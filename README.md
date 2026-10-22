@@ -8,7 +8,9 @@ Formulários do *AI Curatorial Protocol* (AICP) para a curadoria de artigos gera
 
 - **No navegador:** abra a página publicada (GitHub Pages) e preencha os formulários. Pode alternar entre português e inglês a qualquer momento.
 - **Guardar:** o preenchimento fica guardado automaticamente no navegador. Para guardar num ficheiro, ou para continuar noutro computador, use *Guardar ficheiro (JSON)* e depois *Abrir ficheiro (JSON)*.
-- **Exportar:** *Exportar Markdown* gera um registo legível para anexar ao artigo; *Imprimir / PDF* gera uma versão para impressão, com uma fase por página.
+- **Estado do processo:** mostra, por fase, quantos campos estão preenchidos e quais faltam, se a Fase 5 tem um revisor independente e se as condições da Fase 6 estão cumpridas.
+- **Gerar declaração:** monta um rascunho da declaração de uso de IA a partir das respostas (Fases 1, 2, 5 e 6), com parênteses retos onde faltar informação; pode copiá-lo ou colocá-lo na Fase 6.
+- **Exportar:** *Exportar Word* gera um documento .docx com todas as fases; *Exportar Markdown* gera um registo em texto; *Imprimir / PDF* gera uma versão para impressão, com uma fase por página.
 - **Privacidade:** a página não envia dados para nenhum servidor. Não registe dados pessoais ou confidenciais nos campos.
 - **Modelos para descarregar** (pasta [`docs/`](docs/)): `AICP_Formularios_PT.docx` (modelo original em português), `AICP_forms_PT.md`, `AICP_forms_EN.md` e as respetivas versões `.docx`.
 
@@ -50,7 +52,9 @@ Forms for the *AI Curatorial Protocol* (AICP), for curating AI-generated article
 
 - **In the browser:** open the published page (GitHub Pages) and fill in the forms. You can switch between Portuguese and English at any time.
 - **Saving:** entries are saved automatically in the browser. To keep a file, or to continue on another computer, use *Save file (JSON)* and then *Open file (JSON)*.
-- **Exporting:** *Export Markdown* produces a readable record to attach to the article; *Print / PDF* produces a printable version, one phase per page.
+- **Process status:** shows, per phase, how many fields are filled in and which are missing, whether Phase 5 has an independent reviewer and whether the Phase 6 conditions are met.
+- **Generate statement:** drafts the AI use statement from the answers (Phases 1, 2, 5 and 6), with square brackets where information is missing; copy it or insert it in Phase 6.
+- **Exporting:** *Export Word* produces a .docx with all phases; *Export Markdown* produces a text record; *Print / PDF* produces a printable version, one phase per page.
 - **Privacy:** the page sends no data to any server. Do not record personal or confidential data in the fields.
 - **Downloadable templates** in [`docs/`](docs/).
 

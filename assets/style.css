@@ -65,6 +65,22 @@ table.grid { width: 100%; border-collapse: collapse; font-size: 13.5px; }
 .note { font-size: 13px; font-style: italic; color: var(--muted); border-left: 3px solid var(--line); padding-left: 10px; }
 footer { font-size: 12.5px; color: var(--muted); padding: 8px 0 40px; }
 footer h2 { font-size: 14px; }
+.dlg { width: min(720px, calc(100vw - 32px)); max-height: calc(100vh - 48px); border: 1px solid var(--line); border-radius: 10px; padding: 16px 20px; background: var(--paper); color: var(--ink); }
+.dlg::backdrop { background: rgba(0,0,0,.45); }
+.dlg h2 { margin: 0 0 10px; font-size: 18px; }
+.dlg-actions { display: flex; flex-wrap: wrap; gap: 8px; justify-content: flex-end; margin-top: 14px; }
+.status-list { list-style: none; padding: 0; margin: 0; }
+.status-list > li { margin: 0 0 10px; }
+.st-head { display: flex; justify-content: space-between; gap: 8px; font-size: 14px; }
+.st-count { color: var(--muted); font-variant-numeric: tabular-nums; }
+.bar { height: 6px; background: var(--accent-soft); border-radius: 3px; overflow: hidden; margin: 4px 0; }
+.bar span { display: block; height: 100%; background: var(--accent); }
+.status-list details { font-size: 13px; color: var(--muted); }
+.status-list details ul { margin: 4px 0 0; padding-left: 18px; }
+.flag { margin: 8px 0 0; padding: 8px 10px; border-radius: 6px; font-size: 14px; border-left: 4px solid; }
+.flag.ok { border-color: #2e7d32; background: rgba(46,125,50,.08); }
+.flag.warn { border-color: #b26a00; background: rgba(178,106,0,.08); }
+.stmt { width: 100%; font-size: 14px; margin-top: 8px; }
 @media (max-width: 640px) { h1 { font-size: 21px; } .grid tbody th { width: auto; } }
 @media print {
   :root { --ink: #000; --paper: #fff; --bg: #fff; --line: #999; }
