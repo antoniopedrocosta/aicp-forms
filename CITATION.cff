@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "Se usar estes formulários, cite o artigo abaixo. If you use these forms, please cite the article below."
+title: "AI Curatorial Protocol (AICP): curation forms for AI-generated articles"
+type: software
+license: MIT
+authors:
+  - family-names: Costa
+    given-names: António Pedro
+preferred-citation:
+  type: article
+  title: "Algorithmic responsibility in education: A curatorial protocol for AI-generated text, images, and videos"
+  authors:
+    - family-names: Costa
+      given-names: António Pedro
+    - family-names: Pinho
+      given-names: Isabel
+    - family-names: Piedade
+      given-names: Filipe
+    - family-names: Balula
+      given-names: Ana
+    - family-names: Ribeiro
+      given-names: Norberto
+    - family-names: Ruano
+      given-names: Luis Eduardo
+    - family-names: Antonini
+      given-names: Alessio
+  journal: "조형교육"
+  volume: 99
+  issue: 2
+  start: 25
+  end: 38
+  year: 2026
