@@ -1,19 +1,19 @@
-// Generates blank Markdown templates (PT and EN) from assets/schema.js.
+// Generates blank Markdown templates (PT, EN, ES and IT) from assets/schema.js.
 // Usage: node tools/build-templates.js
 const fs = require("fs"), path = require("path"), vm = require("vm");
 const ctx = { window: {} };
 vm.runInNewContext(fs.readFileSync(path.join(__dirname, "../assets/schema.js"), "utf8"), ctx);
 const S = ctx.window.AICP_SCHEMA;
-for (const lang of ["pt", "en"]) {
+for (const lang of ["pt", "en", "es", "it"]) {
   const t = (o) => (o ? o[lang] : "");
   const out = ["# " + t(S.meta.title), "", "**" + t(S.meta.subtitle) + "**", "", t(S.meta.intro), ""];
-  out.push("## " + (lang === "pt" ? "Como usar" : "How to use"), "");
+  out.push("## " + ({ pt: "Como usar", en: "How to use", es: "Cómo usar", it: "Come usare" })[lang], "");
   S.meta.howto.forEach((h, i) => out.push(i + 1 + ". " + t(h)));
   out.push("");
   for (const sec of S.sections) {
     out.push("## " + t(sec.title) + (sec.subtitle ? ": " + t(sec.subtitle) : ""), "");
     if (sec.prompt) out.push("_" + t(sec.prompt) + "_", "");
-    if (sec.phase) out.push((lang === "pt" ? "Artigo / código do registo: ____  Curador(a): ____  Data: ____" : "Article / record code: ____  Curator: ____  Date: ____"), "");
+    if (sec.phase) out.push(({ pt: "Artigo / código do registo: ____  Curador(a): ____  Data: ____", en: "Article / record code: ____  Curator: ____  Date: ____", es: "Artículo / código del registro: ____  Curador(a): ____  Fecha: ____", it: "Articolo / codice del registro: ____  Curatore/curatrice: ____  Data: ____" })[lang], "");
     for (const blk of sec.blocks) {
       if (blk.title) out.push("### " + t(blk.title), "");
       for (const f of blk.fields) {

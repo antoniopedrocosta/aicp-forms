@@ -4,44 +4,44 @@
   const S = window.AICP_SCHEMA;
   const STORE = "aicp-forms-v1";
   const UI = {
-    lang: { pt: "PT", en: "EN" },
-    exportMd: { pt: "Exportar Markdown", en: "Export Markdown" },
-    exportJson: { pt: "Guardar ficheiro (JSON)", en: "Save file (JSON)" },
-    importJson: { pt: "Abrir ficheiro (JSON)", en: "Open file (JSON)" },
-    print: { pt: "Imprimir / PDF", en: "Print / PDF" },
-    reset: { pt: "Limpar tudo", en: "Clear all" },
-    resetConfirm: { pt: "Apagar todos os campos preenchidos neste navegador?", en: "Delete all filled-in fields in this browser?" },
-    addRow: { pt: "+ linha", en: "+ row" },
-    saved: { pt: "Guardado neste navegador", en: "Saved in this browser" },
-    notSaved: { pt: "Não foi possível guardar neste navegador; exporte o ficheiro para não perder dados.", en: "Could not save in this browser; export the file to avoid losing data." },
-    howto: { pt: "Como usar", en: "How to use" },
-    privacy: { pt: "Os dados ficam apenas neste navegador. Nada é enviado para servidores.", en: "Data stays in this browser only. Nothing is sent to any server." },
-    refs: { pt: "Referências", en: "References" },
-    words: { pt: "palavras", en: "words" },
-    detail: { pt: "Especificar", en: "Specify" },
-    badFile: { pt: "Ficheiro inválido.", en: "Invalid file." },
-    phases: { pt: "Fases", en: "Phases" },
-    articleCode: { pt: "Artigo / código", en: "Article / code" },
-    curator: { pt: "Curador(a)", en: "Curator" },
-    exportDocx: { pt: "Exportar Word", en: "Export Word" },
-    statusBtn: { pt: "Estado do processo", en: "Process status" },
-    statementBtn: { pt: "Gerar declaração", en: "Generate statement" },
-    status: { pt: "Estado do processo", en: "Process status" },
-    statement: { pt: "Declaração de uso de IA", en: "AI use statement" },
-    stmtHint: { pt: "Rascunho gerado a partir das respostas. O que está entre parênteses retos tem de ser completado ou confirmado. Reveja antes de usar.", en: "Draft generated from the answers. Text in square brackets must be completed or confirmed. Review before use." },
-    copy: { pt: "Copiar", en: "Copy" },
-    copied: { pt: "Copiado", en: "Copied" },
-    insert: { pt: "Colocar na Fase 6", en: "Insert in Phase 6" },
-    close: { pt: "Fechar", en: "Close" },
-    emptyFields: { pt: "Campos por preencher", en: "Empty fields" },
-    p5ok: { pt: "há pelo menos um revisor independente e o grupo reviu o artigo e pelo menos uma das Fases 1 a 4.", en: "there is at least one independent reviewer and the group reviewed the article and at least one of Phases 1 to 4." },
-    p5notok: { pt: "ainda não cumpre o requisito.", en: "requirement not yet met." },
-    p5noIndep: { pt: "Falta um revisor identificado e independente da produção.", en: "An identified reviewer independent of production is missing." },
-    p5noArticle: { pt: "O grupo ainda não reviu o artigo.", en: "The group has not yet reviewed the article." },
-    p5noPhases: { pt: "O grupo ainda não reviu nenhuma das Fases 1 a 4.", en: "The group has not yet reviewed any of Phases 1 to 4." },
-    conditions: { pt: "Condições da Fase 6 cumpridas", en: "Phase 6 conditions met" },
-    decision: { pt: "Decisão", en: "Decision" },
-    noDecision: { pt: "por tomar", en: "not yet taken" }
+    lang: { pt: "PT", en: "EN", es: "ES", it: "IT" },
+    exportMd: { pt: "Exportar Markdown", en: "Export Markdown", es: "Exportar Markdown", it: "Esporta Markdown" },
+    exportJson: { pt: "Guardar ficheiro (JSON)", en: "Save file (JSON)", es: "Guardar archivo (JSON)", it: "Salva file (JSON)" },
+    importJson: { pt: "Abrir ficheiro (JSON)", en: "Open file (JSON)", es: "Abrir archivo (JSON)", it: "Apri file (JSON)" },
+    print: { pt: "Imprimir / PDF", en: "Print / PDF", es: "Imprimir / PDF", it: "Stampa / PDF" },
+    reset: { pt: "Limpar tudo", en: "Clear all", es: "Borrar todo", it: "Cancella tutto" },
+    resetConfirm: { pt: "Apagar todos os campos preenchidos neste navegador?", en: "Delete all filled-in fields in this browser?", es: "¿Borrar todos los campos completados en este navegador?", it: "Cancellare tutti i campi compilati in questo browser?" },
+    addRow: { pt: "+ linha", en: "+ row", es: "+ fila", it: "+ riga" },
+    saved: { pt: "Guardado neste navegador", en: "Saved in this browser", es: "Guardado en este navegador", it: "Salvato in questo browser" },
+    notSaved: { pt: "Não foi possível guardar neste navegador; exporte o ficheiro para não perder dados.", en: "Could not save in this browser; export the file to avoid losing data.", es: "No se pudo guardar en este navegador; exporte el archivo para no perder datos.", it: "Impossibile salvare in questo browser; esportare il file per non perdere i dati." },
+    howto: { pt: "Como usar", en: "How to use", es: "Cómo usar", it: "Come usare" },
+    privacy: { pt: "Os dados ficam apenas neste navegador. Nada é enviado para servidores.", en: "Data stays in this browser only. Nothing is sent to any server.", es: "Los datos quedan solo en este navegador. No se envía nada a ningún servidor.", it: "I dati restano solo in questo browser. Nulla viene inviato a server." },
+    refs: { pt: "Referências", en: "References", es: "Referencias", it: "Riferimenti bibliografici" },
+    words: { pt: "palavras", en: "words", es: "palabras", it: "parole" },
+    detail: { pt: "Especificar", en: "Specify", es: "Especificar", it: "Specificare" },
+    badFile: { pt: "Ficheiro inválido.", en: "Invalid file.", es: "Archivo no válido.", it: "File non valido." },
+    phases: { pt: "Fases", en: "Phases", es: "Fases", it: "Fasi" },
+    articleCode: { pt: "Artigo / código", en: "Article / code", es: "Artículo / código", it: "Articolo / codice" },
+    curator: { pt: "Curador(a)", en: "Curator", es: "Curador(a)", it: "Curatore/curatrice" },
+    exportDocx: { pt: "Exportar Word", en: "Export Word", es: "Exportar Word", it: "Esporta Word" },
+    statusBtn: { pt: "Estado do processo", en: "Process status", es: "Estado del proceso", it: "Stato del processo" },
+    statementBtn: { pt: "Gerar declaração", en: "Generate statement", es: "Generar declaración", it: "Genera dichiarazione" },
+    status: { pt: "Estado do processo", en: "Process status", es: "Estado del proceso", it: "Stato del processo" },
+    statement: { pt: "Declaração de uso de IA", en: "AI use statement", es: "Declaración de uso de IA", it: "Dichiarazione d'uso dell'IA" },
+    stmtHint: { pt: "Rascunho gerado a partir das respostas. O que está entre parênteses retos tem de ser completado ou confirmado. Reveja antes de usar.", en: "Draft generated from the answers. Text in square brackets must be completed or confirmed. Review before use.", es: "Borrador generado a partir de las respuestas. Lo que está entre corchetes debe completarse o confirmarse. Revíselo antes de usarlo.", it: "Bozza generata a partire dalle risposte. Ciò che è tra parentesi quadre va completato o confermato. Rivedere prima dell'uso." },
+    copy: { pt: "Copiar", en: "Copy", es: "Copiar", it: "Copia" },
+    copied: { pt: "Copiado", en: "Copied", es: "Copiado", it: "Copiato" },
+    insert: { pt: "Colocar na Fase 6", en: "Insert in Phase 6", es: "Colocar en la Fase 6", it: "Inserisci nella Fase 6" },
+    close: { pt: "Fechar", en: "Close", es: "Cerrar", it: "Chiudi" },
+    emptyFields: { pt: "Campos por preencher", en: "Empty fields", es: "Campos por completar", it: "Campi da compilare" },
+    p5ok: { pt: "há pelo menos um revisor independente e o grupo reviu o artigo e pelo menos uma das Fases 1 a 4.", en: "there is at least one independent reviewer and the group reviewed the article and at least one of Phases 1 to 4.", es: "hay al menos un revisor independiente y el grupo revisó el artículo y al menos una de las Fases 1 a 4.", it: "c'è almeno un revisore indipendente e il gruppo ha rivisto l'articolo e almeno una delle Fasi 1-4." },
+    p5notok: { pt: "ainda não cumpre o requisito.", en: "requirement not yet met.", es: "todavía no cumple el requisito.", it: "non soddisfa ancora il requisito." },
+    p5noIndep: { pt: "Falta um revisor identificado e independente da produção.", en: "An identified reviewer independent of production is missing.", es: "Falta un revisor identificado e independiente de la producción.", it: "Manca un revisore identificato e indipendente dalla produzione." },
+    p5noArticle: { pt: "O grupo ainda não reviu o artigo.", en: "The group has not yet reviewed the article.", es: "El grupo todavía no ha revisado el artículo.", it: "Il gruppo non ha ancora rivisto l'articolo." },
+    p5noPhases: { pt: "O grupo ainda não reviu nenhuma das Fases 1 a 4.", en: "The group has not yet reviewed any of Phases 1 to 4.", es: "El grupo todavía no ha revisado ninguna de las Fases 1 a 4.", it: "Il gruppo non ha ancora rivisto nessuna delle Fasi 1-4." },
+    conditions: { pt: "Condições da Fase 6 cumpridas", en: "Phase 6 conditions met", es: "Condiciones de la Fase 6 cumplidas", it: "Condizioni della Fase 6 soddisfatte" },
+    decision: { pt: "Decisão", en: "Decision", es: "Decisión", it: "Decisione" },
+    noDecision: { pt: "por tomar", en: "not yet taken", es: "pendiente", it: "da prendere" }
   };
 
   let state = load() || { lang: "pt", v: {} };
@@ -171,7 +171,7 @@
 
   /* ---------- page ---------- */
   function render() {
-    document.documentElement.lang = state.lang === "pt" ? "pt-PT" : "en";
+    document.documentElement.lang = { pt: "pt-PT", en: "en", es: "es", it: "it" }[state.lang] || "pt-PT";
     document.title = t(S.meta.title) + " · " + t(S.meta.subtitle);
     const app = document.getElementById("app");
     app.innerHTML = "";
@@ -180,7 +180,7 @@
       el("div", { class: "brand" }, el("p", { class: "kicker" }, t(S.meta.title)), el("h1", {}, t(S.meta.subtitle)), el("p", { class: "lede" }, t(S.meta.intro))),
       el("div", { class: "toolbar no-print" },
         el("div", { class: "langs", role: "group", "aria-label": "Language" },
-          ["pt", "en"].map((l) => el("button", { type: "button", class: l === state.lang ? "on" : "", "aria-pressed": l === state.lang, onclick: () => { state.lang = l; save(); render(); } }, UI.lang[l]))),
+          ["pt", "en", "es", "it"].map((l) => el("button", { type: "button", class: l === state.lang ? "on" : "", "aria-pressed": l === state.lang, onclick: () => { state.lang = l; save(); render(); } }, UI.lang[l]))),
         el("button", { type: "button", onclick: showStatus }, t(UI.statusBtn)),
         el("button", { type: "button", onclick: showStatement }, t(UI.statementBtn)),
         el("button", { type: "button", onclick: exportDocx }, t(UI.exportDocx)),
@@ -248,7 +248,7 @@
         blk.fields.forEach((f) => {
           const k = key(sec.id, blk.id, f.id);
           if (f.type === "text" || f.type === "date" || f.type === "textarea") {
-            out.push("**" + t(f.label) + "**", "", (get(k, "") || "_" + "(vazio / empty)" + "_"), "");
+            out.push("**" + t(f.label) + "**", "", (get(k, "") || "_(" + ({ pt: "vazio", en: "empty", es: "vacío", it: "vuoto" })[state.lang] + ")_"), "");
           } else if (f.type === "radio" || f.type === "check") {
             const cur = get(k, f.type === "check" ? [] : null);
             const marks = f.options.map((o, i) => ((f.type === "check" ? cur.includes(i) : cur === i) ? "[x] " : "[ ] ") + t(o)).join("  ");
@@ -362,7 +362,7 @@
   /* ---------- 2. AI use statement ---------- */
   function buildStatement() {
     const blank = (v, ph) => (v && String(v).trim() ? String(v).trim() : "[" + ph + "]");
-    const pt = state.lang === "pt";
+    const pt = state.lang === "pt", es = state.lang === "es", it = state.lang === "it";
     const p1 = S.sections.find((s) => s.id === "p1");
     const typeF = p1.blocks[0].fields[0], degF = p1.blocks[0].fields[1];
     const typeV = get("p1.a.type", null);
@@ -407,6 +407,32 @@
       if (code) s.push("Registo AICP: " + code + ", disponível em [local do depósito].");
       s.push(allConds ? "O conteúdo e as referências foram verificados e são da responsabilidade de quem assina."
                       : "[Concluir as condições da Fase 6 antes de afirmar:] O conteúdo e as referências foram verificados e são da responsabilidade de quem assina.");
+    } else if (it) {
+      s.push("Nella preparazione di questo " + blank(typeTxt && typeTxt.toLowerCase(), "tipo di testo") + " è stato utilizzato " + blank(tool, "strumento e fornitore") + " (modello " + blank(model, "modello e versione") + "), in data " + blank(when, "data") + ".");
+      if (degV != null) s.push("Grado di produzione da parte dell'IA: " + t(degF.options[degV]).toLowerCase() + ".");
+      s.push("Lo strumento è stato utilizzato per " + "[finalità: per esempio, stesura di una prima versione, revisione linguistica, traduzione, ricerca bibliografica]" + ".");
+      if (docs) s.push("Allo strumento sono stati forniti i seguenti documenti: " + docs + ".");
+      s.push("L'uso è stato sottoposto ad audit con l'AI Curatorial Protocol (AICP; Costa et al., 2026), comprendente il registro di provenienza"
+        + (nClaims ? ", la verifica di " + nClaims + " affermazioni e riferimenti (" + nExists + " confermati alla fonte; " + nSays + " con contenuto confermato)" : ", la verifica dei riferimenti [indicare quanti]")
+        + ", un audit dei bias"
+        + (p5.ok && group.length ? ", la validazione incrociata da parte di " + group.join(", ") : ", la validazione incrociata da parte di [composizione del gruppo indipendente]")
+        + " e una decisione documentata" + (decV != null ? " (" + t(decF.options[decV]).toLowerCase() + ")" : "") + ".");
+      if (code) s.push("Registro AICP: " + code + ", disponibile in [luogo del deposito].");
+      s.push(allConds ? "Il contenuto e i riferimenti sono stati verificati e sono sotto la responsabilità di chi firma."
+                      : "[Completare le condizioni della Fase 6 prima di affermare:] Il contenuto e i riferimenti sono stati verificati e sono sotto la responsabilità di chi firma.");
+    } else if (es) {
+      s.push("En la preparación de este " + blank(typeTxt && typeTxt.toLowerCase(), "tipo de texto") + " se utilizó " + blank(tool, "herramienta y proveedor") + " (modelo " + blank(model, "modelo y versión") + "), en " + blank(when, "fecha") + ".");
+      if (degV != null) s.push("Grado de producción por IA: " + t(degF.options[degV]).toLowerCase() + ".");
+      s.push("La herramienta se utilizó para " + "[finalidades: por ejemplo, redacción de una primera versión, revisión lingüística, traducción, búsqueda bibliográfica]" + ".");
+      if (docs) s.push("Se proporcionaron a la herramienta los siguientes documentos: " + docs + ".");
+      s.push("El uso fue auditado con el AI Curatorial Protocol (AICP; Costa et al., 2026), incluyendo el registro de procedencia"
+        + (nClaims ? ", la verificación de " + nClaims + " afirmaciones y referencias (" + nExists + " confirmadas en la fuente; " + nSays + " con contenido confirmado)" : ", la verificación de las referencias [indicar cuántas]")
+        + ", una auditoría de sesgos"
+        + (p5.ok && group.length ? ", la validación cruzada por " + group.join(", ") : ", la validación cruzada por [composición del grupo independiente]")
+        + " y una decisión documentada" + (decV != null ? " (" + t(decF.options[decV]).toLowerCase() + ")" : "") + ".");
+      if (code) s.push("Registro AICP: " + code + ", disponible en [lugar del depósito].");
+      s.push(allConds ? "El contenido y las referencias fueron verificados y son responsabilidad de quienes firman."
+                      : "[Completar las condiciones de la Fase 6 antes de afirmar:] El contenido y las referencias fueron verificados y son responsabilidad de quienes firman.");
     } else {
       s.push("In preparing this " + blank(typeTxt && typeTxt.toLowerCase(), "type of text") + ", " + blank(tool, "tool and provider") + " (model " + blank(model, "model and version") + ") was used on " + blank(when, "date") + ".");
       if (degV != null) s.push("Degree of AI production: " + t(degF.options[degV]).toLowerCase() + ".");
@@ -534,7 +560,8 @@
   }
   function exportDocx() {
     const files = Object.assign({}, DOCX_STATIC, { "word/document.xml": buildDocumentXml() });
-    if (state.lang === "en") files["word/styles.xml"] = files["word/styles.xml"].replace('w:val="pt-PT"', 'w:val="en-GB"');
+    const docLang = { en: "en-GB", es: "es-ES", it: "it-IT" }[state.lang];
+    if (docLang) files["word/styles.xml"] = files["word/styles.xml"].replace('w:val="pt-PT"', 'w:val="' + docLang + '"');
     const a = el("a", { href: URL.createObjectURL(zip(files)), download: fileBase() + ".docx" });
     document.body.append(a); a.click(); a.remove();
   }
