@@ -1,20 +1,20 @@
 # AI Curatorial Protocol (AICP)
 
-**Moduli di curatela di articoli generati dall'IA**
+**Moduli di curatela di testi generati dall'IA**
 
-Sei moduli, uno per fase, da allegare all'articolo curato. Estensione del modello 5R (Bain et al., 2002) con una nuova fase, Reconciling (Costa et al., 2026).
+Sei moduli, uno per fase, da allegare a qualsiasi testo prodotto con l'IA generativa (articolo, elaborato accademico, relazione, materiale didattico, testo divulgativo, tra gli altri). Estensione del modello 5R (Bain et al., 2002) con una nuova fase, Reconciling (Costa et al., 2026).
 
 ## Come usare
 
 1. Compilare i moduli in ordine (Fasi 1-6). Il processo è iterativo: è possibile tornare a fasi precedenti quando emergono nuove evidenze, e tale ritorno va registrato.
-2. I moduli sono formativi. "Sì" e "No" descrivono ciò che è stato fatto; non misurano giusto o sbagliato né autorizzano l'uso dell'articolo.
-3. La Fase 5 richiede un secondo gruppo che non abbia partecipato alla produzione dell'articolo. Un'opinione libera, senza confronto strutturato, è una rilevazione di concezioni, non è Reconciling.
-4. Conservare il testo originale generato (Fase 1) e allegare questi moduli all'articolo finale. Non registrare dati personali o riservati nei campi.
+2. I moduli sono formativi. "Sì" e "No" descrivono ciò che è stato fatto; non misurano giusto o sbagliato né autorizzano l'uso del testo.
+3. La Fase 5 richiede un secondo gruppo che non abbia partecipato alla produzione del testo. Un'opinione libera, senza confronto strutturato, è una rilevazione di concezioni, non è Reconciling.
+4. Conservare il testo originale generato (Fase 1) e allegare questi moduli al testo finale. Non registrare dati personali o riservati nei campi.
 5. La responsabilità della decisione e del testo finale resta alle persone e viene documentata nella Fase 6.
 
 ## Identificazione del processo
 
-**Titolo o tema dell'articolo analizzato**
+**Titolo o tema del testo analizzato**
 
 > 
 
@@ -34,7 +34,7 @@ Sei moduli, uno per fase, da allegare all'articolo curato. Estensione del modell
 
 > 
 
-**Finalità dell'uso previsto** _(es.: invio a rivista, lavoro curricolare, base di revisione, valutazione)_
+**Finalità dell'uso previsto** _(es.: invio a rivista, lavoro curricolare, materiale didattico, relazione, divulgazione, valutazione)_
 
 > 
 
@@ -59,13 +59,13 @@ Sei moduli, uno per fase, da allegare all'articolo curato. Estensione del modell
 
 ## Fase 1 · Reporting: Registro di provenienza (Provenance Record)
 
-_Come è stato prodotto questo articolo? Registrare le condizioni di produzione prima di valutarlo._
+_Come è stato prodotto questo testo? Registrare le condizioni di produzione prima di valutarlo._
 
-Articolo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
+Testo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
 
 ### A. Testo analizzato
 
-**Tipo di testo**: ☐ Articolo scientifico  ☐ Rassegna  ☐ Abstract  ☐ Altro  ____
+**Tipo di testo**: ☐ Articolo scientifico  ☐ Rassegna della letteratura  ☐ Abstract  ☐ Elaborato accademico (saggio, relazione, tesi)  ☐ Materiale didattico  ☐ Testo divulgativo o giornalistico  ☐ Comunicazione istituzionale o professionale  ☐ Testo creativo o letterario  ☐ Altro  ____
 
 **Grado di produzione da parte dell'IA**: ☐ Interamente generato  ☐ Parzialmente generato  ☐ Riscritto dall'IA  ☐ Non so
 
@@ -127,9 +127,9 @@ Articolo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
 
 ## Fase 2 · Relating: Ancoraggio culturale (Cultural Anchoring)
 
-_Con quali fonti e conoscenze posso confrontare questo articolo?_
+_Con quali fonti e conoscenze posso confrontare questo testo?_
 
-Articolo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
+Testo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
 
 ### A. Repertorio di riferimento
 
@@ -139,7 +139,7 @@ Articolo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
 |   |   |   |
 |   |   |   |
 
-### B. Verifica di affermazioni e riferimenti dell'articolo
+### B. Verifica di affermazioni e riferimenti del testo
 
 | Affermazione o riferimento nel testo | Esiste? | Dice ciò che il testo afferma? | Fonte / DOI verificato |
 | --- | --- | --- | --- |
@@ -152,13 +152,13 @@ Articolo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
 
 > Esiste? / Dice ciò che il testo afferma? → S = sì, N = no, NV = non verificabile
 
-### C. Confronto con il campo
+### C. Confronto con le conoscenze del settore
 
-**Ciò che l'articolo presenta e converge con la letteratura**
+**Ciò che il testo presenta ed è coerente con le fonti e le conoscenze del settore**
 
 > 
 
-**Ciò che sembra assente (autori, lingue, regioni, prospettive teoriche)**
+**Ciò che sembra assente (autori, fonti, lingue, regioni, prospettive)**
 
 > 
 
@@ -174,9 +174,9 @@ Articolo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
 
 ## Fase 3 · Responding: Audit dei bias e della diversità (Bias and Diversity Audit)
 
-_Cosa osservo e come reagisco? Confrontare l'articolo con variazioni del prompt._
+_Cosa osservo e come reagisco? Confrontare il testo con variazioni del prompt._
 
-Articolo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
+Testo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
 
 ### A. Risposta personale
 
@@ -206,7 +206,7 @@ Articolo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
 | Predominio di una regione, lingua o scuola teorica | ☐ S ☐ N ☐ NA |   |
 | Assenza di voci, contesti o gruppi | ☐ S ☐ N ☐ NA |   |
 | Stereotipi (genere, cultura, professione, disciplina) | ☐ S ☐ N ☐ NA |   |
-| Semplificazione o travisamento di teorie e autori | ☐ S ☐ N ☐ NA |   |
+| Semplificazione o travisamento di idee, teorie, fonti o autori | ☐ S ☐ N ☐ NA |   |
 | Omogeneizzazione dello stile (perdita della voce autoriale) | ☐ S ☐ N ☐ NA |   |
 
 > S = sì, osservato; N = non osservato; NA = non valutato
@@ -221,7 +221,7 @@ Articolo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
 
 _Come interpreto ciò che ho osservato? Separare ciò che posso affermare da ciò che soltanto inferisco._
 
-Articolo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
+Testo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
 
 ### A. Osservato, interpretato, incerto
 
@@ -232,13 +232,13 @@ Articolo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
 |   |   |   |
 |   |   |   |
 
-### B. Valutazione dell'articolo come testo scientifico
+### B. Valutazione della qualità del testo
 
-**Coerenza: domanda, obiettivi, metodo, risultati e conclusione**: ☐ Adeguata  ☐ Parziale  ☐ Inadeguata
+**Coerenza: scopo, struttura, sviluppo e conclusioni (in un testo scientifico: domanda, obiettivi, metodo, risultati e conclusione)**: ☐ Adeguata  ☐ Parziale  ☐ Inadeguata
 
-**Fondamento teorico ed empirico delle affermazioni**: ☐ Adeguato  ☐ Parziale  ☐ Inadeguato
+**Fondamento delle affermazioni (fonti, dati, ragionamento)**: ☐ Adeguato  ☐ Parziale  ☐ Inadeguato
 
-**Limiti e incertezze dichiarati dal testo**: ☐ Sì  ☐ In parte  ☐ No
+**Limiti e incertezze dichiarati dal testo, quando il genere lo richiede**: ☐ Sì  ☐ In parte  ☐ No
 
 **Ho una conoscenza sufficiente del tema per valutare il testo?**: ☐ Sì  ☐ In parte  ☐ No: consultare un esperto
 
@@ -248,7 +248,7 @@ Articolo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
 
 **Paternità, proprietà intellettuale e privacy analizzate**: ☐ Sì  ☐ No  ☐ In sospeso
 
-### D. Testo curatoriale (obbligatorio se l'articolo è diffuso oltre chi lo ha creato)
+### D. Testo curatoriale (obbligatorio se il testo è diffuso oltre chi lo ha creato)
 
 **Ambiguità irrisolte, registrate come evidenza analitica** _(fino a 150 parole)_
 
@@ -256,9 +256,9 @@ Articolo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
 
 ## Fase 5 · Reconciling: Validazione incrociata umana e comunitaria (Human–Community Cross-Validation)
 
-_Cosa dicono altre persone? Un secondo gruppo, indipendente dalla produzione, rivede l'articolo e le Fasi 1-4._
+_Cosa dicono altre persone? Un secondo gruppo, indipendente dalla produzione, rivede il testo e le Fasi 1-4._
 
-Articolo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
+Testo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
 
 ### A. Secondo gruppo di revisione
 
@@ -270,7 +270,7 @@ Articolo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
 
 **Consenso e garanzie**: ☐ Non applicabile  ☐ Ottenuto  ☐ In sospeso
 
-**Cosa ha rivisto il gruppo**: ☐ Articolo  ☐ Registro (F1)  ☐ Repertorio (F2)  ☐ Audit (F3)  ☐ Contestualizzazione (F4)
+**Cosa ha rivisto il gruppo**: ☐ Testo  ☐ Registro (F1)  ☐ Repertorio (F2)  ☐ Audit (F3)  ☐ Contestualizzazione (F4)
 
 ### B. Esito della revisione
 
@@ -298,17 +298,17 @@ Articolo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
 
 **È necessario tornare a fasi precedenti?**: ☐ No  ☐ Sì  ____
 
-> Se gli studenti o il curatore esprimono solo opinioni libere, senza confrontare l'articolo con un secondo gruppo indipendente, non si tratta di Reconciling: è un brainstorming o una rilevazione di concezioni, e va registrato come tale.
+> Se gli studenti o il curatore esprimono solo opinioni libere, senza confrontare il testo con un secondo gruppo indipendente, non si tratta di Reconciling: è un brainstorming o una rilevazione di concezioni, e va registrato come tale.
 
 ## Fase 6 · Reconstructing: Decisione curatoriale documentata (Documented Curatorial Decision)
 
 _Cosa decido? Una decisione fondata sulle Fasi 1-5, assunta da persone e messa per iscritto._
 
-Articolo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
+Testo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
 
 ### A. Decisione
 
-**Decisione sull'articolo**: ☐ Utilizzare  ☐ Utilizzare con contestualizzazione  ☐ Adattare  ☐ Non utilizzare
+**Decisione sul testo**: ☐ Utilizzare  ☐ Utilizzare con contestualizzazione  ☐ Adattare  ☐ Non utilizzare
 
 **Uso previsto** _(dove, per quale scopo, davanti a quale pubblico)_
 
@@ -320,9 +320,9 @@ Articolo / codice del registro: ____  Curatore/curatrice: ____  Data: ____
 
 ### B. Condizioni prima dell'uso
 
-**Condizioni soddisfatte**: ☐ Tutti i riferimenti verificati alla fonte (esistono e dicono ciò che il testo afferma)  ☐ Affermazioni fattuali e dati verificati  ☐ Voce e paternità garantite (testo riscritto e assunto da chi firma)  ☐ Diritto d'autore, privacy e consensi gestiti  ☐ Revisione finale completa del manoscritto
+**Condizioni soddisfatte**: ☐ Riferimenti e fonti verificati all'origine, ove presenti (esistono e dicono ciò che il testo afferma)  ☐ Affermazioni fattuali e dati verificati  ☐ Voce e paternità garantite (testo riscritto e assunto da chi firma)  ☐ Diritto d'autore, privacy e consensi gestiti  ☐ Revisione finale completa del testo
 
-**Cosa sarà modificato o respinto** _(parti del testo, cifre, riferimenti)_
+**Cosa sarà modificato o respinto** _(parti del testo, cifre, dati, riferimenti)_
 
 > 
 

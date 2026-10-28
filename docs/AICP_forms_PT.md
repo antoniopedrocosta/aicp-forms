@@ -1,20 +1,20 @@
 # AI Curatorial Protocol (AICP)
 
-**Formulários de curadoria de artigos gerados por IA**
+**Formulários de curadoria de textos gerados por IA**
 
-Seis formulários, um por fase, para anexar ao artigo curado. Extensão do modelo 5R (Bain et al., 2002) com uma nova fase, Reconciling (Costa et al., 2026).
+Seis formulários, um por fase, para anexar a qualquer texto produzido com IA generativa (artigo, trabalho académico, relatório, material didático, texto de divulgação, entre outros). Extensão do modelo 5R (Bain et al., 2002) com uma nova fase, Reconciling (Costa et al., 2026).
 
 ## Como usar
 
 1. Preencha por ordem (Fases 1 a 6). O processo é iterativo: pode regressar a fases anteriores quando surgir nova evidência e deve registar esse regresso.
-2. Os formulários são formativos. "Sim" e "Não" descrevem o que foi feito; não medem certo ou errado nem autorizam o uso do artigo.
-3. A Fase 5 exige um segundo grupo que não participou na produção do artigo. Uma opinião livre, sem confronto estruturado, é um levantamento de conceções, não é Reconciling.
-4. Guarde o texto original gerado (Fase 1) e anexe estes formulários ao artigo final. Não registe dados pessoais ou confidenciais nos campos.
+2. Os formulários são formativos. "Sim" e "Não" descrevem o que foi feito; não medem certo ou errado nem autorizam o uso do texto.
+3. A Fase 5 exige um segundo grupo que não participou na produção do texto. Uma opinião livre, sem confronto estruturado, é um levantamento de conceções, não é Reconciling.
+4. Guarde o texto original gerado (Fase 1) e anexe estes formulários ao texto final. Não registe dados pessoais ou confidenciais nos campos.
 5. A responsabilidade pela decisão e pelo texto final permanece nas pessoas, e fica documentada na Fase 6.
 
 ## Identificação do processo
 
-**Título ou tema do artigo analisado**
+**Título ou tema do texto analisado**
 
 > 
 
@@ -34,7 +34,7 @@ Seis formulários, um por fase, para anexar ao artigo curado. Extensão do model
 
 > 
 
-**Finalidade da utilização prevista** _(ex.: submissão, trabalho curricular, base de revisão, avaliação)_
+**Finalidade da utilização prevista** _(ex.: submissão a revista, trabalho curricular, material de aula, relatório, divulgação, avaliação)_
 
 > 
 
@@ -59,13 +59,13 @@ Seis formulários, um por fase, para anexar ao artigo curado. Extensão do model
 
 ## Fase 1 · Reporting: Registo de proveniência (Provenance Record)
 
-_Como foi produzido este artigo? Registar as condições de produção antes de o avaliar._
+_Como foi produzido este texto? Registar as condições de produção antes de o avaliar._
 
-Artigo / código do registo: ____  Curador(a): ____  Data: ____
+Texto / código do registo: ____  Curador(a): ____  Data: ____
 
 ### A. Texto analisado
 
-**Tipo de texto**: ☐ Artigo científico  ☐ Revisão  ☐ Resumo/abstract  ☐ Outro  ____
+**Tipo de texto**: ☐ Artigo científico  ☐ Revisão de literatura  ☐ Resumo/abstract  ☐ Trabalho académico (ensaio, relatório, dissertação)  ☐ Material didático ou pedagógico  ☐ Texto de divulgação ou jornalístico  ☐ Comunicação institucional ou profissional  ☐ Texto criativo ou literário  ☐ Outro  ____
 
 **Grau de produção por IA**: ☐ Totalmente gerado  ☐ Parcialmente gerado  ☐ Reescrito por IA  ☐ Não sei
 
@@ -127,9 +127,9 @@ Artigo / código do registo: ____  Curador(a): ____  Data: ____
 
 ## Fase 2 · Relating: Ancoragem cultural (Cultural Anchoring)
 
-_Com que fontes e conhecimentos posso comparar este artigo?_
+_Com que fontes e conhecimentos posso comparar este texto?_
 
-Artigo / código do registo: ____  Curador(a): ____  Data: ____
+Texto / código do registo: ____  Curador(a): ____  Data: ____
 
 ### A. Repositório de referência
 
@@ -139,7 +139,7 @@ Artigo / código do registo: ____  Curador(a): ____  Data: ____
 |   |   |   |
 |   |   |   |
 
-### B. Verificação de afirmações e referências do artigo
+### B. Verificação de afirmações e referências do texto
 
 | Afirmação ou referência no texto | Existe? | Diz o que o texto afirma? | Fonte / DOI verificado |
 | --- | --- | --- | --- |
@@ -152,13 +152,13 @@ Artigo / código do registo: ____  Curador(a): ____  Data: ____
 
 > Existe? / Diz o que o texto afirma? → S = sim, N = não, NV = não consegui verificar
 
-### C. Comparação com o campo
+### C. Comparação com o conhecimento da área
 
-**O que o artigo apresenta e converge com a literatura**
+**O que o texto apresenta e é consistente com as fontes e o conhecimento da área**
 
 > 
 
-**O que parece ausente (autores, línguas, regiões, perspetivas teóricas)**
+**O que parece ausente (autores, fontes, línguas, regiões, perspetivas)**
 
 > 
 
@@ -174,9 +174,9 @@ Artigo / código do registo: ____  Curador(a): ____  Data: ____
 
 ## Fase 3 · Responding: Auditoria de enviesamento e diversidade (Bias and Diversity Audit)
 
-_O que observo e como reajo? Comparar o artigo com variações do prompt._
+_O que observo e como reajo? Comparar o texto com variações do prompt._
 
-Artigo / código do registo: ____  Curador(a): ____  Data: ____
+Texto / código do registo: ____  Curador(a): ____  Data: ____
 
 ### A. Resposta pessoal
 
@@ -206,7 +206,7 @@ Artigo / código do registo: ____  Curador(a): ____  Data: ____
 | Domínio de uma região, língua ou escola teórica | ☐ S ☐ N ☐ NA |   |
 | Ausência de vozes, contextos ou grupos | ☐ S ☐ N ☐ NA |   |
 | Estereótipos (género, cultura, profissão, disciplina) | ☐ S ☐ N ☐ NA |   |
-| Simplificação ou deturpação de teorias e autores | ☐ S ☐ N ☐ NA |   |
+| Simplificação ou deturpação de ideias, teorias, fontes ou autores | ☐ S ☐ N ☐ NA |   |
 | Homogeneização do estilo (perda de voz autoral) | ☐ S ☐ N ☐ NA |   |
 
 > S = sim, observado; N = não observado; NA = não avaliado
@@ -221,7 +221,7 @@ Artigo / código do registo: ____  Curador(a): ____  Data: ____
 
 _Como interpreto o que observei? Separar o que posso afirmar do que apenas infiro._
 
-Artigo / código do registo: ____  Curador(a): ____  Data: ____
+Texto / código do registo: ____  Curador(a): ____  Data: ____
 
 ### A. Observado, interpretado, incerto
 
@@ -232,13 +232,13 @@ Artigo / código do registo: ____  Curador(a): ____  Data: ____
 |   |   |   |
 |   |   |   |
 
-### B. Avaliação do artigo como texto científico
+### B. Avaliação da qualidade do texto
 
-**Coerência: pergunta, objetivos, método, resultados e conclusão**: ☐ Adequada  ☐ Parcial  ☐ Inadequada
+**Coerência: propósito, estrutura, desenvolvimento e conclusões (num texto científico: pergunta, objetivos, método, resultados e conclusão)**: ☐ Adequada  ☐ Parcial  ☐ Inadequada
 
-**Suporte teórico e empírico das afirmações**: ☐ Adequado  ☐ Parcial  ☐ Inadequado
+**Fundamentação das afirmações (fontes, dados, raciocínio)**: ☐ Adequado  ☐ Parcial  ☐ Inadequado
 
-**Limitações e incertezas declaradas pelo texto**: ☐ Sim  ☐ Parcialmente  ☐ Não
+**Limitações e incertezas declaradas pelo texto, quando o género o exige**: ☐ Sim  ☐ Parcialmente  ☐ Não
 
 **Tenho conhecimento suficiente do tema para avaliar o texto?**: ☐ Sim  ☐ Parcialmente  ☐ Não: consultar especialista
 
@@ -248,7 +248,7 @@ Artigo / código do registo: ____  Curador(a): ____  Data: ____
 
 **Autoria, propriedade intelectual e privacidade analisadas**: ☐ Sim  ☐ Não  ☐ Pendente
 
-### D. Texto curatorial (obrigatório se o artigo for divulgado além de quem o criou)
+### D. Texto curatorial (obrigatório se o texto for divulgado além de quem o criou)
 
 **Ambiguidades por resolver, registadas como evidência analítica** _(até 150 palavras)_
 
@@ -256,9 +256,9 @@ Artigo / código do registo: ____  Curador(a): ____  Data: ____
 
 ## Fase 5 · Reconciling: Validação cruzada humana e comunitária (Human–Community Cross-Validation)
 
-_O que dizem outras pessoas? Um segundo grupo, independente da produção, revê o artigo e as Fases 1 a 4._
+_O que dizem outras pessoas? Um segundo grupo, independente da produção, revê o texto e as Fases 1 a 4._
 
-Artigo / código do registo: ____  Curador(a): ____  Data: ____
+Texto / código do registo: ____  Curador(a): ____  Data: ____
 
 ### A. Segundo grupo revisor
 
@@ -270,7 +270,7 @@ Artigo / código do registo: ____  Curador(a): ____  Data: ____
 
 **Consentimento e salvaguardas**: ☐ Não aplicável  ☐ Obtido  ☐ Pendente
 
-**O que o grupo reviu**: ☐ Artigo  ☐ Registo (F1)  ☐ Repositório (F2)  ☐ Auditoria (F3)  ☐ Contextualização (F4)
+**O que o grupo reviu**: ☐ Texto  ☐ Registo (F1)  ☐ Repositório (F2)  ☐ Auditoria (F3)  ☐ Contextualização (F4)
 
 ### B. Resultado da revisão
 
@@ -298,17 +298,17 @@ Artigo / código do registo: ____  Curador(a): ____  Data: ____
 
 **É necessário regressar a fases anteriores?**: ☐ Não  ☐ Sim  ____
 
-> Se os estudantes ou o curador apenas exprimem opiniões livres, sem confrontar o artigo com um segundo grupo independente, não é Reconciling: é brainstorming ou levantamento de conceções, e deve ser registado como tal.
+> Se os estudantes ou o curador apenas exprimem opiniões livres, sem confrontar o texto com um segundo grupo independente, não é Reconciling: é brainstorming ou levantamento de conceções, e deve ser registado como tal.
 
 ## Fase 6 · Reconstructing: Decisão curatorial documentada (Documented Curatorial Decision)
 
 _O que decido? Uma decisão fundamentada nas Fases 1 a 5, assumida por pessoas e escrita._
 
-Artigo / código do registo: ____  Curador(a): ____  Data: ____
+Texto / código do registo: ____  Curador(a): ____  Data: ____
 
 ### A. Decisão
 
-**Decisão sobre o artigo**: ☐ Utilizar  ☐ Utilizar com contextualização  ☐ Adaptar  ☐ Não utilizar
+**Decisão sobre o texto**: ☐ Utilizar  ☐ Utilizar com contextualização  ☐ Adaptar  ☐ Não utilizar
 
 **Utilização prevista** _(onde, para quê, perante que público)_
 
@@ -320,9 +320,9 @@ Artigo / código do registo: ____  Curador(a): ____  Data: ____
 
 ### B. Condições antes de utilizar
 
-**Condições cumpridas**: ☐ Todas as referências verificadas na fonte (existem e dizem o que o texto afirma)  ☐ Afirmações factuais e dados verificados  ☐ Voz e autoria asseguradas (texto reescrito e assumido por quem assina)  ☐ Direitos de autor, privacidade e consentimentos tratados  ☐ Revisão final integral do manuscrito
+**Condições cumpridas**: ☐ Referências e fontes verificadas na origem, quando existam (existem e dizem o que o texto afirma)  ☐ Afirmações factuais e dados verificados  ☐ Voz e autoria asseguradas (texto reescrito e assumido por quem assina)  ☐ Direitos de autor, privacidade e consentimentos tratados  ☐ Revisão final integral do texto
 
-**O que será alterado ou rejeitado** _(partes do texto, números, referências)_
+**O que será alterado ou rejeitado** _(partes do texto, números, dados, referências)_
 
 > 
 

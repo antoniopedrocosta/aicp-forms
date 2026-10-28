@@ -13,7 +13,7 @@ for (const lang of ["pt", "en", "es", "it"]) {
   for (const sec of S.sections) {
     out.push("## " + t(sec.title) + (sec.subtitle ? ": " + t(sec.subtitle) : ""), "");
     if (sec.prompt) out.push("_" + t(sec.prompt) + "_", "");
-    if (sec.phase) out.push(({ pt: "Artigo / código do registo: ____  Curador(a): ____  Data: ____", en: "Article / record code: ____  Curator: ____  Date: ____", es: "Artículo / código del registro: ____  Curador(a): ____  Fecha: ____", it: "Articolo / codice del registro: ____  Curatore/curatrice: ____  Data: ____" })[lang], "");
+    if (sec.phase) out.push(({ pt: "Texto / código do registo: ____  Curador(a): ____  Data: ____", en: "Text / record code: ____  Curator: ____  Date: ____", es: "Texto / código del registro: ____  Curador(a): ____  Fecha: ____", it: "Testo / codice del registro: ____  Curatore/curatrice: ____  Data: ____" })[lang], "");
     for (const blk of sec.blocks) {
       if (blk.title) out.push("### " + t(blk.title), "");
       for (const f of blk.fields) {

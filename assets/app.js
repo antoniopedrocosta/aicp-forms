@@ -21,7 +21,7 @@
     detail: { pt: "Especificar", en: "Specify", es: "Especificar", it: "Specificare" },
     badFile: { pt: "Ficheiro inválido.", en: "Invalid file.", es: "Archivo no válido.", it: "File non valido." },
     phases: { pt: "Fases", en: "Phases", es: "Fases", it: "Fasi" },
-    articleCode: { pt: "Artigo / código", en: "Article / code", es: "Artículo / código", it: "Articolo / codice" },
+    articleCode: { pt: "Texto / código", en: "Text / code", es: "Texto / código", it: "Testo / codice" },
     curator: { pt: "Curador(a)", en: "Curator", es: "Curador(a)", it: "Curatore/curatrice" },
     exportDocx: { pt: "Exportar Word", en: "Export Word", es: "Exportar Word", it: "Esporta Word" },
     statusBtn: { pt: "Estado do processo", en: "Process status", es: "Estado del proceso", it: "Stato del processo" },
@@ -34,10 +34,10 @@
     insert: { pt: "Colocar na Fase 6", en: "Insert in Phase 6", es: "Colocar en la Fase 6", it: "Inserisci nella Fase 6" },
     close: { pt: "Fechar", en: "Close", es: "Cerrar", it: "Chiudi" },
     emptyFields: { pt: "Campos por preencher", en: "Empty fields", es: "Campos por completar", it: "Campi da compilare" },
-    p5ok: { pt: "há pelo menos um revisor independente e o grupo reviu o artigo e pelo menos uma das Fases 1 a 4.", en: "there is at least one independent reviewer and the group reviewed the article and at least one of Phases 1 to 4.", es: "hay al menos un revisor independiente y el grupo revisó el artículo y al menos una de las Fases 1 a 4.", it: "c'è almeno un revisore indipendente e il gruppo ha rivisto l'articolo e almeno una delle Fasi 1-4." },
+    p5ok: { pt: "há pelo menos um revisor independente e o grupo reviu o texto e pelo menos uma das Fases 1 a 4.", en: "there is at least one independent reviewer and the group reviewed the text and at least one of Phases 1 to 4.", es: "hay al menos un revisor independiente y el grupo revisó el texto y al menos una de las Fases 1 a 4.", it: "c'è almeno un revisore indipendente e il gruppo ha rivisto il testo e almeno una delle Fasi 1-4." },
     p5notok: { pt: "ainda não cumpre o requisito.", en: "requirement not yet met.", es: "todavía no cumple el requisito.", it: "non soddisfa ancora il requisito." },
     p5noIndep: { pt: "Falta um revisor identificado e independente da produção.", en: "An identified reviewer independent of production is missing.", es: "Falta un revisor identificado e independiente de la producción.", it: "Manca un revisore identificato e indipendente dalla produzione." },
-    p5noArticle: { pt: "O grupo ainda não reviu o artigo.", en: "The group has not yet reviewed the article.", es: "El grupo todavía no ha revisado el artículo.", it: "Il gruppo non ha ancora rivisto l'articolo." },
+    p5noArticle: { pt: "O grupo ainda não reviu o texto.", en: "The group has not yet reviewed the text.", es: "El grupo todavía no ha revisado el texto.", it: "Il gruppo non ha ancora rivisto il testo." },
     p5noPhases: { pt: "O grupo ainda não reviu nenhuma das Fases 1 a 4.", en: "The group has not yet reviewed any of Phases 1 to 4.", es: "El grupo todavía no ha revisado ninguna de las Fases 1 a 4.", it: "Il gruppo non ha ancora rivisto nessuna delle Fasi 1-4." },
     conditions: { pt: "Condições da Fase 6 cumpridas", en: "Phase 6 conditions met", es: "Condiciones de la Fase 6 cumplidas", it: "Condizioni della Fase 6 soddisfatte" },
     decision: { pt: "Decisão", en: "Decision", es: "Decisión", it: "Decisione" },
@@ -395,7 +395,7 @@
 
     const s = [];
     if (pt) {
-      s.push("Na preparação deste " + blank(typeTxt && typeTxt.toLowerCase(), "tipo de texto") + ", foi utilizado o " + blank(tool, "ferramenta e fornecedor") + " (modelo " + blank(model, "modelo e versão") + "), em " + blank(when, "data") + ".");
+      s.push("Na preparação do texto (" + blank(typeTxt && typeTxt.toLowerCase(), "tipo de texto") + "), foi utilizado o " + blank(tool, "ferramenta e fornecedor") + " (modelo " + blank(model, "modelo e versão") + "), em " + blank(when, "data") + ".");
       if (degV != null) s.push("Grau de produção por IA: " + t(degF.options[degV]).toLowerCase() + ".");
       s.push("A ferramenta foi usada para " + "[finalidades: por exemplo, redação de uma primeira versão, revisão de linguagem, tradução, pesquisa bibliográfica]" + ".");
       if (docs) s.push("Foram fornecidos à ferramenta os seguintes documentos: " + docs + ".");
@@ -408,7 +408,7 @@
       s.push(allConds ? "O conteúdo e as referências foram verificados e são da responsabilidade de quem assina."
                       : "[Concluir as condições da Fase 6 antes de afirmar:] O conteúdo e as referências foram verificados e são da responsabilidade de quem assina.");
     } else if (it) {
-      s.push("Nella preparazione di questo " + blank(typeTxt && typeTxt.toLowerCase(), "tipo di testo") + " è stato utilizzato " + blank(tool, "strumento e fornitore") + " (modello " + blank(model, "modello e versione") + "), in data " + blank(when, "data") + ".");
+      s.push("Nella preparazione del testo (" + blank(typeTxt && typeTxt.toLowerCase(), "tipo di testo") + ") è stato utilizzato " + blank(tool, "strumento e fornitore") + " (modello " + blank(model, "modello e versione") + "), in data " + blank(when, "data") + ".");
       if (degV != null) s.push("Grado di produzione da parte dell'IA: " + t(degF.options[degV]).toLowerCase() + ".");
       s.push("Lo strumento è stato utilizzato per " + "[finalità: per esempio, stesura di una prima versione, revisione linguistica, traduzione, ricerca bibliografica]" + ".");
       if (docs) s.push("Allo strumento sono stati forniti i seguenti documenti: " + docs + ".");
@@ -421,7 +421,7 @@
       s.push(allConds ? "Il contenuto e i riferimenti sono stati verificati e sono sotto la responsabilità di chi firma."
                       : "[Completare le condizioni della Fase 6 prima di affermare:] Il contenuto e i riferimenti sono stati verificati e sono sotto la responsabilità di chi firma.");
     } else if (es) {
-      s.push("En la preparación de este " + blank(typeTxt && typeTxt.toLowerCase(), "tipo de texto") + " se utilizó " + blank(tool, "herramienta y proveedor") + " (modelo " + blank(model, "modelo y versión") + "), en " + blank(when, "fecha") + ".");
+      s.push("En la preparación del texto (" + blank(typeTxt && typeTxt.toLowerCase(), "tipo de texto") + ") se utilizó " + blank(tool, "herramienta y proveedor") + " (modelo " + blank(model, "modelo y versión") + "), en " + blank(when, "fecha") + ".");
       if (degV != null) s.push("Grado de producción por IA: " + t(degF.options[degV]).toLowerCase() + ".");
       s.push("La herramienta se utilizó para " + "[finalidades: por ejemplo, redacción de una primera versión, revisión lingüística, traducción, búsqueda bibliográfica]" + ".");
       if (docs) s.push("Se proporcionaron a la herramienta los siguientes documentos: " + docs + ".");
@@ -434,7 +434,7 @@
       s.push(allConds ? "El contenido y las referencias fueron verificados y son responsabilidad de quienes firman."
                       : "[Completar las condiciones de la Fase 6 antes de afirmar:] El contenido y las referencias fueron verificados y son responsabilidad de quienes firman.");
     } else {
-      s.push("In preparing this " + blank(typeTxt && typeTxt.toLowerCase(), "type of text") + ", " + blank(tool, "tool and provider") + " (model " + blank(model, "model and version") + ") was used on " + blank(when, "date") + ".");
+      s.push("In preparing this text (" + blank(typeTxt && typeTxt.toLowerCase(), "type of text") + "), " + blank(tool, "tool and provider") + " (model " + blank(model, "model and version") + ") was used on " + blank(when, "date") + ".");
       if (degV != null) s.push("Degree of AI production: " + t(degF.options[degV]).toLowerCase() + ".");
       s.push("The tool was used to " + "[purposes: e.g. drafting a first version, language editing, translation, literature search]" + ".");
       if (docs) s.push("The following documents were provided to the tool: " + docs + ".");

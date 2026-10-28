@@ -1,8 +1,8 @@
-# AI Curatorial Protocol (AICP): formulários / forms
+# AI Curatorial Protocol (AICP): formulários / forms / formularios / moduli
 
 **PT** · [EN](#english) · [ES](#espanol) · [IT](#italiano)
 
-Formulários do *AI Curatorial Protocol* (AICP) para a curadoria de artigos gerados por IA: seis fases (Reporting, Relating, Responding, Reasoning, Reconciling, Reconstructing), que alargam o modelo 5R de Bain et al. (2002) com a fase *Reconciling* (Costa et al., 2026).
+Formulários do *AI Curatorial Protocol* (AICP) para a curadoria de textos produzidos com IA generativa (artigos, trabalhos académicos, relatórios, materiais didáticos, textos de divulgação, entre outros): seis fases (Reporting, Relating, Responding, Reasoning, Reconciling, Reconstructing), que alargam o modelo 5R de Bain et al. (2002) com a fase *Reconciling* (Costa et al., 2026).
 
 ## Utilizar
 
@@ -46,7 +46,7 @@ Conteúdo dos formulários: [CC BY 4.0](https://creativecommons.org/licenses/by/
 
 ## English
 
-Forms for the *AI Curatorial Protocol* (AICP), for curating AI-generated articles in six phases (Reporting, Relating, Responding, Reasoning, Reconciling, Reconstructing). The protocol extends the 5R model of Bain et al. (2002) with a new phase, *Reconciling* (Costa et al., 2026).
+Forms for the *AI Curatorial Protocol* (AICP), for curating texts produced with generative AI (articles, academic assignments, reports, teaching materials, outreach texts, among others) in six phases (Reporting, Relating, Responding, Reasoning, Reconciling, Reconstructing). The protocol extends the 5R model of Bain et al. (2002) with a new phase, *Reconciling* (Costa et al., 2026).
 
 ### Use
 
@@ -76,7 +76,7 @@ Form content: CC BY 4.0. Code: MIT.
 
 ## Español
 
-Formularios del *AI Curatorial Protocol* (AICP) para la curaduría de artículos generados por IA, en seis fases (Reporting, Relating, Responding, Reasoning, Reconciling, Reconstructing). El protocolo amplía el modelo 5R de Bain et al. (2002) con una nueva fase, *Reconciling* (Costa et al., 2026).
+Formularios del *AI Curatorial Protocol* (AICP) para la curaduría de textos producidos con IA generativa (artículos, trabajos académicos, informes, materiales didácticos, textos de divulgación, entre otros), en seis fases (Reporting, Relating, Responding, Reasoning, Reconciling, Reconstructing). El protocolo amplía el modelo 5R de Bain et al. (2002) con una nueva fase, *Reconciling* (Costa et al., 2026).
 
 ### Uso
 
@@ -98,7 +98,7 @@ Contenido de los formularios: CC BY 4.0. Código: MIT.
 
 ## Italiano
 
-Moduli dell'*AI Curatorial Protocol* (AICP) per la curatela di articoli generati dall'IA, in sei fasi (Reporting, Relating, Responding, Reasoning, Reconciling, Reconstructing). Il protocollo estende il modello 5R di Bain et al. (2002) con una nuova fase, *Reconciling* (Costa et al., 2026).
+Moduli dell'*AI Curatorial Protocol* (AICP) per la curatela di testi prodotti con l'IA generativa (articoli, elaborati accademici, relazioni, materiali didattici, testi divulgativi, tra gli altri), in sei fasi (Reporting, Relating, Responding, Reasoning, Reconciling, Reconstructing). Il protocollo estende il modello 5R di Bain et al. (2002) con una nuova fase, *Reconciling* (Costa et al., 2026).
 
 ### Uso
 

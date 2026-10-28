@@ -1,20 +1,20 @@
 # AI Curatorial Protocol (AICP)
 
-**Curation forms for AI-generated articles**
+**Curation forms for AI-generated texts**
 
-Six forms, one per phase, to attach to the curated article. An extension of the 5R model (Bain et al., 2002) with a new phase, Reconciling (Costa et al., 2026).
+Six forms, one per phase, to attach to any text produced with generative AI (article, academic assignment, report, teaching material, outreach text, among others). An extension of the 5R model (Bain et al., 2002) with a new phase, Reconciling (Costa et al., 2026).
 
 ## How to use
 
 1. Complete the forms in order (Phases 1 to 6). The process is iterative: you may return to earlier phases when new evidence emerges, and should record that return.
-2. The forms are formative. "Yes" and "No" describe what was done; they do not measure right or wrong, nor do they authorise use of the article.
-3. Phase 5 requires a second group that was not involved in producing the article. Free opinion without structured comparison is a survey of conceptions, not Reconciling.
-4. Keep the original generated text (Phase 1) and attach these forms to the final article. Do not record personal or confidential data in the fields.
+2. The forms are formative. "Yes" and "No" describe what was done; they do not measure right or wrong, nor do they authorise use of the text.
+3. Phase 5 requires a second group that was not involved in producing the text. Free opinion without structured comparison is a survey of conceptions, not Reconciling.
+4. Keep the original generated text (Phase 1) and attach these forms to the final text. Do not record personal or confidential data in the fields.
 5. Responsibility for the decision and the final text remains with people, and is documented in Phase 6.
 
 ## Process identification
 
-**Title or topic of the article analysed**
+**Title or topic of the text analysed**
 
 > 
 
@@ -34,7 +34,7 @@ Six forms, one per phase, to attach to the curated article. An extension of the 
 
 > 
 
-**Intended use** _(e.g. submission, coursework, basis for a review, assessment)_
+**Intended use** _(e.g. journal submission, coursework, teaching material, report, outreach, assessment)_
 
 > 
 
@@ -59,13 +59,13 @@ Six forms, one per phase, to attach to the curated article. An extension of the 
 
 ## Phase 1 · Reporting: Provenance Record
 
-_How was this article produced? Record the conditions of production before assessing it._
+_How was this text produced? Record the conditions of production before assessing it._
 
-Article / record code: ____  Curator: ____  Date: ____
+Text / record code: ____  Curator: ____  Date: ____
 
 ### A. Text analysed
 
-**Type of text**: ☐ Research article  ☐ Review  ☐ Abstract  ☐ Other  ____
+**Type of text**: ☐ Research article  ☐ Literature review  ☐ Abstract  ☐ Academic assignment (essay, report, thesis)  ☐ Teaching or learning material  ☐ Outreach or journalistic text  ☐ Institutional or professional communication  ☐ Creative or literary text  ☐ Other  ____
 
 **Degree of AI production**: ☐ Fully generated  ☐ Partly generated  ☐ Rewritten by AI  ☐ Don't know
 
@@ -127,9 +127,9 @@ Article / record code: ____  Curator: ____  Date: ____
 
 ## Phase 2 · Relating: Cultural Anchoring
 
-_Which sources and knowledge can I compare this article with?_
+_Which sources and knowledge can I compare this text with?_
 
-Article / record code: ____  Curator: ____  Date: ____
+Text / record code: ____  Curator: ____  Date: ____
 
 ### A. Reference repository
 
@@ -139,7 +139,7 @@ Article / record code: ____  Curator: ____  Date: ____
 |   |   |   |
 |   |   |   |
 
-### B. Checking claims and references in the article
+### B. Checking claims and references in the text
 
 | Claim or reference in the text | Exists? | Says what the text claims? | Source / DOI checked |
 | --- | --- | --- | --- |
@@ -152,13 +152,13 @@ Article / record code: ____  Curator: ____  Date: ____
 
 > Exists? / Says what the text claims? → Y = yes, N = no, NV = could not verify
 
-### C. Comparison with the field
+### C. Comparison with knowledge in the field
 
-**What the article presents that converges with the literature**
+**What the text presents that is consistent with sources and knowledge in the field**
 
 > 
 
-**What seems absent (authors, languages, regions, theoretical perspectives)**
+**What seems absent (authors, sources, languages, regions, perspectives)**
 
 > 
 
@@ -174,9 +174,9 @@ Article / record code: ____  Curator: ____  Date: ____
 
 ## Phase 3 · Responding: Bias and Diversity Audit
 
-_What do I observe and how do I respond? Compare the article with variations of the prompt._
+_What do I observe and how do I respond? Compare the text with variations of the prompt._
 
-Article / record code: ____  Curator: ____  Date: ____
+Text / record code: ____  Curator: ____  Date: ____
 
 ### A. Personal response
 
@@ -206,7 +206,7 @@ Article / record code: ____  Curator: ____  Date: ____
 | Dominance of one region, language or theoretical school | ☐ Y ☐ N ☐ NA |   |
 | Absence of voices, contexts or groups | ☐ Y ☐ N ☐ NA |   |
 | Stereotypes (gender, culture, profession, discipline) | ☐ Y ☐ N ☐ NA |   |
-| Oversimplification or misrepresentation of theories and authors | ☐ Y ☐ N ☐ NA |   |
+| Oversimplification or misrepresentation of ideas, theories, sources or authors | ☐ Y ☐ N ☐ NA |   |
 | Homogenised style (loss of authorial voice) | ☐ Y ☐ N ☐ NA |   |
 
 > Y = yes, observed; N = not observed; NA = not assessed
@@ -221,7 +221,7 @@ Article / record code: ____  Curator: ____  Date: ____
 
 _How do I interpret what I observed? Separate what I can claim from what I only infer._
 
-Article / record code: ____  Curator: ____  Date: ____
+Text / record code: ____  Curator: ____  Date: ____
 
 ### A. Observed, interpreted, uncertain
 
@@ -232,13 +232,13 @@ Article / record code: ____  Curator: ____  Date: ____
 |   |   |   |
 |   |   |   |
 
-### B. Assessment of the article as a scientific text
+### B. Assessment of the quality of the text
 
-**Coherence: question, aims, method, results and conclusion**: ☐ Adequate  ☐ Partial  ☐ Inadequate
+**Coherence: purpose, structure, development and conclusions (in a scientific text: question, aims, method, results and conclusion)**: ☐ Adequate  ☐ Partial  ☐ Inadequate
 
-**Theoretical and empirical support for claims**: ☐ Adequate  ☐ Partial  ☐ Inadequate
+**Support for claims (sources, data, reasoning)**: ☐ Adequate  ☐ Partial  ☐ Inadequate
 
-**Limitations and uncertainties stated by the text**: ☐ Yes  ☐ Partly  ☐ No
+**Limitations and uncertainties stated by the text, where the genre requires it**: ☐ Yes  ☐ Partly  ☐ No
 
 **Do I have enough knowledge of the topic to assess the text?**: ☐ Yes  ☐ Partly  ☐ No: consult an expert
 
@@ -248,7 +248,7 @@ Article / record code: ____  Curator: ____  Date: ____
 
 **Authorship, intellectual property and privacy analysed**: ☐ Yes  ☐ No  ☐ Pending
 
-### D. Curatorial text (required if the article is shared beyond its creators)
+### D. Curatorial text (required if the text is shared beyond its creators)
 
 **Unresolved ambiguities, recorded as analytical evidence** _(up to 150 words)_
 
@@ -256,9 +256,9 @@ Article / record code: ____  Curator: ____  Date: ____
 
 ## Phase 5 · Reconciling: Human–Community Cross-Validation
 
-_What do others say? A second group, independent of the production, reviews the article and Phases 1 to 4._
+_What do others say? A second group, independent of the production, reviews the text and Phases 1 to 4._
 
-Article / record code: ____  Curator: ____  Date: ____
+Text / record code: ____  Curator: ____  Date: ____
 
 ### A. Second reviewing group
 
@@ -270,7 +270,7 @@ Article / record code: ____  Curator: ____  Date: ____
 
 **Consent and safeguards**: ☐ Not applicable  ☐ Obtained  ☐ Pending
 
-**What the group reviewed**: ☐ Article  ☐ Record (P1)  ☐ Repository (P2)  ☐ Audit (P3)  ☐ Contextualisation (P4)
+**What the group reviewed**: ☐ Text  ☐ Record (P1)  ☐ Repository (P2)  ☐ Audit (P3)  ☐ Contextualisation (P4)
 
 ### B. Review outcome
 
@@ -298,17 +298,17 @@ Article / record code: ____  Curator: ____  Date: ____
 
 **Is it necessary to return to earlier phases?**: ☐ No  ☐ Yes  ____
 
-> If students or the curator only express free opinions, without comparing the article with an independent second group, this is not Reconciling: it is brainstorming or a survey of conceptions, and should be recorded as such.
+> If students or the curator only express free opinions, without comparing the text with an independent second group, this is not Reconciling: it is brainstorming or a survey of conceptions, and should be recorded as such.
 
 ## Phase 6 · Reconstructing: Documented Curatorial Decision
 
 _What do I decide? A decision grounded in Phases 1 to 5, owned by people and written down._
 
-Article / record code: ____  Curator: ____  Date: ____
+Text / record code: ____  Curator: ____  Date: ____
 
 ### A. Decision
 
-**Decision about the article**: ☐ Use  ☐ Use with contextualisation  ☐ Adapt  ☐ Do not use
+**Decision about the text**: ☐ Use  ☐ Use with contextualisation  ☐ Adapt  ☐ Do not use
 
 **Intended use** _(where, for what, for which audience)_
 
@@ -320,9 +320,9 @@ Article / record code: ____  Curator: ____  Date: ____
 
 ### B. Conditions before use
 
-**Conditions met**: ☐ All references checked at source (they exist and say what the text claims)  ☐ Factual claims and data checked  ☐ Voice and authorship ensured (text rewritten and owned by the signatories)  ☐ Copyright, privacy and consents addressed  ☐ Full final review of the manuscript
+**Conditions met**: ☐ References and sources checked at source, where present (they exist and say what the text claims)  ☐ Factual claims and data checked  ☐ Voice and authorship ensured (text rewritten and owned by the signatories)  ☐ Copyright, privacy and consents addressed  ☐ Full final review of the text
 
-**What will be changed or rejected** _(parts of the text, figures, references)_
+**What will be changed or rejected** _(parts of the text, figures, data, references)_
 
 > 
 
