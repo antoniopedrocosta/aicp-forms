@@ -301,7 +301,7 @@ Contenido / código del registro: ____  Curador(a): ____  Fecha: ____
 
 ### C. Declaración de uso
 
-**Texto de la declaración** _Frase breve para acompañar el contenido (en una imagen, puede ir en el pie). Adáptela a su caso o use el botón "Generar declaración"._ _P. ej.: «Utilicé [herramienta, versión, fecha] para [finalidad]. Verifiqué el contenido y asumo la responsabilidad.» / «Imagen generada con [herramienta], [fecha].»_
+**Texto de la declaración** _Generada automáticamente a partir de las respuestas y actualizada a medida que completa. Puede editarla; en ese caso deja de actualizarse. En una imagen, puede ir en el pie._ _P. ej.: «Utilicé [herramienta, versión, fecha] para [finalidad]. Verifiqué el contenido y asumo la responsabilidad.» / «Imagen generada con [herramienta], [fecha].»_
 
 > 
 

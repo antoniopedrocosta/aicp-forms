@@ -301,7 +301,7 @@ Content / record code: ____  Curator: ____  Date: ____
 
 ### C. Use statement
 
-**Statement text** _A short sentence to accompany the content (for an image, it can go in the caption). Adapt it to your case or use the "Generate statement" button._ _E.g. "I used [tool, version, date] for [purpose]. I checked the content and take responsibility for it." / "Image generated with [tool], [date]."_
+**Statement text** _Generated automatically from the answers and updated as you fill in the forms. You can edit it; it then stops updating. For an image, it can go in the caption._ _E.g. "I used [tool, version, date] for [purpose]. I checked the content and take responsibility for it." / "Image generated with [tool], [date]."_
 
 > 
 

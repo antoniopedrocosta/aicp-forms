@@ -301,7 +301,7 @@ Contenuto / codice del registro: ____  Curatore/curatrice: ____  Data: ____
 
 ### C. Dichiarazione d'uso
 
-**Testo della dichiarazione** _Frase breve da allegare al contenuto (per un'immagine, può andare nella didascalia). La adatti al suo caso o usi il pulsante "Genera dichiarazione"._ _Es.: «Ho utilizzato [strumento, versione, data] per [finalità]. Ho verificato il contenuto e me ne assumo la responsabilità.» / «Immagine generata con [strumento], [data].»_
+**Testo della dichiarazione** _Generata automaticamente dalle risposte e aggiornata man mano che compila. Può modificarla; in tal caso smette di aggiornarsi. Per un'immagine, può andare nella didascalia._ _Es.: «Ho utilizzato [strumento, versione, data] per [finalità]. Ho verificato il contenuto e me ne assumo la responsabilità.» / «Immagine generata con [strumento], [data].»_
 
 > 
 

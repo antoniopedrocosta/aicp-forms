@@ -39,6 +39,10 @@
     p5notok: { pt: "ainda não cumpre o requisito.", en: "requirement not yet met.", es: "todavía no cumple el requisito.", it: "non soddisfa ancora il requisito.", ko: "아직 요건을 충족하지 않습니다." },
     p5noIndep: { pt: "Falta um revisor identificado e independente da produção do conteúdo.", en: "An identified reviewer independent of production is missing.", es: "Falta un revisor identificado e independiente de la producción.", it: "Manca un revisore identificato e indipendente dalla produzione.", ko: "제작과 무관한 검토자가 확인되지 않았습니다." },
     conditions: { pt: "Condições da Fase 6 cumpridas", en: "Phase 6 conditions met", es: "Condiciones de la Fase 6 cumplidas", it: "Condizioni della Fase 6 soddisfatte", ko: "6단계 확인 사항" },
+    stmtAuto: { pt: "Atualiza-se automaticamente à medida que preenche os formulários. O que está entre parênteses retos falta completar ou resolver.", en: "Updates automatically as you fill in the forms. Text in square brackets still needs completing or resolving.", es: "Se actualiza automáticamente a medida que completa los formularios. Lo que está entre corchetes falta completar o resolver.", it: "Si aggiorna automaticamente man mano che compila i moduli. Ciò che è tra parentesi quadre va ancora completato o risolto.", ko: "양식을 작성하는 대로 자동으로 갱신됩니다. 대괄호 안의 내용은 아직 채우거나 해결해야 합니다." },
+    stmtManual: { pt: "Editada por si: já não se atualiza automaticamente.", en: "Edited by you: no longer updates automatically.", es: "Editada por usted: ya no se actualiza automáticamente.", it: "Modificata da lei: non si aggiorna più automaticamente.", ko: "직접 수정함: 더 이상 자동으로 갱신되지 않습니다." },
+    stmtReset: { pt: "Voltar à versão automática", en: "Restore automatic version", es: "Volver a la versión automática", it: "Ripristina la versione automatica", ko: "자동 버전으로 되돌리기" },
+    stmtResetConfirm: { pt: "Substituir o texto editado pela versão automática?", en: "Replace your edited text with the automatic version?", es: "¿Sustituir el texto editado por la versión automática?", it: "Sostituire il testo modificato con la versione automatica?", ko: "수정한 내용을 자동 버전으로 바꾸시겠습니까?" },
     decision: { pt: "Decisão", en: "Decision", es: "Decisión", it: "Decisione", ko: "결정" },
     noDecision: { pt: "por tomar", en: "not yet taken", es: "pendiente", it: "da prendere", ko: "미정" }
   };
@@ -60,7 +64,28 @@
   }
   const key = (...p) => p.join(".");
   const get = (k, d) => (k in state.v ? state.v[k] : d);
-  const set = (k, val) => { state.v[k] = val; save(); };
+  const STMT = "p6.c.statement";
+  const set = (k, val) => { state.v[k] = val; save(); if (k !== STMT && k !== STMT + ".auto") scheduleStmt(); };
+  // The Phase 6 statement follows the answers until the user edits it by hand.
+  const stmtAuto = () => { const v = get(STMT + ".auto", null); return v == null ? !String(get(STMT, "") || "").trim() : v; };
+  let stmtTimer = null;
+  function scheduleStmt() { clearTimeout(stmtTimer); stmtTimer = setTimeout(syncStmt, 250); }
+  function syncStmt() {
+    if (!stmtAuto()) return;
+    const txt = buildStatement();
+    state.v[STMT] = txt; state.v[STMT + ".auto"] = true; save();
+    const ta = document.getElementById("p6-c-statement");
+    if (ta && document.activeElement !== ta) { ta.value = txt; grow(ta); }
+  }
+  function stmtMode() {
+    const box = el("div", { class: "stmt-mode no-print", id: "stmt-mode" });
+    if (stmtAuto()) box.append(el("span", {}, t(UI.stmtAuto)));
+    else box.append(el("span", {}, t(UI.stmtManual) + " "), el("button", { type: "button", onclick: () => {
+      if (!confirm(t(UI.stmtResetConfirm))) return;
+      state.v[STMT + ".auto"] = true; syncStmt(); const old = document.getElementById("stmt-mode"); if (old) old.replaceWith(stmtMode());
+    } }, t(UI.stmtReset)));
+    return box;
+  }
   // Which parts of the form apply, according to "Tipo de conteúdo" (0 text, 1 image, 2 video, 3 mixed; empty = text).
   const media = () => get("id.id.media", null);
   const hasText = () => { const m = media(); return m == null || m === 0 || m === 3; };
@@ -102,9 +127,15 @@
     } else if (f.type === "textarea") {
       const counter = f.maxWords ? el("span", { class: "counter" }) : null;
       const upd = (v) => { if (counter) { const n = (v.trim().match(/\S+/g) || []).length; counter.textContent = n + " / " + f.maxWords + " " + t(UI.words); counter.classList.toggle("over", n > f.maxWords); } };
-      const ta = el("textarea", { id, rows: f.rows || 3, oninput: (e) => { set(k, e.target.value); upd(e.target.value); } });
+      const isStmt = k === STMT;
+      const ta = el("textarea", { id, rows: f.rows || 3, oninput: (e) => {
+        if (isStmt && stmtAuto()) { state.v[STMT + ".auto"] = false; const old = document.getElementById("stmt-mode"); if (old) old.replaceWith(stmtMode()); }
+        set(k, e.target.value); upd(e.target.value);
+      } });
+      if (isStmt && stmtAuto()) { state.v[STMT] = buildStatement(); state.v[STMT + ".auto"] = true; }
       ta.value = get(k, ""); upd(ta.value);
       wrap.append(fieldLabel(f, id), ta); if (counter) wrap.append(counter);
+      if (isStmt) wrap.append(stmtMode());
     } else if (f.type === "radio" || f.type === "check") {
       const fs = el("fieldset", {}, el("legend", { class: "flabel" }, t(f.label), helpBits(f)));
       const opts = el("div", { class: "opts" });
@@ -231,6 +262,7 @@
 
     const foot = el("footer", {}, el("h2", {}, t(UI.refs)), el("p", {}, t(S.meta.references)));
     app.append(head, nav, howto, main, foot);
+    if (stmtAuto()) syncStmt();
   }
 
   /* ---------- export / import ---------- */
@@ -384,14 +416,16 @@
     const degTxt = degV == null ? "" : t(degF.options[degV]).toLowerCase() + (degV === 1 && get("p1.a.degree.detail", "") ? " (" + get("p1.a.degree.detail", "") + ")" : "");
     const tool = get("p1.a.tool", ""), when = get("p1.a.when", "");
     const docs = get("p1.a.docs", null) === 1 ? get("p1.a.docs.detail", "") : null;
-    let nClaims = 0, nExists = 0, nSays = 0, nEl = 0, nElOk = 0;
+    let nClaims = 0, nExists = 0, nSays = 0, nEl = 0, nElOk = 0, nBad = 0;
     if (hasText()) {
       const cf = fld("p2", "b", "claims");
       for (let r = 0; r < rowsOf(cf, "p2.b.claims"); r++) {
         if (!String(get(key("p2.b.claims", r, 0), "") || "").trim()) continue;
         nClaims++;
-        if (get(key("p2.b.claims", r, 1), null) === 0) nExists++;
-        if (get(key("p2.b.claims", r, 2), null) === 0) nSays++;
+        const ex = get(key("p2.b.claims", r, 1), null) === 0, sa = get(key("p2.b.claims", r, 2), null) === 0;
+        if (ex) nExists++;
+        if (sa) nSays++;
+        if (!(ex && sa)) nBad++;
       }
     }
     if (hasVisual()) {
@@ -416,7 +450,14 @@
     const kind = m == null ? 0 : m; // 0 text, 1 image, 2 video, 3 mixed
 
     const W = {
-      pt: { obj: ["do texto", "da imagem", "do vídeo", "do conteúdo"], tp: "tipo", tool: "ferramenta e versão", date: "data",
+      pt: { dest: "Utilização prevista: ", pdNo: "Não foram introduzidos dados pessoais ou confidenciais na ferramenta.", pdYes: "Foram introduzidos dados pessoais ou confidenciais, protegidos da seguinte forma: ", pdPh: "salvaguardas",
+            wm: "A marca de água e os metadados de origem foram preservados.", lim: "Limitações: ",
+            notUsed: "[Decisão: não utilizar. Se o conteúdo não for usado, não é necessária declaração.]",
+            wRefs: (k) => "[Atenção: " + k + " afirmação(ões) ou referência(s) por confirmar; resolver antes de usar.]",
+            wEls: (k) => "[Atenção: " + k + " elemento(s) da imagem ou do vídeo incorreto(s) ou por verificar.]",
+            wRights: "[Atenção: direitos ainda por verificar (Fase 4).]", wReal: "[Atenção: o conteúdo pode ser tomado como real e precisa de revisão (Fase 4).]",
+            wLabel: "[Atenção: falta a identificação visível “gerado com IA” (Fase 6).]", wExpert: "[Atenção: falta o parecer de alguém que domine o tema (Fase 4).]",
+            obj: ["do texto", "da imagem", "do vídeo", "do conteúdo"], tp: "tipo", tool: "ferramenta e versão", date: "data",
             open: (o, ty, tl, dt) => "Na preparação " + o + " (" + ty + "), foi utilizado o " + tl + ", em " + dt + ".",
             part: "Parte gerada pela IA: ", purpose: "A ferramenta foi usada para [finalidades: por exemplo, redação de uma primeira versão, revisão de linguagem, tradução, criação de uma ilustração].",
             docs: "Foram fornecidos à ferramenta os seguintes materiais: ", audit: "A utilização foi auditada com o AI Curatorial Protocol (AICP; Costa et al., 2026), incluindo o registo de proveniência",
@@ -425,7 +466,14 @@
             bias: ", uma auditoria de enviesamentos", cross: ", a validação cruzada por ", crossTodo: ", a validação cruzada por [composição do grupo independente]", dec: " e uma decisão documentada",
             lab: "O conteúdo visual está identificado como gerado por IA.", rec: (c) => "Registo AICP: " + c + ", disponível em [local do depósito].",
             endT: "O conteúdo e as referências foram verificados e são da responsabilidade de quem assina.", endV: "O conteúdo foi verificado e é da responsabilidade de quem assina.", todo: "[Concluir as condições da Fase 6 antes de afirmar:] " },
-      en: { obj: ["this text", "this image", "this video", "this content"], tp: "type", tool: "tool and version", date: "date",
+      en: { dest: "Intended use: ", pdNo: "No personal or confidential data were entered into the tool.", pdYes: "Personal or confidential data were entered, protected as follows: ", pdPh: "safeguards",
+            wm: "The watermark and origin metadata were preserved.", lim: "Limitations: ",
+            notUsed: "[Decision: do not use. If the content is not used, no statement is needed.]",
+            wRefs: (k) => "[Warning: " + k + " claim(s) or reference(s) not confirmed; resolve before use.]",
+            wEls: (k) => "[Warning: " + k + " element(s) of the image or video incorrect or unchecked.]",
+            wRights: "[Warning: rights not yet checked (Phase 4).]", wReal: "[Warning: the content could be taken as real and needs revising (Phase 4).]",
+            wLabel: "[Warning: the visible “AI-generated” label is missing (Phase 6).]", wExpert: "[Warning: an opinion from someone who knows the topic is missing (Phase 4).]",
+            obj: ["this text", "this image", "this video", "this content"], tp: "type", tool: "tool and version", date: "date",
             open: (o, ty, tl, dt) => "In preparing " + o + " (" + ty + "), " + tl + " was used on " + dt + ".",
             part: "Part generated by AI: ", purpose: "The tool was used to [purposes: e.g. drafting a first version, language editing, translation, creating an illustration].",
             docs: "The following materials were provided to the tool: ", audit: "Its use was audited with the AI Curatorial Protocol (AICP; Costa et al., 2026), including a provenance record",
@@ -434,7 +482,14 @@
             bias: ", a bias audit", cross: ", cross-validation by ", crossTodo: ", cross-validation by [composition of the independent group]", dec: " and a documented decision",
             lab: "The visual content is labelled as AI-generated.", rec: (c) => "AICP record: " + c + ", available at [repository location].",
             endT: "The content and references were checked and are the responsibility of the signatories.", endV: "The content was checked and is the responsibility of the signatories.", todo: "[Complete the Phase 6 conditions before stating:] " },
-      es: { obj: ["del texto", "de la imagen", "del vídeo", "del contenido"], tp: "tipo", tool: "herramienta y versión", date: "fecha",
+      es: { dest: "Uso previsto: ", pdNo: "No se introdujeron datos personales o confidenciales en la herramienta.", pdYes: "Se introdujeron datos personales o confidenciales, protegidos de la siguiente forma: ", pdPh: "salvaguardas",
+            wm: "Se preservaron la marca de agua y los metadatos de origen.", lim: "Limitaciones: ",
+            notUsed: "[Decisión: no utilizar. Si el contenido no se usa, no hace falta declaración.]",
+            wRefs: (k) => "[Atención: " + k + " afirmación(es) o referencia(s) sin confirmar; resolver antes de usar.]",
+            wEls: (k) => "[Atención: " + k + " elemento(s) de la imagen o el vídeo incorrecto(s) o sin verificar.]",
+            wRights: "[Atención: derechos aún sin verificar (Fase 4).]", wReal: "[Atención: el contenido puede tomarse como real y necesita revisión (Fase 4).]",
+            wLabel: "[Atención: falta la identificación visible “generado con IA” (Fase 6).]", wExpert: "[Atención: falta el parecer de alguien que domine el tema (Fase 4).]",
+            obj: ["del texto", "de la imagen", "del vídeo", "del contenido"], tp: "tipo", tool: "herramienta y versión", date: "fecha",
             open: (o, ty, tl, dt) => "En la preparación " + o + " (" + ty + ") se utilizó " + tl + ", en " + dt + ".",
             part: "Parte generada por la IA: ", purpose: "La herramienta se utilizó para [finalidades: por ejemplo, redacción de una primera versión, revisión lingüística, traducción, creación de una ilustración].",
             docs: "Se proporcionaron a la herramienta los siguientes materiales: ", audit: "El uso fue auditado con el AI Curatorial Protocol (AICP; Costa et al., 2026), incluyendo el registro de procedencia",
@@ -443,7 +498,14 @@
             bias: ", una auditoría de sesgos", cross: ", la validación cruzada por ", crossTodo: ", la validación cruzada por [composición del grupo independiente]", dec: " y una decisión documentada",
             lab: "El contenido visual está identificado como generado por IA.", rec: (c) => "Registro AICP: " + c + ", disponible en [lugar del depósito].",
             endT: "El contenido y las referencias fueron verificados y son responsabilidad de quienes firman.", endV: "El contenido fue verificado y es responsabilidad de quienes firman.", todo: "[Completar las condiciones de la Fase 6 antes de afirmar:] " },
-      it: { obj: ["del testo", "dell'immagine", "del video", "del contenuto"], tp: "tipo", tool: "strumento e versione", date: "data",
+      it: { dest: "Uso previsto: ", pdNo: "Nello strumento non sono stati inseriti dati personali o riservati.", pdYes: "Sono stati inseriti dati personali o riservati, protetti nel modo seguente: ", pdPh: "garanzie",
+            wm: "La filigrana e i metadati di origine sono stati conservati.", lim: "Limiti: ",
+            notUsed: "[Decisione: non utilizzare. Se il contenuto non viene usato, non serve alcuna dichiarazione.]",
+            wRefs: (k) => "[Attenzione: " + k + " affermazione/i o riferimento/i non confermato/i; risolvere prima dell'uso.]",
+            wEls: (k) => "[Attenzione: " + k + " elemento/i dell'immagine o del video errato/i o non verificato/i.]",
+            wRights: "[Attenzione: diritti non ancora verificati (Fase 4).]", wReal: "[Attenzione: il contenuto può essere scambiato per reale e va rivisto (Fase 4).]",
+            wLabel: "[Attenzione: manca l'indicazione visibile “generato con IA” (Fase 6).]", wExpert: "[Attenzione: manca il parere di qualcuno che conosca il tema (Fase 4).]",
+            obj: ["del testo", "dell'immagine", "del video", "del contenuto"], tp: "tipo", tool: "strumento e versione", date: "data",
             open: (o, ty, tl, dt) => "Nella preparazione " + o + " (" + ty + ") è stato utilizzato " + tl + ", in data " + dt + ".",
             part: "Parte generata dall'IA: ", purpose: "Lo strumento è stato utilizzato per [finalità: per esempio, stesura di una prima versione, revisione linguistica, traduzione, creazione di un'illustrazione].",
             docs: "Allo strumento sono stati forniti i seguenti materiali: ", audit: "L'uso è stato sottoposto ad audit con l'AI Curatorial Protocol (AICP; Costa et al., 2026), comprendente il registro di provenienza",
@@ -452,7 +514,14 @@
             bias: ", un audit dei bias", cross: ", la validazione incrociata da parte di ", crossTodo: ", la validazione incrociata da parte di [composizione del gruppo indipendente]", dec: " e una decisione documentata",
             lab: "Il contenuto visivo è indicato come generato dall'IA.", rec: (c) => "Registro AICP: " + c + ", disponibile in [luogo del deposito].",
             endT: "Il contenuto e i riferimenti sono stati verificati e sono sotto la responsabilità di chi firma.", endV: "Il contenuto è stato verificato ed è sotto la responsabilità di chi firma.", todo: "[Completare le condizioni della Fase 6 prima di affermare:] " },
-      ko: { obj: ["본 텍스트", "본 이미지", "본 영상", "본 콘텐츠"], tp: "유형", tool: "도구와 버전", date: "날짜",
+      ko: { dest: "사용 목적: ", pdNo: "도구에 개인정보나 기밀 정보를 입력하지 않았습니다.", pdYes: "개인정보나 기밀 정보를 입력했으며, 다음과 같이 보호했습니다: ", pdPh: "보호 조치",
+            wm: "워터마크와 출처 메타데이터를 보존했습니다.", lim: "한계: ",
+            notUsed: "[결정: 사용하지 않음. 콘텐츠를 사용하지 않으면 고지문이 필요하지 않습니다.]",
+            wRefs: (k) => "[주의: 확인되지 않은 주장 또는 참고문헌 " + k + "건; 사용 전에 해결하십시오.]",
+            wEls: (k) => "[주의: 이미지나 영상의 요소 " + k + "건이 부정확하거나 확인되지 않았습니다.]",
+            wRights: "[주의: 권리 확인이 아직 끝나지 않았습니다(4단계).]", wReal: "[주의: 콘텐츠가 실제로 오인될 수 있어 수정이 필요합니다(4단계).]",
+            wLabel: "[주의: 눈에 보이는 “AI 생성” 표시가 없습니다(6단계).]", wExpert: "[주의: 주제를 잘 아는 사람의 의견이 없습니다(4단계).]",
+            obj: ["본 텍스트", "본 이미지", "본 영상", "본 콘텐츠"], tp: "유형", tool: "도구와 버전", date: "날짜",
             open: (o, ty, tl, dt) => o + "(" + ty + ")의 제작에는 " + dt + "에 " + tl + "을(를) 사용하였습니다.",
             part: "AI가 생성한 부분: ", purpose: "도구는 [목적: 예를 들어 초안 작성, 문장 교정, 번역, 삽화 제작]에 사용되었습니다.",
             docs: "도구에 제공한 자료: ", audit: "AI 사용은 AI Curatorial Protocol(AICP; Costa et al., 2026)에 따라 점검하였으며, 여기에는 출처 기록",
@@ -464,16 +533,33 @@
     }[L] || null;
     const w = W || {};
     const s = [];
+    const dot = (x) => { x = String(x).trim(); return /[.!?。»"”]$/.test(x) ? x : x + "."; };
+    // Warnings first: they disappear as the problems are resolved in the forms.
+    if (decV === 3) s.push(w.notUsed);
+    if (nBad) s.push(w.wRefs(nBad));
+    if (nEl - nElOk > 0) s.push(w.wEls(nEl - nElOk));
+    if ((hasText() && [1, 2].includes(get("p4.b.plagiarism", null))) || (hasVisual() && [1, 2].includes(get("p4.b.vrights", null)))) s.push(w.wRights);
+    if (hasVisual() && get("p4.b.real", null) === 2) s.push(w.wReal);
+    if (hasVisual() && !labelled && (get("p4.b.real", null) === 1 || get("id.id.vtype", null) === 1)) s.push(w.wLabel);
+    if (get("p4.b.expertise", null) === 2) s.push(w.wExpert);
     s.push(w.open(w.obj[kind], blank(typeTxt, w.tp), blank(tool, w.tool), blank(when, w.date)));
     if (degV != null) s.push(w.part + degTxt + ".");
     s.push(w.purpose);
+    const dest = String(get("id.id.purpose", "") || "").trim();
+    if (dest) s.push(dot(w.dest + dest));
     if (docs) s.push(w.docs + docs + ".");
+    const pd = get("p1.a.personal", null);
+    if (pd === 0) s.push(w.pdNo);
+    else if (pd === 1) s.push(w.pdYes + blank(get("p1.a.personal.detail", ""), w.pdPh) + ".");
     let a = w.audit;
     if (hasText()) a += nClaims ? w.claims(nClaims, nExists, nSays) : w.claimsTodo;
     if (hasVisual()) a += nEl ? w.els(nEl, nElOk) : w.elsTodo;
     a += w.bias + (p5.ok && group.length ? w.cross + group.join(", ") : w.crossTodo) + w.dec + (decTxt ? " (" + decTxt + ")" : "");
     s.push(a + (L === "ko" ? "이 포함됩니다." : "."));
     if (labelled) s.push(w.lab);
+    if (hasVisual() && get("p6.b.vconditions", []).includes(1)) s.push(w.wm);
+    const lim = String(get("p4.c.curatorial", "") || "").trim();
+    if (lim) s.push(dot(w.lim + lim.replace(/^[«"“]|[»"”]$/g, "")));
     if (code) s.push(w.rec(code));
     const end = hasText() ? w.endT : w.endV;
     s.push(allConds ? end : w.todo + end);
@@ -490,7 +576,7 @@
       else { ta.select(); document.execCommand("copy"); done(); }
     } }, t(UI.copy));
     const insBtn = el("button", { type: "button", onclick: () => {
-      set("p6.c.statement", ta.value); dlg.close(); render();
+      state.v[STMT + ".auto"] = ta.value === buildStatement(); set(STMT, ta.value); dlg.close(); render();
       const target = document.getElementById("p6-c-statement"); if (target) target.scrollIntoView({ block: "center" });
     } }, t(UI.insert));
     const dlg = openDialog(t(UI.statement), el("div", {}, info, ta), [copyBtn, insBtn]);

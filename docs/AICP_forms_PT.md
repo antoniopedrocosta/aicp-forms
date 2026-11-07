@@ -301,7 +301,7 @@ Conteúdo / código do registo: ____  Curador(a): ____  Data: ____
 
 ### C. Declaração de uso
 
-**Texto da declaração** _Frase curta para acompanhar o conteúdo (numa imagem, pode ir na legenda). Adapte ao seu caso ou use o botão "Gerar declaração"._ _Ex.: «Utilizei [ferramenta, versão, data] para [finalidade]. Verifiquei o conteúdo e assumo a responsabilidade por ele.» / «Imagem gerada com [ferramenta], [data].»_
+**Texto da declaração** _Gerada automaticamente a partir das respostas e atualizada à medida que preenche. Pode editá-la; nesse caso deixa de se atualizar. Numa imagem, pode ir na legenda._ _Ex.: «Utilizei [ferramenta, versão, data] para [finalidade]. Verifiquei o conteúdo e assumo a responsabilidade por ele.» / «Imagem gerada com [ferramenta], [data].»_
 
 > 
 
