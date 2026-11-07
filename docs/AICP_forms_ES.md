@@ -2,361 +2,272 @@
 
 **Formularios de curaduría de textos generados por IA**
 
-Seis formularios, uno por fase, para adjuntar a cualquier texto producido con IA generativa (artículo, trabajo académico, informe, material didáctico, texto de divulgación, entre otros). Extensión del modelo 5R (Bain et al., 2002) con una nueva fase, Reconciling (Costa et al., 2026).
+Seis formularios breves, uno por fase, para adjuntar a cualquier texto producido con IA generativa (artículo, trabajo académico, informe, material didáctico, texto de divulgación, entre otros). Cada campo tiene una ayuda y, cuando es útil, un ejemplo. Extensión del modelo 5R (Bain et al., 2002) con una nueva fase, Reconciling (Costa et al., 2026).
 
 ## Cómo usar
 
-1. Complete los formularios en orden (Fases 1 a 6). El proceso es iterativo: puede volver a fases anteriores cuando surja nueva evidencia y debe registrar ese regreso.
-2. Los formularios son formativos. "Sí" y "No" describen lo que se hizo; no miden lo correcto o incorrecto ni autorizan el uso del texto.
-3. La Fase 5 exige un segundo grupo que no haya participado en la producción del texto. Una opinión libre, sin contraste estructurado, es un relevamiento de concepciones, no es Reconciling.
-4. Guarde el texto original generado (Fase 1) y adjunte estos formularios al texto final. No registre datos personales o confidenciales en los campos.
-5. La responsabilidad por la decisión y por el texto final recae en las personas y queda documentada en la Fase 6.
+1. Complete los formularios en orden (Fases 1 a 6). Puede volver a una fase anterior cuando surja información nueva; registre ese regreso.
+2. Las ayudas y los ejemplos son solo orientación. Los ejemplos son ficticios (un texto sobre burnout en enfermeros).
+3. "Sí" y "No" describen lo que se hizo; no son correcto o incorrecto. Si no lo sabe, escriba "No sé": es una respuesta válida.
+4. Guarde el texto original generado y adjunte estos formularios al texto final. No escriba datos personales en los campos.
+5. La decisión y el texto final son siempre de la persona que firma, nunca de la IA.
 
-## Identificación del proceso
+## Identificación
 
-**Título o tema del texto analizado**
-
-> 
-
-**Código del registro** _(p. ej.: AICP-2026-001)_
+**Texto analizado** _Título o tema del texto generado por IA que va a evaluar._ _P. ej.: Marco sobre burnout en enfermeros_
 
 > 
 
-**Curador(a) responsable**
+**Tipo de texto** _El tipo de texto cambia lo que hay que verificar: un texto científico exige referencias; un material didáctico exige rigor y adecuación al alumnado._: ☐ Científico o académico  ☐ Didáctico  ☐ Divulgación o periodismo  ☐ Institucional o profesional  ☐ Creativo  ☐ Otro  ____
+
+**Código del registro** _Un código breve para vincular los formularios al texto y al original guardado._ _P. ej.: AICP-2026-001_
 
 > 
 
-**Director(a) / revisor(es)**
+**Curador(a)** _Persona que completa los formularios y asume la decisión final._
 
 > 
 
-**Institución / unidad**
+**Director(a) / revisor(es)** _Quién revisará en la Fase 5._
 
 > 
 
-**Finalidad del uso previsto** _(p. ej.: envío a revista, trabajo curricular, material de clase, informe, divulgación, evaluación)_
+**¿Para qué va a usar el texto?** _El uso previsto cambia el rigor necesario._ _P. ej.: envío a revista; trabajo de curso; material de clase; base de lectura_
 
 > 
 
-**Fecha de inicio**
+### Las seis fases en resumen
 
-> 
+> Complete en orden; puede volver atrás.
 
-**Fecha de finalización**
+| Fase y pregunta | Completada el |
+| --- | --- |
+| **1 · Reporting: ¿Cómo se creó?** |   |
+| **2 · Relating: ¿Qué dicen otras fuentes?** |   |
+| **3 · Responding: ¿Qué observo y cómo reacciono?** |   |
+| **4 · Reasoning: ¿Qué puedo afirmar con seguridad?** |   |
+| **5 · Reconciling: ¿Qué dicen los demás?** |   |
+| **6 · Reconstructing: ¿Qué decido?** |   |
 
-> 
+## Fase 1 · Reporting: Registrar el origen del texto (Provenance Record)
 
-### Control de las fases
-
-| Fase | Completada (fecha) | Responsable |
-| --- | --- | --- |
-| 1 · Reporting |   |   |
-| 2 · Relating |   |   |
-| 3 · Responding |   |   |
-| 4 · Reasoning |   |   |
-| 5 · Reconciling |   |   |
-| 6 · Reconstructing |   |   |
-
-## Fase 1 · Reporting: Registro de procedencia (Provenance Record)
-
-_¿Cómo se produjo este texto? Registrar las condiciones de producción antes de evaluarlo._
+_¿Cómo se creó este texto? Anote lo que sabe sobre cómo lo produjo la IA._
 
 Texto / código del registro: ____  Curador(a): ____  Fecha: ____
 
-### A. Texto analizado
+### Origen del texto
 
-**Tipo de texto**: ☐ Artículo científico  ☐ Revisión de literatura  ☐ Resumen/abstract  ☐ Trabajo académico (ensayo, informe, tesis)  ☐ Material didáctico o pedagógico  ☐ Texto de divulgación o periodístico  ☐ Comunicación institucional o profesional  ☐ Texto creativo o literario  ☐ Otro  ____
-
-**Grado de producción por IA**: ☐ Totalmente generado  ☐ Parcialmente generado  ☐ Reescrito por IA  ☐ No sé
-
-**Extensión y secciones generadas** _(n.º de palabras; secciones o párrafos producidos por la IA)_
+**1. Herramienta y versión** _Nombre de la herramienta y, si aparece, la versión o el modelo (suele verse en pantalla o en la configuración). Indique si la búsqueda web estaba activa._ _P. ej.: ChatGPT, modelo indicado en pantalla, sin búsqueda web_
 
 > 
 
-### B. Condiciones de producción
-
-**Herramienta y proveedor**
+**2. Fecha y hora** _Los resultados pueden cambiar con la fecha y la versión; por eso el registro es importante._ _P. ej.: 12/10/2026, 15 h_
 
 > 
 
-**Modelo y versión**
+**3. Petición realizada (prompt)** _Copie y pegue la petición tal como la escribió, incluidas las instrucciones anteriores en la misma conversación. Si hizo varios intentos, indique cuántos y cuál usó._ _P. ej.: «Escribe un párrafo sobre el burnout en enfermeros portugueses, con referencias.»_
 
 > 
 
-**Fecha y hora de la generación**
+**4. ¿Qué parte generó la IA?** _"Reescritura": el texto original era suyo y la IA solo lo mejoró. Si elige "Parte", indique cuáles._: ☐ Todo  ☐ Parte  ☐ Reescritura de un texto mío  ☐ No sé  ____
+
+**5. ¿Proporcionó documentos o fuentes a la IA?** _"Sí" si adjuntó archivos o pegó textos. Si pidió referencias sin dar fuentes, la IA puede haberlas inventado._: ☐ No  ☐ Sí  ____
+
+**6. ¿Usó datos personales o confidenciales?** _P. ej.: nombres de participantes, entrevistas, textos inéditos. Si "Sí", indique cómo los protegió._: ☐ No  ☐ Sí  ____
+
+**7. ¿Dónde guardó el texto original?** _Guarde siempre la versión original, sin ediciones (archivo o enlace)._ _P. ej.: carpeta AICP-001/original.docx_
 
 > 
 
-**Prompt exacto (o enlace al archivo)** _(copiar íntegramente; incluir instrucciones de sistema, si se conocen)_
+**8. ¿Qué no puede saber?** _Decir lo que no se sabe forma parte del rigor._ _P. ej.: con qué textos aprendió la IA; qué fuentes usó_
 
 > 
 
-**Parámetros y funcionalidades activas** _(búsqueda web, herramientas, memoria, temperatura, idioma)_
+## Fase 2 · Relating: Comparar con fuentes de confianza (Cultural Anchoring)
 
-> 
-
-**N.º de intentos / iteraciones** _(¿es la primera versión generada? ¿qué cambió entre versiones?)_
-
-> 
-
-### C. Fuentes y datos proporcionados a la IA
-
-**¿Se proporcionaron documentos o datos?**: ☐ No  ☐ Sí  ____
-
-**¿Se pidieron referencias a la IA?**: ☐ No  ☐ Sí
-
-**¿Se introdujeron datos personales, confidenciales o inéditos?**: ☐ No  ☐ Sí, con salvaguardas  ____
-
-### D. Límites de lo que se sabe sobre el origen
-
-**Lo que sé sobre el origen del texto**
-
-> 
-
-**Lo que no puedo saber (datos de entrenamiento, pasos intermedios)**
-
-> 
-
-**Original guardado en**
-
-> 
-
-**Registro realizado por**
-
-> 
-
-## Fase 2 · Relating: Anclaje cultural (Cultural Anchoring)
-
-_¿Con qué fuentes y conocimientos puedo comparar este texto?_
+_¿Qué dicen las fuentes que conozco? Compare el texto con fuentes fiables sobre el tema._
 
 Texto / código del registro: ____  Curador(a): ____  Fecha: ____
 
-### A. Repositorio de referencia
+### A. Fuentes de comparación (elija 2 a 3 fuentes fiables)
 
-| Fuente consultada (obra, base de datos, directriz) | Tipo | Qué permite comparar |
-| --- | --- | --- |
-|   |   |   |
-|   |   |   |
-|   |   |   |
+> Si el texto no cita fuentes (por ejemplo, un texto didáctico o de divulgación), compárelo con fuentes de referencia sobre el tema: manual, programa, documento oficial.
 
-### B. Verificación de afirmaciones y referencias del texto
+| Fuente usada para comparar | Dónde la encontró |
+| --- | --- |
+| _P. ej.: manual de referencia del área; artículos recientes sobre el tema_ | _P. ej.: biblioteca, Scopus, SciELO, Google Académico_ |
+|   |   |
+|   |   |
 
-| Afirmación o referencia en el texto | ¿Existe? | ¿Dice lo que el texto afirma? | Fuente / DOI verificado |
+### B. Verificar referencias y afirmaciones (empiece por las más importantes)
+
+> Busque la obra por título y DOI. "¿Dice lo que el texto afirma?": abra la fuente y confirme la idea. Antes de usar el texto, todas las referencias deben estar verificadas (Fase 6).
+
+| Afirmación o referencia del texto | ¿Existe? | ¿Dice lo que el texto afirma? | Dónde lo verificó |
 | --- | --- | --- | --- |
-|   |   |   |   |
-|   |   |   |   |
-|   |   |   |   |
+| _P. ej.: (Ferreira & Almeida, 2021)_ |   |   | _P. ej.: Google Académico y DOI_ |
 |   |   |   |   |
 |   |   |   |   |
 |   |   |   |   |
 
-> ¿Existe? / ¿Dice lo que el texto afirma? → S = sí, N = no, NV = no pude verificar
+### C. Balance
 
-### C. Comparación con el conocimiento del área
-
-**Lo que el texto presenta y es coherente con las fuentes y el conocimiento del área**
+**¿Qué coincide con las fuentes?** _Ideas del texto que las fuentes confirman._
 
 > 
 
-**Lo que parece ausente (autores, fuentes, lenguas, regiones, perspectivas)**
+**¿Qué falta?** _Autores, lenguas, países o perspectivas importantes que no aparecen._ _P. ej.: estudios en portugués; autores de América Latina_
 
 > 
 
-### D. Adecuación al contexto
+**¿Está actualizado y adecuado a mi contexto?** _Mire los años de las fuentes, cuando existan (en general, los últimos 5 a 10 años, salvo obras clásicas), y si sirve a su disciplina, su público y su país._: ☐ Sí  ☐ En parte  ☐ No
 
-**Actualidad de las fuentes citadas** _(intervalo de años; obras de referencia que faltan)_
+## Fase 3 · Responding: Probar y buscar señales de alerta (Bias and Diversity Audit)
 
-> 
-
-**Contexto disciplinar, institucional, cultural y lingüístico** _(¿sirve el texto al contexto en que se usará?)_
-
-> 
-
-## Fase 3 · Responding: Auditoría de sesgos y diversidad (Bias and Diversity Audit)
-
-_¿Qué observo y cómo reacciono? Comparar el texto con variaciones del prompt._
+_¿Qué observo y cómo reacciono? Busque problemas y vea qué ocurre si cambia la petición._
 
 Texto / código del registro: ____  Curador(a): ____  Fecha: ____
 
-### A. Respuesta personal
+### A. Primera reacción
 
-**Lo que me sorprende, incomoda o convence**
-
-> 
-
-**Patrones que encuentro en el texto**
+**¿Qué le sorprende, incomoda o convence?** _Escriba su reacción espontánea, antes de analizar._ _P. ej.: Me convenció porque tiene cifras, pero no las reconozco._
 
 > 
 
-### B. Prueba de variación del prompt
+### B. Prueba: cambie la petición (pida otra vez a la IA, cambiando una cosa)
 
-| Variación probada | Prompt modificado | Qué cambió en la respuesta |
+> Puede cambiar el país, la teoría, el idioma o pedir la opinión contraria. Si la respuesta cambia mucho, el texto no es estable.
+
+| Qué cambió en la petición | Qué cambió en la respuesta |
+| --- | --- |
+| _P. ej.: pedí contraargumentos_ | _P. ej.: el texto pasó a admitir limitaciones_ |
+|   |   |
+
+### C. Señales de alerta
+
+| Señal de alerta | Respuesta | Dónde (fragmento) |
 | --- | --- | --- |
-| _p. ej.: idioma, región, perspectiva teórica_ |   |   |
-| _p. ej.: pedir contraargumentos_ |   |   |
-| _p. ej.: pedir nivel de certeza_ |   |   |
+| **Generaliza demasiado**: Usa "todos", "siempre", "en toda Europa" sin pruebas. | ☐ Lo vi ☐ No lo vi |   |
+| **Habla con demasiada certeza**: Dice "prueba", "elimina", "demuestra" sin datos que lo sostengan. | ☐ Lo vi ☐ No lo vi |   |
+| **Siempre le da la razón**: Si pide lo contrario, ¿también está de acuerdo? La IA tiende a complacer. | ☐ Lo vi ☐ No lo vi |   |
+| **Deja voces fuera**: Solo aparecen autores o ejemplos de un país, lengua o escuela teórica. | ☐ Lo vi ☐ No lo vi |   |
+| **Usa estereotipos**: Asocia grupos a papeles o características (género, edad, cultura, profesión). | ☐ Lo vi ☐ No lo vi |   |
+| **Simplifica o borra su estilo**: Resume ideas o autores de forma pobre, o el texto suena genérico. | ☐ Lo vi ☐ No lo vi |   |
 
-### C. Verificación de sesgos
+### D. Resumen
 
-| Aspecto observado | ¿Observado? | Evidencia (fragmento, línea, página) |
-| --- | --- | --- |
-| Generalización excesiva ("todos", "en todas partes") | ☐ S ☐ N ☐ NA |   |
-| Lenguaje de certeza excesiva ("demuestra", "elimina") | ☐ S ☐ N ☐ NA |   |
-| Acuerdo acrítico con el prompt (complacencia) | ☐ S ☐ N ☐ NA |   |
-| Predominio de una región, lengua o escuela teórica | ☐ S ☐ N ☐ NA |   |
-| Ausencia de voces, contextos o grupos | ☐ S ☐ N ☐ NA |   |
-| Estereotipos (género, cultura, profesión, disciplina) | ☐ S ☐ N ☐ NA |   |
-| Simplificación o tergiversación de ideas, teorías, fuentes o autores | ☐ S ☐ N ☐ NA |   |
-| Homogeneización del estilo (pérdida de voz autoral) | ☐ S ☐ N ☐ NA |   |
-
-> S = sí, observado; N = no observado; NA = no evaluado
-
-### D. Síntesis
-
-**Tres principales riesgos identificados** _(ordenar por gravedad)_
+**Principal riesgo encontrado** _El problema más grave que vio (una frase)._ _P. ej.: Referencias inventadas y certeza excesiva._
 
 > 
 
-## Fase 4 · Reasoning: Contextualización crítica (Critical Contextualisation)
+## Fase 4 · Reasoning: Pensar con cuidado (Critical Contextualisation)
 
-_¿Cómo interpreto lo que observé? Separar lo que puedo afirmar de lo que solo infiero._
+_¿Qué puedo afirmar con seguridad? Separe lo que sabe de lo que solo supone._
 
 Texto / código del registro: ____  Curador(a): ____  Fecha: ____
 
-### A. Observado, interpretado, incierto
+### A. Tres columnas (escriba 2 a 3 frases en cada una)
 
-| Observado (puedo afirmarlo, con evidencia) | Interpretado (estoy infiriendo) | Incierto (dudas que persisten) |
+| Observado (tengo pruebas) | Interpretado (estoy deduciendo) | Incierto (no lo sé) |
 | --- | --- | --- |
-|   |   |   |
-|   |   |   |
-|   |   |   |
+| _P. ej.: las 2 referencias no existen_ | _P. ej.: burnout y sobrecarga parecen relacionados_ | _P. ej.: el porcentaje real en Portugal_ |
 |   |   |   |
 
-### B. Evaluación de la calidad del texto
+### B. Evaluación rápida
 
-**Coherencia: propósito, estructura, desarrollo y conclusiones (en un texto científico: pregunta, objetivos, método, resultados y conclusión)**: ☐ Adecuada  ☐ Parcial  ☐ Inadecuada
+**¿El texto es coherente?** _¿El propósito, la estructura y las conclusiones están alineados? En un texto científico: la pregunta, los objetivos, el método y las conclusiones._: ☐ Sí  ☐ En parte  ☐ No
 
-**Fundamentación de las afirmaciones (fuentes, datos, razonamiento)**: ☐ Adecuada  ☐ Parcial  ☐ Inadecuada
+**¿Apoya lo que dice con fuentes, datos o buenos argumentos?** _¿Hay fuentes, datos o razonamiento para las afirmaciones principales?_: ☐ Sí  ☐ En parte  ☐ No
 
-**Limitaciones e incertidumbres declaradas por el texto, cuando el género lo exige**: ☐ Sí  ☐ Parcialmente  ☐ No
+**¿Sé lo suficiente del tema para evaluar?** _Si "No", pida ayuda a quien domine el tema antes de decidir. Es la respuesta más honesta y frecuente._: ☐ Sí  ☐ En parte  ☐ No
 
-**¿Tengo conocimiento suficiente del tema para evaluar el texto?**: ☐ Sí  ☐ Parcialmente  ☐ No: consultar a un especialista
+**¿Verifiqué plagio y derechos?** _Use la herramienta de similitud de su institución y confirme si hay textos o imágenes con derechos de autor._: ☐ Sí  ☐ No  ☐ Pendiente
 
-### C. Integridad y derechos
+### C. Nota para quien vaya a leer (obligatoria si el texto sale de su grupo)
 
-**Similitud con fuentes existentes verificada (plagio)**: ☐ Sí  ☐ No  ☐ No aplicable  ____
-
-**Autoría, propiedad intelectual y privacidad analizadas**: ☐ Sí  ☐ No  ☐ Pendiente
-
-### D. Texto curatorial (obligatorio si el texto se difunde más allá de quienes lo crearon)
-
-**Ambigüedades por resolver, registradas como evidencia analítica** _(hasta 150 palabras)_
+**Lo que quedó por resolver** _3 a 5 líneas con las dudas que persisten. Una duda declarada ayuda al lector._ _P. ej.: «La prevalencia citada no se confirmó; los datos deben leerse con cautela.»_
 
 > 
 
-## Fase 5 · Reconciling: Validación cruzada humana y comunitaria (Human–Community Cross-Validation)
+## Fase 5 · Reconciling: Contrastar con otras personas (Human–Community Cross-Validation)
 
-_¿Qué dicen otras personas? Un segundo grupo, independiente de la producción, revisa el texto y las Fases 1 a 4._
+_¿Qué dicen las personas que no crearon el texto? Pida a al menos una persona independiente (idealmente un pequeño grupo) que revise el texto y las Fases 1 a 4._
 
 Texto / código del registro: ____  Curador(a): ____  Fecha: ____
 
-### A. Segundo grupo revisor
+### A. Quién revisó
 
-| Nombre o código | Rol (par, docente, especialista, comunidad) | ¿Independiente de la producción? | Fecha de la revisión |
-| --- | --- | --- | --- |
-|   |   |   |   |
-|   |   |   |   |
-|   |   |   |   |
+> La revisión solo cuenta como Reconciling si la persona no participó en la creación del texto. Si el texto incluye trabajos de estudiantes o datos de otras personas, pida consentimiento.
 
-**Consentimiento y salvaguardas**: ☐ No aplicable  ☐ Obtenido  ☐ Pendiente
+| Nombre o código | Rol | ¿Participó en la producción del texto? |
+| --- | --- | --- |
+| _P. ej.: Colega X_ | _P. ej.: par; director(a); especialista_ |   |
+|   |   |   |
 
-**Qué revisó el grupo**: ☐ Texto  ☐ Registro (F1)  ☐ Repositorio (F2)  ☐ Auditoría (F3)  ☐ Contextualización (F4)
+### B. Resultado
 
-### B. Resultado de la revisión
+> Si solo pide opiniones libres, sin contrastar el texto con alguien independiente, eso es una lluvia de ideas y no es Reconciling. Regístrelo como tal.
 
-**En qué coincidimos**
-
-> 
-
-**En qué discrepamos**
+**¿En qué coincidimos?** _Puntos en los que usted y el revisor tienen la misma lectura._
 
 > 
 
-**Qué necesito reconsiderar**
+**¿En qué discrepamos?** _Puntos con lecturas diferentes, y por qué._ _P. ej.: El revisor cree que el concepto está mal definido._
 
 > 
 
-### C. Divergencias y resolución
+**¿Qué voy a cambiar?** _Cambios o verificaciones que decidió hacer después de la conversación._
 
-| Punto de divergencia | Posición del curador | Posición del revisor | Resolución |
-| --- | --- | --- | --- |
-|   |   |   |   |
-|   |   |   |   |
-|   |   |   |   |
+> 
 
-### D. Seguimiento
+**¿Se resolvieron las diferencias?** _Es aceptable mantener lecturas diferentes, siempre que quede registrado._: ☐ Sí, hubo acuerdo  ☐ Se mantienen dos lecturas  ☐ Pedimos una tercera opinión
 
-**¿Es necesario volver a fases anteriores?**: ☐ No  ☐ Sí  ____
+**¿Hay que volver a fases anteriores?** _Si la revisión aportó pruebas nuevas, vuelva a la fase correspondiente._: ☐ No  ☐ Sí  ____
 
-> Si los estudiantes o el curador solo expresan opiniones libres, sin contrastar el texto con un segundo grupo independiente, no es Reconciling: es una lluvia de ideas o un relevamiento de concepciones, y debe registrarse como tal.
+## Fase 6 · Reconstructing: Decidir y registrar (Documented Curatorial Decision)
 
-## Fase 6 · Reconstructing: Decisión curatorial documentada (Documented Curatorial Decision)
-
-_¿Qué decido? Una decisión fundamentada en las Fases 1 a 5, asumida por personas y escrita._
+_¿Qué decido? Una decisión basada en las fases anteriores, asumida por personas y escrita._
 
 Texto / código del registro: ____  Curador(a): ____  Fecha: ____
 
 ### A. Decisión
 
-**Decisión sobre el texto**: ☐ Utilizar  ☐ Utilizar con contextualización  ☐ Adaptar  ☐ No utilizar
+**Marque una**
 
-**Uso previsto** _(dónde, para qué, ante qué público)_
+- ☐ **Utilizar**: usa el texto tal como está; solo si ninguna fase encontró problemas
+- ☐ **Utilizar con contextualización**: usa el texto con una nota que explique el origen (IA) y los límites
+- ☐ **Adaptar**: aprovecha partes y reescribe o corrige el resto
+- ☐ **No utilizar**: rechaza el texto; registre el motivo
 
-> 
-
-**Justificación** _(evidencias decisivas de las Fases 1 a 5)_
-
-> 
-
-### B. Condiciones antes de utilizar
-
-**Condiciones cumplidas**: ☐ Referencias y fuentes verificadas en el origen, cuando existan (existen y dicen lo que el texto afirma)  ☐ Afirmaciones factuales y datos verificados  ☐ Voz y autoría aseguradas (texto reescrito y asumido por quien firma)  ☐ Derechos de autor, privacidad y consentimientos atendidos  ☐ Revisión final completa del texto
-
-**Lo que se modificará o rechazará** _(partes del texto, cifras, datos, referencias)_
+**¿Por qué?** _2 a 3 frases con las pruebas de las Fases 1 a 5. Si eligió "Adaptar", indique qué cambia._ _P. ej.: Hay referencias inexistentes y certeza excesiva; la revisión lo confirmó._
 
 > 
+
+### B. Antes de usar, ¿confirmó?
+
+**Marque lo que ya hizo**: ☐ Referencias verificadas en la fuente, cuando existan  ☐ Datos y hechos verificados  ☐ Texto reescrito y asumido por quien firma  ☐ Derechos de autor y privacidad atendidos  ☐ Revisión final del texto completo
 
 ### C. Declaración de uso
 
-**Texto de la declaración** _(modelo: "Utilicé [herramienta, versión, fecha] para [finalidad]. El contenido y las referencias fueron verificados y son de mi responsabilidad.")_
+**Texto de la declaración** _Frase breve para acompañar el texto. Adáptela a su caso o use el botón "Generar declaración"._ _P. ej.: «Utilicé [herramienta, versión, fecha] para [finalidad]. Verifiqué el contenido y las referencias y asumo la responsabilidad por el texto.»_
 
 > 
 
-### D. Repositorio y aprendizaje
-
-**Actualización del repositorio de la Fase 2**
+**La próxima vez haré diferente** _Un aprendizaje para el próximo uso de IA._ _P. ej.: Proporcionar fuentes verificadas en la petición._
 
 > 
 
-**En un próximo uso de IA haré diferente**
+### D. Firma
+
+**Curador(a)**
 
 > 
 
-### E. Responsabilidad
-
-**Curador(a) responsable**
-
-> 
-
-**Revisor(es) / director(a)**
+**Revisor(a) / director(a)**
 
 > 
 
 **Fecha**
-
-> 
-
-**Firma (nombre escrito o iniciales)**
 
 > 
 

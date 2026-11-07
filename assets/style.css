@@ -43,6 +43,11 @@ button.danger { color: var(--danger); }
 .field { margin: 0 0 12px; }
 .flabel { display: block; font-weight: 600; font-size: 14px; margin-bottom: 4px; }
 .hint { display: block; font-weight: 400; font-style: italic; color: var(--muted); font-size: 12.5px; }
+.ex { display: block; font-weight: 400; color: var(--muted); font-size: 12.5px; }
+.ohint, .rhint { display: block; font-weight: 400; font-style: italic; color: var(--muted); font-size: 12px; }
+.opts .opt-wide { flex: 1 1 100%; align-items: flex-start; }
+.opts .opt-wide input { margin-top: 3px; }
+textarea::placeholder, input::placeholder { color: var(--muted); opacity: 0.75; font-style: italic; }
 fieldset { border: 0; padding: 0; margin: 0; }
 legend { padding: 0; }
 input[type=text], input[type=date], textarea, select { width: 100%; font: inherit; font-size: 14px; color: var(--ink); background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; }
@@ -93,3 +98,6 @@ footer h2 { font-size: 14px; }
   textarea, input[type=text], input[type=date], select { border: 1px solid #999; overflow: visible; resize: none; }
   .tablebox { overflow: visible; }
 }
+
+.radiocell .opt { margin-right: 12px; }
+.note { margin-top: 0; }

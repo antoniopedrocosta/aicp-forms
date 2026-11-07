@@ -16,24 +16,27 @@ for (const lang of ["pt", "en", "es", "it"]) {
     if (sec.phase) out.push(({ pt: "Texto / código do registo: ____  Curador(a): ____  Data: ____", en: "Text / record code: ____  Curator: ____  Date: ____", es: "Texto / código del registro: ____  Curador(a): ____  Fecha: ____", it: "Testo / codice del registro: ____  Curatore/curatrice: ____  Data: ____" })[lang], "");
     for (const blk of sec.blocks) {
       if (blk.title) out.push("### " + t(blk.title), "");
+      if (blk.note) out.push("> " + t(blk.note), "");
       for (const f of blk.fields) {
-        const hint = f.hint ? " _(" + t(f.hint) + ")_" : "";
+        const EXL = { pt: "Ex.:", en: "E.g.", es: "P. ej.:", it: "Es.:" }[lang];
+        const hint = (f.hint ? " _" + t(f.hint) + "_" : "") + (f.ex ? " _" + EXL + " " + t(f.ex) + "_" : "");
         if (["text", "date", "textarea"].includes(f.type)) out.push("**" + t(f.label) + "**" + hint, "", "> ", "");
-        else if (f.type === "radio" || f.type === "check") out.push("**" + t(f.label) + "**" + hint + ": " + f.options.map((o) => "☐ " + t(o)).join("  ") + (f.detailOn != null || f.other ? "  ____" : ""), "");
+        else if (f.type === "radio" || f.type === "check") if (f.optionHints) { out.push("**" + t(f.label) + "**" + hint, ""); f.options.forEach((o, i) => out.push("- ☐ **" + t(o) + "**: " + t(f.optionHints[i]))); out.push(""); }
+        else out.push("**" + t(f.label) + "**" + hint + ": " + f.options.map((o) => "☐ " + t(o)).join("  ") + (f.detailOn != null || f.other ? "  ____" : ""), "");
         else {
           const fixed = f.fixedRows || f.type === "radioTable";
           out.push("| " + f.columns.map(t).join(" | ") + " |", "|" + f.columns.map(() => " --- |").join(""));
           const n = fixed ? f.rowLabels.length : f.rows || 3;
           for (let r = 0; r < n; r++) out.push("| " + f.columns.map((c, ci) => {
-            if (fixed && ci === 0) return t(f.rowLabels[r]);
+            if (fixed && ci === 0) return "**" + t(f.rowLabels[r]) + "**" + (f.rowHints ? ": " + t(f.rowHints[r]) : "");
             if (f.type === "radioTable" && ci === 1) return f.options.map((o) => "☐ " + t(o)).join(" ");
             if (f.placeholders && ci === 0 && f.placeholders[r]) return "_" + t(f.placeholders[r]) + "_";
+            if (r === 0 && f.colExamples && f.colExamples[ci]) return "_" + t(f.colExamples[ci]) + "_";
             return " ";
           }).join(" | ") + " |");
           out.push("");
         }
       }
-      if (blk.note) out.push("> " + t(blk.note), "");
     }
   }
   out.push("---", "", t(S.meta.references), "");

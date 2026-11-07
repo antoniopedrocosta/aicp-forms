@@ -7,6 +7,7 @@ Formulários do *AI Curatorial Protocol* (AICP) para a curadoria de textos produ
 ## Utilizar
 
 - **No navegador:** abra a página publicada (GitHub Pages) e preencha os formulários. Pode alternar entre português, inglês, espanhol e italiano a qualquer momento.
+- **Ajudas e exemplos:** cada campo tem uma ajuda curta e, quando útil, um exemplo fictício (um texto sobre burnout em enfermeiros).
 - **Guardar:** o preenchimento fica guardado automaticamente no navegador. Para guardar num ficheiro, ou para continuar noutro computador, use *Guardar ficheiro (JSON)* e depois *Abrir ficheiro (JSON)*.
 - **Estado do processo:** mostra, por fase, quantos campos estão preenchidos e quais faltam, se a Fase 5 tem um revisor independente e se as condições da Fase 6 estão cumpridas.
 - **Gerar declaração:** monta um rascunho da declaração de uso de IA a partir das respostas (Fases 1, 2, 5 e 6), com parênteses retos onde faltar informação; pode copiá-lo ou colocá-lo na Fase 6.
@@ -51,6 +52,7 @@ Forms for the *AI Curatorial Protocol* (AICP), for curating texts produced with 
 ### Use
 
 - **In the browser:** open the published page (GitHub Pages) and fill in the forms. You can switch between Portuguese, English, Spanish and Italian at any time.
+- **Help and examples:** each field has a short help note and, where useful, a fictional example (a text about burnout in nurses).
 - **Saving:** entries are saved automatically in the browser. To keep a file, or to continue on another computer, use *Save file (JSON)* and then *Open file (JSON)*.
 - **Process status:** shows, per phase, how many fields are filled in and which are missing, whether Phase 5 has an independent reviewer and whether the Phase 6 conditions are met.
 - **Generate statement:** drafts the AI use statement from the answers (Phases 1, 2, 5 and 6), with square brackets where information is missing; copy it or insert it in Phase 6.
@@ -81,6 +83,7 @@ Formularios del *AI Curatorial Protocol* (AICP) para la curaduría de textos pro
 ### Uso
 
 - **En el navegador:** abra la página publicada (GitHub Pages) y complete los formularios. Puede cambiar entre portugués, inglés, español e italiano en cualquier momento (botones PT/EN/ES/IT).
+- **Ayudas y ejemplos:** cada campo tiene una breve ayuda y, cuando es útil, un ejemplo ficticio (un texto sobre burnout en enfermeros).
 - **Guardar:** las respuestas se guardan automáticamente en el navegador. Para conservar un archivo o continuar en otro ordenador, use *Guardar archivo (JSON)* y después *Abrir archivo (JSON)*.
 - **Estado del proceso:** muestra, por fase, cuántos campos están completos y cuáles faltan, si la Fase 5 tiene un revisor independiente y si se cumplen las condiciones de la Fase 6.
 - **Generar declaración:** redacta un borrador de la declaración de uso de IA a partir de las respuestas, con corchetes donde falta información.
@@ -103,6 +106,7 @@ Moduli dell'*AI Curatorial Protocol* (AICP) per la curatela di testi prodotti co
 ### Uso
 
 - **Nel browser:** aprire la pagina pubblicata (GitHub Pages) e compilare i moduli. È possibile passare dal portoghese all'inglese, allo spagnolo e all'italiano in qualsiasi momento (pulsanti PT/EN/ES/IT).
+- **Aiuti ed esempi:** ogni campo ha un breve aiuto e, quando utile, un esempio fittizio (un testo sul burnout negli infermieri).
 - **Salvataggio:** le risposte vengono salvate automaticamente nel browser. Per conservare un file o continuare su un altro computer, usare *Salva file (JSON)* e poi *Apri file (JSON)*.
 - **Stato del processo:** mostra, per ogni fase, quanti campi sono compilati e quali mancano, se la Fase 5 ha un revisore indipendente e se le condizioni della Fase 6 sono soddisfatte.
 - **Genera dichiarazione:** redige una bozza della dichiarazione d'uso dell'IA a partire dalle risposte, con parentesi quadre dove mancano informazioni.

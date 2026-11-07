@@ -2,361 +2,272 @@
 
 **Curation forms for AI-generated texts**
 
-Six forms, one per phase, to attach to any text produced with generative AI (article, academic assignment, report, teaching material, outreach text, among others). An extension of the 5R model (Bain et al., 2002) with a new phase, Reconciling (Costa et al., 2026).
+Six short forms, one per phase, to attach to any text produced with generative AI (article, academic assignment, report, teaching material, outreach text, among others). Each field has a help note and, where useful, an example. An extension of the 5R model (Bain et al., 2002) with a new phase, Reconciling (Costa et al., 2026).
 
 ## How to use
 
-1. Complete the forms in order (Phases 1 to 6). The process is iterative: you may return to earlier phases when new evidence emerges, and should record that return.
-2. The forms are formative. "Yes" and "No" describe what was done; they do not measure right or wrong, nor do they authorise use of the text.
-3. Phase 5 requires a second group that was not involved in producing the text. Free opinion without structured comparison is a survey of conceptions, not Reconciling.
-4. Keep the original generated text (Phase 1) and attach these forms to the final text. Do not record personal or confidential data in the fields.
-5. Responsibility for the decision and the final text remains with people, and is documented in Phase 6.
+1. Complete the forms in order (Phases 1 to 6). You may go back to an earlier phase when new information emerges; record that return.
+2. The help notes and examples are guidance only. The examples are fictional (a text about burnout in nurses).
+3. "Yes" and "No" describe what was done; they are not right or wrong. If you do not know, write "Don't know": it is a valid answer.
+4. Keep the original generated text and attach these forms to the final text. Do not write personal data in the fields.
+5. The decision and the final text always belong to the person who signs, never to the AI.
 
-## Process identification
+## Identification
 
-**Title or topic of the text analysed**
-
-> 
-
-**Record code** _(e.g. AICP-2026-001)_
+**Text analysed** _Title or topic of the AI-generated text you will assess._ _E.g. Background section on burnout in nurses_
 
 > 
 
-**Responsible curator**
+**Type of text** _The type of text changes what needs checking: a scientific text requires references; teaching material requires accuracy and fit with the learners._: ☐ Scientific or academic  ☐ Teaching material  ☐ Outreach or journalism  ☐ Institutional or professional  ☐ Creative  ☐ Other  ____
+
+**Record code** _A short code linking the forms to the text and to the stored original._ _E.g. AICP-2026-001_
 
 > 
 
-**Supervisor / reviewer(s)**
+**Curator** _Person who fills in the forms and owns the final decision._
 
 > 
 
-**Institution / unit**
+**Supervisor / reviewer(s)** _Who will review in Phase 5._
 
 > 
 
-**Intended use** _(e.g. journal submission, coursework, teaching material, report, outreach, assessment)_
+**What will you use the text for?** _The intended use changes the rigour required._ _E.g. journal submission; coursework; class material; background reading_
 
 > 
 
-**Start date**
+### The six phases at a glance
 
-> 
+> Fill in order; you may go back.
 
-**Completion date**
+| Phase and question | Completed on |
+| --- | --- |
+| **1 · Reporting: How was it made?** |   |
+| **2 · Relating: What do other sources say?** |   |
+| **3 · Responding: What do I observe and how do I respond?** |   |
+| **4 · Reasoning: What can I safely claim?** |   |
+| **5 · Reconciling: What do others say?** |   |
+| **6 · Reconstructing: What do I decide?** |   |
 
-> 
+## Phase 1 · Reporting: Record the origin of the text (Provenance Record)
 
-### Phase control
-
-| Phase | Completed (date) | Responsible |
-| --- | --- | --- |
-| 1 · Reporting |   |   |
-| 2 · Relating |   |   |
-| 3 · Responding |   |   |
-| 4 · Reasoning |   |   |
-| 5 · Reconciling |   |   |
-| 6 · Reconstructing |   |   |
-
-## Phase 1 · Reporting: Provenance Record
-
-_How was this text produced? Record the conditions of production before assessing it._
+_How was this text made? Note what you know about how the AI produced it._
 
 Text / record code: ____  Curator: ____  Date: ____
 
-### A. Text analysed
+### Origin of the text
 
-**Type of text**: ☐ Research article  ☐ Literature review  ☐ Abstract  ☐ Academic assignment (essay, report, thesis)  ☐ Teaching or learning material  ☐ Outreach or journalistic text  ☐ Institutional or professional communication  ☐ Creative or literary text  ☐ Other  ____
-
-**Degree of AI production**: ☐ Fully generated  ☐ Partly generated  ☐ Rewritten by AI  ☐ Don't know
-
-**Length and sections generated** _(number of words; sections or paragraphs produced by AI)_
+**1. Tool and version** _Name of the tool and, if shown, the version or model (usually visible on screen or in settings). State whether web search was on._ _E.g. ChatGPT, model shown on screen, web search off_
 
 > 
 
-### B. Conditions of production
-
-**Tool and provider**
+**2. Date and time** _Results can change with the date and version, so recording them matters._ _E.g. 12/10/2026, 3 pm_
 
 > 
 
-**Model and version**
+**3. Request made (prompt)** _Copy and paste the request exactly as you wrote it, including earlier instructions in the same conversation. If you made several attempts, say how many and which one you used._ _E.g. "Write a paragraph on burnout in Portuguese nurses, with references."_
 
 > 
 
-**Date and time of generation**
+**4. Which part was generated by AI?** _"Rewrite": the original text was yours and the AI only improved it. If you choose "Part", say which._: ☐ All of it  ☐ Part  ☐ Rewrite of my own text  ☐ Don't know  ____
+
+**5. Did you give the AI documents or sources?** _"Yes" if you attached files or pasted texts. If you asked for references without giving sources, the AI may have invented them._: ☐ No  ☐ Yes  ____
+
+**6. Did you use personal or confidential data?** _E.g. participants' names, interviews, unpublished texts. If "Yes", say how you protected them._: ☐ No  ☐ Yes  ____
+
+**7. Where did you store the original text?** _Always keep the original, unedited version (file or link)._ _E.g. folder AICP-001/original.docx_
 
 > 
 
-**Exact prompt (or link to file)** _(copy in full; include system instructions, if known)_
+**8. What can you not know?** _Stating what is not known is part of rigour._ _E.g. which texts the AI learned from; which sources it used_
 
 > 
 
-**Parameters and active features** _(web search, tools, memory, temperature, language)_
+## Phase 2 · Relating: Compare with trusted sources (Cultural Anchoring)
 
-> 
-
-**Number of attempts / iterations** _(is this the first generated version? what changed between versions?)_
-
-> 
-
-### C. Sources and data provided to the AI
-
-**Were documents or data provided?**: ☐ No  ☐ Yes  ____
-
-**Were references requested from the AI?**: ☐ No  ☐ Yes
-
-**Were personal, confidential or unpublished data entered?**: ☐ No  ☐ Yes, with safeguards  ____
-
-### D. Limits of what is known about the origin
-
-**What I know about the origin of the text**
-
-> 
-
-**What I cannot know (training data, intermediate steps)**
-
-> 
-
-**Original stored at**
-
-> 
-
-**Record made by**
-
-> 
-
-## Phase 2 · Relating: Cultural Anchoring
-
-_Which sources and knowledge can I compare this text with?_
+_What do the sources I know say? Compare the text with reliable sources on the topic._
 
 Text / record code: ____  Curator: ____  Date: ____
 
-### A. Reference repository
+### A. Comparison sources (choose 2 to 3 reliable sources)
 
-| Source consulted (work, database, guideline) | Type | What it allows to compare |
-| --- | --- | --- |
-|   |   |   |
-|   |   |   |
-|   |   |   |
+> If the text cites no sources (for example, a teaching or outreach text), compare it with reference sources on the topic: textbook, curriculum, official document.
 
-### B. Checking claims and references in the text
+| Source used for comparison | Where you found it |
+| --- | --- |
+| _E.g. key textbook in the field; recent articles on the topic_ | _E.g. library, Scopus, SciELO, Google Scholar_ |
+|   |   |
+|   |   |
 
-| Claim or reference in the text | Exists? | Says what the text claims? | Source / DOI checked |
+### B. Check references and claims (start with the most important)
+
+> Search for the work by title and DOI. "Says what the text claims?": open the source and confirm the idea. Before using the text, all references must be checked (Phase 6).
+
+| Claim or reference in the text | Exists? | Says what the text claims? | Where you checked |
 | --- | --- | --- | --- |
-|   |   |   |   |
-|   |   |   |   |
-|   |   |   |   |
+| _E.g. (Ferreira & Almeida, 2021)_ |   |   | _E.g. Google Scholar and DOI_ |
 |   |   |   |   |
 |   |   |   |   |
 |   |   |   |   |
 
-> Exists? / Says what the text claims? → Y = yes, N = no, NV = could not verify
+### C. Overall
 
-### C. Comparison with knowledge in the field
-
-**What the text presents that is consistent with sources and knowledge in the field**
+**What agrees with the sources?** _Ideas in the text that the sources confirm._
 
 > 
 
-**What seems absent (authors, sources, languages, regions, perspectives)**
+**What is missing?** _Important authors, languages, countries or perspectives that do not appear._ _E.g. studies in Portuguese; Latin American authors_
 
 > 
 
-### D. Fit with the context
+**Is it up to date and suited to my context?** _Check the years of the sources, where present (generally the last 5 to 10 years, except classic works), and whether it suits your discipline, audience and country._: ☐ Yes  ☐ Partly  ☐ No
 
-**Currency of the sources cited** _(range of years; missing key works)_
+## Phase 3 · Responding: Test and look for warning signs (Bias and Diversity Audit)
 
-> 
-
-**Disciplinary, institutional, cultural and linguistic context** _(does the text serve the context in which it will be used?)_
-
-> 
-
-## Phase 3 · Responding: Bias and Diversity Audit
-
-_What do I observe and how do I respond? Compare the text with variations of the prompt._
+_What do I observe and how do I respond? Look for problems and see what happens if you change the request._
 
 Text / record code: ____  Curator: ____  Date: ____
 
-### A. Personal response
+### A. First reaction
 
-**What surprises, troubles or convinces me**
-
-> 
-
-**Patterns I find in the text**
+**What surprises, troubles or convinces you?** _Write your spontaneous reaction, before analysing._ _E.g. It convinced me because it has figures, but I don't recognise them._
 
 > 
 
-### B. Prompt variation test
+### B. Test: change the request (ask the AI again, changing one thing)
 
-| Variation tested | Modified prompt | What changed in the response |
+> You can change the country, the theory or the language, or ask for the opposite view. If the response changes a lot, the text is not stable.
+
+| What changed in the request | What changed in the response |
+| --- | --- |
+| _E.g. asked for counter-arguments_ | _E.g. the text began to acknowledge limitations_ |
+|   |   |
+
+### C. Warning signs
+
+| Warning sign | Answer | Where (excerpt) |
 | --- | --- | --- |
-| _e.g. language, region, theoretical perspective_ |   |   |
-| _e.g. ask for counter-arguments_ |   |   |
-| _e.g. ask for level of certainty_ |   |   |
-
-### C. Bias check
-
-| Aspect observed | Observed? | Evidence (excerpt, line, page) |
-| --- | --- | --- |
-| Overgeneralisation ("all", "everywhere") | ☐ Y ☐ N ☐ NA |   |
-| Overconfident language ("demonstrates", "eliminates") | ☐ Y ☐ N ☐ NA |   |
-| Uncritical agreement with the prompt (sycophancy) | ☐ Y ☐ N ☐ NA |   |
-| Dominance of one region, language or theoretical school | ☐ Y ☐ N ☐ NA |   |
-| Absence of voices, contexts or groups | ☐ Y ☐ N ☐ NA |   |
-| Stereotypes (gender, culture, profession, discipline) | ☐ Y ☐ N ☐ NA |   |
-| Oversimplification or misrepresentation of ideas, theories, sources or authors | ☐ Y ☐ N ☐ NA |   |
-| Homogenised style (loss of authorial voice) | ☐ Y ☐ N ☐ NA |   |
-
-> Y = yes, observed; N = not observed; NA = not assessed
+| **Overgeneralises**: Uses "all", "always", "across Europe" without evidence. | ☐ Seen ☐ Not seen |   |
+| **Sounds too certain**: Says "proves", "eliminates", "demonstrates" without supporting data. | ☐ Seen ☐ Not seen |   |
+| **Always agrees with you**: If you ask for the opposite, does it agree too? AI tends to please. | ☐ Seen ☐ Not seen |   |
+| **Leaves voices out**: Only authors or examples from one country, language or school of thought appear. | ☐ Seen ☐ Not seen |   |
+| **Uses stereotypes**: Links groups to roles or traits (gender, age, culture, profession). | ☐ Seen ☐ Not seen |   |
+| **Oversimplifies or erases your style**: Summarises ideas or authors poorly, or the text sounds generic. | ☐ Seen ☐ Not seen |   |
 
 ### D. Summary
 
-**Three main risks identified** _(order by severity)_
+**Main risk found** _The most serious problem you saw (one sentence)._ _E.g. Invented references and overconfidence._
 
 > 
 
-## Phase 4 · Reasoning: Critical Contextualisation
+## Phase 4 · Reasoning: Think carefully (Critical Contextualisation)
 
-_How do I interpret what I observed? Separate what I can claim from what I only infer._
+_What can I safely claim? Separate what you know from what you only assume._
 
 Text / record code: ____  Curator: ____  Date: ____
 
-### A. Observed, interpreted, uncertain
+### A. Three columns (write 2 to 3 sentences in each)
 
-| Observed (I can claim, with evidence) | Interpreted (I am inferring) | Uncertain (remaining doubts) |
+| Observed (I have evidence) | Interpreted (I am inferring) | Uncertain (I don't know) |
 | --- | --- | --- |
-|   |   |   |
-|   |   |   |
-|   |   |   |
+| _E.g. the 2 references do not exist_ | _E.g. burnout and workload seem related_ | _E.g. the actual percentage in Portugal_ |
 |   |   |   |
 
-### B. Assessment of the quality of the text
+### B. Quick assessment
 
-**Coherence: purpose, structure, development and conclusions (in a scientific text: question, aims, method, results and conclusion)**: ☐ Adequate  ☐ Partial  ☐ Inadequate
+**Is the text coherent?** _Are the purpose, structure and conclusions aligned? In a scientific text: the question, aims, method and conclusions._: ☐ Yes  ☐ Partly  ☐ No
 
-**Support for claims (sources, data, reasoning)**: ☐ Adequate  ☐ Partial  ☐ Inadequate
+**Does it support what it says with sources, data or sound arguments?** _Are there sources, data or reasoning behind the main claims?_: ☐ Yes  ☐ Partly  ☐ No
 
-**Limitations and uncertainties stated by the text, where the genre requires it**: ☐ Yes  ☐ Partly  ☐ No
+**Do I know enough about the topic to assess it?** _If "No", ask someone who knows the topic before deciding. It is the most honest and most common answer._: ☐ Yes  ☐ Partly  ☐ No
 
-**Do I have enough knowledge of the topic to assess the text?**: ☐ Yes  ☐ Partly  ☐ No: consult an expert
+**Did I check plagiarism and rights?** _Use your institution's similarity tool and check for copyrighted texts or images._: ☐ Yes  ☐ No  ☐ Pending
 
-### C. Integrity and rights
+### C. Note for readers (required if the text leaves your group)
 
-**Similarity with existing sources checked (plagiarism)**: ☐ Yes  ☐ No  ☐ Not applicable  ____
-
-**Authorship, intellectual property and privacy analysed**: ☐ Yes  ☐ No  ☐ Pending
-
-### D. Curatorial text (required if the text is shared beyond its creators)
-
-**Unresolved ambiguities, recorded as analytical evidence** _(up to 150 words)_
+**What remains unresolved** _3 to 5 lines on the doubts that remain. A stated doubt helps the reader._ _E.g. "The prevalence cited was not confirmed; the figures should be read with caution."_
 
 > 
 
-## Phase 5 · Reconciling: Human–Community Cross-Validation
+## Phase 5 · Reconciling: Compare with other people (Human–Community Cross-Validation)
 
-_What do others say? A second group, independent of the production, reviews the text and Phases 1 to 4._
+_What do people who did not create the text say? Ask at least one independent person (ideally a small group) to review the text and Phases 1 to 4._
 
 Text / record code: ____  Curator: ____  Date: ____
 
-### A. Second reviewing group
+### A. Who reviewed
 
-| Name or code | Role (peer, teacher, expert, community) | Independent of production? | Review date |
-| --- | --- | --- | --- |
-|   |   |   |   |
-|   |   |   |   |
-|   |   |   |   |
+> The review only counts as Reconciling if the person was not involved in creating the text. If the text involves students' work or other people's data, ask for consent.
 
-**Consent and safeguards**: ☐ Not applicable  ☐ Obtained  ☐ Pending
+| Name or code | Role | Involved in producing the text? |
+| --- | --- | --- |
+| _E.g. Colleague X_ | _E.g. peer; supervisor; expert_ |   |
+|   |   |   |
 
-**What the group reviewed**: ☐ Text  ☐ Record (P1)  ☐ Repository (P2)  ☐ Audit (P3)  ☐ Contextualisation (P4)
+### B. Outcome
 
-### B. Review outcome
+> If you only ask for free opinions, without comparing the text with someone independent, that is brainstorming and not Reconciling. Record it as such.
 
-**Where we agree**
-
-> 
-
-**Where we disagree**
+**Where do we agree?** _Points where you and the reviewer read things the same way._
 
 > 
 
-**What I need to reconsider**
+**Where do we disagree?** _Points with different readings, and why._ _E.g. The reviewer thinks the concept is poorly defined._
 
 > 
 
-### C. Divergences and resolution
+**What will I change?** _Changes or checks you decided to make after the discussion._
 
-| Point of divergence | Curator's position | Reviewer's position | Resolution |
-| --- | --- | --- | --- |
-|   |   |   |   |
-|   |   |   |   |
-|   |   |   |   |
+> 
 
-### D. Follow-up
+**Were the differences resolved?** _Keeping different readings is acceptable, as long as it is recorded._: ☐ Yes, we agreed  ☐ Two readings remain  ☐ We asked for a third opinion
 
-**Is it necessary to return to earlier phases?**: ☐ No  ☐ Yes  ____
+**Do we need to go back to earlier phases?** _If the review brought new evidence, go back to the relevant phase._: ☐ No  ☐ Yes  ____
 
-> If students or the curator only express free opinions, without comparing the text with an independent second group, this is not Reconciling: it is brainstorming or a survey of conceptions, and should be recorded as such.
+## Phase 6 · Reconstructing: Decide and record (Documented Curatorial Decision)
 
-## Phase 6 · Reconstructing: Documented Curatorial Decision
-
-_What do I decide? A decision grounded in Phases 1 to 5, owned by people and written down._
+_What do I decide? A decision based on the earlier phases, owned by people and written down._
 
 Text / record code: ____  Curator: ____  Date: ____
 
 ### A. Decision
 
-**Decision about the text**: ☐ Use  ☐ Use with contextualisation  ☐ Adapt  ☐ Do not use
+**Choose one**
 
-**Intended use** _(where, for what, for which audience)_
+- ☐ **Use**: use the text as it is; only if no phase found problems
+- ☐ **Use with contextualisation**: use the text with a note explaining its origin (AI) and limits
+- ☐ **Adapt**: keep some parts and rewrite or correct the rest
+- ☐ **Do not use**: reject the text; record the reason
 
-> 
-
-**Justification** _(decisive evidence from Phases 1 to 5)_
-
-> 
-
-### B. Conditions before use
-
-**Conditions met**: ☐ References and sources checked at source, where present (they exist and say what the text claims)  ☐ Factual claims and data checked  ☐ Voice and authorship ensured (text rewritten and owned by the signatories)  ☐ Copyright, privacy and consents addressed  ☐ Full final review of the text
-
-**What will be changed or rejected** _(parts of the text, figures, data, references)_
+**Why?** _2 to 3 sentences with the evidence from Phases 1 to 5. If you chose "Adapt", say what changes._ _E.g. There are non-existent references and overconfidence; the review confirmed it._
 
 > 
+
+### B. Before use, did you confirm?
+
+**Tick what you have done**: ☐ References checked at source, where present  ☐ Data and facts checked  ☐ Text rewritten and owned by the signatory  ☐ Copyright and privacy addressed  ☐ Final review of the full text
 
 ### C. Use statement
 
-**Statement text** _(template: "I used [tool, version, date] for [purpose]. The content and references were checked and are my responsibility.")_
+**Statement text** _A short sentence to accompany the text. Adapt it to your case or use the "Generate statement" button._ _E.g. "I used [tool, version, date] for [purpose]. I checked the content and references and take responsibility for the text."_
 
 > 
 
-### D. Repository and learning
-
-**Update to the Phase 2 repository**
+**Next time I will do differently** _One lesson for the next time you use AI._ _E.g. Provide checked sources in the request._
 
 > 
 
-**Next time I use AI I will do differently**
+### D. Signature
+
+**Curator**
 
 > 
 
-### E. Responsibility
-
-**Responsible curator**
-
-> 
-
-**Reviewer(s) / supervisor**
+**Reviewer / supervisor**
 
 > 
 
 **Date**
-
-> 
-
-**Signature (typed name or initials)**
 
 > 
 

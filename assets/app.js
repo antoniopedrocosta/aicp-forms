@@ -2,7 +2,7 @@
 (function () {
   "use strict";
   const S = window.AICP_SCHEMA;
-  const STORE = "aicp-forms-v1";
+  const STORE = "aicp-forms-v2";
   const UI = {
     lang: { pt: "PT", en: "EN", es: "ES", it: "IT" },
     exportMd: { pt: "Exportar Markdown", en: "Export Markdown", es: "Exportar Markdown", it: "Esporta Markdown" },
@@ -18,6 +18,7 @@
     privacy: { pt: "Os dados ficam apenas neste navegador. Nada é enviado para servidores.", en: "Data stays in this browser only. Nothing is sent to any server.", es: "Los datos quedan solo en este navegador. No se envía nada a ningún servidor.", it: "I dati restano solo in questo browser. Nulla viene inviato a server." },
     refs: { pt: "Referências", en: "References", es: "Referencias", it: "Riferimenti bibliografici" },
     words: { pt: "palavras", en: "words", es: "palabras", it: "parole" },
+    ex: { pt: "Ex.:", en: "E.g.", es: "P. ej.:", it: "Es.:" },
     detail: { pt: "Especificar", en: "Specify", es: "Especificar", it: "Specificare" },
     badFile: { pt: "Ficheiro inválido.", en: "Invalid file.", es: "Archivo no válido.", it: "File non valido." },
     phases: { pt: "Fases", en: "Phases", es: "Fases", it: "Fasi" },
@@ -34,11 +35,9 @@
     insert: { pt: "Colocar na Fase 6", en: "Insert in Phase 6", es: "Colocar en la Fase 6", it: "Inserisci nella Fase 6" },
     close: { pt: "Fechar", en: "Close", es: "Cerrar", it: "Chiudi" },
     emptyFields: { pt: "Campos por preencher", en: "Empty fields", es: "Campos por completar", it: "Campi da compilare" },
-    p5ok: { pt: "há pelo menos um revisor independente e o grupo reviu o texto e pelo menos uma das Fases 1 a 4.", en: "there is at least one independent reviewer and the group reviewed the text and at least one of Phases 1 to 4.", es: "hay al menos un revisor independiente y el grupo revisó el texto y al menos una de las Fases 1 a 4.", it: "c'è almeno un revisore indipendente e il gruppo ha rivisto il testo e almeno una delle Fasi 1-4." },
+    p5ok: { pt: "há pelo menos um revisor identificado que não participou na produção do texto.", en: "there is at least one identified reviewer who was not involved in producing the text.", es: "hay al menos un revisor identificado que no participó en la producción del texto.", it: "c'è almeno un revisore identificato che non ha partecipato alla produzione del testo." },
     p5notok: { pt: "ainda não cumpre o requisito.", en: "requirement not yet met.", es: "todavía no cumple el requisito.", it: "non soddisfa ancora il requisito." },
     p5noIndep: { pt: "Falta um revisor identificado e independente da produção.", en: "An identified reviewer independent of production is missing.", es: "Falta un revisor identificado e independiente de la producción.", it: "Manca un revisore identificato e indipendente dalla produzione." },
-    p5noArticle: { pt: "O grupo ainda não reviu o texto.", en: "The group has not yet reviewed the text.", es: "El grupo todavía no ha revisado el texto.", it: "Il gruppo non ha ancora rivisto il testo." },
-    p5noPhases: { pt: "O grupo ainda não reviu nenhuma das Fases 1 a 4.", en: "The group has not yet reviewed any of Phases 1 to 4.", es: "El grupo todavía no ha revisado ninguna de las Fases 1 a 4.", it: "Il gruppo non ha ancora rivisto nessuna delle Fasi 1-4." },
     conditions: { pt: "Condições da Fase 6 cumpridas", en: "Phase 6 conditions met", es: "Condiciones de la Fase 6 cumplidas", it: "Condizioni della Fase 6 soddisfatte" },
     decision: { pt: "Decisão", en: "Decision", es: "Decisión", it: "Decisione" },
     noDecision: { pt: "por tomar", en: "not yet taken", es: "pendiente", it: "da prendere" }
@@ -76,8 +75,14 @@
 
   /* ---------- field renderers ---------- */
   function fieldLabel(f, id) {
-    return el("label", { for: id, class: "flabel" }, t(f.label), f.hint ? el("span", { class: "hint" }, t(f.hint)) : null);
+    return el("label", { for: id, class: "flabel" }, t(f.label), helpBits(f));
   }
+  function helpBits(f) {
+    return [f.hint ? el("span", { class: "hint" }, t(f.hint)) : null, f.ex ? el("span", { class: "ex" }, t(UI.ex) + " " + t(f.ex)) : null];
+  }
+  const helpText = (f) => [f.hint ? t(f.hint) : "", f.ex ? t(UI.ex) + " " + t(f.ex) : ""].filter(Boolean).join(" ");
+  const rowLabelText = (f, r) => t(f.rowLabels[r]) + (f.rowHints && f.rowHints[r] ? ": " + t(f.rowHints[r]) : "");
+  const optText = (f, i) => t(f.options[i]) + (f.optionHints && f.optionHints[i] ? " (" + t(f.optionHints[i]) + ")" : "");
 
   function renderField(sec, blk, f) {
     const k = key(sec.id, blk.id, f.id);
@@ -94,7 +99,7 @@
       ta.value = get(k, ""); upd(ta.value);
       wrap.append(fieldLabel(f, id), ta); if (counter) wrap.append(counter);
     } else if (f.type === "radio" || f.type === "check") {
-      const fs = el("fieldset", {}, el("legend", { class: "flabel" }, t(f.label), f.hint ? el("span", { class: "hint" }, t(f.hint)) : null));
+      const fs = el("fieldset", {}, el("legend", { class: "flabel" }, t(f.label), helpBits(f)));
       const opts = el("div", { class: "opts" });
       const cur = get(k, f.type === "check" ? [] : null);
       const detailK = key(k, "detail");
@@ -111,7 +116,7 @@
             showDetail();
           }
         });
-        opts.append(el("span", { class: "opt" }, inp, el("label", { for: oid }, t(o))));
+        opts.append(el("span", { class: "opt" + (f.optionHints ? " opt-wide" : "") }, inp, el("label", { for: oid }, t(o), f.optionHints && f.optionHints[i] ? el("span", { class: "ohint" }, t(f.optionHints[i])) : null)));
       });
       fs.append(opts);
       if (detail) fs.append(detail);
@@ -135,7 +140,7 @@
       f.columns.forEach((c, ci) => {
         const ck = key(k, r, ci);
         const cid = id + "-" + r + "-" + ci;
-        if (fixed && ci === 0) { tr.append(el("th", { scope: "row" }, t(f.rowLabels[r]))); return; }
+        if (fixed && ci === 0) { tr.append(el("th", { scope: "row" }, t(f.rowLabels[r]), f.rowHints && f.rowHints[r] ? el("span", { class: "rhint" }, t(f.rowHints[r])) : null)); return; }
         if (f.type === "radioTable" && ci === 1) {
           const cell = el("td", { class: "radiocell" });
           f.options.forEach((o, oi) => {
@@ -150,7 +155,7 @@
             el("option", { value: "" }, "—"), sel.map((o, oi) => el("option", { value: oi, selected: get(ck, null) === oi }, t(o))));
           tr.append(el("td", {}, s)); return;
         }
-        const ph = f.placeholders && ci === 0 && f.placeholders[r] ? t(f.placeholders[r]) : "";
+        const ph = f.placeholders && ci === 0 && f.placeholders[r] ? t(f.placeholders[r]) : (r === 0 && f.colExamples && f.colExamples[ci] ? t(f.colExamples[ci]) : "");
         const ta = el("textarea", { id: cid, rows: 2, "aria-label": t(c), placeholder: ph, oninput: (e) => set(ck, e.target.value) });
         ta.value = get(ck, "");
         tr.append(el("td", {}, ta));
@@ -209,8 +214,8 @@
       sec.blocks.forEach((blk) => {
         const b = el("div", { class: "block" });
         if (blk.title) b.append(el("h3", {}, t(blk.title)));
-        blk.fields.forEach((f) => b.append(renderField(sec, blk, f)));
         if (blk.note) b.append(el("p", { class: "note" }, t(blk.note)));
+        blk.fields.forEach((f) => b.append(renderField(sec, blk, f)));
         sh.append(b);
       });
       main.append(sh);
@@ -228,7 +233,7 @@
   const fileBase = () => (get("id.id.code", "") || "AICP").replace(/[^\w.-]+/g, "_");
 
   function exportJson() {
-    download(fileBase() + ".json", JSON.stringify({ schema: "aicp-forms-v1", lang: state.lang, exported: new Date().toISOString(), values: state.v }, null, 2), "application/json");
+    download(fileBase() + ".json", JSON.stringify({ schema: "aicp-forms-v2", lang: state.lang, exported: new Date().toISOString(), values: state.v }, null, 2), "application/json");
   }
   function importJson(e) {
     const file = e.target.files[0]; if (!file) return;
@@ -245,6 +250,7 @@
       out.push("## " + t(sec.title) + (sec.subtitle ? ": " + t(sec.subtitle) : ""), "");
       sec.blocks.forEach((blk) => {
         if (blk.title) out.push("### " + t(blk.title), "");
+        if (blk.note) out.push("> " + t(blk.note), "");
         blk.fields.forEach((f) => {
           const k = key(sec.id, blk.id, f.id);
           if (f.type === "text" || f.type === "date" || f.type === "textarea") {
@@ -260,7 +266,7 @@
             out.push("| " + f.columns.map(t).join(" | ") + " |", "|" + f.columns.map(() => " --- |").join(""));
             for (let r = 0; r < n; r++) {
               const cells = f.columns.map((c, ci) => {
-                if (fixed && ci === 0) return t(f.rowLabels[r]);
+                if (fixed && ci === 0) return mdEsc(rowLabelText(f, r));
                 const v = get(key(k, r, ci), f.type === "radioTable" || (f.selectCols && f.selectCols[ci]) ? null : "");
                 if (f.type === "radioTable" && ci === 1) return v == null ? "" : t(f.options[v]);
                 if (f.selectCols && f.selectCols[ci]) return v == null ? "" : t(f.selectCols[ci][v]);
@@ -271,7 +277,6 @@
             out.push("");
           }
         });
-        if (blk.note) out.push("> " + t(blk.note), "");
       });
     });
     out.push("---", "", t(S.meta.references), "");
@@ -285,7 +290,7 @@
   }
   function cellText(f, k, r, ci) {
     const fixed = f.fixedRows || f.type === "radioTable";
-    if (fixed && ci === 0) return t(f.rowLabels[r]);
+    if (fixed && ci === 0) return rowLabelText(f, r);
     const v = get(key(k, r, ci), null);
     if (f.type === "radioTable" && ci === 1) return v == null ? "" : t(f.options[v]);
     if (f.selectCols && f.selectCols[ci]) return v == null ? "" : t(f.selectCols[ci][v]);
@@ -323,9 +328,7 @@
       const name = String(get(key(k, r, 0), "") || "").trim();
       if (name && get(key(k, r, 2), null) === 0) indep++;
     }
-    const reviewed = get("p5.a.reviewed", []);
-    const article = reviewed.includes(0), phases = reviewed.filter((i) => i > 0).length;
-    return { indep, article, phases, ok: indep > 0 && article && phases > 0 };
+    return { indep, ok: indep > 0 };
   }
 
   function showStatus() {
@@ -346,9 +349,7 @@
     });
     const p5 = phase5Check();
     const p5msg = p5.ok ? t(UI.p5ok) : t(UI.p5notok)
-      + (p5.indep ? "" : " " + t(UI.p5noIndep))
-      + (p5.article ? "" : " " + t(UI.p5noArticle))
-      + (p5.phases ? "" : " " + t(UI.p5noPhases));
+      + (p5.indep ? "" : " " + t(UI.p5noIndep));
     const conds = get("p6.b.conditions", []).length;
     const decision = get("p6.a.decision", null);
     body.append(list,
@@ -363,13 +364,14 @@
   function buildStatement() {
     const blank = (v, ph) => (v && String(v).trim() ? String(v).trim() : "[" + ph + "]");
     const pt = state.lang === "pt", es = state.lang === "es", it = state.lang === "it";
-    const p1 = S.sections.find((s) => s.id === "p1");
-    const typeF = p1.blocks[0].fields[0], degF = p1.blocks[0].fields[1];
-    const typeV = get("p1.a.type", null);
-    const typeTxt = typeV == null ? null : (typeV === typeF.options.length - 1 ? get("p1.a.type.detail", "") : t(typeF.options[typeV]));
+    const fld = (sid, bid, fid) => S.sections.find((s) => s.id === sid).blocks.find((b) => b.id === bid).fields.find((f) => f.id === fid);
+    const typeF = fld("id", "id", "type"), degF = fld("p1", "a", "degree");
+    const typeV = get("id.id.type", null);
+    const typeTxt = typeV == null ? null : (typeV === typeF.options.length - 1 ? get("id.id.type.detail", "") : t(typeF.options[typeV]));
     const degV = get("p1.a.degree", null);
-    const tool = get("p1.b.tool", ""), model = get("p1.b.model", ""), when = get("p1.b.when", "");
-    const docs = get("p1.c.docs", null) === 1 ? get("p1.c.docs.detail", "") : null;
+    const degTxt = degV == null ? "" : t(degF.options[degV]).toLowerCase() + (degV === 1 && get("p1.a.degree.detail", "") ? " (" + get("p1.a.degree.detail", "") + ")" : "");
+    const tool = get("p1.a.tool", ""), when = get("p1.a.when", "");
+    const docs = get("p1.a.docs", null) === 1 ? get("p1.a.docs.detail", "") : null;
     // Phase 2 verification
     const cf = S.sections.find((s) => s.id === "p2").blocks[1].fields[0];
     let nClaims = 0, nExists = 0, nSays = 0;
@@ -395,8 +397,8 @@
 
     const s = [];
     if (pt) {
-      s.push("Na preparação do texto (" + blank(typeTxt && typeTxt.toLowerCase(), "tipo de texto") + "), foi utilizado o " + blank(tool, "ferramenta e fornecedor") + " (modelo " + blank(model, "modelo e versão") + "), em " + blank(when, "data") + ".");
-      if (degV != null) s.push("Grau de produção por IA: " + t(degF.options[degV]).toLowerCase() + ".");
+      s.push("Na preparação do texto (" + blank(typeTxt && typeTxt.toLowerCase(), "tipo de texto") + "), foi utilizado o " + blank(tool, "ferramenta e versão") + ", em " + blank(when, "data") + ".");
+      if (degV != null) s.push("Parte gerada pela IA: " + degTxt + ".");
       s.push("A ferramenta foi usada para " + "[finalidades: por exemplo, redação de uma primeira versão, revisão de linguagem, tradução, pesquisa bibliográfica]" + ".");
       if (docs) s.push("Foram fornecidos à ferramenta os seguintes documentos: " + docs + ".");
       s.push("A utilização foi auditada com o AI Curatorial Protocol (AICP; Costa et al., 2026), incluindo o registo de proveniência"
@@ -408,8 +410,8 @@
       s.push(allConds ? "O conteúdo e as referências foram verificados e são da responsabilidade de quem assina."
                       : "[Concluir as condições da Fase 6 antes de afirmar:] O conteúdo e as referências foram verificados e são da responsabilidade de quem assina.");
     } else if (it) {
-      s.push("Nella preparazione del testo (" + blank(typeTxt && typeTxt.toLowerCase(), "tipo di testo") + ") è stato utilizzato " + blank(tool, "strumento e fornitore") + " (modello " + blank(model, "modello e versione") + "), in data " + blank(when, "data") + ".");
-      if (degV != null) s.push("Grado di produzione da parte dell'IA: " + t(degF.options[degV]).toLowerCase() + ".");
+      s.push("Nella preparazione del testo (" + blank(typeTxt && typeTxt.toLowerCase(), "tipo di testo") + ") è stato utilizzato " + blank(tool, "strumento e versione") + ", in data " + blank(when, "data") + ".");
+      if (degV != null) s.push("Parte generata dall'IA: " + degTxt + ".");
       s.push("Lo strumento è stato utilizzato per " + "[finalità: per esempio, stesura di una prima versione, revisione linguistica, traduzione, ricerca bibliografica]" + ".");
       if (docs) s.push("Allo strumento sono stati forniti i seguenti documenti: " + docs + ".");
       s.push("L'uso è stato sottoposto ad audit con l'AI Curatorial Protocol (AICP; Costa et al., 2026), comprendente il registro di provenienza"
@@ -421,8 +423,8 @@
       s.push(allConds ? "Il contenuto e i riferimenti sono stati verificati e sono sotto la responsabilità di chi firma."
                       : "[Completare le condizioni della Fase 6 prima di affermare:] Il contenuto e i riferimenti sono stati verificati e sono sotto la responsabilità di chi firma.");
     } else if (es) {
-      s.push("En la preparación del texto (" + blank(typeTxt && typeTxt.toLowerCase(), "tipo de texto") + ") se utilizó " + blank(tool, "herramienta y proveedor") + " (modelo " + blank(model, "modelo y versión") + "), en " + blank(when, "fecha") + ".");
-      if (degV != null) s.push("Grado de producción por IA: " + t(degF.options[degV]).toLowerCase() + ".");
+      s.push("En la preparación del texto (" + blank(typeTxt && typeTxt.toLowerCase(), "tipo de texto") + ") se utilizó " + blank(tool, "herramienta y versión") + ", en " + blank(when, "fecha") + ".");
+      if (degV != null) s.push("Parte generada por la IA: " + degTxt + ".");
       s.push("La herramienta se utilizó para " + "[finalidades: por ejemplo, redacción de una primera versión, revisión lingüística, traducción, búsqueda bibliográfica]" + ".");
       if (docs) s.push("Se proporcionaron a la herramienta los siguientes documentos: " + docs + ".");
       s.push("El uso fue auditado con el AI Curatorial Protocol (AICP; Costa et al., 2026), incluyendo el registro de procedencia"
@@ -434,8 +436,8 @@
       s.push(allConds ? "El contenido y las referencias fueron verificados y son responsabilidad de quienes firman."
                       : "[Completar las condiciones de la Fase 6 antes de afirmar:] El contenido y las referencias fueron verificados y son responsabilidad de quienes firman.");
     } else {
-      s.push("In preparing this text (" + blank(typeTxt && typeTxt.toLowerCase(), "type of text") + "), " + blank(tool, "tool and provider") + " (model " + blank(model, "model and version") + ") was used on " + blank(when, "date") + ".");
-      if (degV != null) s.push("Degree of AI production: " + t(degF.options[degV]).toLowerCase() + ".");
+      s.push("In preparing this text (" + blank(typeTxt && typeTxt.toLowerCase(), "type of text") + "), " + blank(tool, "tool and version") + " was used on " + blank(when, "date") + ".");
+      if (degV != null) s.push("Part generated by AI: " + degTxt + ".");
       s.push("The tool was used to " + "[purposes: e.g. drafting a first version, language editing, translation, literature search]" + ".");
       if (docs) s.push("The following documents were provided to the tool: " + docs + ".");
       s.push("Its use was audited with the AI Curatorial Protocol (AICP; Costa et al., 2026), including a provenance record"
@@ -502,15 +504,16 @@
       if (sec.phase) b.push(wP(wRun(t(UI.articleCode) + ": ", { sz: 18, color: "5B6470" }) + wRun(get("id.id.code", "") || "—", { b: true, sz: 18 }) + wRun("    " + t(UI.curator) + ": ", { sz: 18, color: "5B6470" }) + wRun(get("id.id.curator", "") || "—", { b: true, sz: 18 }), { after: 120 }));
       sec.blocks.forEach((blk) => {
         if (blk.title) b.push(wP(wRun(t(blk.title).toUpperCase(), { b: true, color: hex, sz: 20 }), { before: 160, after: 80 }));
+        if (blk.note) b.push(wP(wRun(t(blk.note), { i: true, color: "5B6470", sz: 18 }), { after: 120 }));
         blk.fields.forEach((f) => {
           const k = key(sec.id, blk.id, f.id);
           if (["text", "date", "textarea"].includes(f.type)) {
-            b.push(wP(wRun(t(f.label), { b: true, sz: 20 }) + (f.hint ? wRun("  " + t(f.hint), { i: true, color: "5B6470", sz: 17 }) : ""), { after: 20 }));
+            b.push(wP(wRun(t(f.label), { b: true, sz: 20 }) + (helpText(f) ? wRun("  " + helpText(f), { i: true, color: "5B6470", sz: 17 }) : ""), { after: 20 }));
             b.push(wP(wRun(get(k, "") || " ", { sz: 20 }), { after: 140 }));
           } else if (f.type === "radio" || f.type === "check") {
             const cur = get(k, f.type === "check" ? [] : null);
             const det = get(key(k, "detail"), "");
-            const opts = f.options.map((o, i) => ((f.type === "check" ? cur.includes(i) : cur === i) ? "☒ " : "☐ ") + t(o)).join("     ");
+            const opts = f.options.map((o, i) => ((f.type === "check" ? cur.includes(i) : cur === i) ? "☒ " : "☐ ") + optText(f, i)).join(f.optionHints ? "\n" : "     ");
             b.push(wP(wRun(t(f.label), { b: true, sz: 20 }), { after: 20 }));
             b.push(wP(wRun(opts + (det ? "  (" + det + ")" : ""), { sz: 20 }), { after: 140 }));
           } else {
@@ -525,7 +528,6 @@
             b.push(wTable(f.columns.map(t), rows));
           }
         });
-        if (blk.note) b.push(wP(wRun(t(blk.note), { i: true, color: "5B6470", sz: 18 }), { after: 120 }));
       });
     });
     b.push(wP(wRun(t(UI.refs), { b: true, sz: 20 }), { pageBreak: true }));
