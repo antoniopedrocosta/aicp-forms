@@ -101,3 +101,5 @@ footer h2 { font-size: 14px; }
 
 .radiocell .opt { margin-right: 12px; }
 .note { margin-top: 0; }
+
+:lang(ko) .hint, :lang(ko) .ohint, :lang(ko) .rhint, :lang(ko) .prompt, :lang(ko) .note, :lang(ko) .lede, :lang(ko) textarea::placeholder, :lang(ko) input::placeholder { font-style: normal; }

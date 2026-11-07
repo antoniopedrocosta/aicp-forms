@@ -1,26 +1,30 @@
 # AI Curatorial Protocol (AICP)
 
-**Curation forms for AI-generated texts**
+**Curation forms for AI-generated content: text, image and video**
 
-Six short forms, one per phase, to attach to any text produced with generative AI (article, academic assignment, report, teaching material, outreach text, among others). Each field has a help note and, where useful, an example. An extension of the 5R model (Bain et al., 2002) with a new phase, Reconciling (Costa et al., 2026).
+Six short forms, one per phase, to attach to any content produced with generative AI: texts (article, academic assignment, report, teaching material, outreach), images and videos. Choose the type of content first; the fields adjust. Each field has a help note and, where useful, an example. An extension of the 5R model (Bain et al., 2002) with a new phase, Reconciling (Costa et al., 2026).
 
 ## How to use
 
-1. Complete the forms in order (Phases 1 to 6). You may go back to an earlier phase when new information emerges; record that return.
-2. The help notes and examples are guidance only. The examples are fictional (a text about burnout in nurses).
+1. Start by stating the type of content (text, image, video or mixed). Then complete the forms in order (Phases 1 to 6). You may go back to an earlier phase when new information emerges; record that return.
+2. The help notes and examples are guidance only. The examples are fictional (content about burnout in nurses).
 3. "Yes" and "No" describe what was done; they are not right or wrong. If you do not know, write "Don't know": it is a valid answer.
-4. Keep the original generated text and attach these forms to the final text. Do not write personal data in the fields.
-5. The decision and the final text always belong to the person who signs, never to the AI.
+4. Keep the original generated output (text, image or video) and attach these forms to the final version. Do not write personal data in the fields.
+5. The decision and the final content always belong to the person who signs, never to the AI.
 
 ## Identification
 
-**Text analysed** _Title or topic of the AI-generated text you will assess._ _E.g. Background section on burnout in nurses_
+**Type of content** _Choose this first: the following fields adjust to the type of content._: ☐ Text  ☐ Image  ☐ Video  ☐ Mixed (text with image or video)
+
+**Content analysed** _Title or topic of the AI-generated content you will assess._ _E.g. Background section on burnout in nurses; illustration for a poster_
 
 > 
 
-**Type of text** _The type of text changes what needs checking: a scientific text requires references; teaching material requires accuracy and fit with the learners._: ☐ Scientific or academic  ☐ Teaching material  ☐ Outreach or journalism  ☐ Institutional or professional  ☐ Creative  ☐ Other  ____
+**[Text only] Type of text** _The type of text changes what needs checking: a scientific text requires references; teaching material requires accuracy and fit with the learners._: ☐ Scientific or academic  ☐ Teaching material  ☐ Outreach or journalism  ☐ Institutional or professional  ☐ Creative  ☐ Other  ____
 
-**Record code** _A short code linking the forms to the text and to the stored original._ _E.g. AICP-2026-001_
+**[Image and video only] Type of image or video** _A photorealistic image needs more care than a drawing, because it can be taken as real._: ☐ Illustration or drawing  ☐ Photorealistic  ☐ Diagram, chart or infographic  ☐ Explainer or teaching video  ☐ Animation  ☐ Other  ____
+
+**Record code** _A short code linking the forms to the content and to the stored original._ _E.g. AICP-2026-001_
 
 > 
 
@@ -32,7 +36,7 @@ Six short forms, one per phase, to attach to any text produced with generative A
 
 > 
 
-**What will you use the text for?** _The intended use changes the rigour required._ _E.g. journal submission; coursework; class material; background reading_
+**What will you use the content for?** _The intended use changes the rigour required._ _E.g. journal submission; coursework; class material; poster; social media_
 
 > 
 
@@ -49,13 +53,13 @@ Six short forms, one per phase, to attach to any text produced with generative A
 | **5 · Reconciling: What do others say?** |   |
 | **6 · Reconstructing: What do I decide?** |   |
 
-## Phase 1 · Reporting: Record the origin of the text (Provenance Record)
+## Phase 1 · Reporting: Record the origin of the content (Provenance Record)
 
-_How was this text made? Note what you know about how the AI produced it._
+_How was this content made? Note what you know about how the AI produced it._
 
-Text / record code: ____  Curator: ____  Date: ____
+Content / record code: ____  Curator: ____  Date: ____
 
-### Origin of the text
+### Origin of the content
 
 **1. Tool and version** _Name of the tool and, if shown, the version or model (usually visible on screen or in settings). State whether web search was on._ _E.g. ChatGPT, model shown on screen, web search off_
 
@@ -65,41 +69,57 @@ Text / record code: ____  Curator: ____  Date: ____
 
 > 
 
-**3. Request made (prompt)** _Copy and paste the request exactly as you wrote it, including earlier instructions in the same conversation. If you made several attempts, say how many and which one you used._ _E.g. "Write a paragraph on burnout in Portuguese nurses, with references."_
+**3. Request made (prompt)** _Copy and paste the request exactly as you wrote it, including earlier instructions in the same conversation. If you made several attempts, say how many and which one you used._ _E.g. "Write a paragraph on burnout in Portuguese nurses, with references." / "Illustration of a tired nurse at the end of a shift, watercolour style."_
 
 > 
 
-**4. Which part was generated by AI?** _"Rewrite": the original text was yours and the AI only improved it. If you choose "Part", say which._: ☐ All of it  ☐ Part  ☐ Rewrite of my own text  ☐ Don't know  ____
+**4. Which part was generated by AI?** _"Transformation": the original (text, image or video) was yours and the AI altered or improved it. If you choose "Part", say which._: ☐ All of it  ☐ Part  ☐ Transformation of my own material  ☐ Don't know  ____
 
-**5. Did you give the AI documents or sources?** _"Yes" if you attached files or pasted texts. If you asked for references without giving sources, the AI may have invented them._: ☐ No  ☐ Yes  ____
+**5. Did you give the AI documents, images or other sources?** _"Yes" if you attached files, pasted texts or gave reference images. If you asked for references without giving sources, the AI may have invented them. If you used other people's images, mind the rights._: ☐ No  ☐ Yes  ____
 
-**6. Did you use personal or confidential data?** _E.g. participants' names, interviews, unpublished texts. If "Yes", say how you protected them._: ☐ No  ☐ Yes  ____
+**6. Did you use personal or confidential data?** _E.g. participants' names, interviews, unpublished texts, photographs or voices of real people. If "Yes", say how you protected them._: ☐ No  ☐ Yes  ____
 
-**7. Where did you store the original text?** _Always keep the original, unedited version (file or link)._ _E.g. folder AICP-001/original.docx_
+**7. Where did you store the original?** _Always keep the original generated version, unedited (file or link)._ _E.g. folder AICP-001/original_
 
 > 
 
-**8. What can you not know?** _Stating what is not known is part of rigour._ _E.g. which texts the AI learned from; which sources it used_
+**8. What can you not know?** _Stating what is not known is part of rigour._ _E.g. which texts or images the AI learned from; which sources it used_
+
+> 
+
+### [Image and video only] Image and video
+
+**9. Generation settings** _Aspect ratio, resolution, style, negative prompt and seed (if the tool shows them)._ _E.g. 16:9, watercolour style, no text in the image_
+
+> 
+
+**10. How many generations before choosing this one?** _Choosing the best of many is also your decision; record it._ _E.g. 8 images; I chose the 5th_
+
+> 
+
+**11. Does it carry a watermark or content credentials?** _Some tools mark the file as AI-generated, with a visible mark or in the metadata (for example, Content Credentials). Do not remove them._: ☐ Yes, visible  ☐ Yes, in the metadata  ☐ No  ☐ Don't know
+
+**[Video only] 12. Length, voice and music** _Length of the video. Were the voice and music AI-generated, recorded by you or taken from a library? Under what licence?_ _E.g. 2 min; AI-generated voice; music from a free library (CC BY)_
 
 > 
 
 ## Phase 2 · Relating: Compare with trusted sources (Cultural Anchoring)
 
-_What do the sources I know say? Compare the text with reliable sources on the topic._
+_What do the sources I know say? Compare the content with reliable sources on the topic._
 
-Text / record code: ____  Curator: ____  Date: ____
+Content / record code: ____  Curator: ____  Date: ____
 
 ### A. Comparison sources (choose 2 to 3 reliable sources)
 
-> If the text cites no sources (for example, a teaching or outreach text), compare it with reference sources on the topic: textbook, curriculum, official document.
+> If the content cites no sources (for example, teaching material or an image), compare it with reference sources on the topic: textbook, curriculum, official document, real photographs or images.
 
 | Source used for comparison | Where you found it |
 | --- | --- |
-| _E.g. key textbook in the field; recent articles on the topic_ | _E.g. library, Scopus, SciELO, Google Scholar_ |
+| _E.g. key textbook in the field; recent articles; photographs of hospital wards_ | _E.g. library, Scopus, SciELO, Google Scholar, photo archive_ |
 |   |   |
 |   |   |
 
-### B. Check references and claims (start with the most important)
+### [Text only] B. Check references and claims (start with the most important)
 
 > Search for the work by title and DOI. "Says what the text claims?": open the source and confirm the idea. Before using the text, all references must be checked (Phase 6).
 
@@ -110,13 +130,24 @@ Text / record code: ____  Curator: ____  Date: ____
 |   |   |   |   |
 |   |   |   |   |
 
+### [Image and video only] B. Check what the image or video shows
+
+> Look for details that may be wrong: anatomy, equipment, uniforms, places, maps, dates, cultural symbols and text written inside the image.
+
+| Element shown | Is it correct? | Source used to compare |
+| --- | --- | --- |
+| _E.g. the nurse's uniform and equipment_ |   | _E.g. photographs of Portuguese hospitals_ |
+|   |   |   |
+|   |   |   |
+|   |   |   |
+
 ### C. Overall
 
-**What agrees with the sources?** _Ideas in the text that the sources confirm._
+**What agrees with the sources?** _Ideas or elements of the content that the sources confirm._
 
 > 
 
-**What is missing?** _Important authors, languages, countries or perspectives that do not appear._ _E.g. studies in Portuguese; Latin American authors_
+**What is missing?** _Important authors, languages, countries, perspectives or people that do not appear._ _E.g. studies in Portuguese; male or older nurses_
 
 > 
 
@@ -126,24 +157,24 @@ Text / record code: ____  Curator: ____  Date: ____
 
 _What do I observe and how do I respond? Look for problems and see what happens if you change the request._
 
-Text / record code: ____  Curator: ____  Date: ____
+Content / record code: ____  Curator: ____  Date: ____
 
 ### A. First reaction
 
-**What surprises, troubles or convinces you?** _Write your spontaneous reaction, before analysing._ _E.g. It convinced me because it has figures, but I don't recognise them._
+**What surprises, troubles or convinces you?** _Write your spontaneous reaction, before analysing._ _E.g. It convinced me because it has figures, but I don't recognise them. / The image is attractive, but all the nurses are young._
 
 > 
 
 ### B. Test: change the request (ask the AI again, changing one thing)
 
-> You can change the country, the theory or the language, or ask for the opposite view. If the response changes a lot, the text is not stable.
+> You can change the country, the theory, the language or the people depicted, or ask for the opposite view. If the response changes a lot, the result is not stable.
 
 | What changed in the request | What changed in the response |
 | --- | --- |
-| _E.g. asked for counter-arguments_ | _E.g. the text began to acknowledge limitations_ |
+| _E.g. asked for counter-arguments; asked for nurses of various ages_ | _E.g. the text began to acknowledge limitations_ |
 |   |   |
 
-### C. Warning signs
+### [Text only] C. Warning signs in the text
 
 | Warning sign | Answer | Where (excerpt) |
 | --- | --- | --- |
@@ -154,9 +185,20 @@ Text / record code: ____  Curator: ____  Date: ____
 | **Uses stereotypes**: Links groups to roles or traits (gender, age, culture, profession). | ☐ Seen ☐ Not seen |   |
 | **Oversimplifies or erases your style**: Summarises ideas or authors poorly, or the text sounds generic. | ☐ Seen ☐ Not seen |   |
 
+### [Image and video only] C. Warning signs in the image or video
+
+| Warning sign | Answer | Where (moment or area) |
+| --- | --- | --- |
+| **Stereotyped depiction**: Who appears in each role? E.g. male doctors and female nurses; a single ethnicity or age. | ☐ Seen ☐ Not seen |   |
+| **People and places all alike**: Repeated faces, bodies and settings, or from a single culture. | ☐ Seen ☐ Not seen |   |
+| **Visual errors**: Hands, illegible text, impossible objects or proportions; in video, movements or sounds that do not match. | ☐ Seen ☐ Not seen |   |
+| **Misleading realism**: Looks like a real photograph or footage of something that did not happen. | ☐ Seen ☐ Not seen |   |
+| **Imitates an artist, brand or character**: Recognisable style of an author, logos or protected characters. | ☐ Seen ☐ Not seen |   |
+| **Resemblance to a real person**: Someone could be recognised by face or voice. | ☐ Seen ☐ Not seen |   |
+
 ### D. Summary
 
-**Main risk found** _The most serious problem you saw (one sentence)._ _E.g. Invented references and overconfidence._
+**Main risk found** _The most serious problem you saw (one sentence)._ _E.g. Invented references and overconfidence. / Only young female nurses appear._
 
 > 
 
@@ -164,7 +206,7 @@ Text / record code: ____  Curator: ____  Date: ____
 
 _What can I safely claim? Separate what you know from what you only assume._
 
-Text / record code: ____  Curator: ____  Date: ____
+Content / record code: ____  Curator: ____  Date: ____
 
 ### A. Three columns (write 2 to 3 sentences in each)
 
@@ -175,38 +217,46 @@ Text / record code: ____  Curator: ____  Date: ____
 
 ### B. Quick assessment
 
-**Is the text coherent?** _Are the purpose, structure and conclusions aligned? In a scientific text: the question, aims, method and conclusions._: ☐ Yes  ☐ Partly  ☐ No
+**[Text only] Is the text coherent?** _Are the purpose, structure and conclusions aligned? In a scientific text: the question, aims, method and conclusions._: ☐ Yes  ☐ Partly  ☐ No
 
-**Does it support what it says with sources, data or sound arguments?** _Are there sources, data or reasoning behind the main claims?_: ☐ Yes  ☐ Partly  ☐ No
+**[Text only] Does it support what it says with sources, data or sound arguments?** _Are there sources, data or reasoning behind the main claims?_: ☐ Yes  ☐ Partly  ☐ No
+
+**[Image and video only] Does the image or video serve its purpose?** _Does it communicate what it intends, without elements that distract or confuse?_: ☐ Yes  ☐ Partly  ☐ No
+
+**[Image and video only] Could it be taken as real?** _If it looks real and is not, it must be clearly labelled as AI-generated, or should not be used._: ☐ No  ☐ Yes, but it will be labelled  ☐ Yes, it needs revising
+
+**[Image and video only] Does it have alt text or captions?** _Alt text on images and captions on videos make the content accessible._: ☐ Yes  ☐ Partly  ☐ No  ☐ Not applicable
 
 **Do I know enough about the topic to assess it?** _If "No", ask someone who knows the topic before deciding. It is the most honest and most common answer._: ☐ Yes  ☐ Partly  ☐ No
 
-**Did I check plagiarism and rights?** _Use your institution's similarity tool and check for copyrighted texts or images._: ☐ Yes  ☐ No  ☐ Pending
+**[Text only] Did I check plagiarism and rights?** _Use your institution's similarity tool and check for copyrighted texts._: ☐ Yes  ☐ No  ☐ Pending
 
-### C. Note for readers (required if the text leaves your group)
+**[Image and video only] Did I check rights and consents?** _Reference images, artists' styles, brands, music and voice; consent of recognisable people; the tool's terms of use._: ☐ Yes  ☐ No  ☐ Pending
 
-**What remains unresolved** _3 to 5 lines on the doubts that remain. A stated doubt helps the reader._ _E.g. "The prevalence cited was not confirmed; the figures should be read with caution."_
+### C. Note for the audience (required if the content leaves your group)
+
+**What remains unresolved** _3 to 5 lines on the doubts that remain. A stated doubt helps the audience._ _E.g. "The prevalence cited was not confirmed." / "Illustrative AI-generated image; does not depict real people."_
 
 > 
 
 ## Phase 5 · Reconciling: Compare with other people (Human–Community Cross-Validation)
 
-_What do people who did not create the text say? Ask at least one independent person (ideally a small group) to review the text and Phases 1 to 4._
+_What do people who did not create the content say? Ask at least one independent person (ideally a small group) to review the content and Phases 1 to 4._
 
-Text / record code: ____  Curator: ____  Date: ____
+Content / record code: ____  Curator: ____  Date: ____
 
 ### A. Who reviewed
 
-> The review only counts as Reconciling if the person was not involved in creating the text. If the text involves students' work or other people's data, ask for consent.
+> The review only counts as Reconciling if the person was not involved in creating the content. If the content involves students' work, or other people's data or images, ask for consent.
 
-| Name or code | Role | Involved in producing the text? |
+| Name or code | Role | Involved in producing the content? |
 | --- | --- | --- |
 | _E.g. Colleague X_ | _E.g. peer; supervisor; expert_ |   |
 |   |   |   |
 
 ### B. Outcome
 
-> If you only ask for free opinions, without comparing the text with someone independent, that is brainstorming and not Reconciling. Record it as such.
+> If you only ask for free opinions, without comparing the content with someone independent, that is brainstorming and not Reconciling. Record it as such.
 
 **Where do we agree?** _Points where you and the reviewer read things the same way._
 
@@ -228,16 +278,16 @@ Text / record code: ____  Curator: ____  Date: ____
 
 _What do I decide? A decision based on the earlier phases, owned by people and written down._
 
-Text / record code: ____  Curator: ____  Date: ____
+Content / record code: ____  Curator: ____  Date: ____
 
 ### A. Decision
 
 **Choose one**
 
-- ☐ **Use**: use the text as it is; only if no phase found problems
-- ☐ **Use with contextualisation**: use the text with a note explaining its origin (AI) and limits
-- ☐ **Adapt**: keep some parts and rewrite or correct the rest
-- ☐ **Do not use**: reject the text; record the reason
+- ☐ **Use**: use the content as it is; only if no phase found problems
+- ☐ **Use with contextualisation**: use the content with a note explaining its origin (AI) and limits
+- ☐ **Adapt**: keep some parts and redo or correct the rest
+- ☐ **Do not use**: reject the content; record the reason
 
 **Why?** _2 to 3 sentences with the evidence from Phases 1 to 5. If you chose "Adapt", say what changes._ _E.g. There are non-existent references and overconfidence; the review confirmed it._
 
@@ -245,15 +295,17 @@ Text / record code: ____  Curator: ____  Date: ____
 
 ### B. Before use, did you confirm?
 
-**Tick what you have done**: ☐ References checked at source, where present  ☐ Data and facts checked  ☐ Text rewritten and owned by the signatory  ☐ Copyright and privacy addressed  ☐ Final review of the full text
+**[Text only] For the text, tick what you have done**: ☐ References checked at source, where present  ☐ Data and facts checked  ☐ Text rewritten and owned by the signatory  ☐ Copyright and privacy addressed  ☐ Final review of the full text
+
+**[Image and video only] For the image or video, tick what you have done**: ☐ Visible "AI-generated" label  ☐ Watermark and origin metadata preserved  ☐ Elements shown checked  ☐ Rights and consents addressed (people, style, brands, music)  ☐ Alt text or captions included
 
 ### C. Use statement
 
-**Statement text** _A short sentence to accompany the text. Adapt it to your case or use the "Generate statement" button._ _E.g. "I used [tool, version, date] for [purpose]. I checked the content and references and take responsibility for the text."_
+**Statement text** _A short sentence to accompany the content (for an image, it can go in the caption). Adapt it to your case or use the "Generate statement" button._ _E.g. "I used [tool, version, date] for [purpose]. I checked the content and take responsibility for it." / "Image generated with [tool], [date]."_
 
 > 
 
-**Next time I will do differently** _One lesson for the next time you use AI._ _E.g. Provide checked sources in the request._
+**Next time I will do differently** _One lesson for the next time you use AI._ _E.g. Provide checked sources in the request; ask for diversity of people in the image._
 
 > 
 

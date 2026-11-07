@@ -1,26 +1,30 @@
 # AI Curatorial Protocol (AICP)
 
-**Formularios de curaduría de textos generados por IA**
+**Formularios de curaduría de contenidos generados por IA: texto, imagen y vídeo**
 
-Seis formularios breves, uno por fase, para adjuntar a cualquier texto producido con IA generativa (artículo, trabajo académico, informe, material didáctico, texto de divulgación, entre otros). Cada campo tiene una ayuda y, cuando es útil, un ejemplo. Extensión del modelo 5R (Bain et al., 2002) con una nueva fase, Reconciling (Costa et al., 2026).
+Seis formularios breves, uno por fase, para adjuntar a cualquier contenido producido con IA generativa: textos (artículo, trabajo académico, informe, material didáctico, divulgación), imágenes y vídeos. Elija primero el tipo de contenido; los campos se ajustan. Cada campo tiene una ayuda y, cuando es útil, un ejemplo. Extensión del modelo 5R (Bain et al., 2002) con una nueva fase, Reconciling (Costa et al., 2026).
 
 ## Cómo usar
 
-1. Complete los formularios en orden (Fases 1 a 6). Puede volver a una fase anterior cuando surja información nueva; registre ese regreso.
-2. Las ayudas y los ejemplos son solo orientación. Los ejemplos son ficticios (un texto sobre burnout en enfermeros).
+1. Empiece indicando el tipo de contenido (texto, imagen, vídeo o mixto). Después complete en orden (Fases 1 a 6). Puede volver a una fase anterior cuando surja información nueva; registre ese regreso.
+2. Las ayudas y los ejemplos son solo orientación. Los ejemplos son ficticios (contenidos sobre burnout en enfermeros).
 3. "Sí" y "No" describen lo que se hizo; no son correcto o incorrecto. Si no lo sabe, escriba "No sé": es una respuesta válida.
-4. Guarde el texto original generado y adjunte estos formularios al texto final. No escriba datos personales en los campos.
-5. La decisión y el texto final son siempre de la persona que firma, nunca de la IA.
+4. Guarde el original generado (texto, imagen o vídeo) y adjunte estos formularios a la versión final. No escriba datos personales en los campos.
+5. La decisión y el contenido final son siempre de la persona que firma, nunca de la IA.
 
 ## Identificación
 
-**Texto analizado** _Título o tema del texto generado por IA que va a evaluar._ _P. ej.: Marco sobre burnout en enfermeros_
+**Tipo de contenido** _Elija esto primero: los campos siguientes se ajustan al tipo de contenido._: ☐ Texto  ☐ Imagen  ☐ Vídeo  ☐ Mixto (texto con imagen o vídeo)
+
+**Contenido analizado** _Título o tema del contenido generado por IA que va a evaluar._ _P. ej.: Marco sobre burnout en enfermeros; ilustración para un cartel_
 
 > 
 
-**Tipo de texto** _El tipo de texto cambia lo que hay que verificar: un texto científico exige referencias; un material didáctico exige rigor y adecuación al alumnado._: ☐ Científico o académico  ☐ Didáctico  ☐ Divulgación o periodismo  ☐ Institucional o profesional  ☐ Creativo  ☐ Otro  ____
+**[Solo texto] Tipo de texto** _El tipo de texto cambia lo que hay que verificar: un texto científico exige referencias; un material didáctico exige rigor y adecuación al alumnado._: ☐ Científico o académico  ☐ Didáctico  ☐ Divulgación o periodismo  ☐ Institucional o profesional  ☐ Creativo  ☐ Otro  ____
 
-**Código del registro** _Un código breve para vincular los formularios al texto y al original guardado._ _P. ej.: AICP-2026-001_
+**[Solo imagen y vídeo] Tipo de imagen o vídeo** _Una imagen fotorrealista exige más cuidado que un dibujo, porque puede tomarse como real._: ☐ Ilustración o dibujo  ☐ Fotorrealista  ☐ Diagrama, esquema o infografía  ☐ Vídeo explicativo o didáctico  ☐ Animación  ☐ Otro  ____
+
+**Código del registro** _Un código breve para vincular los formularios al contenido y al original guardado._ _P. ej.: AICP-2026-001_
 
 > 
 
@@ -32,7 +36,7 @@ Seis formularios breves, uno por fase, para adjuntar a cualquier texto producido
 
 > 
 
-**¿Para qué va a usar el texto?** _El uso previsto cambia el rigor necesario._ _P. ej.: envío a revista; trabajo de curso; material de clase; base de lectura_
+**¿Para qué va a usar el contenido?** _El uso previsto cambia el rigor necesario._ _P. ej.: envío a revista; trabajo de curso; material de clase; cartel; redes sociales_
 
 > 
 
@@ -49,13 +53,13 @@ Seis formularios breves, uno por fase, para adjuntar a cualquier texto producido
 | **5 · Reconciling: ¿Qué dicen los demás?** |   |
 | **6 · Reconstructing: ¿Qué decido?** |   |
 
-## Fase 1 · Reporting: Registrar el origen del texto (Provenance Record)
+## Fase 1 · Reporting: Registrar el origen del contenido (Provenance Record)
 
-_¿Cómo se creó este texto? Anote lo que sabe sobre cómo lo produjo la IA._
+_¿Cómo se creó este contenido? Anote lo que sabe sobre cómo lo produjo la IA._
 
-Texto / código del registro: ____  Curador(a): ____  Fecha: ____
+Contenido / código del registro: ____  Curador(a): ____  Fecha: ____
 
-### Origen del texto
+### Origen del contenido
 
 **1. Herramienta y versión** _Nombre de la herramienta y, si aparece, la versión o el modelo (suele verse en pantalla o en la configuración). Indique si la búsqueda web estaba activa._ _P. ej.: ChatGPT, modelo indicado en pantalla, sin búsqueda web_
 
@@ -65,41 +69,57 @@ Texto / código del registro: ____  Curador(a): ____  Fecha: ____
 
 > 
 
-**3. Petición realizada (prompt)** _Copie y pegue la petición tal como la escribió, incluidas las instrucciones anteriores en la misma conversación. Si hizo varios intentos, indique cuántos y cuál usó._ _P. ej.: «Escribe un párrafo sobre el burnout en enfermeros portugueses, con referencias.»_
+**3. Petición realizada (prompt)** _Copie y pegue la petición tal como la escribió, incluidas las instrucciones anteriores en la misma conversación. Si hizo varios intentos, indique cuántos y cuál usó._ _P. ej.: «Escribe un párrafo sobre el burnout en enfermeros portugueses, con referencias.» / «Ilustración de una enfermera cansada al final del turno, estilo acuarela.»_
 
 > 
 
-**4. ¿Qué parte generó la IA?** _"Reescritura": el texto original era suyo y la IA solo lo mejoró. Si elige "Parte", indique cuáles._: ☐ Todo  ☐ Parte  ☐ Reescritura de un texto mío  ☐ No sé  ____
+**4. ¿Qué parte generó la IA?** _"Transformación": el original (texto, imagen o vídeo) era suyo y la IA lo alteró o mejoró. Si elige "Parte", indique cuáles._: ☐ Todo  ☐ Parte  ☐ Transformación de material mío  ☐ No sé  ____
 
-**5. ¿Proporcionó documentos o fuentes a la IA?** _"Sí" si adjuntó archivos o pegó textos. Si pidió referencias sin dar fuentes, la IA puede haberlas inventado._: ☐ No  ☐ Sí  ____
+**5. ¿Proporcionó documentos, imágenes u otras fuentes a la IA?** _"Sí" si adjuntó archivos, pegó textos o dio imágenes de referencia. Si pidió referencias sin dar fuentes, la IA puede haberlas inventado. Si usó imágenes de otras personas, atención a los derechos._: ☐ No  ☐ Sí  ____
 
-**6. ¿Usó datos personales o confidenciales?** _P. ej.: nombres de participantes, entrevistas, textos inéditos. Si "Sí", indique cómo los protegió._: ☐ No  ☐ Sí  ____
+**6. ¿Usó datos personales o confidenciales?** _P. ej.: nombres de participantes, entrevistas, textos inéditos, fotografías o voces de personas reales. Si "Sí", indique cómo los protegió._: ☐ No  ☐ Sí  ____
 
-**7. ¿Dónde guardó el texto original?** _Guarde siempre la versión original, sin ediciones (archivo o enlace)._ _P. ej.: carpeta AICP-001/original.docx_
+**7. ¿Dónde guardó el original?** _Guarde siempre la versión original generada, sin ediciones (archivo o enlace)._ _P. ej.: carpeta AICP-001/original_
 
 > 
 
-**8. ¿Qué no puede saber?** _Decir lo que no se sabe forma parte del rigor._ _P. ej.: con qué textos aprendió la IA; qué fuentes usó_
+**8. ¿Qué no puede saber?** _Decir lo que no se sabe forma parte del rigor._ _P. ej.: con qué textos o imágenes aprendió la IA; qué fuentes usó_
+
+> 
+
+### [Solo imagen y vídeo] Imagen y vídeo
+
+**9. Parámetros de la generación** _Proporción, resolución, estilo, prompt negativo y seed (si la herramienta los muestra)._ _P. ej.: 16:9, estilo acuarela, sin texto en la imagen_
+
+> 
+
+**10. ¿Cuántas generaciones hizo hasta elegir esta?** _Elegir la mejor entre muchas también es una decisión suya; regístrela._ _P. ej.: 8 imágenes; elegí la 5.ª_
+
+> 
+
+**11. ¿Tiene marca de agua o credenciales de contenido?** _Algunas herramientas marcan el archivo como generado por IA, con una marca visible o en los metadatos (por ejemplo, Content Credentials). No las elimine._: ☐ Sí, visible  ☐ Sí, en los metadatos  ☐ No  ☐ No sé
+
+**[Solo vídeo] 12. Duración, voz y música** _Duración del vídeo. ¿La voz y la música las generó la IA, las grabó usted o proceden de un banco? ¿Con qué licencia?_ _P. ej.: 2 min; voz generada por IA; música de banco libre (CC BY)_
 
 > 
 
 ## Fase 2 · Relating: Comparar con fuentes de confianza (Cultural Anchoring)
 
-_¿Qué dicen las fuentes que conozco? Compare el texto con fuentes fiables sobre el tema._
+_¿Qué dicen las fuentes que conozco? Compare el contenido con fuentes fiables sobre el tema._
 
-Texto / código del registro: ____  Curador(a): ____  Fecha: ____
+Contenido / código del registro: ____  Curador(a): ____  Fecha: ____
 
 ### A. Fuentes de comparación (elija 2 a 3 fuentes fiables)
 
-> Si el texto no cita fuentes (por ejemplo, un texto didáctico o de divulgación), compárelo con fuentes de referencia sobre el tema: manual, programa, documento oficial.
+> Si el contenido no cita fuentes (por ejemplo, un material didáctico o una imagen), compárelo con fuentes de referencia sobre el tema: manual, programa, documento oficial, fotografías o imágenes reales.
 
 | Fuente usada para comparar | Dónde la encontró |
 | --- | --- |
-| _P. ej.: manual de referencia del área; artículos recientes sobre el tema_ | _P. ej.: biblioteca, Scopus, SciELO, Google Académico_ |
+| _P. ej.: manual de referencia del área; artículos recientes; fotografías de servicios hospitalarios_ | _P. ej.: biblioteca, Scopus, SciELO, Google Académico, archivo fotográfico_ |
 |   |   |
 |   |   |
 
-### B. Verificar referencias y afirmaciones (empiece por las más importantes)
+### [Solo texto] B. Verificar referencias y afirmaciones (empiece por las más importantes)
 
 > Busque la obra por título y DOI. "¿Dice lo que el texto afirma?": abra la fuente y confirme la idea. Antes de usar el texto, todas las referencias deben estar verificadas (Fase 6).
 
@@ -110,13 +130,24 @@ Texto / código del registro: ____  Curador(a): ____  Fecha: ____
 |   |   |   |   |
 |   |   |   |   |
 
+### [Solo imagen y vídeo] B. Verificar lo que muestra la imagen o el vídeo
+
+> Busque detalles que puedan estar mal: anatomía, equipos, uniformes, lugares, mapas, fechas, símbolos culturales y texto escrito dentro de la imagen.
+
+| Elemento representado | ¿Es correcto? | Con qué fuente lo comparó |
+| --- | --- | --- |
+| _P. ej.: uniforme y equipo de la enfermera_ |   | _P. ej.: fotografías de hospitales portugueses_ |
+|   |   |   |
+|   |   |   |
+|   |   |   |
+
 ### C. Balance
 
-**¿Qué coincide con las fuentes?** _Ideas del texto que las fuentes confirman._
+**¿Qué coincide con las fuentes?** _Ideas o elementos del contenido que las fuentes confirman._
 
 > 
 
-**¿Qué falta?** _Autores, lenguas, países o perspectivas importantes que no aparecen._ _P. ej.: estudios en portugués; autores de América Latina_
+**¿Qué falta?** _Autores, lenguas, países, perspectivas o personas importantes que no aparecen._ _P. ej.: estudios en portugués; enfermeros hombres o mayores_
 
 > 
 
@@ -126,24 +157,24 @@ Texto / código del registro: ____  Curador(a): ____  Fecha: ____
 
 _¿Qué observo y cómo reacciono? Busque problemas y vea qué ocurre si cambia la petición._
 
-Texto / código del registro: ____  Curador(a): ____  Fecha: ____
+Contenido / código del registro: ____  Curador(a): ____  Fecha: ____
 
 ### A. Primera reacción
 
-**¿Qué le sorprende, incomoda o convence?** _Escriba su reacción espontánea, antes de analizar._ _P. ej.: Me convenció porque tiene cifras, pero no las reconozco._
+**¿Qué le sorprende, incomoda o convence?** _Escriba su reacción espontánea, antes de analizar._ _P. ej.: Me convenció porque tiene cifras, pero no las reconozco. / La imagen es bonita, pero todas las enfermeras son jóvenes._
 
 > 
 
 ### B. Prueba: cambie la petición (pida otra vez a la IA, cambiando una cosa)
 
-> Puede cambiar el país, la teoría, el idioma o pedir la opinión contraria. Si la respuesta cambia mucho, el texto no es estable.
+> Puede cambiar el país, la teoría, el idioma, las personas representadas o pedir la opinión contraria. Si la respuesta cambia mucho, el resultado no es estable.
 
 | Qué cambió en la petición | Qué cambió en la respuesta |
 | --- | --- |
-| _P. ej.: pedí contraargumentos_ | _P. ej.: el texto pasó a admitir limitaciones_ |
+| _P. ej.: pedí contraargumentos; pedí enfermeros de varias edades_ | _P. ej.: el texto pasó a admitir limitaciones_ |
 |   |   |
 
-### C. Señales de alerta
+### [Solo texto] C. Señales de alerta en el texto
 
 | Señal de alerta | Respuesta | Dónde (fragmento) |
 | --- | --- | --- |
@@ -154,9 +185,20 @@ Texto / código del registro: ____  Curador(a): ____  Fecha: ____
 | **Usa estereotipos**: Asocia grupos a papeles o características (género, edad, cultura, profesión). | ☐ Lo vi ☐ No lo vi |   |
 | **Simplifica o borra su estilo**: Resume ideas o autores de forma pobre, o el texto suena genérico. | ☐ Lo vi ☐ No lo vi |   |
 
+### [Solo imagen y vídeo] C. Señales de alerta en la imagen o el vídeo
+
+| Señal de alerta | Respuesta | Dónde (momento o zona) |
+| --- | --- | --- |
+| **Estereotipos en la representación**: ¿Quién aparece en cada papel? P. ej.: médicos hombres y enfermeras mujeres; una sola etnia o edad. | ☐ Lo vi ☐ No lo vi |   |
+| **Personas y lugares todos iguales**: Rostros, cuerpos y escenarios repetidos, o de una sola cultura. | ☐ Lo vi ☐ No lo vi |   |
+| **Errores visuales**: Manos, texto ilegible, objetos o proporciones imposibles; en el vídeo, movimientos o sonidos que no encajan. | ☐ Lo vi ☐ No lo vi |   |
+| **Realismo que puede engañar**: Parece una fotografía o grabación real de algo que no ocurrió. | ☐ Lo vi ☐ No lo vi |   |
+| **Imita a un artista, marca o personaje**: Estilo reconocible de un autor, logotipos o personajes protegidos. | ☐ Lo vi ☐ No lo vi |   |
+| **Parecido con una persona real**: Alguien podría ser reconocido por el rostro o la voz. | ☐ Lo vi ☐ No lo vi |   |
+
 ### D. Resumen
 
-**Principal riesgo encontrado** _El problema más grave que vio (una frase)._ _P. ej.: Referencias inventadas y certeza excesiva._
+**Principal riesgo encontrado** _El problema más grave que vio (una frase)._ _P. ej.: Referencias inventadas y certeza excesiva. / Solo aparecen enfermeras jóvenes._
 
 > 
 
@@ -164,7 +206,7 @@ Texto / código del registro: ____  Curador(a): ____  Fecha: ____
 
 _¿Qué puedo afirmar con seguridad? Separe lo que sabe de lo que solo supone._
 
-Texto / código del registro: ____  Curador(a): ____  Fecha: ____
+Contenido / código del registro: ____  Curador(a): ____  Fecha: ____
 
 ### A. Tres columnas (escriba 2 a 3 frases en cada una)
 
@@ -175,38 +217,46 @@ Texto / código del registro: ____  Curador(a): ____  Fecha: ____
 
 ### B. Evaluación rápida
 
-**¿El texto es coherente?** _¿El propósito, la estructura y las conclusiones están alineados? En un texto científico: la pregunta, los objetivos, el método y las conclusiones._: ☐ Sí  ☐ En parte  ☐ No
+**[Solo texto] ¿El texto es coherente?** _¿El propósito, la estructura y las conclusiones están alineados? En un texto científico: la pregunta, los objetivos, el método y las conclusiones._: ☐ Sí  ☐ En parte  ☐ No
 
-**¿Apoya lo que dice con fuentes, datos o buenos argumentos?** _¿Hay fuentes, datos o razonamiento para las afirmaciones principales?_: ☐ Sí  ☐ En parte  ☐ No
+**[Solo texto] ¿Apoya lo que dice con fuentes, datos o buenos argumentos?** _¿Hay fuentes, datos o razonamiento para las afirmaciones principales?_: ☐ Sí  ☐ En parte  ☐ No
+
+**[Solo imagen y vídeo] ¿La imagen o el vídeo cumple el objetivo?** _¿Comunica lo que pretende, sin elementos que distraigan o confundan?_: ☐ Sí  ☐ En parte  ☐ No
+
+**[Solo imagen y vídeo] ¿Puede tomarse como real?** _Si parece real y no lo es, debe ir claramente identificado como generado por IA, o no debe usarse._: ☐ No  ☐ Sí, pero irá identificado  ☐ Sí, hay que revisarlo
+
+**[Solo imagen y vídeo] ¿Tiene texto alternativo o subtítulos?** _El texto alternativo en las imágenes y los subtítulos en los vídeos hacen accesible el contenido._: ☐ Sí  ☐ En parte  ☐ No  ☐ No aplica
 
 **¿Sé lo suficiente del tema para evaluar?** _Si "No", pida ayuda a quien domine el tema antes de decidir. Es la respuesta más honesta y frecuente._: ☐ Sí  ☐ En parte  ☐ No
 
-**¿Verifiqué plagio y derechos?** _Use la herramienta de similitud de su institución y confirme si hay textos o imágenes con derechos de autor._: ☐ Sí  ☐ No  ☐ Pendiente
+**[Solo texto] ¿Verifiqué plagio y derechos?** _Use la herramienta de similitud de su institución y confirme si hay textos con derechos de autor._: ☐ Sí  ☐ No  ☐ Pendiente
 
-### C. Nota para quien vaya a leer (obligatoria si el texto sale de su grupo)
+**[Solo imagen y vídeo] ¿Verifiqué derechos y consentimientos?** _Imágenes de referencia, estilo de artistas, marcas, música y voz; consentimiento de personas reconocibles; condiciones de uso de la herramienta._: ☐ Sí  ☐ No  ☐ Pendiente
 
-**Lo que quedó por resolver** _3 a 5 líneas con las dudas que persisten. Una duda declarada ayuda al lector._ _P. ej.: «La prevalencia citada no se confirmó; los datos deben leerse con cautela.»_
+### C. Nota para quien vaya a ver o leer (obligatoria si el contenido sale de su grupo)
+
+**Lo que quedó por resolver** _3 a 5 líneas con las dudas que persisten. Una duda declarada ayuda a quien ve o lee._ _P. ej.: «La prevalencia citada no se confirmó.» / «Imagen ilustrativa generada por IA; no representa a personas reales.»_
 
 > 
 
 ## Fase 5 · Reconciling: Contrastar con otras personas (Human–Community Cross-Validation)
 
-_¿Qué dicen las personas que no crearon el texto? Pida a al menos una persona independiente (idealmente un pequeño grupo) que revise el texto y las Fases 1 a 4._
+_¿Qué dicen las personas que no crearon el contenido? Pida a al menos una persona independiente (idealmente un pequeño grupo) que revise el contenido y las Fases 1 a 4._
 
-Texto / código del registro: ____  Curador(a): ____  Fecha: ____
+Contenido / código del registro: ____  Curador(a): ____  Fecha: ____
 
 ### A. Quién revisó
 
-> La revisión solo cuenta como Reconciling si la persona no participó en la creación del texto. Si el texto incluye trabajos de estudiantes o datos de otras personas, pida consentimiento.
+> La revisión solo cuenta como Reconciling si la persona no participó en la creación del contenido. Si el contenido incluye trabajos de estudiantes, datos o imágenes de otras personas, pida consentimiento.
 
-| Nombre o código | Rol | ¿Participó en la producción del texto? |
+| Nombre o código | Rol | ¿Participó en la producción del contenido? |
 | --- | --- | --- |
 | _P. ej.: Colega X_ | _P. ej.: par; director(a); especialista_ |   |
 |   |   |   |
 
 ### B. Resultado
 
-> Si solo pide opiniones libres, sin contrastar el texto con alguien independiente, eso es una lluvia de ideas y no es Reconciling. Regístrelo como tal.
+> Si solo pide opiniones libres, sin contrastar el contenido con alguien independiente, eso es una lluvia de ideas y no es Reconciling. Regístrelo como tal.
 
 **¿En qué coincidimos?** _Puntos en los que usted y el revisor tienen la misma lectura._
 
@@ -228,16 +278,16 @@ Texto / código del registro: ____  Curador(a): ____  Fecha: ____
 
 _¿Qué decido? Una decisión basada en las fases anteriores, asumida por personas y escrita._
 
-Texto / código del registro: ____  Curador(a): ____  Fecha: ____
+Contenido / código del registro: ____  Curador(a): ____  Fecha: ____
 
 ### A. Decisión
 
 **Marque una**
 
-- ☐ **Utilizar**: usa el texto tal como está; solo si ninguna fase encontró problemas
-- ☐ **Utilizar con contextualización**: usa el texto con una nota que explique el origen (IA) y los límites
-- ☐ **Adaptar**: aprovecha partes y reescribe o corrige el resto
-- ☐ **No utilizar**: rechaza el texto; registre el motivo
+- ☐ **Utilizar**: usa el contenido tal como está; solo si ninguna fase encontró problemas
+- ☐ **Utilizar con contextualización**: usa el contenido con una nota que explique el origen (IA) y los límites
+- ☐ **Adaptar**: aprovecha partes y rehace o corrige el resto
+- ☐ **No utilizar**: rechaza el contenido; registre el motivo
 
 **¿Por qué?** _2 a 3 frases con las pruebas de las Fases 1 a 5. Si eligió "Adaptar", indique qué cambia._ _P. ej.: Hay referencias inexistentes y certeza excesiva; la revisión lo confirmó._
 
@@ -245,15 +295,17 @@ Texto / código del registro: ____  Curador(a): ____  Fecha: ____
 
 ### B. Antes de usar, ¿confirmó?
 
-**Marque lo que ya hizo**: ☐ Referencias verificadas en la fuente, cuando existan  ☐ Datos y hechos verificados  ☐ Texto reescrito y asumido por quien firma  ☐ Derechos de autor y privacidad atendidos  ☐ Revisión final del texto completo
+**[Solo texto] En el texto, marque lo que ya hizo**: ☐ Referencias verificadas en la fuente, cuando existan  ☐ Datos y hechos verificados  ☐ Texto reescrito y asumido por quien firma  ☐ Derechos de autor y privacidad atendidos  ☐ Revisión final del texto completo
+
+**[Solo imagen y vídeo] En la imagen o el vídeo, marque lo que ya hizo**: ☐ Identificación visible "generado con IA"  ☐ Marca de agua y metadatos de origen preservados  ☐ Elementos representados verificados  ☐ Derechos y consentimientos atendidos (personas, estilo, marcas, música)  ☐ Texto alternativo o subtítulos incluidos
 
 ### C. Declaración de uso
 
-**Texto de la declaración** _Frase breve para acompañar el texto. Adáptela a su caso o use el botón "Generar declaración"._ _P. ej.: «Utilicé [herramienta, versión, fecha] para [finalidad]. Verifiqué el contenido y las referencias y asumo la responsabilidad por el texto.»_
+**Texto de la declaración** _Frase breve para acompañar el contenido (en una imagen, puede ir en el pie). Adáptela a su caso o use el botón "Generar declaración"._ _P. ej.: «Utilicé [herramienta, versión, fecha] para [finalidad]. Verifiqué el contenido y asumo la responsabilidad.» / «Imagen generada con [herramienta], [fecha].»_
 
 > 
 
-**La próxima vez haré diferente** _Un aprendizaje para el próximo uso de IA._ _P. ej.: Proporcionar fuentes verificadas en la petición._
+**La próxima vez haré diferente** _Un aprendizaje para el próximo uso de IA._ _P. ej.: Proporcionar fuentes verificadas en la petición; pedir diversidad de personas en la imagen._
 
 > 
 
