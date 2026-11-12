@@ -14,7 +14,7 @@ Six short forms, one per phase, to attach to any content produced with generativ
 
 ## Identification
 
-**Type of content** _Choose this first: the following fields adjust to the type of content._: ☐ Text  ☐ Image  ☐ Video  ☐ Mixed (text with image or video)
+**Type of content** _Choose this first: the following fields adjust to the type of content. Tick only what was generated with AI: an AI-generated text with your own photographs is "Text"._: ☐ Text  ☐ Image  ☐ Video  ☐ Mixed (text and image or video, both AI-generated)
 
 **Content analysed** _Title or topic of the AI-generated content you will assess._ _E.g. Background section on burnout in nurses; illustration for a poster_
 
@@ -42,16 +42,16 @@ Six short forms, one per phase, to attach to any content produced with generativ
 
 ### The six phases at a glance
 
-> Fill in order; you may go back.
+> Fill in order; you may go back. A phase is complete when every applicable field is filled in or marked as not applicable, and remaining doubts are recorded.
 
-| Phase and question | Completed on |
-| --- | --- |
-| **1 · Reporting: How was it made?** |   |
-| **2 · Relating: What do other sources say?** |   |
-| **3 · Responding: What do I observe and how do I respond?** |   |
-| **4 · Reasoning: What can I safely claim?** |   |
-| **5 · Reconciling: What do others say?** |   |
-| **6 · Reconstructing: What do I decide?** |   |
+| Phase and question | Status | Completed on |
+| --- | --- | --- |
+| **1 · Reporting: How was it made?** |   |   |
+| **2 · Relating: What do other sources say?** |   |   |
+| **3 · Responding: What do I observe and how do I respond?** |   |   |
+| **4 · Reasoning: What can I safely claim?** |   |   |
+| **5 · Reconciling: What do others say?** |   |   |
+| **6 · Reconstructing: What do I decide?** |   |   |
 
 ## Phase 1 · Reporting: Record the origin of the content (Provenance Record)
 
@@ -69,7 +69,7 @@ Content / record code: ____  Curator: ____  Date: ____
 
 > 
 
-**3. Request made (prompt)** _Copy and paste the request exactly as you wrote it, including earlier instructions in the same conversation. If you made several attempts, say how many and which one you used._ _E.g. "Write a paragraph on burnout in Portuguese nurses, with references." / "Illustration of a tired nurse at the end of a shift, watercolour style."_
+**3. Request made (prompt)** _Record the initial request and later instructions that changed the content, sources or direction, exactly as you wrote them. You do not need to copy the whole conversation: say where the full history is stored. If you made several attempts, say how many and which one you used._ _E.g. "Write a paragraph on burnout in Portuguese nurses, with references." / "Illustration of a tired nurse at the end of a shift, watercolour style."_
 
 > 
 
@@ -121,9 +121,9 @@ Content / record code: ____  Curator: ____  Date: ____
 
 ### [Text only] B. Check references and claims (start with the most important)
 
-> Search for the work by title and DOI. "Says what the text claims?": open the source and confirm the idea. Before using the text, all references must be checked (Phase 6).
+> Search for the work by title and DOI. In "Says what the text claims?", state whether the source supports, partly supports or contradicts the claim; if you could not check, say why. In "Where you checked", give the page or section consulted and, in one sentence, the match found. Before using the text, all references must be checked (Phase 6).
 
-| Claim or reference in the text | Exists? | Says what the text claims? | Where you checked |
+| Claim or reference in the text | Exists? | Says what the text claims? | Where you checked (page or section) |
 | --- | --- | --- | --- |
 | _E.g. (Ferreira & Almeida, 2021)_ |   |   | _E.g. Google Scholar and DOI_ |
 |   |   |   |   |
@@ -147,11 +147,11 @@ Content / record code: ____  Curator: ____  Date: ____
 
 > 
 
-**What is missing?** _Important authors, languages, countries, perspectives or people that do not appear._ _E.g. studies in Portuguese; male or older nurses_
+**Which relevant perspectives are missing?** _Name a relevant perspective that is not sufficiently represented (authors, languages, countries, groups, approaches) and explain why its absence limits the content._ _E.g. studies in Portuguese; male or older nurses_
 
 > 
 
-**Is it up to date and suited to my context?** _Check the years of the sources, where present (generally the last 5 to 10 years, except classic works), and whether it suits your discipline, audience and country._: ☐ Yes  ☐ Partly  ☐ No
+**Is it up to date and suited to my context?** _Check the years of the sources, where present (generally the last 5 to 10 years, except classic works), and whether it suits your discipline, audience and country._: ☐ Yes  ☐ Partly  ☐ No  ☐ Not assessed
 
 ## Phase 3 · Responding: Test and look for warning signs (Bias and Diversity Audit)
 
@@ -167,7 +167,7 @@ Content / record code: ____  Curator: ____  Date: ____
 
 ### B. Test: change the request (ask the AI again, changing one thing)
 
-> You can change the country, the theory, the language or the people depicted, or ask for the opposite view. If the response changes a lot, the result is not stable.
+> You can change the country, the theory, the language or the people depicted, or ask for the opposite view. A different response is not a problem in itself: the change of context may justify it. Record whether contradictions, unsupported claims or differences the tool cannot justify appeared.
 
 | What changed in the request | What changed in the response |
 | --- | --- |
@@ -176,25 +176,29 @@ Content / record code: ____  Curator: ____  Date: ____
 
 ### [Text only] C. Warning signs in the text
 
+> In "Where", record a passage that illustrates the sign and its location, and explain in one sentence why you consider it problematic. E.g. "Conclusion: ‘This approach guarantees better learning’. Overconfidence: the text presents no results that could guarantee it."
+
 | Warning sign | Answer | Where (excerpt) |
 | --- | --- | --- |
-| **Overgeneralises**: Uses "all", "always", "across Europe" without evidence. | ☐ Seen ☐ Not seen |   |
-| **Sounds too certain**: Says "proves", "eliminates", "demonstrates" without supporting data. | ☐ Seen ☐ Not seen |   |
-| **Always agrees with you**: If you ask for the opposite, does it agree too? AI tends to please. | ☐ Seen ☐ Not seen |   |
-| **Leaves voices out**: Only authors or examples from one country, language or school of thought appear. | ☐ Seen ☐ Not seen |   |
-| **Uses stereotypes**: Links groups to roles or traits (gender, age, culture, profession). | ☐ Seen ☐ Not seen |   |
-| **Oversimplifies or erases your style**: Summarises ideas or authors poorly, or the text sounds generic. | ☐ Seen ☐ Not seen |   |
+| **Overgeneralises**: Uses "all", "always", "across Europe" without evidence. | ☐ Seen ☐ Not seen ☐ Not assessed |   |
+| **Sounds too certain**: Says "proves", "eliminates", "demonstrates" without supporting data. | ☐ Seen ☐ Not seen ☐ Not assessed |   |
+| **Always agrees with you**: If you ask for the opposite, does it agree too? AI tends to please. | ☐ Seen ☐ Not seen ☐ Not assessed |   |
+| **Leaves voices out**: Only authors or examples from one country, language or school of thought appear. | ☐ Seen ☐ Not seen ☐ Not assessed |   |
+| **Uses stereotypes**: Links groups to roles or traits (gender, age, culture, profession). | ☐ Seen ☐ Not seen ☐ Not assessed |   |
+| **Oversimplifies or erases your style**: Summarises ideas or authors poorly, or the text sounds generic. | ☐ Seen ☐ Not seen ☐ Not assessed |   |
 
 ### [Image and video only] C. Warning signs in the image or video
 
+> In "Where", record the moment or area of the image that illustrates the sign and explain in one sentence why you consider it problematic.
+
 | Warning sign | Answer | Where (moment or area) |
 | --- | --- | --- |
-| **Stereotyped depiction**: Who appears in each role? E.g. male doctors and female nurses; a single ethnicity or age. | ☐ Seen ☐ Not seen |   |
-| **People and places all alike**: Repeated faces, bodies and settings, or from a single culture. | ☐ Seen ☐ Not seen |   |
-| **Visual errors**: Hands, illegible text, impossible objects or proportions; in video, movements or sounds that do not match. | ☐ Seen ☐ Not seen |   |
-| **Misleading realism**: Looks like a real photograph or footage of something that did not happen. | ☐ Seen ☐ Not seen |   |
-| **Imitates an artist, brand or character**: Recognisable style of an author, logos or protected characters. | ☐ Seen ☐ Not seen |   |
-| **Resemblance to a real person**: Someone could be recognised by face or voice. | ☐ Seen ☐ Not seen |   |
+| **Stereotyped depiction**: Who appears in each role? E.g. male doctors and female nurses; a single ethnicity or age. | ☐ Seen ☐ Not seen ☐ Not assessed |   |
+| **People and places all alike**: Repeated faces, bodies and settings, or from a single culture. | ☐ Seen ☐ Not seen ☐ Not assessed |   |
+| **Visual errors**: Hands, illegible text, impossible objects or proportions; in video, movements or sounds that do not match. | ☐ Seen ☐ Not seen ☐ Not assessed |   |
+| **Misleading realism**: Looks like a real photograph or footage of something that did not happen. | ☐ Seen ☐ Not seen ☐ Not assessed |   |
+| **Imitates an artist, brand or character**: Recognisable style of an author, logos or protected characters. | ☐ Seen ☐ Not seen ☐ Not assessed |   |
+| **Resemblance to a real person**: Someone could be recognised by face or voice. | ☐ Seen ☐ Not seen ☐ Not assessed |   |
 
 ### D. Summary
 
@@ -217,17 +221,21 @@ Content / record code: ____  Curator: ____  Date: ____
 
 ### B. Quick assessment
 
-**[Text only] Is the text coherent?** _Are the purpose, structure and conclusions aligned? In a scientific text: the question, aims, method and conclusions._: ☐ Yes  ☐ Partly  ☐ No
+**[Text only] Is the text coherent?** _Are the purpose, structure and conclusions aligned? In a scientific text: the question, aims, method and conclusions._: ☐ Yes  ☐ Partly  ☐ No  ☐ Not assessed
 
-**[Text only] Does it support what it says with sources, data or sound arguments?** _Are there sources, data or reasoning behind the main claims?_: ☐ Yes  ☐ Partly  ☐ No
+**[Text only] Does it support what it says with sources, data or sound arguments?** _Are there sources, data or reasoning behind the main claims?_: ☐ Yes  ☐ Partly  ☐ No  ☐ Not assessed
 
-**[Image and video only] Does the image or video serve its purpose?** _Does it communicate what it intends, without elements that distract or confuse?_: ☐ Yes  ☐ Partly  ☐ No
+**[Image and video only] Does the image or video serve its purpose?** _Does it communicate what it intends, without elements that distract or confuse?_: ☐ Yes  ☐ Partly  ☐ No  ☐ Not assessed
 
 **[Image and video only] Could it be taken as real?** _If it looks real and is not, it must be clearly labelled as AI-generated, or should not be used._: ☐ No  ☐ Yes, but it will be labelled  ☐ Yes, it needs revising
 
 **[Image and video only] Does it have alt text or captions?** _Alt text on images and captions on videos make the content accessible._: ☐ Yes  ☐ Partly  ☐ No  ☐ Not applicable
 
-**Do I know enough about the topic to assess it?** _If "No", ask someone who knows the topic before deciding. It is the most honest and most common answer._: ☐ Yes  ☐ Partly  ☐ No
+**Can I assess the main aspects of the topic?** _State below where you need expert support. Asking for it before deciding is the most honest and most common answer._: ☐ Yes  ☐ Partly  ☐ No
+
+**Where do I need expert support?** _E.g. psychometrics of the items; clinical data_
+
+> 
 
 **[Text only] Did I check plagiarism and rights?** _Use your institution's similarity tool and check for copyrighted texts._: ☐ Yes  ☐ No  ☐ Pending
 
@@ -235,7 +243,7 @@ Content / record code: ____  Curator: ____  Date: ____
 
 ### C. Note for the audience (required if the content leaves your group)
 
-**What remains unresolved** _3 to 5 lines on the doubts that remain. A stated doubt helps the audience._ _E.g. "The prevalence cited was not confirmed." / "Illustrative AI-generated image; does not depict real people."_
+**What remains unresolved** _For each pending issue, record why it remains unresolved and what it means for using the content (3 to 5 lines)._ _E.g. "One of the sources supporting the conclusion could not be read in full; until it is, the claim should remain unconfirmed." / "Illustrative AI-generated image; does not depict real people."_
 
 > 
 
@@ -266,7 +274,7 @@ Content / record code: ____  Curator: ____  Date: ____
 
 > 
 
-**What will I change?** _Changes or checks you decided to make after the discussion._
+**What will I change?** _Record each agreed change, the part of the content it applies to and the reviewer's comment that prompted it._ _E.g. Section 2: "demonstrates" becomes "suggests", at the reviewer's request (no results demonstrate it)._
 
 > 
 
@@ -281,6 +289,8 @@ _What do I decide? A decision based on the earlier phases, owned by people and w
 Content / record code: ____  Curator: ____  Date: ____
 
 ### A. Decision
+
+> The AICP outcome documents the curation process carried out. It is not, in itself, a scientific validation of the instruments, results or models presented in the content.
 
 **Choose one**
 

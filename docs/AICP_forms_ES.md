@@ -14,7 +14,7 @@ Seis formularios breves, uno por fase, para adjuntar a cualquier contenido produ
 
 ## Identificación
 
-**Tipo de contenido** _Elija esto primero: los campos siguientes se ajustan al tipo de contenido._: ☐ Texto  ☐ Imagen  ☐ Vídeo  ☐ Mixto (texto con imagen o vídeo)
+**Tipo de contenido** _Elija esto primero: los campos siguientes se ajustan al tipo de contenido. Marque solo lo que se generó con IA: un texto generado con IA con fotografías suyas es "Texto"._: ☐ Texto  ☐ Imagen  ☐ Vídeo  ☐ Mixto (texto e imagen o vídeo, ambos generados con IA)
 
 **Contenido analizado** _Título o tema del contenido generado por IA que va a evaluar._ _P. ej.: Marco sobre burnout en enfermeros; ilustración para un cartel_
 
@@ -42,16 +42,16 @@ Seis formularios breves, uno por fase, para adjuntar a cualquier contenido produ
 
 ### Las seis fases en resumen
 
-> Complete en orden; puede volver atrás.
+> Complete en orden; puede volver atrás. Una fase está completada cuando todos los campos aplicables están completos o marcados como no aplicables, y las dudas que quedan están registradas.
 
-| Fase y pregunta | Completada el |
-| --- | --- |
-| **1 · Reporting: ¿Cómo se creó?** |   |
-| **2 · Relating: ¿Qué dicen otras fuentes?** |   |
-| **3 · Responding: ¿Qué observo y cómo reacciono?** |   |
-| **4 · Reasoning: ¿Qué puedo afirmar con seguridad?** |   |
-| **5 · Reconciling: ¿Qué dicen los demás?** |   |
-| **6 · Reconstructing: ¿Qué decido?** |   |
+| Fase y pregunta | Estado | Completada el |
+| --- | --- | --- |
+| **1 · Reporting: ¿Cómo se creó?** |   |   |
+| **2 · Relating: ¿Qué dicen otras fuentes?** |   |   |
+| **3 · Responding: ¿Qué observo y cómo reacciono?** |   |   |
+| **4 · Reasoning: ¿Qué puedo afirmar con seguridad?** |   |   |
+| **5 · Reconciling: ¿Qué dicen los demás?** |   |   |
+| **6 · Reconstructing: ¿Qué decido?** |   |   |
 
 ## Fase 1 · Reporting: Registrar el origen del contenido (Provenance Record)
 
@@ -69,7 +69,7 @@ Contenido / código del registro: ____  Curador(a): ____  Fecha: ____
 
 > 
 
-**3. Petición realizada (prompt)** _Copie y pegue la petición tal como la escribió, incluidas las instrucciones anteriores en la misma conversación. Si hizo varios intentos, indique cuántos y cuál usó._ _P. ej.: «Escribe un párrafo sobre el burnout en enfermeros portugueses, con referencias.» / «Ilustración de una enfermera cansada al final del turno, estilo acuarela.»_
+**3. Petición realizada (prompt)** _Registre la petición inicial y las instrucciones posteriores que cambiaron el contenido, las fuentes o la orientación, tal como las escribió. No hace falta copiar toda la conversación: indique dónde está guardado el historial completo. Si hizo varios intentos, indique cuántos y cuál usó._ _P. ej.: «Escribe un párrafo sobre el burnout en enfermeros portugueses, con referencias.» / «Ilustración de una enfermera cansada al final del turno, estilo acuarela.»_
 
 > 
 
@@ -121,9 +121,9 @@ Contenido / código del registro: ____  Curador(a): ____  Fecha: ____
 
 ### [Solo texto] B. Verificar referencias y afirmaciones (empiece por las más importantes)
 
-> Busque la obra por título y DOI. "¿Dice lo que el texto afirma?": abra la fuente y confirme la idea. Antes de usar el texto, todas las referencias deben estar verificadas (Fase 6).
+> Busque la obra por título y DOI. En "¿Dice lo que el texto afirma?", indique si la fuente sustenta, sustenta en parte o contradice la afirmación; si no pudo verificarlo, explique por qué. En "Dónde lo verificó", indique la página o sección consultada y, en una frase, la correspondencia encontrada. Antes de usar el texto, todas las referencias deben estar verificadas (Fase 6).
 
-| Afirmación o referencia del texto | ¿Existe? | ¿Dice lo que el texto afirma? | Dónde lo verificó |
+| Afirmación o referencia del texto | ¿Existe? | ¿Dice lo que el texto afirma? | Dónde lo verificó (página o sección) |
 | --- | --- | --- | --- |
 | _P. ej.: (Ferreira & Almeida, 2021)_ |   |   | _P. ej.: Google Académico y DOI_ |
 |   |   |   |   |
@@ -147,11 +147,11 @@ Contenido / código del registro: ____  Curador(a): ____  Fecha: ____
 
 > 
 
-**¿Qué falta?** _Autores, lenguas, países, perspectivas o personas importantes que no aparecen._ _P. ej.: estudios en portugués; enfermeros hombres o mayores_
+**¿Qué perspectivas relevantes están ausentes?** _Indique una perspectiva relevante que no esté suficientemente representada (autores, lenguas, países, grupos, enfoques) y explique por qué esa ausencia limita el contenido._ _P. ej.: estudios en portugués; enfermeros hombres o mayores_
 
 > 
 
-**¿Está actualizado y adecuado a mi contexto?** _Mire los años de las fuentes, cuando existan (en general, los últimos 5 a 10 años, salvo obras clásicas), y si sirve a su disciplina, su público y su país._: ☐ Sí  ☐ En parte  ☐ No
+**¿Está actualizado y adecuado a mi contexto?** _Mire los años de las fuentes, cuando existan (en general, los últimos 5 a 10 años, salvo obras clásicas), y si sirve a su disciplina, su público y su país._: ☐ Sí  ☐ En parte  ☐ No  ☐ No evaluado
 
 ## Fase 3 · Responding: Probar y buscar señales de alerta (Bias and Diversity Audit)
 
@@ -167,7 +167,7 @@ Contenido / código del registro: ____  Curador(a): ____  Fecha: ____
 
 ### B. Prueba: cambie la petición (pida otra vez a la IA, cambiando una cosa)
 
-> Puede cambiar el país, la teoría, el idioma, las personas representadas o pedir la opinión contraria. Si la respuesta cambia mucho, el resultado no es estable.
+> Puede cambiar el país, la teoría, el idioma, las personas representadas o pedir la opinión contraria. Una respuesta diferente no es, por sí sola, un problema: el cambio de contexto puede justificarla. Registre si surgieron contradicciones, afirmaciones sin respaldo o diferencias que la herramienta no puede justificar.
 
 | Qué cambió en la petición | Qué cambió en la respuesta |
 | --- | --- |
@@ -176,25 +176,29 @@ Contenido / código del registro: ____  Curador(a): ____  Fecha: ____
 
 ### [Solo texto] C. Señales de alerta en el texto
 
+> En "Dónde", registre un pasaje que ejemplifique la señal y su ubicación, y explique en una frase por qué lo considera problemático. P. ej.: «Conclusión: ‘Este enfoque garantiza mejores aprendizajes’. Certeza excesiva: el texto no presenta resultados que permitan garantizarlo.»
+
 | Señal de alerta | Respuesta | Dónde (fragmento) |
 | --- | --- | --- |
-| **Generaliza demasiado**: Usa "todos", "siempre", "en toda Europa" sin pruebas. | ☐ Lo vi ☐ No lo vi |   |
-| **Habla con demasiada certeza**: Dice "prueba", "elimina", "demuestra" sin datos que lo sostengan. | ☐ Lo vi ☐ No lo vi |   |
-| **Siempre le da la razón**: Si pide lo contrario, ¿también está de acuerdo? La IA tiende a complacer. | ☐ Lo vi ☐ No lo vi |   |
-| **Deja voces fuera**: Solo aparecen autores o ejemplos de un país, lengua o escuela teórica. | ☐ Lo vi ☐ No lo vi |   |
-| **Usa estereotipos**: Asocia grupos a papeles o características (género, edad, cultura, profesión). | ☐ Lo vi ☐ No lo vi |   |
-| **Simplifica o borra su estilo**: Resume ideas o autores de forma pobre, o el texto suena genérico. | ☐ Lo vi ☐ No lo vi |   |
+| **Generaliza demasiado**: Usa "todos", "siempre", "en toda Europa" sin pruebas. | ☐ Lo vi ☐ No lo vi ☐ No evaluado |   |
+| **Habla con demasiada certeza**: Dice "prueba", "elimina", "demuestra" sin datos que lo sostengan. | ☐ Lo vi ☐ No lo vi ☐ No evaluado |   |
+| **Siempre le da la razón**: Si pide lo contrario, ¿también está de acuerdo? La IA tiende a complacer. | ☐ Lo vi ☐ No lo vi ☐ No evaluado |   |
+| **Deja voces fuera**: Solo aparecen autores o ejemplos de un país, lengua o escuela teórica. | ☐ Lo vi ☐ No lo vi ☐ No evaluado |   |
+| **Usa estereotipos**: Asocia grupos a papeles o características (género, edad, cultura, profesión). | ☐ Lo vi ☐ No lo vi ☐ No evaluado |   |
+| **Simplifica o borra su estilo**: Resume ideas o autores de forma pobre, o el texto suena genérico. | ☐ Lo vi ☐ No lo vi ☐ No evaluado |   |
 
 ### [Solo imagen y vídeo] C. Señales de alerta en la imagen o el vídeo
 
+> En "Dónde", registre el momento o la zona de la imagen que ejemplifica la señal y explique en una frase por qué la considera problemática.
+
 | Señal de alerta | Respuesta | Dónde (momento o zona) |
 | --- | --- | --- |
-| **Estereotipos en la representación**: ¿Quién aparece en cada papel? P. ej.: médicos hombres y enfermeras mujeres; una sola etnia o edad. | ☐ Lo vi ☐ No lo vi |   |
-| **Personas y lugares todos iguales**: Rostros, cuerpos y escenarios repetidos, o de una sola cultura. | ☐ Lo vi ☐ No lo vi |   |
-| **Errores visuales**: Manos, texto ilegible, objetos o proporciones imposibles; en el vídeo, movimientos o sonidos que no encajan. | ☐ Lo vi ☐ No lo vi |   |
-| **Realismo que puede engañar**: Parece una fotografía o grabación real de algo que no ocurrió. | ☐ Lo vi ☐ No lo vi |   |
-| **Imita a un artista, marca o personaje**: Estilo reconocible de un autor, logotipos o personajes protegidos. | ☐ Lo vi ☐ No lo vi |   |
-| **Parecido con una persona real**: Alguien podría ser reconocido por el rostro o la voz. | ☐ Lo vi ☐ No lo vi |   |
+| **Estereotipos en la representación**: ¿Quién aparece en cada papel? P. ej.: médicos hombres y enfermeras mujeres; una sola etnia o edad. | ☐ Lo vi ☐ No lo vi ☐ No evaluado |   |
+| **Personas y lugares todos iguales**: Rostros, cuerpos y escenarios repetidos, o de una sola cultura. | ☐ Lo vi ☐ No lo vi ☐ No evaluado |   |
+| **Errores visuales**: Manos, texto ilegible, objetos o proporciones imposibles; en el vídeo, movimientos o sonidos que no encajan. | ☐ Lo vi ☐ No lo vi ☐ No evaluado |   |
+| **Realismo que puede engañar**: Parece una fotografía o grabación real de algo que no ocurrió. | ☐ Lo vi ☐ No lo vi ☐ No evaluado |   |
+| **Imita a un artista, marca o personaje**: Estilo reconocible de un autor, logotipos o personajes protegidos. | ☐ Lo vi ☐ No lo vi ☐ No evaluado |   |
+| **Parecido con una persona real**: Alguien podría ser reconocido por el rostro o la voz. | ☐ Lo vi ☐ No lo vi ☐ No evaluado |   |
 
 ### D. Resumen
 
@@ -217,17 +221,21 @@ Contenido / código del registro: ____  Curador(a): ____  Fecha: ____
 
 ### B. Evaluación rápida
 
-**[Solo texto] ¿El texto es coherente?** _¿El propósito, la estructura y las conclusiones están alineados? En un texto científico: la pregunta, los objetivos, el método y las conclusiones._: ☐ Sí  ☐ En parte  ☐ No
+**[Solo texto] ¿El texto es coherente?** _¿El propósito, la estructura y las conclusiones están alineados? En un texto científico: la pregunta, los objetivos, el método y las conclusiones._: ☐ Sí  ☐ En parte  ☐ No  ☐ No evaluado
 
-**[Solo texto] ¿Apoya lo que dice con fuentes, datos o buenos argumentos?** _¿Hay fuentes, datos o razonamiento para las afirmaciones principales?_: ☐ Sí  ☐ En parte  ☐ No
+**[Solo texto] ¿Apoya lo que dice con fuentes, datos o buenos argumentos?** _¿Hay fuentes, datos o razonamiento para las afirmaciones principales?_: ☐ Sí  ☐ En parte  ☐ No  ☐ No evaluado
 
-**[Solo imagen y vídeo] ¿La imagen o el vídeo cumple el objetivo?** _¿Comunica lo que pretende, sin elementos que distraigan o confundan?_: ☐ Sí  ☐ En parte  ☐ No
+**[Solo imagen y vídeo] ¿La imagen o el vídeo cumple el objetivo?** _¿Comunica lo que pretende, sin elementos que distraigan o confundan?_: ☐ Sí  ☐ En parte  ☐ No  ☐ No evaluado
 
 **[Solo imagen y vídeo] ¿Puede tomarse como real?** _Si parece real y no lo es, debe ir claramente identificado como generado por IA, o no debe usarse._: ☐ No  ☐ Sí, pero irá identificado  ☐ Sí, hay que revisarlo
 
 **[Solo imagen y vídeo] ¿Tiene texto alternativo o subtítulos?** _El texto alternativo en las imágenes y los subtítulos en los vídeos hacen accesible el contenido._: ☐ Sí  ☐ En parte  ☐ No  ☐ No aplica
 
-**¿Sé lo suficiente del tema para evaluar?** _Si "No", pida ayuda a quien domine el tema antes de decidir. Es la respuesta más honesta y frecuente._: ☐ Sí  ☐ En parte  ☐ No
+**¿Puedo evaluar los aspectos principales del tema?** _Indique abajo en qué aspectos necesita apoyo especializado. Pedirlo antes de decidir es la respuesta más honesta y frecuente._: ☐ Sí  ☐ En parte  ☐ No
+
+**¿En qué aspectos necesito apoyo especializado?** _P. ej.: psicometría de los ítems; datos clínicos_
+
+> 
 
 **[Solo texto] ¿Verifiqué plagio y derechos?** _Use la herramienta de similitud de su institución y confirme si hay textos con derechos de autor._: ☐ Sí  ☐ No  ☐ Pendiente
 
@@ -235,7 +243,7 @@ Contenido / código del registro: ____  Curador(a): ____  Fecha: ____
 
 ### C. Nota para quien vaya a ver o leer (obligatoria si el contenido sale de su grupo)
 
-**Lo que quedó por resolver** _3 a 5 líneas con las dudas que persisten. Una duda declarada ayuda a quien ve o lee._ _P. ej.: «La prevalencia citada no se confirmó.» / «Imagen ilustrativa generada por IA; no representa a personas reales.»_
+**Lo que quedó por resolver** _Para cada cuestión pendiente, registre por qué sigue sin resolverse y qué consecuencia tiene para el uso del contenido (3 a 5 líneas)._ _P. ej.: «No fue posible consultar íntegramente una de las fuentes que sostiene la conclusión; hasta esa consulta, la afirmación debe quedar sin confirmar.» / «Imagen ilustrativa generada por IA; no representa a personas reales.»_
 
 > 
 
@@ -266,7 +274,7 @@ Contenido / código del registro: ____  Curador(a): ____  Fecha: ____
 
 > 
 
-**¿Qué voy a cambiar?** _Cambios o verificaciones que decidió hacer después de la conversación._
+**¿Qué voy a cambiar?** _Registre cada cambio acordado, la parte del contenido a la que se aplica y la observación del revisor que lo motivó._ _P. ej.: Sección 2: «demuestra» pasa a «sugiere», por indicación del revisor (no hay resultados que lo demuestren)._
 
 > 
 
@@ -281,6 +289,8 @@ _¿Qué decido? Una decisión basada en las fases anteriores, asumida por person
 Contenido / código del registro: ____  Curador(a): ____  Fecha: ____
 
 ### A. Decisión
+
+> La conclusión del AICP documenta el proceso de curaduría realizado. No constituye, por sí sola, una validación científica de los instrumentos, resultados o modelos presentados en el contenido.
 
 **Marque una**
 
