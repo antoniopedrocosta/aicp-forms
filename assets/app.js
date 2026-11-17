@@ -9,6 +9,16 @@
     exportJson: { pt: "Guardar ficheiro (JSON)", en: "Save file (JSON)", es: "Guardar archivo (JSON)", it: "Salva file (JSON)", ko: "파일 저장(JSON)" },
     importJson: { pt: "Abrir ficheiro (JSON)", en: "Open file (JSON)", es: "Abrir archivo (JSON)", it: "Apri file (JSON)", ko: "파일 열기(JSON)" },
     print: { pt: "Imprimir / PDF", en: "Print / PDF", es: "Imprimir / PDF", it: "Stampa / PDF", ko: "인쇄 / PDF" },
+    mergeJson: { pt: "Juntar ficheiro (JSON)", en: "Merge file (JSON)", es: "Combinar archivo (JSON)", it: "Unisci file (JSON)", ko: "파일 합치기(JSON)" },
+    mergeTitle: { pt: "Juntar registos", en: "Merge records", es: "Combinar registros", it: "Unisci registri", ko: "기록 합치기" },
+    mergeAdded: { pt: "Campos a acrescentar a partir do ficheiro: {a}.", en: "Fields to add from the file: {a}.", es: "Campos que se añadirán desde el archivo: {a}.", it: "Campi da aggiungere dal file: {a}.", ko: "파일에서 추가할 항목: {a}개." },
+    mergeNone: { pt: "Não há diferenças a resolver.", en: "There are no differences to resolve.", es: "No hay diferencias que resolver.", it: "Non ci sono differenze da risolvere.", ko: "해결할 차이가 없습니다." },
+    mergeConf: { pt: "Há {c} campos preenchidos de forma diferente nos dois registos. Escolha a versão a manter em cada um.", en: "{c} fields differ between the two records. Choose the version to keep for each.", es: "Hay {c} campos completados de forma distinta en los dos registros. Elija la versión que desea mantener en cada uno.", it: "{c} campi sono compilati in modo diverso nei due registri. Scelga la versione da mantenere per ciascuno.", ko: "두 기록에서 서로 다른 항목이 {c}개 있습니다. 항목마다 유지할 내용을 고르십시오." },
+    mergeHint: { pt: "Nada muda até carregar em Aplicar. Para poder voltar atrás, guarde antes o seu registo (JSON).", en: "Nothing changes until you press Apply. To be able to go back, save your record (JSON) first.", es: "Nada cambia hasta que pulse Aplicar. Para poder volver atrás, guarde antes su registro (JSON).", it: "Nulla cambia finché non preme Applica. Per poter tornare indietro, salvi prima il suo registro (JSON).", ko: "적용을 누르기 전에는 아무것도 바뀌지 않습니다. 되돌릴 수 있도록 먼저 내 기록(JSON)을 저장하십시오." },
+    mine: { pt: "Manter o meu", en: "Keep mine", es: "Mantener el mío", it: "Mantieni il mio", ko: "내 것 유지" },
+    theirs: { pt: "Usar o do ficheiro", en: "Use the file's", es: "Usar el del archivo", it: "Usa quello del file", ko: "파일의 것 사용" },
+    apply: { pt: "Aplicar", en: "Apply", es: "Aplicar", it: "Applica", ko: "적용" },
+    rowW: { pt: "linha", en: "row", es: "fila", it: "riga", ko: "행" },
     reset: { pt: "Limpar tudo", en: "Clear all", es: "Borrar todo", it: "Cancella tutto", ko: "모두 지우기" },
     resetConfirm: { pt: "Apagar todos os campos preenchidos neste navegador?", en: "Delete all filled-in fields in this browser?", es: "¿Borrar todos los campos completados en este navegador?", it: "Cancellare tutti i campi compilati in questo browser?", ko: "이 브라우저에 입력한 모든 내용을 지우시겠습니까?" },
     addRow: { pt: "+ linha", en: "+ row", es: "+ fila", it: "+ riga", ko: "+ 행" },
@@ -231,6 +241,7 @@
         el("button", { type: "button", onclick: exportMd }, t(UI.exportMd)),
         el("button", { type: "button", onclick: exportJson }, t(UI.exportJson)),
         el("label", { class: "btn" }, t(UI.importJson), el("input", { type: "file", accept: "application/json,.json", hidden: true, onchange: importJson })),
+        el("label", { class: "btn" }, t(UI.mergeJson), el("input", { type: "file", accept: "application/json,.json", hidden: true, onchange: mergeJson })),
         el("button", { type: "button", onclick: () => window.print() }, t(UI.print)),
         el("button", { type: "button", class: "danger", onclick: () => { if (confirm(t(UI.resetConfirm))) { state.v = {}; save(); render(); } } }, t(UI.reset)),
         el("span", { id: "status", class: "status", role: "status", "aria-live": "polite" }, t(UI.privacy))
@@ -280,6 +291,90 @@
     file.text().then((txt) => {
       try { const o = JSON.parse(txt); if (!o || typeof o.values !== "object") throw 0; state.v = o.values; if (o.lang) state.lang = o.lang; save(); render(); }
       catch (err) { alert(t(UI.badFile)); }
+    });
+  }
+
+
+  /* ---------- merge a second record (two people filling in separately) ---------- */
+  const isEmpty = (v) => v == null || (typeof v === "string" && !v.trim()) || (Array.isArray(v) && !v.length);
+  const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
+  function fieldOf(k) {
+    const [sid, bid, fid, ...rest] = k.split(".");
+    const sec = S.sections.find((s) => s.id === sid); const blk = sec && sec.blocks.find((b) => b.id === bid);
+    const f = blk && blk.fields.find((x) => x.id === fid);
+    return { sec, f, rest };
+  }
+  function describe(k) {
+    const { sec, f, rest } = fieldOf(k);
+    if (!f) return k;
+    let name = (sec.phase ? t(sec.title).split("·")[0].trim() + " · " : "") + (t(f.label) || f.columns.map(t).join(" / "));
+    if (rest[0] === "detail") name += " (" + t(f.detailLabel || UI.detail) + ")";
+    else if (rest.length === 2) {
+      const r = +rest[0], c = +rest[1];
+      const rowName = (f.fixedRows || f.type === "radioTable") && f.rowLabels ? t(f.rowLabels[r]) : t(UI.rowW) + " " + (r + 1);
+      name += ": " + rowName + ", " + t(f.columns[c]);
+    }
+    return name;
+  }
+  function showVal(k, v) {
+    const { f, rest } = fieldOf(k);
+    if (!f || isEmpty(v)) return String(v == null ? "" : v);
+    if (rest.length === 0 && f.options) return Array.isArray(v) ? v.map((i) => t(f.options[i])).join("; ") : t(f.options[v]);
+    if (rest.length === 2) {
+      const c = +rest[1];
+      if (f.type === "radioTable" && c === 1) return t(f.options[v]);
+      if (f.selectCols && f.selectCols[c]) return t(f.selectCols[c][v]);
+    }
+    return String(v);
+  }
+  function mergeJson(e) {
+    const file = e.target.files[0]; if (!file) return;
+    e.target.value = "";
+    file.text().then((txt) => {
+      let o;
+      try { o = JSON.parse(txt); if (!o || typeof o.values !== "object") throw 0; } catch (err) { alert(t(UI.badFile)); return; }
+      const inc = o.values, add = {}, conflicts = [];
+      const incStmtManual = inc[STMT + ".auto"] === false || (inc[STMT + ".auto"] == null && !isEmpty(inc[STMT]));
+      for (const [k, v] of Object.entries(inc)) {
+        if (k === STMT + ".auto" || isEmpty(v)) continue;
+        const cur = state.v[k];
+        if (k === STMT) {
+          if (!incStmtManual) continue;
+          if (stmtAuto() || isEmpty(cur)) { add[k] = v; add[STMT + ".auto"] = false; }
+          else if (!same(cur, v)) conflicts.push({ k, cur, v });
+          continue;
+        }
+        if (/\.n$/.test(k)) { if (!(cur >= v)) add[k] = v; continue; }
+        if (isEmpty(cur)) { add[k] = v; continue; }
+        if (same(cur, v)) continue;
+        const { f, rest } = fieldOf(k);
+        if (f && f.type === "check" && rest.length === 0 && Array.isArray(cur) && Array.isArray(v)) { add[k] = [...new Set([...cur, ...v])].sort((a, b) => a - b); continue; }
+        conflicts.push({ k, cur, v });
+      }
+      const nAdd = Object.keys(add).filter((k) => !/\.(n|auto)$/.test(k)).length;
+      const body = el("div", { class: "merge-body" },
+        el("p", {}, t(UI.mergeAdded).replace("{a}", nAdd) + " " + (conflicts.length ? t(UI.mergeConf).replace("{c}", conflicts.length) : t(UI.mergeNone))),
+        el("p", { class: "hint" }, t(UI.mergeHint)));
+      const choice = conflicts.map(() => 0);
+      if (conflicts.length) {
+        const list = el("ol", { class: "merge-list" });
+        conflicts.forEach((c, i) => {
+          const nm = "mg-" + i;
+          const opt = (val, label, idx) => el("label", { class: "merge-opt" },
+            el("input", { type: "radio", name: nm, checked: idx === 0, onchange: () => { choice[i] = idx; } }),
+            el("span", {}, el("strong", {}, label + ": "), showVal(c.k, val)));
+          list.append(el("li", {}, el("div", { class: "merge-field" }, describe(c.k)), opt(c.cur, t(UI.mine), 0), opt(c.v, t(UI.theirs), 1)));
+        });
+        body.append(list);
+      }
+      const applyBtn = el("button", { type: "button", class: "primary", onclick: () => {
+        Object.assign(state.v, add);
+        conflicts.forEach((c, i) => {
+          if (choice[i] === 1) { state.v[c.k] = c.v; if (c.k === STMT) state.v[STMT + ".auto"] = false; }
+        });
+        save(); dlg.close(); render();
+      } }, t(UI.apply));
+      const dlg = openDialog(t(UI.mergeTitle), body, [applyBtn]);
     });
   }
 

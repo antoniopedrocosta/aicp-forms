@@ -10,6 +10,7 @@ Formulários do *AI Curatorial Protocol* (AICP) para a curadoria de conteúdos p
 - **Texto, imagem e vídeo:** comece por escolher o tipo de conteúdo; os campos próprios de texto ou de imagem e vídeo aparecem conforme a escolha.
 - **Ajudas e exemplos:** cada campo tem uma ajuda curta e, quando útil, um exemplo fictício (conteúdos sobre burnout em enfermeiros).
 - **Guardar:** o preenchimento fica guardado automaticamente no navegador. Para guardar num ficheiro, ou para continuar noutro computador, use *Guardar ficheiro (JSON)* e depois *Abrir ficheiro (JSON)*.
+- **Várias pessoas:** cada pessoa preenche no seu computador e guarda o ficheiro (JSON); depois, uma delas usa *Juntar ficheiro (JSON)*. Os campos vazios são preenchidos e, nos que diferem, escolhe-se a versão a manter.
 - **Estado do processo:** mostra, por fase, quantos campos estão preenchidos e quais faltam, se a Fase 5 tem um revisor independente e se as condições da Fase 6 estão cumpridas.
 - **Gerar declaração:** monta um rascunho da declaração de uso de IA a partir das respostas (Fases 1, 2, 5 e 6), com parênteses retos onde faltar informação; pode copiá-lo ou colocá-lo na Fase 6.
 - **Exportar:** *Exportar Word* gera um documento .docx com todas as fases; *Exportar Markdown* gera um registo em texto; *Imprimir / PDF* gera uma versão para impressão, com uma fase por página.
@@ -56,6 +57,7 @@ Forms for the *AI Curatorial Protocol* (AICP), for curating content produced wit
 - **Text, image and video:** start by choosing the type of content; the fields specific to text or to image and video appear accordingly.
 - **Help and examples:** each field has a short help note and, where useful, a fictional example (content about burnout in nurses).
 - **Saving:** entries are saved automatically in the browser. To keep a file, or to continue on another computer, use *Save file (JSON)* and then *Open file (JSON)*.
+- **Several people:** each person fills in on their own computer and saves the file (JSON); then one person uses *Merge file (JSON)*. Empty fields are filled in and, where the two records differ, you choose which version to keep.
 - **Process status:** shows, per phase, how many fields are filled in and which are missing, whether Phase 5 has an independent reviewer and whether the Phase 6 conditions are met.
 - **Generate statement:** drafts the AI use statement from the answers (Phases 1, 2, 5 and 6), with square brackets where information is missing; copy it or insert it in Phase 6.
 - **Exporting:** *Export Word* produces a .docx with all phases; *Export Markdown* produces a text record; *Print / PDF* produces a printable version, one phase per page.
@@ -88,6 +90,7 @@ Formularios del *AI Curatorial Protocol* (AICP) para la curaduría de contenidos
 - **Texto, imagen y vídeo:** empiece eligiendo el tipo de contenido; los campos propios de texto o de imagen y vídeo aparecen según la elección.
 - **Ayudas y ejemplos:** cada campo tiene una breve ayuda y, cuando es útil, un ejemplo ficticio (contenidos sobre burnout en enfermeros).
 - **Guardar:** las respuestas se guardan automáticamente en el navegador. Para conservar un archivo o continuar en otro ordenador, use *Guardar archivo (JSON)* y después *Abrir archivo (JSON)*.
+- **Varias personas:** cada una completa en su ordenador y guarda el archivo (JSON); después, una persona usa *Combinar archivo (JSON)*. Los campos vacíos se completan y, en los que difieren, se elige la versión que se mantiene.
 - **Estado del proceso:** muestra, por fase, cuántos campos están completos y cuáles faltan, si la Fase 5 tiene un revisor independiente y si se cumplen las condiciones de la Fase 6.
 - **Generar declaración:** redacta un borrador de la declaración de uso de IA a partir de las respuestas, con corchetes donde falta información.
 - **Exportar:** *Exportar Word* (.docx), *Exportar Markdown* e *Imprimir / PDF*, con una fase por página.
@@ -112,6 +115,7 @@ Moduli dell'*AI Curatorial Protocol* (AICP) per la curatela di contenuti prodott
 - **Testo, immagine e video:** si comincia scegliendo il tipo di contenuto; i campi propri del testo o dell'immagine e del video compaiono in base alla scelta.
 - **Aiuti ed esempi:** ogni campo ha un breve aiuto e, quando utile, un esempio fittizio (contenuti sul burnout negli infermieri).
 - **Salvataggio:** le risposte vengono salvate automaticamente nel browser. Per conservare un file o continuare su un altro computer, usare *Salva file (JSON)* e poi *Apri file (JSON)*.
+- **Più persone:** ciascuno compila sul proprio computer e salva il file (JSON); poi una persona usa *Unisci file (JSON)*. I campi vuoti vengono completati e, per i campi compilati in modo diverso, si sceglie quale versione mantenere.
 - **Stato del processo:** mostra, per ogni fase, quanti campi sono compilati e quali mancano, se la Fase 5 ha un revisore indipendente e se le condizioni della Fase 6 sono soddisfatte.
 - **Genera dichiarazione:** redige una bozza della dichiarazione d'uso dell'IA a partire dalle risposte, con parentesi quadre dove mancano informazioni.
 - **Esportazione:** *Esporta Word* (.docx), *Esporta Markdown* e *Stampa / PDF*, con una fase per pagina.
@@ -136,6 +140,7 @@ Contenuto dei moduli: CC BY 4.0. Codice: MIT.
 - **텍스트, 이미지, 영상:** 먼저 콘텐츠 유형을 선택하면, 텍스트용 또는 이미지·영상용 항목이 선택에 따라 나타납니다.
 - **도움말과 예시:** 각 항목에는 짧은 도움말과, 필요한 경우 가상의 예시(간호사 번아웃에 관한 콘텐츠)가 있습니다.
 - **저장:** 입력 내용은 브라우저에 자동 저장됩니다. 파일로 보관하거나 다른 컴퓨터에서 이어서 작성하려면 *파일 저장(JSON)*과 *파일 열기(JSON)*를 사용하십시오.
+- **여러 사람이 작성하기:** 각자 자기 컴퓨터에서 작성하고 파일(JSON)을 저장합니다. 그다음 한 사람이 *파일 합치기(JSON)*를 사용합니다. 비어 있는 항목은 자동으로 채워지고, 두 사람이 다르게 쓴 항목은 어느 쪽을 유지할지 고를 수 있습니다.
 - **진행 상태:** 단계별로 작성한 항목과 남은 항목, 5단계의 독립 검토자 여부, 6단계 확인 사항 충족 여부를 보여 줍니다.
 - **고지문 생성:** 응답을 바탕으로 AI 사용 고지문 초안을 만들며, 정보가 없는 곳은 대괄호로 표시합니다.
 - **내보내기:** *Word 내보내기*(.docx), *Markdown 내보내기*, *인쇄 / PDF*(단계별로 한 페이지).
