@@ -1,17 +1,1648 @@
 <!doctype html>
 <html lang="pt-PT">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AI Curatorial Protocol (AICP)</title>
-  <meta name="description" content="Formulários do AI Curatorial Protocol (AICP) para curadoria de textos, imagens e vídeos gerados por IA. AICP curation forms for AI-generated texts, images and videos. Formularios de curaduría de textos, imágenes y vídeos generados por IA. Moduli di curatela di testi, immagini e video generati dall'IA. AI 생성 텍스트·이미지·영상 큐레이션 양식.">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f3a5f'/%3E%3Ctext x='16' y='22' font-size='14' text-anchor='middle' fill='white' font-family='sans-serif'%3EAI%3C/text%3E%3C/svg%3E">
-  <link rel="stylesheet" href="assets/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}body{margin:0;font:14px system-ui}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Investigação Qualitativa na Era da IA</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400;1,8..60,500&display=swap">
+<style>
+/* Palco 16:9 (1600×900) escalado para projeção; em ecrãs estreitos os diapositivos passam a uma página contínua de leitura.
+   Vozes: Anton = títulos da aula · Source Sans = texto · Source Serif itálico = voz humana (alunos, comentário reflexivo) · Plex Mono = saídas da máquina. */
+:root{
+  --bg:#FFFFFF; --panel:#F4F6EE; --fg:#1B2013; --muted:#596150; --line:#D9DFCD;
+  --olive:#4F6228; --olive-soft:#E8EEDA; --orchid:#A12F8B; --orchid-soft:#F6E2F1;
+  --amber:#B86E0C; --amber-soft:#FBEBD2; --good:#2E7A44; --bad:#AE3A2E;
+  --orb:214,84,196; --orb-a:.30;
+  --st1:#BF3A2C; --st2:#6E9A31; --st3:#7B3F9E; --st4:#1F88B0; --st5:#DE7A16; --st6:#C93A3A; --st7:#A42E2E;
+  --p1:#6C8EBF; --p2:#9673A6; --p3:#B85450; --p4:#82B366; --p5:#C9A43A;
+  --display:"Anton","Impact","Haettenschweiler","Arial Narrow Bold",sans-serif;
+  --sans:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
+  --voice:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --machine:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#10120D; --panel:#181C13; --fg:#ECEFE3; --muted:#A5AC98; --line:#30372A;
+    --olive:#B6CD80; --olive-soft:#253019; --orchid:#E68AD4; --orchid-soft:#371E33;
+    --amber:#EFAE58; --amber-soft:#382913; --good:#6CC08A; --bad:#F08A7E; --orb-a:.15; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#10120D; --panel:#181C13; --fg:#ECEFE3; --muted:#A5AC98; --line:#30372A;
+  --olive:#B6CD80; --olive-soft:#253019; --orchid:#E68AD4; --orchid-soft:#371E33;
+  --amber:#EFAE58; --amber-soft:#382913; --good:#6CC08A; --bad:#F08A7E; --orb-a:.15; color-scheme:dark;
+}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--orchid);outline-offset:2px}
+*{box-sizing:border-box}
+
+/* ---------- escala tipográfica por modo ---------- */
+#app{--hero:96px;--t1:60px;--t2:32px;--b:26px;--s:20px;--xs:16px;--gap:28px;--r:14px}
+#app.read{--hero:38px;--t1:30px;--t2:21px;--b:17px;--s:15.5px;--xs:13px;--gap:16px;--r:12px}
+
+/* ---------- palco ---------- */
+.present{height:100%;overflow:hidden}
+.present #stage{position:fixed;left:50%;top:50%;width:1600px;height:900px;transform:translate(-50%,-50%) scale(var(--k,1));transform-origin:center}
+.present .slide{position:absolute;inset:0;display:none;padding:56px 96px 92px;flex-direction:column;gap:var(--gap);overflow:hidden}
+.present .slide.is-active{display:flex;animation:enter .32s ease both}
+@keyframes enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.read #stage{max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:4px 64px}
+.read .slide{display:flex;flex-direction:column;gap:var(--gap);padding-block:34px;border-bottom:1px solid var(--line);position:relative;overflow:hidden;scroll-margin-top:60px}
+.slide::before{content:"";position:absolute;width:520px;height:520px;left:-200px;top:-200px;background:radial-gradient(circle,rgba(var(--orb),var(--orb-a)) 0%,rgba(var(--orb),0) 62%);pointer-events:none}
+.present .slide::after{content:"";position:absolute;width:640px;height:640px;right:-260px;bottom:-300px;background:radial-gradient(circle,rgba(var(--orb),calc(var(--orb-a)*.8)) 0%,rgba(var(--orb),0) 60%);pointer-events:none}
+.read .slide::before{width:300px;height:300px;left:-150px;top:-120px}
+.slide>*{position:relative;z-index:1}
+.present .slide [data-f]{transition:opacity .35s ease,transform .35s ease}
+.present .slide [data-f]:not(.f-on){opacity:0;transform:translateY(6px);pointer-events:none}
+
+/* ---------- tipografia ---------- */
+.eyebrow{font:700 var(--xs)/1.2 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0}
+.h{font-family:var(--display);font-weight:400;font-size:var(--t1);line-height:1.06;color:var(--olive);margin:0;text-wrap:balance;letter-spacing:.005em}
+.hero{font-size:var(--hero);line-height:1.02}
+.head{display:flex;flex-direction:column;gap:8px}
+.head-row{display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+p{margin:0}
+.lead{font-size:var(--b);line-height:1.4;max-width:60ch}
+.muted{color:var(--muted)}
+.small{font-size:var(--s);line-height:1.4}
+.xs{font-size:var(--xs);line-height:1.4}
+.voice{font-family:var(--voice);font-style:italic}
+.mono{font-family:var(--machine);font-variant-numeric:tabular-nums}
+.grow{flex:1;min-height:0}
+.cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:calc(var(--gap)*1.6);align-items:start}
+.read .cols{grid-template-columns:minmax(0,1fr)!important;gap:calc(var(--gap)*1.4)}
+.read .ctabs{display:none}
+.list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;font-size:var(--b);line-height:1.35}
+.list li{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline}
+.list li::before{content:"";width:.5em;height:.5em;border-radius:50%;background:var(--olive);transform:translateY(-.08em)}
+.list.small{font-size:var(--s);gap:10px}
+.sub-h{font:700 var(--t2)/1.15 var(--sans);margin:0;color:var(--fg)}
+.cite{font-size:var(--xs);color:var(--muted);line-height:1.45}
+.cite a{color:inherit}
+a{color:var(--olive)}
+mark{background:color-mix(in srgb,var(--orchid) 22%,transparent);color:inherit;padding:0 .12em;border-radius:3px}
+
+/* ---------- componentes ---------- */
+.btn{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--line);background:var(--bg);border-radius:999px;padding:8px 16px;font-weight:600;font-size:var(--s);cursor:pointer}
+.btn:hover{border-color:var(--olive)}
+.btn.primary{background:var(--olive);border-color:var(--olive);color:var(--bg)}
+.chip{display:inline-flex;align-items:center;gap:8px;border:1.5px solid var(--line);background:var(--bg);border-radius:999px;padding:6px 14px;font-weight:600;font-size:var(--s);cursor:pointer}
+.chip[aria-pressed="true"]{border-color:var(--olive);background:var(--olive-soft)}
+.pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 10px;font:600 var(--xs)/1.3 var(--sans);background:var(--panel);border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.pill.live{color:var(--good);border-color:color-mix(in srgb,var(--good) 40%,var(--line))}
+.pill.live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--good);animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35}}
+.qrbox{background:#fff;padding:12px;border-radius:14px;line-height:0;box-shadow:0 1px 0 var(--line),0 8px 24px rgba(0,0,0,.08)}
+.qrbox svg{width:100%;height:auto;display:block}
+.qr-fallback{display:block;line-height:1.3;font:12px var(--machine);color:#222;word-break:break-all;padding:8px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:22px 26px}
+
+/* ---------- sondagens ---------- */
+.opts{display:flex;flex-direction:column;gap:12px}
+.opt{position:relative;display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;padding:14px 20px;border:1.5px solid var(--line);border-radius:12px;background:var(--bg);font:600 var(--b)/1.2 var(--sans);cursor:pointer;overflow:hidden;text-align:left}
+.opt .fill{position:absolute;inset:0 auto 0 0;width:calc(var(--p,0)*100%);background:var(--olive-soft);transition:width .5s ease;z-index:0}
+.opt>span{position:relative;z-index:1}
+.opt[aria-pressed="true"]{border-color:var(--olive);box-shadow:inset 0 0 0 1.5px var(--olive)}
+.opt[aria-pressed="true"] .lab::after{content:" ✓";color:var(--olive)}
+.cnt{font-family:var(--machine);font-size:var(--s);color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.meta{font-size:var(--xs);color:var(--muted);display:flex;gap:10px;align-items:center;flex-wrap:wrap;min-height:1.4em}
+.meta button{border:0;background:none;padding:0;text-decoration:underline;color:var(--muted);cursor:pointer;font-size:inherit}
+.ask{display:flex;gap:10px}
+.ask input{flex:1;min-width:0;font:var(--s)/1.3 var(--sans);padding:12px 16px;border-radius:12px;border:1.5px solid var(--line);background:var(--bg);color:var(--fg)}
+.ask input:focus{border-color:var(--olive);outline:none}
+.wall{display:flex;flex-wrap:wrap;gap:12px;align-content:flex-start;overflow:auto;min-height:0}
+.resp{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 34px 12px 16px;font:italic var(--s)/1.35 var(--voice);max-width:34ch;animation:enter .3s ease both}
+.resp.me{border-color:var(--olive)}
+.resp .x{position:absolute;top:6px;right:8px;border:0;background:none;color:var(--muted);cursor:pointer;font:16px/1 var(--sans);padding:2px}
+.empty{color:var(--muted);font-size:var(--s);border:1.5px dashed var(--line);border-radius:12px;padding:16px 20px}
+.cloud{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:4px 22px;min-height:0;overflow:auto}
+.cloud span{font-family:var(--display);color:var(--olive);line-height:1.1}
+.cloud span:nth-child(3n+2){color:var(--orchid)}
+.cloud span:nth-child(5n+4){color:var(--amber)}
+
+/* ---------- HUD (apresentação) e barra (leitura) ---------- */
+#hud{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:30;display:flex;gap:4px;align-items:center;padding:5px;border-radius:999px;background:color-mix(in srgb,var(--bg) 86%,transparent);border:1px solid var(--line);backdrop-filter:blur(8px);font-size:14px;transition:opacity .3s}
+#hud button{border:0;background:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;cursor:pointer;color:var(--fg)}
+#hud button:hover{background:var(--panel)}
+#hud button[aria-pressed="true"]{background:var(--olive-soft);color:var(--olive)}
+#hud svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#hud .count{font:600 13px var(--machine);padding:0 6px;color:var(--muted);font-variant-numeric:tabular-nums;min-width:56px;text-align:center}
+#hudLeft{position:fixed;left:max(16px,env(safe-area-inset-left,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:30;display:flex;gap:10px;align-items:center;font:600 13px var(--sans);color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+#hudLeft .pill{text-transform:none;letter-spacing:0}
+#progress{position:fixed;left:0;right:0;bottom:0;height:3px;z-index:30;background:transparent}
+#progress i{display:block;height:100%;width:0;background:var(--olive);transition:width .3s}
+.read #hud,.read #hudLeft,.read #progress{display:none}
+#topbar{display:none}
+.read #topbar{display:flex;position:sticky;top:env(safe-area-inset-top,0px);z-index:30;align-items:center;justify-content:space-between;gap:10px;padding-block:10px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.read::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:31;background:var(--bg)}
+#topbar .tb-title{font:400 18px/1 var(--display);color:var(--olive);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#topbar .tb-r{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+#topbar .btn{padding:5px 12px;font-size:13px}
+.follow{display:none}
+.follow.on{display:inline-flex}
+#notes{position:fixed;left:50%;bottom:64px;transform:translateX(-50%);width:min(900px,calc(100vw - 32px));max-height:38vh;overflow:auto;z-index:29;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:16px 20px;box-shadow:0 16px 40px rgba(0,0,0,.18);font-size:16px;line-height:1.5}
+#notes h4{margin:0 0 6px;font:700 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.notes{display:none}
+#qrOverlay{position:fixed;inset:0;z-index:40;display:grid;place-items:center;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(10px);padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.qo{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;max-width:640px;width:100%}
+.qo .qrbox{width:min(62vh,82vw,520px)}
+.qo h3{margin:0;font:400 clamp(28px,4vw,48px)/1.05 var(--display);color:var(--olive)}
+.qo .url{font:14px/1.4 var(--machine);color:var(--muted);word-break:break-all;user-select:all}
+.qo .row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+.qo details{font-size:14px;color:var(--muted);width:100%}
+.qo details form{display:flex;gap:8px;margin-top:8px}
+.qo details input{flex:1;min-width:0;font:14px var(--machine);padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--fg)}
+.qo .note{font-size:14px;color:var(--muted);line-height:1.45;max-width:52ch}
+
+/* ---------- 1 · título ---------- */
+.s-title .tgrid{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:72px;align-items:center;height:100%}
+.read .s-title .tgrid{grid-template-columns:minmax(0,1fr);gap:28px}
+.logo{height:84px;width:auto;align-self:flex-start}
+.read .logo{height:52px}
+:root[data-theme="dark"] .logo{background:#fff;border-radius:10px;padding:6px 10px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .logo{background:#fff;border-radius:10px;padding:6px 10px}}
+.tmain{display:flex;flex-direction:column;gap:26px}
+.tsub{font:400 calc(var(--t1)*.78)/1.1 var(--display);color:var(--olive);opacity:.85;margin:0}
+.author{font:400 calc(var(--t2)*.95)/1.25 var(--display);color:var(--olive);letter-spacing:.02em}
+.author span{display:block;font:600 var(--s)/1.4 var(--sans);letter-spacing:0;color:var(--muted)}
+.join{display:flex;flex-direction:column;gap:14px;align-items:stretch}
+.join p{font-size:var(--s);line-height:1.35;text-align:center}
+.read .join{max-width:260px}
+
+/* ---------- 2 · processo ---------- */
+.stages{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:14px;align-items:end;flex:1;min-height:0;padding-top:20px}
+.stage{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:8px;height:300px;padding:18px 16px;border:0;border-radius:16px;background:var(--c);color:#fff;text-align:left;cursor:pointer;overflow:hidden;box-shadow:inset 0 0 0 0 #fff;transition:box-shadow .2s,transform .2s}
+.stage.focus{height:420px}
+.focus-tag{font:700 var(--xs) var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.stage .st-name{font:700 calc(var(--s)*1.1)/1.15 var(--sans);position:relative;z-index:1}
+.stage.focus .st-name{font:400 calc(var(--t2)*1.05)/1.05 var(--display)}
+.stage .st-sub{font-size:var(--xs);opacity:.9;line-height:1.3;position:relative;z-index:1}
+.stage .fill{position:absolute;left:0;right:0;bottom:0;height:calc(var(--p,0)*100%);background:rgba(255,255,255,.24);transition:height .5s ease}
+.stage .cnt{position:relative;z-index:1;color:#fff;font-size:calc(var(--t2)*.9);font-weight:600}
+.stage[aria-pressed="true"]{box-shadow:inset 0 0 0 4px #fff;transform:translateY(-6px)}
+.stage-wrap{position:relative;display:flex;flex-direction:column;justify-content:flex-end}
+.stfoot{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.read .stages{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding-top:0}
+.read .stage,.read .stage.focus{height:auto;min-height:104px}
+.read .stage.focus .st-name{font:700 calc(var(--s)*1.1)/1.15 var(--sans)}
+
+/* ---------- pergunta grande ---------- */
+.q-wrap{display:flex;flex-direction:column;justify-content:center;gap:40px;flex:1;min-height:0}
+.q-big{font:400 var(--hero)/1.04 var(--display);color:var(--olive);margin:0;text-wrap:balance;max-width:20ch}
+.q-big.med{font-size:calc(var(--hero)*.78);max-width:27ch}
+.q-poll{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:1300px}
+.read .q-poll{grid-template-columns:minmax(0,1fr)}
+
+/* ---------- artigos ---------- */
+.paper{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:56px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:44px 52px}
+.read .paper{grid-template-columns:minmax(0,1fr);padding:22px 20px;gap:22px}
+.paper .ptitle{font:500 calc(var(--t2)*1.2)/1.18 var(--voice);margin:6px 0 10px;text-wrap:balance}
+.paper .authors{font-size:var(--s);font-weight:600}
+.paper .pmeta{font:var(--xs)/1.5 var(--machine);color:var(--muted);margin-top:6px}
+.paper .pabs{font-size:var(--s);line-height:1.45;margin-top:20px;max-width:62ch}
+.paper .qcap{font-size:var(--xs);color:var(--muted);text-align:center;margin-top:10px;line-height:1.35}
+.read .paper .qside{max-width:200px}
+.stats{display:flex;gap:44px;flex-wrap:wrap}
+.stat{max-width:300px}
+.stat b{display:block;font:400 calc(var(--t1)*1.05)/1 var(--display);color:var(--olive)}
+.stat span{font-size:var(--s);color:var(--muted)}
+
+/* ---------- diagramas de sequência ---------- */
+.seq-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:56px;flex:1;min-height:0;align-items:start}
+.read .seq-grid{grid-template-columns:minmax(0,1fr);gap:24px}
+.read .seq{row-gap:22px}
+.seq{--n:2;display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));row-gap:46px;position:relative;padding-bottom:8px}
+.seq .life{grid-row:1/-1;justify-self:center;width:0;border-left:2px dashed var(--line);z-index:0}
+.actor{grid-row:1;justify-self:center;align-self:start;z-index:1;padding:14px 26px;border-radius:14px;border:2px solid;font:700 var(--b)/1 var(--sans);min-width:58%;text-align:center}
+.actor.hu{background:var(--olive-soft);border-color:var(--olive)}
+.actor.ai{background:var(--orchid-soft);border-color:var(--orchid)}
+.actor.pc{background:var(--amber-soft);border-color:var(--amber)}
+.msg{--s:1;z-index:1;display:flex;flex-direction:column;align-items:center;gap:6px;padding-top:4px}
+.msg .lab{font-size:calc(var(--b)*.92);line-height:1.25;text-align:center;padding:0 10px;max-width:100%}
+.msg.from-hu .lab{font-family:var(--voice);font-style:italic}
+.msg.from-ai .lab,.msg.from-pc .lab{font-family:var(--machine);font-size:calc(var(--b)*.8)}
+.msg .arrow{align-self:stretch;margin:0 calc(50% / var(--s));height:0;border-top:3px solid;position:relative}
+.msg .arrow::after{content:"";position:absolute;top:-9.5px;right:-2px;border:8px solid transparent;border-left:14px solid;border-left-color:inherit;border-right:0}
+.msg.rtl .arrow::after{right:auto;left:-2px;border-left:0;border-right:14px solid;border-right-color:inherit}
+.msg.from-hu{color:var(--olive)}
+.msg.from-ai{color:var(--orchid)}
+.msg.from-pc{color:var(--amber)}
+.msg .lab{color:var(--fg)}
+.loopframe{z-index:0;border:2px dashed var(--amber);border-radius:16px;margin:-10px -4px;position:relative}
+.loopframe span{position:absolute;top:-13px;right:16px;background:var(--bg);padding:0 8px;font:700 var(--xs) var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+.seq-side{display:flex;flex-direction:column;gap:18px}
+.seq-ctrl{display:flex;gap:10px;flex-wrap:wrap}
+.read .seq-ctrl{display:none}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;counter-reset:st}
+.steps li{counter-increment:st;display:flex;gap:12px;align-items:center;padding:10px 14px;border-radius:12px;border:1.5px solid var(--line);font-size:var(--s);transition:background .2s,border-color .2s}
+.steps li::before{content:counter(st);font:600 var(--xs) var(--machine);width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--panel);flex:none}
+.steps li.hot{border-color:var(--orchid);background:var(--orchid-soft)}
+.steps li .who{margin-left:auto;font:600 var(--xs) var(--machine);color:var(--muted)}
+.iter{font:600 var(--s) var(--machine);color:var(--muted)}
+
+/* ---------- 8 · escada ---------- */
+.stairs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;align-items:end;height:420px}
+.stairs .lvl{position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;padding:18px;border-radius:16px;border:2px solid var(--olive);background:var(--olive-soft);text-align:left;cursor:pointer;overflow:hidden}
+.stairs .lvl:nth-child(1){height:52%}.stairs .lvl:nth-child(2){height:76%}.stairs .lvl:nth-child(3){height:100%;border-color:var(--orchid);background:var(--orchid-soft)}
+.lvl .fill{position:absolute;left:0;right:0;bottom:0;height:calc(var(--p,0)*100%);background:color-mix(in srgb,var(--olive) 22%,transparent);transition:height .5s}
+.lvl:nth-child(3) .fill{background:color-mix(in srgb,var(--orchid) 22%,transparent)}
+.lvl>*{position:relative}
+.lvl b{font:700 var(--s)/1.15 var(--sans)}
+.lvl small{font-size:var(--xs);color:var(--muted);line-height:1.3}
+.lvl .cnt{position:absolute;top:12px;right:14px}
+.lvl[aria-pressed="true"]{box-shadow:0 0 0 3px var(--bg),0 0 0 6px var(--olive)}
+.read .stairs{grid-template-columns:minmax(0,1fr);height:auto}
+.read .stairs .lvl{height:auto!important;min-height:84px}
+.theory{display:flex;flex-direction:column;gap:16px}
+.theory .card b{display:block;font:700 var(--s) var(--sans);margin-bottom:6px;color:var(--olive)}
+.theory .card p{font-size:var(--s);line-height:1.4}
+
+/* ---------- 9 · visão geral ---------- */
+.triad{display:flex;gap:12px;flex-wrap:wrap}
+.triad span{padding:10px 18px;border-radius:999px;border:1.5px solid var(--line);font-size:var(--s);font-weight:600;background:var(--bg)}
+.triad span.abd{border-color:var(--orchid);background:var(--orchid-soft)}
+.phase-ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.phase-ol li{display:flex;gap:12px;align-items:center;font-size:var(--s);padding:10px 14px;border-radius:10px;border:1.5px solid var(--pc);background:color-mix(in srgb,var(--pc) 16%,var(--bg))}
+.phase-ol li i{font:600 var(--xs) var(--machine);font-style:normal;min-width:26px}
+.read .phase-ol{grid-template-columns:minmax(0,1fr)}
+
+/* ---------- 10 · explorador AbductivAI ---------- */
+.ab{display:grid;grid-template-columns:520px 96px minmax(0,1fr);flex:1;min-height:0}
+.read .ab{grid-template-columns:minmax(0,1fr);gap:20px}
+.ab-list{display:flex;flex-direction:column;gap:9px}
+.ph{display:grid;grid-template-columns:52px minmax(0,1fr);align-items:center;min-height:57px;padding:6px 14px 6px 10px;border:2px solid var(--pc);border-radius:11px;background:color-mix(in srgb,var(--pc) 16%,var(--bg));text-align:left;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.ph .n{font:600 17px var(--machine);color:var(--fg)}
+.ph .nm{font:700 18px/1.15 var(--sans)}
+.ph .sb{font-size:14px;color:var(--muted);line-height:1.2}
+.read .ph .nm{font-size:15.5px}.read .ph .sb{font-size:13px}.read .ph .n{font-size:14px}
+.ph[aria-pressed="true"]{box-shadow:0 0 0 3px var(--bg),0 0 0 5px var(--pc);transform:translateX(6px)}
+.ph.dim{opacity:.45}
+.ab-svg{width:96px;height:100%;overflow:visible}
+.read .ab-svg{display:none}
+.ab-svg path{fill:none;stroke:var(--bad);stroke-width:2.5;stroke-dasharray:6 6;opacity:.35;transition:opacity .2s}
+.ab-svg path.hot{opacity:1;stroke-width:3.5}
+.ab-svg .ah{fill:var(--bad);opacity:.35}.ab-svg .ah.hot{opacity:1}
+.ab-detail{display:flex;flex-direction:column;gap:18px;min-width:0}
+.ab-detail .dn{font:400 var(--t2)/1.1 var(--display);color:var(--olive);font-size:calc(var(--t2)*1.25)}
+.ab-detail .ds{font:var(--s) var(--machine);color:var(--muted)}
+.roles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.read .roles{grid-template-columns:minmax(0,1fr)}
+.role{border-radius:16px;padding:18px 20px;border:1.5px solid}
+.role.hu{border-color:var(--olive);background:var(--olive-soft)}
+.role.ai{border-color:var(--orchid);background:var(--orchid-soft)}
+.role h4{margin:0 0 6px;font:700 var(--xs) var(--sans);letter-spacing:.12em;text-transform:uppercase}
+.role p{font-size:var(--s);line-height:1.42}
+.ruf-badge{align-self:flex-start;display:inline-flex;gap:8px;align-items:center;padding:8px 14px;border-radius:999px;background:var(--orchid);color:var(--bg);font-weight:700;font-size:var(--s)}
+.loops{display:flex;flex-direction:column;gap:8px}
+.loops .lp{display:flex;gap:12px;align-items:baseline;text-align:left;border:1.5px dashed color-mix(in srgb,var(--bad) 50%,var(--line));background:var(--bg);border-radius:12px;padding:8px 14px;font-size:var(--xs);cursor:pointer;line-height:1.35}
+.loops .lp b{font:600 var(--xs) var(--machine);color:var(--bad);white-space:nowrap}
+.loops .lp[aria-pressed="true"]{border-style:solid;border-color:var(--bad)}
+
+/* ---------- 11 · ética ---------- */
+.checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
+.checks li{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:center;font-size:var(--b);line-height:1.3}
+.checks li i{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--olive-soft);color:var(--olive);font:700 20px var(--sans);font-style:normal}
+.read .checks li{grid-template-columns:32px 1fr}.read .checks li i{width:32px;height:32px;font-size:15px}
+.big-stmt{display:flex;flex-direction:column;gap:18px}
+.big-stmt p{font:italic calc(var(--b)*1.05)/1.35 var(--voice);padding-left:22px;border-left:3px solid var(--orchid)}
+
+/* ---------- RUF ---------- */
+.ruf{display:grid;grid-template-columns:64px minmax(0,1.2fr) minmax(0,1fr);grid-template-rows:repeat(3,auto) auto;gap:16px 22px;flex:1;min-height:0;align-content:start}
+.ruf .vlabel{grid-row:1/4;writing-mode:vertical-rl;transform:rotate(180deg);display:grid;place-items:center;border:2px solid var(--amber);background:var(--amber-soft);border-radius:14px;font:700 var(--s) var(--sans);letter-spacing:.04em}
+.ruf .rbox{border:2px solid var(--line);border-radius:14px;padding:16px 20px;background:var(--bg)}
+.ruf .rbox b{display:block;font:700 calc(var(--s)*1.15)/1.2 var(--sans);margin-bottom:6px}
+.ruf .rbox p{font-size:var(--xs);line-height:1.45;color:var(--muted)}
+.ruf .rnote{border-radius:14px;padding:14px 18px;background:var(--amber-soft);border:1.5px solid var(--amber);font-size:var(--s);line-height:1.35;display:flex;align-items:center}
+.ruf .rnote.hu{background:var(--olive-soft);border-color:var(--olive)}
+.ruf .rfinal{grid-column:2/4;border:2px solid var(--fg);border-radius:14px;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:var(--s)}
+.ruf .rfinal b{font:700 calc(var(--s)*1.15) var(--sans)}
+.read .ruf{grid-template-columns:minmax(0,1fr);gap:10px}
+.read .ruf .vlabel{grid-row:auto;writing-mode:horizontal-tb;transform:none;padding:8px}
+.read .ruf .rfinal{grid-column:auto;flex-direction:column;align-items:flex-start}
+.read .ruf .rnote{margin-bottom:10px}
+
+.corpus{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;flex:1;min-height:0}
+.read .corpus{grid-template-columns:minmax(0,1fr)}
+.comp{border:1px solid var(--line);border-radius:12px;padding:12px 16px;background:var(--bg);display:flex;flex-direction:column;gap:4px}
+.comp header{display:flex;justify-content:space-between;font:600 var(--xs) var(--machine);color:var(--muted)}
+.comp p{font:italic 16.5px/1.38 var(--voice)}
+.read .comp p{font-size:15px}
+.present #app[data-lang="en"] .comp p,#app.present[data-lang="en"] .comp p{font-size:15px;line-height:1.34}
+#app.present[data-lang="en"] .corpus{gap:10px}
+
+.ctabs{display:flex;gap:8px;flex-wrap:wrap}
+.ctabs .chip{font-size:var(--xs)}
+.case{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:40px;flex:1;min-height:0}
+.read .case{grid-template-columns:minmax(0,1fr);gap:20px}
+.case-l{display:flex;flex-direction:column;gap:12px;min-width:0}
+.case-l .dim{font:700 var(--t2)/1.1 var(--sans)}
+.case-l .def{font-size:var(--xs);color:var(--muted)}
+.case-l blockquote{margin:0;font:italic var(--s)/1.45 var(--voice);padding:14px 18px;background:var(--panel);border-radius:12px;border:1px solid var(--line)}
+.case-l blockquote small{display:block;font:600 var(--xs) var(--machine);font-style:normal;color:var(--muted);margin-bottom:6px}
+.case-l .opts{gap:8px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.read .case-l .opts{grid-template-columns:minmax(0,1fr)}
+.case-act{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.case-l .opt{font-size:var(--s);padding:10px 14px}
+.case-r{display:flex;flex-direction:column;gap:12px;min-width:0}
+.case-r .wait{flex:1;display:grid;place-items:center;text-align:center;border:1.5px dashed var(--line);border-radius:16px;padding:24px;color:var(--muted);font-size:var(--s)}
+.blk{border-radius:14px;padding:12px 18px;border:1.5px solid var(--line)}
+.blk h4{margin:0 0 6px;font:700 var(--xs) var(--sans);letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+.blk.ai{border-color:color-mix(in srgb,var(--orchid) 50%,var(--line))}
+.blk.hu{border-color:var(--olive);background:var(--olive-soft)}
+.blk .llm{font:var(--xs)/1.5 var(--machine)}
+.blk .rc{font:italic var(--s)/1.4 var(--voice)}
+.pbar{display:grid;grid-template-columns:200px minmax(0,1fr) 54px;gap:12px;align-items:center;font:var(--xs) var(--machine);margin-top:4px}
+.read .pbar{grid-template-columns:120px minmax(0,1fr) 44px}
+.pbar .tr{height:14px;border-radius:7px;background:var(--panel);overflow:hidden;border:1px solid var(--line)}
+.pbar .tr i{display:block;height:100%;background:var(--orchid);width:calc(var(--v)*1%)}
+.zone{display:flex;gap:10px;align-items:baseline;font-size:var(--s)}
+.zone .yn{font:700 var(--xs) var(--sans);padding:3px 10px;border-radius:999px;background:var(--amber-soft);color:var(--amber);border:1px solid var(--amber);white-space:nowrap}
+.zone .yn.no{background:var(--panel);color:var(--muted);border-color:var(--line)}
+.kind{font:600 var(--xs) var(--machine);color:var(--muted)}
+
+.tbl-wrap{flex:1;min-height:0;overflow:auto}
+table.t{width:100%;border-collapse:collapse;font-size:17px;line-height:1.35}
+table.t th{background:var(--fg);color:var(--bg);text-align:left;font:700 15px var(--sans);padding:10px 12px}
+table.t td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+table.t td:first-child{font-weight:700}
+table.t .mono{font-size:15px}
+table.t tbody tr:nth-child(odd){background:color-mix(in srgb,var(--panel) 70%,transparent)}
+table.t.big{font-size:21px}
+table.t.big th{font-size:17px;padding:12px 16px}
+table.t.big td{padding:16px}
+.read table.t,.read table.t tbody,.read table.t tr,.read table.t td{display:block;width:auto}
+.read table.t thead{display:none}
+.read table.t tr{border:1px solid var(--line);border-radius:12px;margin-bottom:10px;padding:6px 4px}
+.read table.t td{border:0;padding:6px 12px;font-size:15px}
+.read table.t td::before{content:attr(data-l);display:block;font:700 11px var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.read table.t tbody tr:nth-child(odd){background:none}
+
+/* ---------- limiar ---------- */
+.quote-x{font:600 calc(var(--t2)*1.1)/1.3 var(--machine);color:var(--orchid);padding:22px 28px;border-radius:16px;background:var(--orchid-soft);border:1.5px solid var(--orchid)}
+.lab{display:flex;flex-direction:column;gap:22px;flex:1;min-height:0}
+.lab-ctl{display:flex;align-items:center;gap:22px;flex-wrap:wrap;padding:16px 22px;border-radius:16px;background:var(--panel);border:1px solid var(--line)}
+.lab-ctl label{font-weight:700;font-size:var(--s)}
+.lab-ctl input[type=range]{flex:1;min-width:200px;accent-color:var(--orchid);height:28px}
+.lab-ctl output{font:600 calc(var(--t2)*1.2) var(--machine);color:var(--orchid);min-width:3.4ch;text-align:right;font-variant-numeric:tabular-nums}
+.lab-ctl .tog{display:flex;align-items:center;gap:8px;font-weight:600;font-size:var(--s);cursor:pointer}
+.lab-ctl .tog input{width:20px;height:20px;accent-color:var(--olive)}
+.lab-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;flex:1;min-height:0}
+.read .lab-cards{grid-template-columns:minmax(0,1fr)}
+.mode{display:flex;flex-direction:column;gap:12px;padding:20px 22px;border-radius:18px;border:1.5px solid var(--line);background:var(--bg)}
+.mode .mh{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.mode .mh b{font:400 calc(var(--t2)*1.05) var(--display);color:var(--olive)}
+.mode .seg{font:italic var(--xs)/1.4 var(--voice);color:var(--muted);min-height:2.8em}
+.bars{position:relative;display:flex;flex-direction:column;gap:8px;padding:6px 0}
+.bar{display:grid;grid-template-columns:180px minmax(0,1fr) 44px;gap:10px;align-items:center;font:var(--xs) var(--machine)}
+.read .bar{grid-template-columns:120px minmax(0,1fr) 40px}
+.bar .tr{position:relative;height:18px;border-radius:5px;background:var(--panel);border:1px solid var(--line)}
+.bar .tr i{position:absolute;inset:0 auto 0 0;width:calc(var(--v)*1%);border-radius:4px;background:var(--orchid);transition:opacity .25s,background .25s}
+.bar.off .tr i{opacity:.25;background:repeating-linear-gradient(-45deg,var(--muted) 0 4px,transparent 4px 8px)}
+.bar.off span:first-child{text-decoration:line-through;color:var(--muted)}
+.bar .tr .th{position:absolute;top:-6px;bottom:-6px;left:calc(var(--t)*1%);width:0;border-left:2.5px solid var(--fg);z-index:2}
+.outcome{font-size:var(--s);line-height:1.4;min-height:4.2em}
+.sig{display:flex;gap:8px;align-items:center;font-size:var(--xs);flex-wrap:wrap}
+.state{font:700 var(--xs) var(--sans);padding:4px 10px;border-radius:999px;border:1px solid;white-space:nowrap}
+.state.good{color:var(--good);border-color:var(--good);background:color-mix(in srgb,var(--good) 12%,var(--bg))}
+.state.none{color:var(--muted);border-color:var(--line);background:var(--panel)}
+.state.noise{color:var(--amber);border-color:var(--amber);background:var(--amber-soft)}
+.state.drop{color:var(--bad);border-color:var(--bad);background:color-mix(in srgb,var(--bad) 10%,var(--bg))}
+.rufsays{display:none;font-size:var(--xs);line-height:1.4;padding:10px 12px;border-radius:12px;background:var(--olive-soft);border:1.5px solid var(--olive)}
+.lab.ruf-on .rufsays{display:block}
+.rufsays b{color:var(--olive)}
+.lab-foot{font-size:var(--s);color:var(--muted)}
+
+.closing .cgrid{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:64px;align-items:center;flex:1}
+.read .closing .cgrid{grid-template-columns:minmax(0,1fr)}
+.qpair{display:flex;gap:28px}
+.qpair figure{margin:0;width:200px;display:flex;flex-direction:column;gap:10px}
+.qpair figcaption{font-size:var(--xs);color:var(--muted);text-align:center;line-height:1.35}
+.read .qpair figure{width:140px}
+
+#app[data-lang="en"] .lg-pt,#app:not([data-lang="en"]) .lg-en{display:none!important}
+#hud .lang-btn{font:700 12px var(--sans);letter-spacing:.04em}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+
 </head>
 <body>
-  <noscript>Esta página precisa de JavaScript. This page requires JavaScript. Esta página requiere JavaScript. Questa pagina richiede JavaScript. Modelos para descarregar / downloadable templates / plantillas / modelli: <a href="docs/">docs/</a></noscript>
-  <div id="app"></div>
-  <script src="assets/schema.js"></script>
-  <script src="assets/app.js"></script>
+<div id="app" class="present">
+  <div id="topbar" role="banner">
+    <span class="tb-title">IA e Investigação Qualitativa</span>
+    <span class="tb-r">
+      <span class="pill" data-livepill>Respostas locais</span>
+      <button class="btn follow" id="followRead" type="button"></button>
+      <button class="btn" type="button" data-act="lang">EN</button>
+      <button class="btn" type="button" data-act="qr">QR</button>
+      <button class="btn" type="button" data-act="mode">Diapositivos</button>
+    </span>
+  </div>
+
+  <main id="stage">
+
+  <!-- 1 -->
+  <section class="slide s-title" data-section="Abertura">
+    <div class="tgrid">
+      <div class="tmain">
+        <img class="logo" src="data:image/png;base64,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" alt="U.Porto · Faculdade de Psicologia e de Ciências da Educação">
+        <p class="eyebrow">Aula 9</p>
+        <h1 class="h hero">Investigação Qualitativa na Era da Inteligência Artificial</h1>
+        <p class="tsub">Da Utilização de Ferramentas à Colaboração Humano–IA</p>
+        <p class="author">António Pedro Costa<span>apcosta@fpce.up.pt · CIIE – FPCEUP</span></p>
+      </div>
+      <div class="join">
+        <div class="qrbox" data-qr="join" role="img" aria-label="Código QR de acesso a esta aula"></div>
+        <p><b>Abram a aula no telemóvel</b><br><span class="muted">para responder às perguntas e explorar os modelos</span></p>
+        <p class="meta" style="justify-content:center"><span class="pill" data-livepill>Respostas locais</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="slide" data-section="Ponto de partida">
+    <div class="head">
+      <p class="eyebrow">Ponto de partida</p>
+      <h2 class="h">O processo de investigação</h2>
+      <p class="lead muted">Toquem nas fases em que já usaram IA. Hoje focamo-nos na análise de dados e nos resultados.</p>
+    </div>
+    <div class="stages" data-poll="fases">
+      <button type="button" class="stage" data-poll-for="fases" data-opt="problema" style="--c:var(--st1)"><span class="fill"></span><span class="cnt"></span><span><span class="st-name">Problema</span><br><span class="st-sub">questão de investigação e objetivos</span></span></button>
+      <button type="button" class="stage" data-poll-for="fases" data-opt="revisao" style="--c:var(--st2)"><span class="fill"></span><span class="cnt"></span><span><span class="st-name">Revisão da Literatura</span><br><span class="st-sub">fundamentação teórica</span></span></button>
+      <button type="button" class="stage" data-poll-for="fases" data-opt="desenho" style="--c:var(--st3)"><span class="fill"></span><span class="cnt"></span><span><span class="st-name">Desenho da Investigação</span><br><span class="st-sub">metodologia</span></span></button>
+      <button type="button" class="stage" data-poll-for="fases" data-opt="recolha" style="--c:var(--st4)"><span class="fill"></span><span class="cnt"></span><span class="st-name">Recolha de Dados</span></button>
+      <div class="stage-wrap"><span class="focus-tag">Foco da aula</span><button type="button" class="stage focus" data-poll-for="fases" data-opt="analise" style="--c:var(--st5)"><span class="fill"></span><span class="cnt"></span><span class="st-name">Análise de Dados</span></button></div>
+      <div class="stage-wrap"><span class="focus-tag">Foco da aula</span><button type="button" class="stage focus" data-poll-for="fases" data-opt="resultados" style="--c:var(--st6)"><span class="fill"></span><span class="cnt"></span><span class="st-name">Resultados</span></button></div>
+      <button type="button" class="stage" data-poll-for="fases" data-opt="dissem" style="--c:var(--st7)"><span class="fill"></span><span class="cnt"></span><span class="st-name">Disseminação</span></button>
+    </div>
+    <div class="stfoot">
+      <button type="button" class="chip" data-poll-for="fases" data-opt="nenhuma"><span>Ainda em nenhuma</span> <span class="cnt"></span></button>
+      <p class="meta" data-meta="fases"></p>
+    </div>
+    <aside class="notes">Como usar: os alunos tocam nas fases no telemóvel; com respostas ao vivo, cada bloco enche à medida que respondem. Sem ligação ao vivo, cliquem num bloco por cada braço no ar.</aside>
+  </section>
+
+  <!-- 3 -->
+  <section class="slide" data-section="Ponto de partida">
+    <p class="eyebrow">Pergunta</p>
+    <div class="q-wrap">
+      <h2 class="q-big med">Quando dois investigadores discordam quanto à codificação, a IA pode ajudar a explorar alternativas, em vez de “impor” uma decisão?</h2>
+      <div>
+        <div class="q-poll opts" data-poll="discordia"></div>
+        <p class="meta" data-meta="discordia" style="margin-top:12px"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="slide" data-section="AbductivAI">
+    <div class="head">
+      <p class="eyebrow">Colaboração humano–IA</p>
+      <h2 class="h">AbductivAI</h2>
+    </div>
+    <article class="paper">
+      <div>
+        <p class="eyebrow">International Journal of Qualitative Methods · vol. 24 · 2025 · acesso aberto</p>
+        <p class="ptitle">AI as a Co-researcher in the Qualitative Research Workflow: Transforming Human-AI Collaboration</p>
+        <p class="authors">António Pedro Costa, Grzegorz Bryda, Prokopis A. Christou e Judita Kasperiuniene</p>
+        <p class="pmeta">DOI 10.1177/16094069251383739</p>
+        <p class="pabs" style="margin-bottom:18px">Propõe o <b>AbductivAI</b>, um modelo abdutivo para analisar dados qualitativos em colaboração entre humanos e agentes de IA. A IA deixa de ser só ferramenta e passa a co-investigadora, desde que o humano assuma o papel de agente reflexivo responsável por todo o processo.</p>
+        <div class="triad"><span>IA agêntica</span><span>Teoria do ator-rede</span><span>Sociomaterialidade</span><span>IA generativa</span></div>
+      </div>
+      <div class="qside">
+        <div class="qrbox" data-qr-url="https://doi.org/10.1177/16094069251383739" role="img" aria-label="Código QR para o artigo AbductivAI"></div>
+        <p class="qcap">Ler o artigo</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- 5 -->
+  <section class="slide" data-section="Da conversa ao agente">
+    <div class="head">
+      <p class="eyebrow">Da conversa ao agente · 1 de 3</p>
+      <h2 class="h">Eu ⇄ GenAI: cada passo passa por mim</h2>
+    </div>
+    <div class="seq-grid">
+      <div class="seq" style="--n:2">
+        <span class="life" style="grid-column:1"></span><span class="life" style="grid-column:2"></span>
+        <div class="actor hu" style="grid-column:1">Eu</div>
+        <div class="actor ai" style="grid-column:2">GenAI</div>
+        <div class="msg from-hu" data-f="1" style="grid-column:1/3;grid-row:2;--s:2"><span class="lab">Proponha categorias para esta entrevista!</span><span class="arrow"></span></div>
+        <div class="msg from-ai rtl" data-f="2" style="grid-column:1/3;grid-row:3;--s:2"><span class="lab">Gera categorias</span><span class="arrow"></span></div>
+        <div class="msg from-hu" data-f="3" style="grid-column:1/3;grid-row:4;--s:2"><span class="lab">Mas apenas com o uso de IA</span><span class="arrow"></span></div>
+        <div class="msg from-ai rtl" data-f="4" style="grid-column:1/3;grid-row:5;--s:2"><span class="lab">Saltar as categorias sem utilização de IA</span><span class="arrow"></span></div>
+      </div>
+      <div class="seq-side">
+        <p class="lead">O investigador conduz cada troca. A IA responde, mas cada novo passo depende de um novo pedido.</p>
+        <div class="seq-ctrl"><button class="btn primary" type="button" data-act="step">Passo seguinte</button><button class="btn" type="button" data-act="restart">Recomeçar</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="slide" data-section="Da conversa ao agente">
+    <div class="head">
+      <p class="eyebrow">Da conversa ao agente · 2 de 3</p>
+      <h2 class="h">GenAI ⇄ Computador: a IA começa a agir</h2>
+    </div>
+    <div class="seq-grid">
+      <div class="seq" style="--n:3">
+        <span class="life" style="grid-column:1"></span><span class="life" style="grid-column:2"></span><span class="life" style="grid-column:3"></span>
+        <div class="actor hu" style="grid-column:1">Eu</div>
+        <div class="actor ai" style="grid-column:2">GenAI</div>
+        <div class="actor pc" style="grid-column:3">Computador</div>
+        <div class="msg from-hu" data-f="1" style="grid-column:1/3;grid-row:2;--s:2"><span class="lab">Propõe categorias para esta entrevista!</span><span class="arrow"></span></div>
+        <div class="msg from-ai" data-f="2" style="grid-column:2/4;grid-row:3;--s:2"><span class="lab">Lista de possíveis categorias ou temas</span><span class="arrow"></span></div>
+        <div class="msg from-pc rtl" data-f="3" style="grid-column:2/4;grid-row:4;--s:2"><span class="lab">Propor novas categorias</span><span class="arrow"></span></div>
+        <div class="msg from-ai" data-f="4" style="grid-column:2/4;grid-row:5;--s:2"><span class="lab">Adicionar novas categorias</span><span class="arrow"></span></div>
+      </div>
+      <div class="seq-side">
+        <p class="lead">A IA passa a escrever no computador, e o computador volta a pedir-lhe propostas. O investigador só entra no início.</p>
+        <div class="seq-ctrl"><button class="btn primary" type="button" data-act="step">Passo seguinte</button><button class="btn" type="button" data-act="restart">Recomeçar</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="slide" data-section="Da conversa ao agente">
+    <div class="head">
+      <p class="eyebrow">Da conversa ao agente · 3 de 3</p>
+      <h2 class="h">Agentes em ciclo: prompt › resposta › ação</h2>
+    </div>
+    <div class="seq-grid">
+      <div class="seq" style="--n:3">
+        <span class="life" style="grid-column:1"></span><span class="life" style="grid-column:2"></span><span class="life" style="grid-column:3"></span>
+        <div class="actor hu" style="grid-column:1">Humano</div>
+        <div class="actor ai" style="grid-column:2">IA</div>
+        <div class="actor pc" style="grid-column:3">Computador</div>
+        <div class="msg from-hu" data-f="1" style="grid-column:1/3;grid-row:2;--s:2"><span class="lab">Tarefa</span><span class="arrow"></span></div>
+        <div class="loopframe" data-f="2" style="grid-column:2/4;grid-row:3/5"><span>Ciclo dos agentes</span></div>
+        <div class="msg from-ai" data-f="2" style="grid-column:2/4;grid-row:3;--s:2"><span class="lab">Prompt › Resposta › Ação</span><span class="arrow"></span></div>
+        <div class="msg from-pc rtl" data-f="3" style="grid-column:2/4;grid-row:4;--s:2"><span class="lab">Obter feedback sobre o resultado</span><span class="arrow"></span></div>
+        <div class="msg from-ai rtl" data-f="4" style="grid-column:1/3;grid-row:5;--s:2"><span class="lab">Retornar resultado</span><span class="arrow"></span></div>
+      </div>
+      <div class="seq-side">
+        <ol class="steps" id="agentSteps">
+          <li>Construção do prompt <span class="who">IA</span></li>
+          <li>Gerar resposta <span class="who">IA</span></li>
+          <li>Análise das respostas <span class="who">IA</span></li>
+          <li>Executar ação <span class="who">Computador</span></li>
+          <li>Converter o resultado em string <span class="who">Computador</span></li>
+          <li>Continuar o loop? <span class="who">decisão</span></li>
+        </ol>
+        <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap">
+          <button class="btn primary" type="button" id="runLoop">Correr um ciclo</button>
+          <span class="iter" id="iterOut" aria-live="polite">Iteração 0</span>
+        </div>
+      </div>
+    </div>
+    <aside class="notes">Como usar: → revela as mensagens do diagrama. «Correr um ciclo» percorre os seis passos; à terceira iteração o agente pára e devolve o resultado ao humano.</aside>
+  </section>
+
+  <!-- 8 -->
+  <section class="slide" data-section="AbductivAI">
+    <div class="head">
+      <p class="eyebrow">Evolução do papel da IA na investigação qualitativa</p>
+      <h2 class="h">De ferramenta a colaborador</h2>
+    </div>
+    <div class="cols grow" style="grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <p class="small muted">E vocês? Toquem no papel que a IA tem (ou teria) no vosso trabalho.</p>
+        <div class="stairs" data-poll="papel">
+          <button type="button" class="lvl" data-poll-for="papel" data-opt="assist"><span class="fill"></span><span class="cnt"></span><b>IA como assistente</b><small>transcrição, codificação automática, organização de dados</small></button>
+          <button type="button" class="lvl" data-poll-for="papel" data-opt="colab"><span class="fill"></span><span class="cnt"></span><b>IA como colaborador semi-autónomo</b><small>identifica padrões, sugere temas</small></button>
+          <button type="button" class="lvl" data-poll-for="papel" data-opt="copesq"><span class="fill"></span><span class="cnt"></span><b>IA como co-investigador reflexivo</b><small>colaboração na interpretação e geração de conhecimentos</small></button>
+        </div>
+        <div class="stfoot"><button type="button" class="chip" data-poll-for="papel" data-opt="nao"><span>Ainda não uso IA</span> <span class="cnt"></span></button><p class="meta" data-meta="papel"></p></div>
+      </div>
+      <div class="theory">
+        <p class="sub-h">Fundamentos teóricos</p>
+        <p class="small muted">Bases epistemológicas para o papel da IA</p>
+        <div class="card"><b>Teoria do ator-rede (ANT)</b><p>Os atores humanos e não humanos constroem o conhecimento em redes.</p></div>
+        <div class="card"><b>Sociomaterialidade</b><p>O social e o material (IA) são inseparáveis na produção de conhecimento.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 -->
+  <section class="slide" data-section="AbductivAI">
+    <div class="head">
+      <p class="eyebrow">Modelo de colaboração humano–IA para análise qualitativa</p>
+      <h2 class="h">Modelo AbductivAI</h2>
+    </div>
+    <div class="cols grow">
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <ul class="list">
+          <li>Combina raciocínio dedutivo, indutivo e abdutivo</li>
+          <li>Baseado na codificação colaborativa (humanos + agentes de IA)</li>
+          <li>8 fases iterativas com validação cruzada</li>
+        </ul>
+        <div class="triad"><span>Dedutivo · parte da teoria</span><span>Indutivo · parte dos dados</span><span class="abd">Abdutivo · salto interpretativo</span></div>
+        <p class="small muted">A abdução não é uma síntese de indução e dedução: é uma inferência criativa que gera compreensões plausíveis e mais profundas (Reichertz, 2007; Tavory &amp; Timmermans, 2014).</p>
+        <div class="stats" style="gap:36px">
+          <div class="stat"><b>323</b><span>resumos do WCQR 2025 usados para testar o modelo</span></div>
+          <div class="stat"><b>2 + 2</b><span>humanos e agentes: a configuração ideal</span></div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:18px">
+        <ol class="phase-ol" id="phaseOl"></ol>
+        <p class="cite">Mayring, P. (2014). <i>Qualitative content analysis: Theoretical foundation, basic procedures and software solution.</i> <a href="https://nbn-resolving.org/urn:nbn:de:0168-ssoar-395173" target="_blank" rel="noopener">SSOAR</a><br>Costa, A. P., &amp; Amado, J. (2018). <i>Content analysis supported by software</i> (2.ª ed.). Ludomedia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 -->
+  <section class="slide" data-section="AbductivAI" id="abSlide">
+    <div class="head-row">
+      <div class="head"><p class="eyebrow">Explorem as fases · humanos e agentes</p><h2 class="h">Modelo AbductivAI</h2></div>
+    </div>
+    <div class="ab">
+      <div class="ab-list" id="abList"></div>
+      <svg class="ab-svg" id="abSvg" aria-hidden="true"></svg>
+      <div class="ab-detail" id="abDetail" aria-live="polite"></div>
+    </div>
+    <aside class="notes">Como usar: cliquem numa fase para ver o que fazem humanos e agentes. As setas tracejadas são as iterações do modelo (4→2, 6→5, 8→1); cliquem numa delas para a destacar. A fase 5.5 é onde entra o RUF.</aside>
+  </section>
+
+  <!-- 11 -->
+  <section class="slide" data-section="AbductivAI">
+    <div class="cols grow" style="align-items:center">
+      <div style="display:flex;flex-direction:column;gap:28px">
+        <div class="head"><p class="eyebrow">Colaboração humano–IA</p><h2 class="h">Considerações éticas</h2></div>
+        <ul class="checks">
+          <li><i>1</i><span><b>Transparência:</b> documentar as contribuições da IA</span></li>
+          <li><i>2</i><span>Validação cruzada com contributos humanos</span></li>
+          <li><i>3</i><span><b>Responsabilidade pelo julgamento final:</b> o investigador humano</span></li>
+        </ul>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:28px">
+        <div class="head"><p class="eyebrow">Reflexões finais</p><h2 class="h">Para onde nos dirigimos?</h2></div>
+        <div class="big-stmt">
+          <p>A IA não substitui o investigador: aumenta as suas capacidades.</p>
+          <p>Importância da reflexividade e da interpretação humana.</p>
+          <p>Surgem novas possibilidades de investigação e de rigor qualitativo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 -->
+  <section class="slide" data-section="RUF">
+    <p class="eyebrow">Pergunta · respondam no telemóvel</p>
+    <h2 class="q-big med">Como é que conseguimos equilibrar a confiança nos algoritmos com a nossa interpretação crítica?</h2>
+    <div data-poll="confianca" style="display:flex;flex-direction:column;gap:14px;flex:1;min-height:0">
+      <form class="ask"><input id="ask-confianca" maxlength="140" autocomplete="off" placeholder="A vossa resposta, em poucas palavras"><button class="btn primary" type="submit">Enviar</button></form>
+      <p class="meta" data-meta="confianca"></p>
+      <div class="wall grow" data-wall="confianca"></div>
+    </div>
+    <aside class="notes">O terceiro modelo é o RUF – Reflexive Uncertainty Framework. Ele serve para lidar com a incerteza, algo muito presente na análise qualitativa. A ideia é manter o investigador sempre reflexivo: questionar resultados, reavaliar interpretações, evitar a confiança cega no algoritmo. Pergunta rápida: Como equilibrar a confiança na máquina com a nossa interpretação crítica? Este é o coração do RUF.</aside>
+  </section>
+
+  <!-- 13 -->
+  <section class="slide" data-section="RUF">
+    <div class="head">
+      <p class="eyebrow">edu4AI 2025 · 2.º Workshop on Education for Artificial Intelligence · ECAI 2025, Bolonha</p>
+      <h2 class="h">Reflexive Uncertainty Framework</h2>
+    </div>
+    <article class="paper">
+      <div>
+        <p class="eyebrow">CEUR Workshop Proceedings · vol. 4114</p>
+        <p class="ptitle">Reflexive Uncertainty AI for Qualitative Data Analysis</p>
+        <p class="authors">António Pedro Costa e Pedro Bem-Haja</p>
+        <p class="pabs">Propõe o <b>RUF</b> como extensão metodológica da coanálise humano–IA que trata a incerteza <b>não como erro, mas como evidência analiticamente produtiva</b>. Os resultados foram triangulados com análise qualitativa tradicional no webQDA e com o ChatGPT; o modelo computacional está a ser implementado no Google Colab.</p>
+        <p class="eyebrow" style="margin-top:22px">Três momentos documentados</p>
+        <div class="triad" style="margin-top:10px"><span>1 · Classificação probabilística</span><span>2 · Zonas de ambiguidade interpretativa</span><span class="abd">3 · Comentário reflexivo</span></div>
+      </div>
+      <div class="qside">
+        <div class="qrbox" data-qr-url="https://qr.codes/KDXG3m" role="img" aria-label="Código QR para o artigo RUF"></div>
+        <p class="qcap">Ler o artigo</p>
+      </div>
+    </article>
+  </section>
+
+  <!-- 14 -->
+  <section class="slide" data-section="RUF">
+    <div class="head-row">
+      <div class="head"><p class="eyebrow">Aprofundamento da fase 5.5 do AbductivAI</p><h2 class="h">Quadro de Incerteza Reflexiva (RUF)</h2></div>
+      <div style="display:flex;gap:14px;align-items:center"><p class="xs muted" style="text-align:right;max-width:16ch">Recurso RUF</p><div class="qrbox" style="width:110px;padding:8px" data-qr-url="https://qr.link/j38uLQ" role="img" aria-label="Código QR do recurso RUF"></div></div>
+    </div>
+    <div class="ruf">
+      <div class="vlabel">Reflexive Uncertainty Framework</div>
+      <div class="rbox" data-f="1"><b>1 · Resultados da classificação probabilística</b><p>Um modelo vetorial transforma segmentos e categorias em vetores, calcula a similaridade do cosseno e aplica softmax para obter probabilidades.</p></div>
+      <div class="rnote" data-f="1">Modelo vetorial: embeddings + similaridade do cosseno + softmax; prompting reflexivo do LLM para justificar</div>
+      <div class="rbox" data-f="2"><b>2 · Zonas de ambiguidade interpretativa</b><p>Pontuações muito próximas, ou baixas e difusas, ativam uma segunda camada: o LLM tem de justificar. Se a justificação oscila, essa instabilidade é dado.</p></div>
+      <div class="rnote" data-f="2">Probabilidades sobrepostas; baixa confiança; raciocínio do LLM inconsistente</div>
+      <div class="rbox" data-f="3"><b>3 · Comentário reflexivo</b><p>O investigador torna explícita a sua posição: a natureza do desacordo, as fontes possíveis do erro e o que a discrepância revela.</p></div>
+      <div class="rnote hu" data-f="3">Notas críticas humanas: desacordo, deteção de enviesamentos, reflexão epistémica</div>
+      <div class="rfinal" data-f="4"><span><b>Decisão final e refinamento teórico</b></span><span class="muted">coanálise humano–IA com transparência epistémica</span></div>
+    </div>
+    <aside class="notes">Na prática, o RUF mostra quais segmentos do texto ativam esse ciclo reflexivo — quando os códigos da IA competem ou revelam tensão semântica. Com isso, o investigador não só identifica padrões, mas também justifica as decisões interpretativas de forma transparente. Este processo reforça a responsabilidade epistemológica e a qualidade metodológica da análise.</aside>
+  </section>
+
+  <!-- 15 -->
+  <section class="slide" data-section="RUF">
+    <div class="head">
+      <p class="eyebrow">O corpus do exemplo · 9 composições do 5.º ano</p>
+      <h2 class="h" style="font-size:calc(var(--t1)*.8)">«Se eu fosse professor»</h2>
+      <p class="small"><b>Pergunta:</b> Quais são as características de um bom professor na perspetiva dos alunos? Há diferenças consoante o género?</p>
+    </div>
+    <div class="corpus" id="corpus"></div>
+    <p class="xs muted">Versão portuguesa reconstituída a partir do Apêndice A do artigo (Costa &amp; Bem-Haja, 2025). M = rapaz · F = rapariga.</p>
+  </section>
+
+  <!-- 16 -->
+  <section class="slide" data-section="RUF">
+    <div class="head"><p class="eyebrow">RUF aplicado à fase 5.5 · votem antes de revelar</p><h2 class="h">Sejam o codificador</h2></div>
+    <div class="ctabs" id="caseTabs" role="tablist" aria-label="Casos"></div>
+    <div id="cases" class="grow" style="display:flex;flex-direction:column"></div>
+    <aside class="notes">Como usar: para cada caso, os alunos escolhem a categoria; depois revelem a classificação da IA, o feedback do LLM, a zona de ambiguidade e o comentário reflexivo. Comparem a distribuição da turma com as probabilidades do modelo: a turma também hesita?</aside>
+  </section>
+
+  <!-- 17 -->
+  <section class="slide" data-section="RUF">
+    <div class="head"><p class="eyebrow">Resumo · RUF aplicado na fase 5.5</p><h2 class="h" style="font-size:calc(var(--t1)*.8)">Seis dimensões, três momentos</h2></div>
+    <div class="tbl-wrap"><table class="t" id="rufTable"><thead><tr><th>Dimensões do RUF</th><th>Exemplo no corpus</th><th>Classificação probabilística</th><th>Zona de ambiguidade</th><th>Comentário reflexivo</th></tr></thead><tbody></tbody></table></div>
+    <p class="xs muted">Fixas, para qualquer corpus: ambiguidade, tensão, ausência. Variáveis, consoante o corpus: inversões, multiplicidade, conflito.</p>
+  </section>
+
+  <!-- 18 -->
+  <section class="slide" data-section="O limiar">
+    <div class="q-wrap">
+      <h2 class="q-big">E se a decisão mais importante da vossa análise estiver num parâmetro que ninguém discute?</h2>
+    </div>
+    <aside class="notes">TRANSIÇÃO — 30 s. Deixar a pergunta no ar antes de mostrar a instrução do Pattyn. Esta secção fecha a palestra e dura cerca de 8 minutos.</aside>
+  </section>
+
+  <!-- 19 -->
+  <section class="slide" data-section="O limiar">
+    <div class="head"><p class="eyebrow">O limiar</p><h2 class="h">O problema do limiar</h2></div>
+    <div class="cols grow" style="grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)">
+      <div style="display:flex;flex-direction:column;gap:22px">
+        <p class="small">Pattyn (2024) recomenda instruir o modelo:</p>
+        <p class="quote-x">“leave pairs empty if less than 40% certain”</p>
+        <ul class="list">
+          <li data-f="1">Apresentado como higiene metodológica, é na verdade um critério de qualidade da análise</li>
+          <li data-f="2">Abaixo do limiar não está o erro do modelo, está o material que resiste à classificação</li>
+        </ul>
+      </div>
+      <div class="card" data-f="3" style="display:flex;flex-direction:column;gap:16px;padding:30px 32px">
+        <p class="eyebrow">A ironia</p>
+        <p class="sub-h">Quatro décadas a recusar a convergência</p>
+        <p class="cite">MacLure (2013), St. Pierre e Jackson (2014), Koro-Ljungberg (2016)</p>
+        <p class="small">A IA generativa não traz aqui um valor novo: reintroduz um valor já rejeitado, desta vez como parâmetro de configuração.</p>
+        <p class="small"><b>E por isso sem debate.</b></p>
+      </div>
+    </div>
+    <aside class="notes">2 min. O limiar do Pattyn é o gancho: uma instrução de aparência trivial que decide o que entra na análise. A ironia é o argumento central da secção — a convergência regressa pela porta da automação, sem passar pela discussão metodológica.</aside>
+  </section>
+
+  <!-- 20 -->
+  <section class="slide" data-section="O limiar">
+    <div class="head"><p class="eyebrow">Laboratório · mexam no limiar</p><h2 class="h">O que o limiar deixa passar</h2></div>
+    <div class="lab" id="lab">
+      <div class="lab-ctl">
+        <label for="lim">Limiar de certeza</label>
+        <input type="range" id="lim" min="0" max="100" step="1" value="40" aria-describedby="limOut">
+        <output id="limOut" for="lim">40%</output>
+        <button type="button" class="chip" id="limReset">Pattyn (2024): 40%</button>
+        <label class="tog"><input type="checkbox" id="rufOn"> <span>Mostrar o que o RUF assinalaria</span></label>
+      </div>
+      <div class="lab-cards">
+        <div class="mode" data-mode="hes">
+          <div class="mh"><b>Hesitação</b><span class="state none" data-state></span></div>
+          <p class="seg">C3: «parava e mandava-os fazer outra coisa que preferissem»</p>
+          <div class="bars"><div class="bar" data-v="72"><span>empatia</span><span class="tr"><i></i><span class="th"></span></span><span>72%</span></div><div class="bar" data-v="68"><span>permissividade</span><span class="tr"><i></i><span class="th"></span></span><span>68%</span></div></div>
+          <p class="outcome" data-out></p>
+          <p class="rufsays"><b>RUF:</b> proximidade de 4 pontos entre categorias + justificação instável do LLM → zona de ambiguidade interpretativa.</p>
+        </div>
+        <div class="mode" data-mode="cega">
+          <div class="mh"><b>Confiança cega</b><span class="state none" data-state></span></div>
+          <p class="seg">C7: «os que não aprendessem ficavam sentados no fundo da sala»</p>
+          <div class="bars"><div class="bar" data-v="78"><span>autoridade</span><span class="tr"><i></i><span class="th"></span></span><span>78%</span></div></div>
+          <p class="outcome" data-out></p>
+          <p class="rufsays"><b>RUF:</b> só um gatilho independente da confiança o apanha: o comentário reflexivo humano sobre o peso simbólico da exclusão espacial.</p>
+        </div>
+        <div class="mode" data-mode="sil">
+          <div class="mh"><b>Silêncio</b><span class="state none" data-state></span></div>
+          <p class="seg">Corpus inteiro: quase nenhuma composição fala de provas ou avaliação</p>
+          <div class="bars"><div class="bar" data-v="22"><span>avaliação formal</span><span class="tr"><i></i><span class="th"></span></span><span>22%</span></div><div class="bar" data-v="18"><span>planificação</span><span class="tr"><i></i><span class="th"></span></span><span>18%</span></div></div>
+          <p class="outcome" data-out></p>
+          <p class="rufsays"><b>RUF:</b> declarar antes os temas que se espera encontrar; a ausência notável passa a achado, não a ruído.</p>
+        </div>
+      </div>
+      <p class="lab-foot">Só o primeiro modo melhora se o limiar descer. O segundo não deixa rasto; o terceiro converteria em ruído o que já descartava em silêncio.</p>
+    </div>
+    <aside class="notes">Como usar: com estes valores, a 40% as duas categorias da hesitação passam; subam acima de 68% para ver o limiar reter só a mais provável e acima de 72% para a descartar. Depois desçam até 0%: só a hesitação fica visível quando o limiar desce; a confiança cega passa sempre sem sinal; o silêncio passa de irrelevância a ruído. No fim liguem «Mostrar o que o RUF assinalaria».</aside>
+  </section>
+
+  <!-- 21 -->
+  <section class="slide" data-section="O limiar">
+    <div class="head"><p class="eyebrow">O limiar</p><h2 class="h">Três modos de falha do limiar</h2></div>
+    <div class="tbl-wrap" style="flex:0 1 auto">
+      <table class="t big">
+        <thead><tr><th>Modo</th><th>O modelo produz</th><th>O limiar faz</th><th>Fica por analisar</th><th>Para o detetar seria preciso</th></tr></thead>
+        <tbody>
+          <tr data-f="1"><td data-l="Modo">Hesitação</td><td data-l="O modelo produz" class="mono">empatia 72% · permissividade 68%</td><td data-l="O limiar faz">descarta, ou retém a mais provável</td><td data-l="Fica por analisar">a subdeterminação do material</td><td data-l="Para o detetar seria preciso">proximidade entre categorias e instabilidade da justificação</td></tr>
+          <tr data-f="2"><td data-l="Modo">Confiança cega</td><td data-l="O modelo produz" class="mono">autoridade 78%</td><td data-l="O limiar faz">deixa passar, sem qualquer sinal</td><td data-l="Fica por analisar">o plano em que o enunciado é relevante</td><td data-l="Para o detetar seria preciso">um gatilho independente da confiança</td></tr>
+          <tr data-f="3"><td data-l="Modo">Silêncio</td><td data-l="O modelo produz" class="mono">avaliação formal 22% · planificação 18%</td><td data-l="O limiar faz">lê como irrelevância</td><td data-l="Fica por analisar">a ausência notável enquanto achado</td><td data-l="Para o detetar seria preciso">declarar antes os temas que se espera encontrar</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="lead" data-f="4">Só o primeiro modo melhora se o limiar descer. O segundo não deixa rasto; o terceiro converteria em ruído o que já descartava em silêncio.</p>
+    <aside class="notes">3 min, o centro da secção. Percorrer as três linhas de cima para baixo. O argumento está na última coluna e na nota: só a hesitação melhora com um limiar mais baixo. A confiança cega não deixa rasto e o silêncio nem sequer é detetável por via distribucional. É aqui que ligo à demonstração do RUF.</aside>
+  </section>
+
+  <!-- 22 -->
+  <section class="slide" data-section="O limiar">
+    <div class="cols grow" style="align-items:start">
+      <div style="display:flex;flex-direction:column;gap:26px">
+        <div class="head"><p class="eyebrow">O limiar</p><h2 class="h">A permanência humana é uma exigência epistemológica</h2></div>
+        <ul class="list">
+          <li>Não é uma precaução prudencial do tipo «a IA ainda comete erros»</li>
+          <li>Nenhum limiar deteta o que a distribuição não regista</li>
+          <li>Há uma classe de omissões inacessível, por construção, ao instrumento que as comete</li>
+        </ul>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:26px" data-f="1">
+        <div class="head"><p class="eyebrow">O mesmo gesto, noutro lugar</p><h2 class="h">Para além da análise de dados</h2></div>
+        <ul class="list">
+          <li>A supressão da fricção é o argumento comercial com que a IA generativa entra no ensino superior</li>
+          <li>Mas a aprendizagem profunda exige precisamente esforço, fricção e ambiguidade</li>
+        </ul>
+        <p class="big-stmt"><span style="display:block;font:italic calc(var(--b)*1.08)/1.35 var(--voice);padding-left:22px;border-left:3px solid var(--orchid)">Numa instituição que forma quem há de interpretar, apagar o que é incerto é decidir o que conta como conhecer.</span></p>
+      </div>
+    </div>
+    <aside class="notes">2 min. A primeira metade fecha o argumento metodológico. A segunda abre para a discussão: o mesmo gesto que apaga a hesitação na análise é o que promete remover o esforço na aprendizagem. Terminar aqui e passar à pergunta final.</aside>
+  </section>
+
+  <!-- 23 -->
+  <section class="slide" data-section="Fecho">
+    <p class="eyebrow">Para terminar · uma palavra</p>
+    <h2 class="q-big med">O que nunca deve sair das mãos do investigador?</h2>
+    <div data-poll="palavra" style="display:flex;flex-direction:column;gap:14px;flex:1;min-height:0">
+      <form class="ask" style="max-width:640px"><input id="ask-palavra" maxlength="24" autocomplete="off" placeholder="Uma palavra"><button class="btn primary" type="submit">Enviar</button></form>
+      <p class="meta" data-meta="palavra"></p>
+      <div class="cloud grow" data-cloud="palavra"></div>
+    </div>
+  </section>
+
+  <!-- 24 -->
+  <section class="slide closing" data-section="Fecho">
+    <div class="cgrid">
+      <div class="tmain">
+        <img class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAB/CAYAAABVEP+YAAAbUUlEQVR42u1dTXabStOu5GQOd+aZuCsQdwUiIw/NXYHJCoJXELyC4BUEr+DDQ4+CVhC8ghfNPHvRCvINVLypW7e7aZofIaeecziJLNH//XR1dXUVgEAgEFwoMgD4+Rs8mXS1QHB5eC9NIBAIhLAEAoFACEsgEAhhCQQCgRCWQCAQCGEJBAIhLIFAIFgnPkgT/A/RyPdbAKhnLJ8PADE+AQBsyXdHzLvEpzlD/TtUZ2p/FzSObRVjeUMA2LHv9tgXFfaF4MyEdc8Gp26ABgCQsM+3PWnvMb0WAAr8l07YBAfLDuYxmuUEsWV/OypIKQCADfl8IIO1nIioMqy7BwCP+Lki7RPiBEoB4Cu2YzqQQG3q3/URR4hlG9MG3y3GhinPLt/Gog50LGcD2ijB32+wPAVr5wD7IQGAz1ieDH8nWIGle9azYo6xRq/ZQGkXtnRXlb8ykEqCk4X+vmGk7bKSt6Q9Qot38oks+nX9B4YFKlP0U4P16AN9p1uwYmxbnSRn26/d4lk53ngI2LupZfu1ZNz4Qi9vm7B+km1Ce4arOUMIi6LQvDd0wKZs0vuO/Vg6TpahhEUlH1V/FZaEVSNB2Gw9Xfo1Gfh7Xp8hCxB9t7VccAQXTFiZYvVdO2GZSMu1H0JHXRIlAX8hwjK9G1sQVuRQv6ESU2b5e05WuUM/pExyFNKCt31KGF1gu6ao76LYWa7OCQB8IZ8fHZX5NK+t42SDEYr3vYWejONlhNJ+CIoB20CP6Mdcttg5aQsP0wyEesSsYU1oNZPCZkX/piA/cDwBeySfbxf2UqGq/7ZnspYLng6+9PymZEr9jB0CuR7oeHJ6KIS1RqgkhU3PloBP8scRkwQUUtWXBbcklUFy0aGGZU0aTATDzUbKkW1xYMSdyRQRwloTasOJom4Lt51Y4qjZRIEFt4aNwxa/XUn/pIp+aCeWOFPZGgphrQlDJ2w2oRGmifR2F6oXhAX1j94M/cDT8ETKEsK6VMTM+BTgpGNpZ5IkkhVKnvuFFO59Vu7pTFvVStPvYp8lhHVxW8V4oI5lrKR3C+c73a1XchpcKLZpsUK6mlK3dlBIWbFMCSGsNSAYQCDxjJOkNkh1SxPWfkIiXqrMLzCvmkC250JYqx38BwWBhJpVfSoFdGswoYAZL2qninuY6cr7LJz5IKAVwhLCghXrpWxsk/wzHfFHM5JVobgMHS1stuCC3cyEVWtMXQRCWGeXrm4UW4vsTCvsfsF6V6TuBwD4hNvjGt6Wecrckp0AxB/WUtuKUkFW0YXo2IZIZj7WN8C/b7CuDxfoD+qc/SMnhUJYsw2sANTK005v84XpbfKV2ttsJvIbRrdSL8RcoJbhIhDCOi+2APAfhc1Q50CPXpQtkKxa+D08s8ZY3xt8XB0JCgRCWDCdLijFSesTiavGp0Eiay6kLlOixLrXRHrbAcAPAPj7AraHQqpCWPBWDT9rUeqC7tg+g397nCiQ2NcsbbZn1C8JWYKcEsIFuaKZG96Ck6TQ5J9eQF8cZib7QPG34xtUGwhhwe/lhgYmPLU6h53X/gyW9eeM+DOGsES6WpCw5Dh2GjydYTtYLbzF2V7AeKnOIGGJM78FCStciW+jS0c5o4QVaO7HNWfY5oYX2A/ehES7EcJa75awvhD9zlomynEiw04bksjP5AssgPXrEx9nItroAi+DvznC6gtoepyA9MLfRPGeK1bjYIaJclxgVb9UwgKY7/pU5ODjXzCDhBXPKGXVv9Ft9lxB8PEE28GtwkFdeybC8i/EU+zjDAcG8ZkdFgphWXRmOYEi+gb6j6I/wSns+OHCpaxkoog5uvf3C4VNby78ki8P07YdKR2GiqAWidDP8oFU+4JfBiOjPmcOAVErOH8gVRhpx/TTIbCoSpppWRBPf6FAqrp+qCY+0XMNpOpS/2KkjvKnY/RowQyEZYosnDuklxPLaNPvfI3Ed8mExSdj47iVKkZGHB5LWNnI989NWMDC2rsuHpFibAvOTFgm0vLxO9t0Cst3Kouw55dKWD5blYsRE801PPpYwgoHLDJrJSzelkMXDx/fmUJKE0xMWB1pBQYvlKZ3G5SOggEEF1isipdIWCrptBigU2xJm4YTbYlcJKRG8X5yYYTF27S2JC2+6Mo2ENZ3+blzv3LPXKt0CuUMJ0LABnXn6SBVuNeFHuVoygZJMtFxdqDRyWWKSVnMqPwtMf1bzD/XHGZ0Zesi4twPdG+TWZogDKl/jMTiMRL2iclKY3E4kyjKE2hINlNsjRsYbyfXtf0tGauqAKs+cbXjgbjYmRTvFIPxC0x75aQiHg5aNuAC4kvqBtwvrBaErGzI7l4xsLMRJ2JLiPoJToQbOJ0y1awtO2+fpeMknav+AZY9YuVsCVm5EBYM0OU1MO31mox5WG2ZbeKR9EMlNHM5hLVW3F+40V6o2JbUch0KzuFmOrAM0CoQf1ggwVgFcGYjUyEnEPcyAoFAIIQlEAiEsAQCgUAISyAQCISwBAKBEJZAIBDAQnZYAVyGkzWQ42iBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCOA3M2tYDK/XHneR0l49H8ULgUAgOB9hvV57AZycnYX42ARf7Rz+VQBQXT0fxc+TQCCYh7Ber73O+2cC/w7kCY6eS0sAKN8IeUXwT9/kgvXDh1/+8RsYbngcWTpbpDuPZiIDZ5c0x9YXVn815/XaC16vvQIr93UisgI4uQX+BgDN67WXISEuAVMgC10MwNwwAAr8zXfy0HcyQ7CLTJF31hMcQxdUpCVupaEnnmQC9rEfW+Kz3TZWZORQ9rnzKNmNjxwA/kv67D+kHDxgh02f/1fR/hmm+YPlUynKn1kGBRmSJn9HVd9U0d5VTyCYcHWE9Xrt+a/XXoYVuwX7IBJD4cHJhXOD+a0FMalzrCGAhgSIgBlCoQ9txy6YQtQTMToZmO5nQ/Skqco+dx43JDpOjvmpyhH0SCiVoc8jImWVOK49EqH7QHzEf3cIrlI7pMnfObL6Rg7R4JNVEdbrtReRii454b68XnsNKu/nxkfcPtNH10EbBQEVZBA8AsCfmMZfAPAwQUh62+3/O8z7Ew5GTyNpxSyogm5i7km6f8HJV37XBkXP77unb0u8dB73ZIyFpC2OmP87APgb+9EUFDUnO4wn1uf3TKq+Ib/7gwTs+EhIIx9A0BnLm6b5N0vTN5TXZ2Mmt9xK3sy1GL8fSVY5MvXmTJLNBgB+nFna8tmA451EDxqecMVpyIqWWkSNgYkvfhdk5duwVTDCvx1xItsOuhonygMhugim92WfEVLZzSCd5qzvaKg6IBJRYiDCgEhWeyxjw+qQM2n2gGm2bNuVEAKNB4SH69KMNWXv0kxwDH8mYzRmOqtmQASgLu0XHEObKfvo/YgtYK0Rlc+BL6/XXjGjbivBQdY9gaKDDmTFj8nKFWkmw7lRki1CpKhPRYg0cZzwkSZEVkZCZU1BKlPmkTCCzOniiH0cWETTsenzgEjeuhiStJ9iy0g+Xk/ePM1Qow5wnSvdrqKcWsr64HgCWE2oUJ8KtwAQvl570QwnibcKBW/DOqiLr3ckqyHfbtUrdLOzYWWMSX0q+HV4ElqWvzGQyUahOqgcyt3ihNtMlEeAkzsmu4Ujea8l2/pb/F1qiMcYsrLaEFtt0U9gSVhD04w0/QcOYc+2bI7ckgW8XVTCWjFZAYk8Xc0gaT3iNqR7GkUH+eSEhU78yiBxwAqO6vnq6JFJlxB9RwJuhAgs6C1txwrGqQNUhOCSxwZ3CxuSRsQkkhDHQbeV+maQtGpDG4OGzEJLErIh86Fptj15ZWA+jVZJZ1Ry86aSsj68IbKipFVMrNvQ7d9TgxR2g51fM0IoHYgEpj4exvS2bILRNvusUMTbbBdSwwrfTBTANjFITy550O18penrBvPttjoe1jXVmH3Q9igNxEYl8lxzmrgZII26pFmxLazr3KHvfVF8VywpYeUTkdWBSCx3cDoJucPPT2RvPQY3eCAAC5gzAJwUq3RVP5LvW6KMv1FsE0OyqtWEdBOWzw3Ja4oJzwcpPTzgEiVYKE99nJxfFSQwpUSYkkl4nOjAoiE6r0qh7ykUfdQnPT2SgwFu10X7PCe/U42Nki2cQ3R8O8U7NM0jfl+TcXXTY6MHBjONjgQfyNh5ZAv4/BLW67WXGuxJbNA1TKG5L1gp7hmmzL5pKD6/XnvV1fOxnNFafUNW0VpxSpTg4ElwUnQ6kFs4naJs2clMRVbHbziBfNYGhUZaqgySDhiMDD9h2VL2bssIc4v/lszk4aemv2PLchY9E9GUR6TYErrkYdo23Wgk6D4CSckYucHnhSjF9/h9Ttq30/d0NmBbRT9Bj36uGJBmStJMMS06RvekD2yl3gMbSz5pu3jswdN7y7uAY8T4ewAIrp6Pqe3l5qvnY331fEywcx/GbOVmPjnsOqjWDKItORoPiaQFbOD4RJcQESlzw8jqTjNJPBxU9PEtbI8+kvQSQp6tpj6xRbpPWIfaspyB41WtufPo+uPRUIaq592Qvb8l/RmwPn9g5d+S8fW3gRxVde3SfByQZq0YoztGVq3FbqNUtMPTVEak7ywIq7JkWI4XAEim8MCAxqmFo73XI5LfmDt/tWYl704+asM9rFqh1Azw+wafWpO3TyQGVRmCHsWvr/m+MtS1UazkvD6Bgrhaw6lUaCC6RiM5qOo2Vx5tz4laV/+I9FetaZ/KkE9fn/N8mp70bOpqm6Yq/YiVt9WM/8Yw3nl5q9kIC4niuyNZTWpeMFLp/+fV87EBgUAAbzkuYbYGssJtYifmvji8nklXCwTwdt3LOEpXBwAI53QBg5JW46CMFylLIHjDElbikF48t78qTN+lbKl0t0DwBgkLpZihZgwPS7k4RlOFJ3A3NhQIBG9Iwood7Kyyhcs+VGLycJsrEAjeGGENndiLuy5GfdTTiKsDgl++9gWC30rCKuF8LlJc/Wr/7ijgdKjyQ7bLAhjvQ6xziVzgPCvnWAw/aCzbh5zAHWe8/mJDWN9g2MVowWmA3cLpukeEbdieceERXDZCOFnq++Raz9HhPiIMNmtwMGfYXz0fozPGN6wHEtFfAw4HKgdprTJYnufwb4vrylEiDODXfUvqFqWCkz6xwfxCdpcuN6x8KSlnSGzYKjY4c035VHdAX5AIOwd1leb+JZB3G43UFxKnfB65FlUarq5Uhr/nhusmObllkE00VoaUJSFtoGpnXR907+3YNaJckX9F6loaDqts0+sueVcGHXOM6d2wa2KF033P12svfb32fg54zupF8/XaqwaWN5ohao7tOyqTDJc8QhKlR/VkLLJJNjC6DP1NrZh8qvIlPXWJWH0jzbWS7vtgQJ1bw2re1x+x5ooM/Z0/0VgZUpbMMA5UfeBjX+nSbxTEoetjGkTDVN4h6QGJIKR76r62/mDpiwksHYadA/XAu46Rw32mOwdvoY/ETUfnDG/ThStTlME2D5/cqqf5BFg32xvxL4pVsNZso7MeKSMiW/MjWX0D4sitsjgQ2TBpi3uQ8Ij7khLzTfD/7YD+iIizwv/DwBC1QYc7xJeTTT/ekcnJy/Kno9fPguw0Xog0HxOvEDo99ZZEdqKEuTOkVzqkd0vSy4ieK0OJq9eX3Qe4fLQLkWLl4GOpYj6VahKpJnDMIyMT944NxGJgu9nW6Qum3VhcfYrYhC0GnuAeiO+tVLOQZqT82Yj+6Ig/1/i1P5AgHcWEY6VWlOXHCAd6AdlivTC3O5Vm0btV1DEj6X0emB7vP7rg+OT/PL2auC3q3PBo3XG/fwOEFSykVIzIA45O4mhAg6AnD7/HX/hhpG8hn+UXaKSSowXx7Mjva8eyxMy+bqNwUzyl59Ka1GnHxtOOEdcQFzW2/cjLQh3dwQhzncxiEafkkikMq13S81h6PHKU15NeamOlIIRlh6/wz8i9rqgM5eZ5hD3k0MB4V9I0v8TgibPLN+05GGhGBqLtPIiq/CcVKFECDag70lSlVtQjJpJARS7bx45jJXQoSzjCN3854NZHSX5PA3oMTS9WRFqi6YUWgTGaxUPVw/mOVOfGC5xOMrpniTxag+O9KXBk+TWG07I9WR2DCaLe6AZ8TXwwqUgiR33TC5kU30eQlmmlb9j2Np24H01lGaNHDiwWeLrohaQ9EwV5BAO2ozy9dIK6vR3CcrAZgxHXgMZuCfkEbHryqHtW4t1I6bJm+RU9K3LnujnTTFLX+5p0wHch1D+zQJ+g8Ix5NzKiD++PLt0N2Zp9J7qejeXiaNuPprJUPRJHaJDOkgH5dNLg1kBYycDAEzS9WFG+2GFuGAmruSDOuqSrNgmZiPsR7Vwxcd2HZeIXZiy8lqpMGwdbmphJj93Dg4fGbPJQO6DIcRG6Jbo3anLCpc/jzBfoUxYAhM/DqOcif0XKmPbMCxoVmu8aPBJb4EBIKLZ0Fa5LrybppZrgt1aBRT5cOGGlC5JNpDhGbizfCViAznREHp2OpzsGbsiKHKKU8pfFyh4opKXKsMXrTq92mlPCiAQ9iEg6ocalMih8ycfs79+wnj7mv8F/a6bPKwb2oa4/EpJeyur+Gb9PJxgr1EhUVxYarus7ITJqlLtnxP+dmEe8ELOBiBhmbjThx2oWaCQh+lpTetue9BKWngenE9FHbBOfxcNMB538Yxj6IYaY2Zm2g8nAcrqU18YQcsg7tWJ1ccnD7zHCSxwNRzPDe0D8n6sMGsOetAOF4WioKLPKeDNjRqW6tIf2R0X6gxo+hoq6dd/FI8ZKX1kCxYFGO8DIMjH8viJ3/nS6O24oO3V6cY/BczL4LuHV87F9vfZeLuDe3RJEeT8gqrHpnZYEkpgij5aEEIuJk/+andQUCqmp6LkionuPBhMNDTqxzlA0JEauJanLPUkrIJ9V0VbuMI2GGMZGzCK/T9K917QrDyTRkt/Wirrd99j92fTjvcE+rNH0R4BtHsCvIBaVxli2INKMz4JmdIa295q8qHqhCy7RjYOYSX6VY3olMSaOiHFpzcYIDHKRjNdtPttO6qvnY7awdJUpIsvCWssrEMDln8T/wG17cs7bLe8dLnLCmU8G4xFkJRAIwMn84xPqExNYmz8sdBdzXCFZhTOEPxcIBGA0Sq2Zfdoqg1AUDla2syrZ2aVfgUAAi52Sl3CKFl2ulbDyNdhC4allDqcjbiErgWD57WAJv7wrwCoJC32mP1qksXm99tIZpaoa7A8ABALBG0afe5kM7MJ9fcXQYPnYYBToYC+Gf/tHEggEIJGfpzYh2I9Q7i1h+yVmDQLBG5WwAHVZyQBpZyfNKhAIzkJYaPkewy+PiL8TMjgd4xagPjkJmMV9prgrBuRaS8Iss/nfTPl16VOr5QjUltMFK6PueyrdJvBPv0YVs8dTlS3T5N/nsrggdW807QQKa/NScycyMeTTDHin7lEs83ZqiU+p1sI1d6RQaBeKd32iFvHJTYnCMK506QYWtlO8XyP4dWOBtku1+i0hU4B/ewMkNGRL+BO3uJHGuHbH2vCn5iJvNwi+A8BH5mWA/q1zE/uHYmB27f8JB1e3Vd8rJl3KyrhnW+4nhTuTHXNxC/BPF8yqtvgJJ3s9fhm5u8RbGKymAU6+2VNNOx3I5dgtKVuscLz3HU6Xc1tNFCAYmQcQv+4eeS8kn+OeC+ddf3Xl3GnyC3EcbEjbBuRzwkiV15+mGzJPCNT7514zZnLmVYR7lE3XaOmukrQKy1PD3x1HJJ14RGDYRGM+clSQQMSe1BDh+R0OwhsieQU4IJ/w+wAJ887SFo/61XoHJ1sdQHJNDN4Zjj1tVLBy35G7iaGFH6rIwmMFz+MT5vGD5RHCyWMBYP0C4v74HsmksrRJ7Mr5B3k3YwFGNqS+EeZ3RzwxmOr/jqQbK/ye1Ypxw8nqBU7BMLrv/8S/3Y50y70cYSFpJUJaYBO95EgitLi8myq2CDcT2cEUCj9T/PJx2xOzr490QxI9x1cQb+f7ezPAl1VOXKvkM/ZdrDCczpkBJZecHgzODcFg35SzgKM5pnOvqGOOhGpjI1k42EgGSFYH5vWVel89IGmFF0FYQlrWAzEh0XFcJjz3bpkMNOa18YFfMaLKJzQCbsjki5ikt2GBOxMY5rzwaQJvq315POIWMSQS6IthwcgcjahbZgzdSdGZgYgOWB5/QB/DAANw3ULVjqjn+QiLkNbdhRJKtUAe1MleBMPDyHPnhAmJcgwap3uVoW4ZPjnRo9SEXP4mjtrKicigUrjzTUj7NFiO2DFwRKBoN9oO4QTBKXyST9lDPHsHu8Gc3c/zLLaxpcZNckL6uejz3An6K3a1Rd7RRREWklYOJ2Xx8cIIq4bl7l+5bA1rNpEDXO3HSFdf8PmM0kOk2cZ1+q16glv5vsJ/VMzcQxfEjS6s7MLvXOiItSVbsHSCOJy3pJ8bxbbuTWBUEIqr52OFE+pStoiPYy3xBw6slClVh+hSPOaSt+w5Lo8MK9875pyu1WzjIlyEAE5K8zFSSsQWiG6bvINfHia/OmwLI42k7Br8AQxBHmhbhRbvHAcQToW7lHBg1JtY4zXhI+m7dkT9gwF9elmE1dlp4Rbx44whsGCi07sMpl2F9xbEs8eVNHJUjMe4vWwmsCl70YTq4lu5dKTo7xMJs2YT7Z49L8Rvuw1Z7WYeZxGW54VM/AOJSAyaEzrPcguWETsnri96IlGYdWXbErMKVd89OJ5SlxZxEtJz+8ubLMzX1fOxuno+div00woJK8UL3UPQKXgjxSq3tSSRxBB4wrQKP+LA20x4S151GBAqBnc4YmAGxA1QZ7PTnXI+ET1LRvRqNopc6gstndGzpkqHmLKtMyeRbCK33RnZNkaKstmQSoaE5qKK2OO4LjSLaN/hA6zhao7LNrHCmIFdaKZz+offI1nVjgPohhjmlYSsbEmowXS+Oqx4txrbq75DhMgwKO9Rz5HixMiIRNEFydhiu9WWk7xSGCbeM4t73ba2xO0nNzRNWD122BafNOXKBxiO2uRRsTI+oKRMI76EJDzXpwmk4BrT+YZj7okYjt4SCbW0OKX+zsw0wPKksCKRj0qS3gbHSAQrv0voSlwNDqIcPTmExAguYIN7aoL6X9hsR6KiA+gvMqmppXimmCC6eIM5OSJvFadLrWYiHwxSTmOxNaoNZYnIPdFO/9MR5JNCWlAR2F5jW8RPLAP8bamZYA9EcmkV6TaGgBOtwxZxaB40jFVK7MEOSF6ZBVk1lpGgCyxHRranXZ/kivGgGkMVadOAla3uaZeQ1PEzCZRbjLDNEwgEAoFAIBAIBAKBQCAQCAQCgUAgEAgEAoFAIBAIBAKBQCAQCAQCgUAgEAgE58X/A3lba9SZftBYAAAAAElFTkSuQmCC" alt="U.Porto · Faculdade de Psicologia e de Ciências da Educação">
+        <h2 class="h hero" style="font-size:calc(var(--hero)*.82)">Investigação Qualitativa na Era da Inteligência Artificial</h2>
+        <p class="tsub">Da Utilização de Ferramentas à Colaboração Humano–IA</p>
+        <p class="author">António Pedro Costa<span>apcosta@fpce.up.pt · CIIE – FPCEUP</span></p>
+      </div>
+      <div class="qpair">
+        <figure><div class="qrbox" data-qr-url="https://doi.org/10.1177/16094069251383739" role="img" aria-label="Código QR do artigo AbductivAI"></div><figcaption>AbductivAI<br>IJQM, 2025</figcaption></figure>
+        <figure><div class="qrbox" data-qr-url="https://qr.codes/KDXG3m" role="img" aria-label="Código QR do artigo RUF"></div><figcaption>RUF<br>edu4AI · ECAI 2025</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <div id="hudLeft"><span id="secLabel"></span><span class="pill" data-livepill>Respostas locais</span><button class="btn follow" id="followPres" type="button" style="font-size:12px;padding:4px 10px;text-transform:none;letter-spacing:0"></button></div>
+  <nav id="hud" aria-label="Navegação">
+    <button type="button" data-act="prev" title="Anterior (←)" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+    <span class="count" id="count">1 / 24</span>
+    <button type="button" data-act="next" title="Seguinte (→)" aria-label="Seguinte"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+    <button type="button" data-act="qr" title="Código QR (Q)" aria-label="Mostrar código QR"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg></button>
+    <button type="button" data-act="notes" title="Notas (N)" aria-label="Notas do apresentador" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M5 4h14v16H5zM8 8h8M8 12h8M8 16h5"/></svg></button>
+    <button type="button" data-act="lang" class="lang-btn" title="Switch to English (E)" aria-label="Switch to English">EN</button>
+    <button type="button" data-act="mode" title="Modo leitura (L)" aria-label="Mudar para modo leitura"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 10h16M4 15h10M4 20h7"/></svg></button>
+    <button type="button" data-act="fs" title="Ecrã inteiro (F)" aria-label="Ecrã inteiro"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+  </nav>
+  <div id="progress"><i></i></div>
+  <div id="notes" hidden><h4>Notas</h4><div id="notesBody"></div></div>
+
+  <div id="qrOverlay" hidden role="dialog" aria-modal="true" aria-label="Acesso à aula">
+    <div class="qo">
+      <h3>Abram a aula no telemóvel</h3>
+      <div class="qrbox" data-qr="join"></div>
+      <p class="url" id="joinUrl"></p>
+      <p class="meta" style="justify-content:center"><span class="pill" data-livepill>Respostas locais</span></p>
+      <div class="row"><button class="btn" type="button" id="copyUrl">Copiar ligação</button><button class="btn primary" type="button" data-act="qrclose">Fechar</button></div>
+      <p class="note" id="qrNote"></p>
+      <details><summary>Alterar a ligação do código QR</summary><form id="urlForm"><input id="urlInput" type="url" placeholder="https://…" aria-label="Nova ligação"><button class="btn" type="submit">Guardar</button></form></details>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+<script>
+(() => {
+'use strict';
+const SHARE_URL = 'https://claude.ai/artifact/5yzYpdyisiHgAxFoNhARGd';
+const I18N_DATA = {"I18N": {"IA e Investigação Qualitativa": "AI and Qualitative Research", "Aula 9": "Session 9", "Investigação Qualitativa na Era da Inteligência Artificial": "Qualitative Research in the Age of Artificial Intelligence", "Da Utilização de Ferramentas à Colaboração Humano–IA": "From Using Tools to Human–AI Collaboration", "Abram a aula no telemóvel": "Open the session on your phone", "para responder às perguntas e explorar os modelos": "to answer the questions and explore the models", "Ponto de partida": "Starting point", "O processo de investigação": "The research process", "Toquem nas fases em que já usaram IA. Hoje focamo-nos na análise de dados e nos resultados.": "Tap the stages where you have already used AI. Today we focus on data analysis and results.", "Problema": "Problem", "questão de investigação e objetivos": "research question and aims", "Revisão da Literatura": "Literature Review", "fundamentação teórica": "theoretical framework", "Desenho da Investigação": "Research Design", "metodologia": "methodology", "Recolha de Dados": "Data Collection", "Foco da aula": "Today's focus", "Análise de Dados": "Data Analysis", "Resultados": "Results", "Disseminação": "Dissemination", "Como usar: os alunos tocam nas fases no telemóvel; com respostas ao vivo, cada bloco enche à medida que respondem. Sem ligação ao vivo, cliquem num bloco por cada braço no ar.": "How to use: students tap the stages on their phones; with live responses, each block fills as they answer. Without a live connection, click a block once for each raised hand.", "Pergunta": "Question", "Quando dois investigadores discordam quanto à codificação, a IA pode ajudar a explorar alternativas, em vez de “impor” uma decisão?": "When two researchers disagree on coding, can AI help explore alternatives instead of “imposing” a decision?", "Colaboração humano–IA": "Human–AI collaboration", "International Journal of Qualitative Methods · vol. 24 · 2025 · acesso aberto": "International Journal of Qualitative Methods · vol. 24 · 2025 · open access", "António Pedro Costa, Grzegorz Bryda, Prokopis A. Christou e Judita Kasperiuniene": "António Pedro Costa, Grzegorz Bryda, Prokopis A. Christou and Judita Kasperiuniene", "Propõe o <b>AbductivAI<\/b>, um modelo abdutivo para analisar dados qualitativos em colaboração entre humanos e agentes de IA. A IA deixa de ser só ferramenta e passa a co-investigadora, desde que o humano assuma o papel de agente reflexivo responsável por todo o processo.": "Proposes <b>AbductivAI<\/b>, an abductive model for analysing qualitative data through collaboration between humans and AI agents. AI stops being just a tool and becomes a co-researcher, provided the human takes on the role of reflexive agent responsible for the whole process.", "IA agêntica": "Agentic AI", "Teoria do ator-rede": "Actor-Network Theory", "Sociomaterialidade": "Sociomateriality", "IA generativa": "Generative AI", "Ler o artigo": "Read the paper", "Da conversa ao agente · 1 de 3": "From chat to agent · 1 of 3", "Eu ⇄ GenAI: cada passo passa por mim": "Me ⇄ GenAI: every step goes through me", "Eu": "Me", "Proponha categorias para esta entrevista!": "Suggest categories for this interview!", "Gera categorias": "Generates categories", "Mas apenas com o uso de IA": "But only with the use of AI", "Saltar as categorias sem utilização de IA": "Skip the categories without AI use", "O investigador conduz cada troca. A IA responde, mas cada novo passo depende de um novo pedido.": "The researcher drives every exchange. The AI responds, but each new step depends on a new request.", "Passo seguinte": "Next step", "Recomeçar": "Start again", "Da conversa ao agente · 2 de 3": "From chat to agent · 2 of 3", "GenAI ⇄ Computador: a IA começa a agir": "GenAI ⇄ Computer: the AI starts to act", "Computador": "Computer", "Propõe categorias para esta entrevista!": "Suggest categories for this interview!", "Lista de possíveis categorias ou temas": "List of possible categories or themes", "Propor novas categorias": "Propose new categories", "Adicionar novas categorias": "Add new categories", "A IA passa a escrever no computador, e o computador volta a pedir-lhe propostas. O investigador só entra no início.": "The AI now writes to the computer, and the computer asks it for more proposals. The researcher only steps in at the start.", "Da conversa ao agente · 3 de 3": "From chat to agent · 3 of 3", "Agentes em ciclo: prompt › resposta › ação": "Agents in a loop: prompt › response › action", "Humano": "Human", "IA": "AI", "Tarefa": "Task", "Ciclo dos agentes": "Agent loop", "Prompt › Resposta › Ação": "Prompt › Response › Action", "Obter feedback sobre o resultado": "Get feedback on the result", "Retornar resultado": "Return result", "Construção do prompt <span class=\"who\">IA<\/span>": "Build the prompt <span class=\"who\">AI<\/span>", "Gerar resposta <span class=\"who\">IA<\/span>": "Generate a response <span class=\"who\">AI<\/span>", "Análise das respostas <span class=\"who\">IA<\/span>": "Analyse the responses <span class=\"who\">AI<\/span>", "Executar ação <span class=\"who\">Computador<\/span>": "Execute the action <span class=\"who\">Computer<\/span>", "Converter o resultado em string <span class=\"who\">Computador<\/span>": "Convert the result to a string <span class=\"who\">Computer<\/span>", "Continuar o loop? <span class=\"who\">decisão<\/span>": "Continue the loop? <span class=\"who\">decision<\/span>", "Como usar: → revela as mensagens do diagrama. «Correr um ciclo» percorre os seis passos; à terceira iteração o agente pára e devolve o resultado ao humano.": "How to use: → reveals the diagram's messages. “Run a cycle” goes through the six steps; on the third iteration the agent stops and returns the result to the human.", "Evolução do papel da IA na investigação qualitativa": "How the role of AI in qualitative research is evolving", "De ferramenta a colaborador": "From tool to collaborator", "E vocês? Toquem no papel que a IA tem (ou teria) no vosso trabalho.": "What about you? Tap the role AI plays (or would play) in your work.", "IA como assistente": "AI as assistant", "transcrição, codificação automática, organização de dados": "transcription, automatic coding, data organisation", "IA como colaborador semi-autónomo": "AI as semi-autonomous collaborator", "identifica padrões, sugere temas": "identifies patterns, suggests themes", "IA como co-investigador reflexivo": "AI as reflexive co-researcher", "colaboração na interpretação e geração de conhecimentos": "collaborates in interpretation and knowledge generation", "Fundamentos teóricos": "Theoretical foundations", "Bases epistemológicas para o papel da IA": "Epistemological grounds for the role of AI", "Teoria do ator-rede (ANT)": "Actor-Network Theory (ANT)", "Os atores humanos e não humanos constroem o conhecimento em redes.": "Human and non-human actors build knowledge in networks.", "O social e o material (IA) são inseparáveis na produção de conhecimento.": "The social and the material (AI) are inseparable in the production of knowledge.", "Modelo de colaboração humano–IA para análise qualitativa": "A human–AI collaboration model for qualitative analysis", "Modelo AbductivAI": "The AbductivAI model", "Combina raciocínio dedutivo, indutivo e abdutivo": "Combines deductive, inductive and abductive reasoning", "Baseado na codificação colaborativa (humanos + agentes de IA)": "Based on collaborative coding (humans + AI agents)", "8 fases iterativas com validação cruzada": "8 iterative phases with cross-validation", "Dedutivo · parte da teoria": "Deductive · starts from theory", "Indutivo · parte dos dados": "Inductive · starts from data", "Abdutivo · salto interpretativo": "Abductive · interpretive leap", "A abdução não é uma síntese de indução e dedução: é uma inferência criativa que gera compreensões plausíveis e mais profundas (Reichertz, 2007; Tavory &amp; Timmermans, 2014).": "Abduction is not a synthesis of induction and deduction: it is a creative inference that generates plausible, deeper understandings (Reichertz, 2007; Tavory &amp; Timmermans, 2014).", "resumos do WCQR 2025 usados para testar o modelo": "WCQR 2025 abstracts used to test the model", "humanos e agentes: a configuração ideal": "humans and agents: the ideal set-up", "Mayring, P. (2014). <i>Qualitative content analysis: Theoretical foundation, basic procedures and software solution.<\/i> <a href=\"https://nbn-resolving.org/urn:nbn:de:0168-ssoar-395173\" target=\"_blank\" rel=\"noopener\">SSOAR<\/a><br>Costa, A. P., &amp; Amado, J. (2018). <i>Content analysis supported by software<\/i> (2.ª ed.). Ludomedia.": "Mayring, P. (2014). <i>Qualitative content analysis: Theoretical foundation, basic procedures and software solution.<\/i> <a href=\"https://nbn-resolving.org/urn:nbn:de:0168-ssoar-395173\" target=\"_blank\" rel=\"noopener\">SSOAR<\/a><br>Costa, A. P., &amp; Amado, J. (2018). <i>Content analysis supported by software<\/i> (2nd ed.). Ludomedia.", "Explorem as fases · humanos e agentes": "Explore the phases · humans and agents", "Como usar: cliquem numa fase para ver o que fazem humanos e agentes. As setas tracejadas são as iterações do modelo (4→2, 6→5, 8→1); cliquem numa delas para a destacar. A fase 5.5 é onde entra o RUF.": "How to use: click a phase to see what humans and agents do. The dashed arrows are the model's iterations (4→2, 6→5, 8→1); click one to highlight it. Phase 5.5 is where the RUF comes in.", "Considerações éticas": "Ethical considerations", "<b>Transparência:<\/b> documentar as contribuições da IA": "<b>Transparency:<\/b> document AI's contributions", "Validação cruzada com contributos humanos": "Cross-validation with human input", "<b>Responsabilidade pelo julgamento final:<\/b> o investigador humano": "<b>Responsibility for the final judgement:<\/b> the human researcher", "Reflexões finais": "Final reflections", "Para onde nos dirigimos?": "Where are we heading?", "A IA não substitui o investigador: aumenta as suas capacidades.": "AI does not replace the researcher: it extends their capabilities.", "Importância da reflexividade e da interpretação humana.": "The importance of reflexivity and human interpretation.", "Surgem novas possibilidades de investigação e de rigor qualitativo.": "New possibilities for research and qualitative rigour are emerging.", "Pergunta · respondam no telemóvel": "Question · answer on your phone", "Como é que conseguimos equilibrar a confiança nos algoritmos com a nossa interpretação crítica?": "How can we balance trust in algorithms with our own critical interpretation?", "Enviar": "Send", "O terceiro modelo é o RUF – Reflexive Uncertainty Framework. Ele serve para lidar com a incerteza, algo muito presente na análise qualitativa. A ideia é manter o investigador sempre reflexivo: questionar resultados, reavaliar interpretações, evitar a confiança cega no algoritmo. Pergunta rápida: Como equilibrar a confiança na máquina com a nossa interpretação crítica? Este é o coração do RUF.": "The third model is the RUF – Reflexive Uncertainty Framework. It is designed to deal with uncertainty, which is very present in qualitative analysis. The idea is to keep the researcher reflexive at all times: questioning results, reassessing interpretations, avoiding blind trust in the algorithm. Quick question: how do we balance trust in the machine with our critical interpretation? This is the heart of the RUF.", "edu4AI 2025 · 2.º Workshop on Education for Artificial Intelligence · ECAI 2025, Bolonha": "edu4AI 2025 · 2nd Workshop on Education for Artificial Intelligence · ECAI 2025, Bologna", "António Pedro Costa e Pedro Bem-Haja": "António Pedro Costa and Pedro Bem-Haja", "Propõe o <b>RUF<\/b> como extensão metodológica da coanálise humano–IA que trata a incerteza <b>não como erro, mas como evidência analiticamente produtiva<\/b>. Os resultados foram triangulados com análise qualitativa tradicional no webQDA e com o ChatGPT; o modelo computacional está a ser implementado no Google Colab.": "Proposes the <b>RUF<\/b> as a methodological extension of human–AI co-analysis that treats uncertainty <b>not as error but as analytically productive evidence<\/b>. The results were triangulated with traditional qualitative analysis in webQDA and with ChatGPT; the computational model is being implemented in Google Colab.", "Três momentos documentados": "Three documented moments", "1 · Classificação probabilística": "1 · Probabilistic classification", "2 · Zonas de ambiguidade interpretativa": "2 · Zones of interpretive ambiguity", "3 · Comentário reflexivo": "3 · Reflexive commentary", "Aprofundamento da fase 5.5 do AbductivAI": "Deepening phase 5.5 of AbductivAI", "Quadro de Incerteza Reflexiva (RUF)": "Reflexive Uncertainty Framework (RUF)", "Recurso RUF": "RUF resource", "1 · Resultados da classificação probabilística": "1 · Probabilistic classification outputs", "Um modelo vetorial transforma segmentos e categorias em vetores, calcula a similaridade do cosseno e aplica softmax para obter probabilidades.": "A vector model turns segments and categories into vectors, computes cosine similarity and applies softmax to obtain probabilities.", "Modelo vetorial: embeddings + similaridade do cosseno + softmax; prompting reflexivo do LLM para justificar": "Vector model: embeddings + cosine similarity + softmax; reflective LLM prompting for justification", "Pontuações muito próximas, ou baixas e difusas, ativam uma segunda camada: o LLM tem de justificar. Se a justificação oscila, essa instabilidade é dado.": "Very close scores, or low and diffuse ones, trigger a second layer: the LLM has to justify. If the justification wavers, that instability is data.", "Probabilidades sobrepostas; baixa confiança; raciocínio do LLM inconsistente": "Overlapping probabilities; low confidence; inconsistent LLM reasoning", "O investigador torna explícita a sua posição: a natureza do desacordo, as fontes possíveis do erro e o que a discrepância revela.": "The researcher makes their position explicit: the nature of the disagreement, possible sources of error and what the discrepancy reveals.", "Notas críticas humanas: desacordo, deteção de enviesamentos, reflexão epistémica": "Human critical notes: disagreement, bias detection, epistemic reflection", "Decisão final e refinamento teórico": "Final decision and theoretical refinement", "coanálise humano–IA com transparência epistémica": "human–AI co-analysis with epistemic transparency", "Na prática, o RUF mostra quais segmentos do texto ativam esse ciclo reflexivo — quando os códigos da IA competem ou revelam tensão semântica. Com isso, o investigador não só identifica padrões, mas também justifica as decisões interpretativas de forma transparente. Este processo reforça a responsabilidade epistemológica e a qualidade metodológica da análise.": "In practice, the RUF shows which text segments trigger this reflexive cycle — when the AI's codes compete or reveal semantic tension. The researcher thus not only identifies patterns but also justifies interpretive decisions transparently. This process strengthens epistemological responsibility and the methodological quality of the analysis.", "O corpus do exemplo · 9 composições do 5.º ano": "The example corpus · 9 compositions by 5th graders", "«Se eu fosse professor»": "“If I were a teacher”", "<b>Pergunta:<\/b> Quais são as características de um bom professor na perspetiva dos alunos? Há diferenças consoante o género?": "<b>Question:<\/b> What are the characteristics of a good teacher from the students' perspective? Are there differences by gender?", "Versão portuguesa reconstituída a partir do Apêndice A do artigo (Costa &amp; Bem-Haja, 2025). M = rapaz · F = rapariga.": "Compositions as given in Appendix A of the paper (Costa &amp; Bem-Haja, 2025). M = boy · F = girl.", "RUF aplicado à fase 5.5 · votem antes de revelar": "RUF applied to phase 5.5 · vote before revealing", "Sejam o codificador": "You are the coder", "Como usar: para cada caso, os alunos escolhem a categoria; depois revelem a classificação da IA, o feedback do LLM, a zona de ambiguidade e o comentário reflexivo. Comparem a distribuição da turma com as probabilidades do modelo: a turma também hesita?": "How to use: for each case, students choose a category; then reveal the AI's classification, the LLM feedback, the ambiguity zone and the reflexive commentary. Compare the class distribution with the model's probabilities: does the class hesitate too?", "Resumo · RUF aplicado na fase 5.5": "Summary · RUF applied in phase 5.5", "Seis dimensões, três momentos": "Six dimensions, three moments", "Dimensões do RUF": "RUF dimensions", "Exemplo no corpus": "Example in the corpus", "Classificação probabilística": "Probabilistic classification", "Zona de ambiguidade": "Ambiguity zone", "Comentário reflexivo": "Reflexive commentary", "Fixas, para qualquer corpus: ambiguidade, tensão, ausência. Variáveis, consoante o corpus: inversões, multiplicidade, conflito.": "Fixed, for any corpus: ambiguity, tension, absence. Variable, depending on the corpus: reversals, multiplicity, conflict.", "E se a decisão mais importante da vossa análise estiver num parâmetro que ninguém discute?": "What if the most important decision in your analysis sits in a parameter nobody discusses?", "TRANSIÇÃO — 30 s. Deixar a pergunta no ar antes de mostrar a instrução do Pattyn. Esta secção fecha a palestra e dura cerca de 8 minutos.": "TRANSITION — 30 s. Leave the question hanging before showing Pattyn's instruction. This section closes the talk and lasts about 8 minutes.", "O limiar": "The threshold", "O problema do limiar": "The threshold problem", "Pattyn (2024) recomenda instruir o modelo:": "Pattyn (2024) recommends instructing the model:", "Apresentado como higiene metodológica, é na verdade um critério de qualidade da análise": "Presented as methodological hygiene, it is in fact a criterion for the quality of the analysis", "Abaixo do limiar não está o erro do modelo, está o material que resiste à classificação": "Below the threshold lies not the model's error but the material that resists classification", "A ironia": "The irony", "Quatro décadas a recusar a convergência": "Four decades of refusing convergence", "MacLure (2013), St. Pierre e Jackson (2014), Koro-Ljungberg (2016)": "MacLure (2013), St. Pierre and Jackson (2014), Koro-Ljungberg (2016)", "A IA generativa não traz aqui um valor novo: reintroduz um valor já rejeitado, desta vez como parâmetro de configuração.": "Generative AI brings no new value here: it reintroduces a value already rejected, this time as a configuration parameter.", "E por isso sem debate.": "And therefore without debate.", "2 min. O limiar do Pattyn é o gancho: uma instrução de aparência trivial que decide o que entra na análise. A ironia é o argumento central da secção — a convergência regressa pela porta da automação, sem passar pela discussão metodológica.": "2 min. Pattyn's threshold is the hook: a seemingly trivial instruction that decides what enters the analysis. The irony is the section's central argument — convergence returns through the door of automation, without passing through methodological discussion.", "Laboratório · mexam no limiar": "Lab · move the threshold", "O que o limiar deixa passar": "What the threshold lets through", "Limiar de certeza": "Certainty threshold", "Hesitação": "Hesitation", "C3: «parava e mandava-os fazer outra coisa que preferissem»": "C3: “I'd stop and tell them to do something else they'd prefer”", "empatia": "empathy", "permissividade": "permissiveness", "<b>RUF:<\/b> proximidade de 4 pontos entre categorias + justificação instável do LLM → zona de ambiguidade interpretativa.": "<b>RUF:<\/b> a 4-point gap between categories + unstable LLM justification → zone of interpretive ambiguity.", "Confiança cega": "Blind confidence", "C7: «os que não aprendessem ficavam sentados no fundo da sala»": "C7: “those who didn't learn would be placed at the back of the classroom”", "autoridade": "authority", "<b>RUF:<\/b> só um gatilho independente da confiança o apanha: o comentário reflexivo humano sobre o peso simbólico da exclusão espacial.": "<b>RUF:<\/b> only a trigger independent of confidence catches it: the researcher's reflexive commentary on the symbolic weight of spatial exclusion.", "Silêncio": "Silence", "Corpus inteiro: quase nenhuma composição fala de provas ou avaliação": "Whole corpus: almost no composition mentions tests or assessment", "avaliação formal": "formal evaluation", "planificação": "planning", "<b>RUF:<\/b> declarar antes os temas que se espera encontrar; a ausência notável passa a achado, não a ruído.": "<b>RUF:<\/b> declare in advance the themes you expect to find; the notable absence becomes a finding, not noise.", "Só o primeiro modo melhora se o limiar descer. O segundo não deixa rasto; o terceiro converteria em ruído o que já descartava em silêncio.": "Only the first mode improves if the threshold is lowered. The second leaves no trace; the third would turn into noise what it was already discarding in silence.", "Como usar: com estes valores, a 40% as duas categorias da hesitação passam; subam acima de 68% para ver o limiar reter só a mais provável e acima de 72% para a descartar. Depois desçam até 0%: só a hesitação fica visível quando o limiar desce; a confiança cega passa sempre sem sinal; o silêncio passa de irrelevância a ruído. No fim liguem «Mostrar o que o RUF assinalaria».": "How to use: with these values, at 40% both hesitation categories pass; go above 68% to see the threshold keep only the most likely one, and above 72% to discard it. Then go down to 0%: only hesitation becomes visible as the threshold drops; blind confidence always passes without a signal; silence shifts from irrelevance to noise. Finally switch on “Show what the RUF would flag”.", "Três modos de falha do limiar": "Three ways the threshold fails", "Modo": "Mode", "O modelo produz": "The model outputs", "O limiar faz": "What the threshold does", "Fica por analisar": "Left unanalysed", "Para o detetar seria preciso": "Detecting it would require", "empatia 72% · permissividade 68%": "empathy 72% · permissiveness 68%", "descarta, ou retém a mais provável": "discards, or keeps the most likely", "a subdeterminação do material": "the underdetermination of the material", "proximidade entre categorias e instabilidade da justificação": "proximity between categories and instability of the justification", "autoridade 78%": "authority 78%", "deixa passar, sem qualquer sinal": "lets it through, with no signal at all", "o plano em que o enunciado é relevante": "the plane on which the statement matters", "um gatilho independente da confiança": "a trigger independent of confidence", "avaliação formal 22% · planificação 18%": "formal evaluation 22% · planning 18%", "lê como irrelevância": "reads it as irrelevance", "a ausência notável enquanto achado": "the notable absence as a finding", "declarar antes os temas que se espera encontrar": "declaring in advance the themes one expects to find", "3 min, o centro da secção. Percorrer as três linhas de cima para baixo. O argumento está na última coluna e na nota: só a hesitação melhora com um limiar mais baixo. A confiança cega não deixa rasto e o silêncio nem sequer é detetável por via distribucional. É aqui que ligo à demonstração do RUF.": "3 min, the centre of the section. Go through the three rows from top to bottom. The argument is in the last column and in the note: only hesitation improves with a lower threshold. Blind confidence leaves no trace and silence is not even detectable distributionally. This is where I link to the RUF demonstration.", "A permanência humana é uma exigência epistemológica": "Keeping the human in the loop is an epistemological requirement", "Não é uma precaução prudencial do tipo «a IA ainda comete erros»": "It is not a prudential precaution of the “AI still makes mistakes” kind", "Nenhum limiar deteta o que a distribuição não regista": "No threshold detects what the distribution does not register", "Há uma classe de omissões inacessível, por construção, ao instrumento que as comete": "There is a class of omissions that is, by construction, inaccessible to the instrument that commits them", "O mesmo gesto, noutro lugar": "The same gesture, elsewhere", "Para além da análise de dados": "Beyond data analysis", "A supressão da fricção é o argumento comercial com que a IA generativa entra no ensino superior": "Removing friction is the sales pitch with which generative AI enters higher education", "Mas a aprendizagem profunda exige precisamente esforço, fricção e ambiguidade": "Yet deep learning requires precisely effort, friction and ambiguity", "Numa instituição que forma quem há de interpretar, apagar o que é incerto é decidir o que conta como conhecer.": "In an institution that educates those who will interpret, erasing what is uncertain is deciding what counts as knowing.", "2 min. A primeira metade fecha o argumento metodológico. A segunda abre para a discussão: o mesmo gesto que apaga a hesitação na análise é o que promete remover o esforço na aprendizagem. Terminar aqui e passar à pergunta final.": "2 min. The first half closes the methodological argument. The second opens the discussion: the same gesture that erases hesitation in analysis is the one that promises to remove effort from learning. End here and move to the final question.", "Para terminar · uma palavra": "To finish · one word", "O que nunca deve sair das mãos do investigador?": "What should never leave the researcher's hands?", "Notas": "Notes", "Copiar ligação": "Copy link", "Fechar": "Close", "Alterar a ligação do código QR": "Change the QR code link", "Guardar": "Save", "Ainda em nenhuma": "None yet", "Ainda não uso IA": "I don't use AI yet", "Mostrar o que o RUF assinalaria": "Show what the RUF would flag"}, "ATTR": {"U.Porto · Faculdade de Psicologia e de Ciências da Educação": "U.Porto · Faculty of Psychology and Education Sciences", "Código QR de acesso a esta aula": "QR code to open this session", "Código QR para o artigo AbductivAI": "QR code for the AbductivAI paper", "A vossa resposta, em poucas palavras": "Your answer, in a few words", "Código QR para o artigo RUF": "QR code for the RUF paper", "Código QR do recurso RUF": "QR code for the RUF resource", "Modo": "Mode", "O modelo produz": "The model outputs", "O limiar faz": "What the threshold does", "Fica por analisar": "Left unanalysed", "Para o detetar seria preciso": "Detecting it would require", "Uma palavra": "One word", "Código QR do artigo AbductivAI": "QR code for the AbductivAI paper", "Código QR do artigo RUF": "QR code for the RUF paper", "Navegação": "Navigation", "Anterior": "Previous", "Anterior (←)": "Previous (←)", "Seguinte": "Next", "Seguinte (→)": "Next (→)", "Mostrar código QR": "Show QR code", "Código QR (Q)": "QR code (Q)", "Notas do apresentador": "Presenter notes", "Notas (N)": "Notes (N)", "Ecrã inteiro": "Full screen", "Ecrã inteiro (F)": "Full screen (F)", "Acesso à aula": "Access to the session", "Nova ligação": "New link"}};
+const I18N = I18N_DATA.I18N, ATTR = I18N_DATA.ATTR;
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const store = {
+  get(k) { try { const v = localStorage.getItem('aula9:' + k); return v ? JSON.parse(v) : null; } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem('aula9:' + k, JSON.stringify(v)); } catch (e) {} },
+  del(k) { try { localStorage.removeItem('aula9:' + k); } catch (e) {} }
+};
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const BAD_CHARS = new RegExp('[\\u0000-\\u001f\\u007f-\\u009f\\u00ad\\u200b-\\u200f\\u2028-\\u202e\\u2060-\\u206f\\ufeff]', 'g');
+const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
+const inClaude = !!(window.claude && typeof window.claude.use === 'function');
+
+/* ================= línguas ================= */
+let LANG = 'pt';
+const T = (pt, en) => LANG === 'en' ? en : pt;
+const tr = o => (o && typeof o === 'object') ? (LANG === 'en' ? o.en : o.pt) : o;
+// conteúdo gerado: as duas línguas ficam no DOM e o CSS mostra a ativa
+function duo(pt, en) { const f = document.createDocumentFragment(); f.append(el('span', 'lg-pt', pt), el('span', 'lg-en', en)); return f; }
+function dual(tag, cls, pt, en) { const e = el(tag, cls); e.append(duo(pt, en)); return e; }
+const SECTIONS = {'Abertura':'Opening','Ponto de partida':'Starting point','AbductivAI':'AbductivAI','Da conversa ao agente':'From chat to agent','RUF':'RUF','O limiar':'The threshold','Fecho':'Closing'};
+const norm = s => s.replace(/\s+/g, ' ').trim();
+const i18nNodes = [], i18nAttrs = [];
+function collectI18n(root) {
+  const walk = node => {
+    for (const c of Array.from(node.children)) {
+      const tg = c.tagName.toLowerCase();
+      if (tg === 'script' || tg === 'style' || tg === 'svg') continue;
+      const k = norm(c.innerHTML);
+      if (k && Object.prototype.hasOwnProperty.call(I18N, k)) { i18nNodes.push({el: c, pt: c.innerHTML, en: I18N[k]}); continue; }
+      walk(c);
+    }
+  };
+  walk(root);
+  $$('[placeholder],[aria-label],[title],[data-l],img[alt]', root).forEach(e => ['placeholder', 'aria-label', 'title', 'data-l', 'alt'].forEach(a => {
+    const v = e.getAttribute(a); if (v && Object.prototype.hasOwnProperty.call(ATTR, v)) i18nAttrs.push({el: e, a, pt: v, en: ATTR[v]});
+  }));
+}
+
+/* ================= conteúdo ================= */
+const CORPUS = [
+  {id:'C1', g:'M', pt:'Se eu fosse professor, chegava sempre a horas para dar o exemplo aos alunos. Também preparava bem as aulas para que todos pudessem aprender e perceber a matéria. Era exigente com os meus alunos e não os deixava portar-se mal. Se se portassem mal, primeiro avisava-os e depois falava com os pais.',
+   en:'If I were a teacher, I would always arrive on time to set an example for the students. I would also prepare my lessons well so that everyone could learn and understand the subjects. I would be strict with my students and would not allow them to misbehave. If they did misbehave, I would first warn them and then inform their parents.'},
+  {id:'C2', g:'M', pt:'Se eu fosse professor, tentava ajudar os alunos com mais dificuldades. Preparava bem as aulas para que todos me percebessem. Mas, quando tudo corresse bem, também acabava a aula mais cedo e deixava-os ir para o recreio.',
+   en:'If I were a teacher, I would try to help the students who have more difficulties. I would prepare the lessons well so that everyone could understand me. But when everything went well, I would also end the class earlier and let them go to recess.'},
+  {id:'C3', g:'F', pt:'Se eu fosse professora, não deixava ninguém brincar nas minhas aulas; se o fizessem, eram logo castigados. Mas quando visse que estavam cansados, parava e mandava-os fazer outra coisa que preferissem.',
+   en:'If I were a teacher, I would not allow anyone to play around during my classes; if they did, they would be punished immediately. But when I saw they were tired, I would stop and tell them to do something else they\'d prefer.'},
+  {id:'C4', g:'F', pt:'Se eu fosse professora, fazia muitas perguntas para aprendermos bem a matéria e também dava aos alunos a oportunidade de perguntarem o que não sabiam. Não os deixava andar à luta nem falar mal uns dos outros. Quem o fizesse era castigado e os pais eram avisados.',
+   en:'If I were a teacher, I would ask many questions so we could learn the material well; I would also give the students a chance to ask questions about what they didn’t know. I wouldn’t allow them to fight or speak badly about each other. Whoever did that would be punished, and their parents would be notified.'},
+  {id:'C5', g:'M', pt:'Se eu fosse professor, nunca exigia demasiado dos alunos e deixava-os brincar sempre que quisessem. Não os chateava com muitos testes. As aulas eram cheias de jogos para aprendermos e também víamos muitos filmes.',
+   en:'If I were a teacher, I would never ask too much of the students, and I would let them play whenever they wanted. I wouldn’t bother them with too many tests. Classes would be filled with games so we could learn, and we would also watch many movies.'},
+  {id:'C6', g:'F', pt:'Se eu fosse professora, fazia muitas revisões antes dos testes. Todos os alunos iam conseguir responder. Quem não aprendesse tinha de estudar com os colegas que já sabiam a matéria. Também nunca deixava haver mau comportamento, palavrões ou chamar nomes aos colegas.',
+   en:'If I were a teacher, I would do a lot of revision before tests. All students would be able to answer. Those who didn’t learn would have to study with classmates who already knew the material. I would also never allow bad behaviour or swearing in class or name-calling among classmates.'},
+  {id:'C7', g:'F', pt:'Se eu fosse professora, castigava os alunos logo no início do ano. Exigia que todos se pusessem em sentido quando eu chegasse, e quem se mexesse sofria as consequências. Os que não aprendessem ficavam sentados no fundo da sala, para não perturbarem os colegas que queriam aprender.',
+   en:'If I were a teacher, I would punish the students right at the beginning of the year. I would require all students to stand at attention upon my arrival, and any student who moved would face consequences. Those who didn’t learn would be placed at the back of the classroom so they wouldn’t disturb the classmates who wanted to learn.'},
+  {id:'C8', g:'M', pt:'Se eu fosse professor, tentava ajudar os alunos mais fracos e perceber porque é que alguns tinham mais dificuldades, e oferecia sempre a minha ajuda. Não permitia distrações durante a aula, mas também me esforçava por criar momentos para fazermos atividades divertidas e nos rirmos juntos.',
+   en:'If I were a teacher, I would try to help the weaker students. I would also try to understand why some students had more difficulties and would always offer my help. I would not permit distractions during class time; however, I would also make an effort to create opportunities for us to engage in enjoyable activities and share laughter.'},
+  {id:'C9', g:'F', pt:'Se eu fosse professora, garantia que todos os alunos aprendiam bem a matéria e que as aulas não eram aborrecidas. Ao mesmo tempo, incentivava os alunos a serem todos amigos uns dos outros, para se sentirem bem na escola.',
+   en:'If I were a teacher, I would make sure all the students learned the lessons well and that the lessons weren’t boring. At the same time, I would encourage students to all be friends with one another so they could feel good at school.'}
+];
+const G = {M: {pt:'rapaz', en:'boy'}, F: {pt:'rapariga', en:'girl'}};
+const CASES = [
+  {id:'ruf1', fixed:true, c:'C3',
+   dim:{pt:'Ambiguidade interpretativa', en:'Interpretive ambiguity'},
+   def:{pt:'Expressões que admitem várias interpretações, sem consenso claro.', en:'Expressions that allow multiple interpretations, with no clear consensus.'},
+   mark:{pt:'parava e mandava-os fazer outra coisa que preferissem', en:'I would stop and tell them to do something else they\'d prefer'},
+   ex:{pt:'C3: «parava e mandava-os fazer outra coisa que preferissem»', en:'C3: ‘I\'d stop and tell them to do something else they\'d prefer’'},
+   opts:[['a','Empatia','Empathy'],['b','Permissividade','Permissiveness'],['ab','As duas','Both']],
+   p:[[{pt:'Empatia', en:'Empathy'},72],[{pt:'Permissividade', en:'Permissiveness'},68]],
+   llm:{pt:'«Ambas se aplicam: o tom é empático, mas a ausência de regulação pode indicar permissividade.»', en:'“Both apply: the tone is empathetic, but the absence of regulation can indicate permissiveness.”'},
+   zone:[true, {pt:'Duas categorias próximas (empatia vs. permissividade)', en:'Two close categories (empathy vs. permissiveness)'}],
+   rc:{pt:'A IA atribuiu empatia, mas pode estar a confundir com perda de autoridade. O contexto emocional é ambíguo.', en:'The AI attributed empathy but may be confusing it with a loss of authority. The emotional context is ambiguous.'}},
+  {id:'ruf2', fixed:true, c:'C4',
+   dim:{pt:'Tensão entre categorias', en:'Tension between codes'},
+   def:{pt:'Códigos que competem ou se sobrepõem no mesmo segmento.', en:'Applied codes that compete or overlap in the same segment.'},
+   mark:{pt:'Não os deixava andar à luta nem falar mal uns dos outros', en:'I wouldn’t allow them to fight or speak badly about each other'},
+   ex:{pt:'C4: disciplina com promoção de amizade', en:'C4: discipline with friendship promotion'},
+   opts:[['a','Disciplina','Discipline'],['b','Cuidado coletivo','Collective care'],['ab','As duas','Both']],
+   p:[[{pt:'Disciplina', en:'Discipline'},71],[{pt:'Cuidado coletivo', en:'Collective care'},69]],
+   llm:{pt:'«A disciplina está presente, mas com uma forte componente relacional. Ambas são justificáveis.»', en:'“Discipline is present, but with a strong relational component. Both are justifiable.”'},
+   zone:[true, {pt:'Tensão entre regulação e vínculo', en:'Tension between regulation and bonding'}],
+   rc:{pt:'A IA marca disciplina e empatia sem reconhecer que estas ideias se tensionam em contextos escolares reais.', en:'The AI marks discipline and empathy without recognising that these ideas are in tension in real school contexts.'}},
+  {id:'ruf3', fixed:false, c:'C7',
+   dim:{pt:'Inversões ou quebras de expectativas', en:'Reversals or breaches of expectations'},
+   def:{pt:'Quando a expressão se afasta de padrões esperados, como papéis de género ou hierarquia.', en:'When the expression deviates from expected patterns, such as gender roles or hierarchy.'},
+   mark:{pt:'castigava os alunos logo no início do ano', en:'I would punish the students right at the beginning of the year'},
+   ex:{pt:'C7: rapariga propõe castigos severos', en:'C7: girl proposes severe punishment'},
+   opts:[['a','Autoridade','Authority'],['b','Severidade','Severity'],['ab','As duas','Both']],
+   p:[[{pt:'Autoridade', en:'Authority'},77],[{pt:'Severidade', en:'Severity'},74]],
+   llm:{pt:'«A intenção é impor respeito, mas o tom pode ser exagerado ou dramatizado.»', en:'“The intention is to command respect, but the tone can be exaggerated or dramatised.”'},
+   zone:[false, {pt:'Pontuação alta, mas quebra de expectativa cultural', en:'High score, but breach of cultural expectation'}],
+   rc:{pt:'A IA aplica autoridade com confiança, mas não percebe o desvio de norma social e de género.', en:'The AI applies authority with confidence but does not perceive the deviation from social and gender norms.'}},
+  {id:'ruf4', fixed:true, c:null,
+   dim:{pt:'Ausência relevante (silêncio temático)', en:'Relevant absence (thematic silence)'},
+   def:{pt:'Temas esperados que não aparecem, como a avaliação.', en:'Expected topics that don’t appear, such as evaluation.'},
+   ex:{pt:'Quase nenhuma composição menciona provas ou avaliações', en:'Almost no composition mentions tests or assessments'},
+   opts:[['a','Avaliação formal','Formal evaluation'],['b','Planificação','Planning'],['n','Nenhuma: a ausência é o dado','Neither: the absence is the data']],
+   p:[[{pt:'Avaliação formal', en:'Formal evaluation'},22],[{pt:'Planificação', en:'Planning'},18]],
+   llm:{pt:'«Não há referência explícita. Pode ser uma omissão temática, mas não foi interpretada como tal.»', en:'“There is no explicit reference. It may be a thematic omission, but it has not been interpreted as such.”'},
+   zone:[true, {pt:'Ausência detetada por humanos, não pela IA', en:'Absence detected by humans, not by the AI'}],
+   rc:{pt:'A IA não reconheceu a ausência como dado analítico — uma limitação recorrente.', en:'The AI did not identify the absence as analytical data — a recurring limitation.'}},
+  {id:'ruf5', fixed:false, c:'C8',
+   dim:{pt:'Multiplicidade de posições', en:'Multiplicity of positions'},
+   def:{pt:'O professor como figura que acumula funções divergentes.', en:'The teacher as a figure who accumulates divergent functions.'},
+   mark:{pt:'Não permitia distrações durante a aula, mas também me esforçava por criar momentos para fazermos atividades divertidas', en:'I would not permit distractions during class time; however, I would also make an effort to create opportunities for us to engage in enjoyable activities'},
+   ex:{pt:'C8: controlo rígido + recreação', en:'C8: strict control + recreation'},
+   opts:[['a','Disciplina','Discipline'],['b','Liberdade','Freedom'],['ab','As duas','Both']],
+   p:[[{pt:'Disciplina', en:'Discipline'},67],[{pt:'Liberdade', en:'Freedom'},65]],
+   llm:{pt:'«Ambos os elementos estão presentes; há uma tentativa de equilibrar autoridade e diversão.»', en:'“Both elements are present; there’s an attempt to balance authority and fun.”'},
+   zone:[true, {pt:'Sobreposição de categorias opostas', en:'Overlap of opposite categories'}],
+   rc:{pt:'A IA colapsa controlo e liberdade como complementares, ignorando o dilema pedagógico.', en:'The AI collapses control and freedom as complementary, ignoring the pedagogical dilemma.'}},
+  {id:'ruf6', fixed:false, c:'C5',
+   dim:{pt:'Conflito entre prática e desejo', en:'Conflict between practice and desire'},
+   def:{pt:'Os alunos desejam uma prática e comparam-na com a oposta.', en:'Students desire one practice and compare it with its opposite.'},
+   mark:{pt:'Não os chateava com muitos testes', en:'I wouldn’t bother them with too many tests'},
+   ex:{pt:'C5: rejeição de provas, mas valorização dos jogos', en:'C5: rejection of tests, but appreciation of games'},
+   opts:[['a','Ludicidade','Playfulness'],['b','Crítica institucional','Institutional criticism'],['ab','As duas','Both']],
+   p:[[{pt:'Ludicidade', en:'Playfulness'},70],[{pt:'Crítica institucional', en:'Institutional criticism'},68]],
+   llm:{pt:'«A ludicidade é explícita, mas a passagem contém uma crítica implícita ao sistema de avaliação.»', en:'“Playfulness is explicit, but the passage contains implicit criticism of the evaluation system.”'},
+   zone:[true, {pt:'Desejo e crítica implícita coexistem', en:'Desire and implicit criticism coexist'}],
+   rc:{pt:'A IA reconhece ludicidade, mas não nota a crítica embutida ao modelo escolar tradicional.', en:'The AI identifies playfulness but doesn’t notice the criticism embedded in the traditional school model.'}}
+];
+const PHASES = [
+  {id:'1', pc:'--p1', name:{pt:'Pergunta de investigação e quadro teórico', en:'Research question and theoretical framework'}, sub:{pt:'ponto de entrada abdutivo: teoria + LLM', en:'abductive entry point: theory + LLMs'},
+   h:{pt:'Formulam uma questão de investigação clara e definem um quadro teórico inicial que inclui os aspetos dedutivos e indutivos do estudo. Podem usar parte ou a totalidade dos dados para criar ou clarificar a pergunta.', en:'Formulate a clear research question and define an initial theoretical framework that includes the deductive and inductive aspects of the study. They can use some or all of the data to create or clarify the question.'},
+   a:{pt:'Servem de ponto de entrada abdutivo: apoiam a exploração da teoria a partir da qual nasce a pergunta.', en:'Act as an abductive entry point: they support the exploration of the theory from which the question emerges.'}},
+  {id:'2', pc:'--p2', name:{pt:'Sistema inicial de categorias', en:'Initial category system'}, sub:{pt:'categorias da teoria + emergentes', en:'theory-based + emergent categories'},
+   h:{pt:'Elaboram um primeiro sistema de categorias baseado na teoria e em critérios de seleção preliminares (dedutivos).', en:'Draw up an initial category system based on theory and preliminary (deductive) selection criteria.'},
+   a:{pt:'A pedido dos humanos, propõem categorias emergentes a partir das perguntas orientadoras dos dados.', en:'At the humans’ request, propose emergent categories using the guiding questions of the data.'}},
+  {id:'3', pc:'--p3', name:{pt:'Definição das diretrizes de codificação', en:'Defining the coding guidelines'}, sub:{pt:'regras + exemplos; a IA valida a lógica', en:'rules + examples; AI validates the logic'},
+   h:{pt:'Criam definições preliminares de categorias, exemplos-padrão e regras de codificação iniciais.', en:'Create preliminary category definitions, standard examples and initial coding rules.'},
+   a:{pt:'Validam a coerência destas diretrizes e sugerem ajustamentos, bem como propõem categorias adicionais (indutivo).', en:'Validate the consistency of these guidelines and suggest adjustments, as well as proposing additional categories (inductive).'}},
+  {id:'4', pc:'--p4', name:{pt:'Codificação colaborativa inicial', en:'Initial collaborative coding'}, sub:{pt:'humanos + agentes codificam e comparam', en:'humans + agents co-code and compare'},
+   h:{pt:'Codificam parte dos dados em simultâneo com os agentes, analisam as categorias emergentes e ajustam-nas conforme necessário.', en:'Code part of the data simultaneously with the agents, review the emerging categories and adjust them as needed.'},
+   a:{pt:'Codificam a mesma parte dos dados e destacam padrões, sugerindo possíveis novas categorias ou regras.', en:'Code the same part of the data and highlight patterns, suggesting possible new categories or rules.'}},
+  {id:'5', pc:'--p5', name:{pt:'Revisão de categorias e regras', en:'Review of categories and rules'}, sub:{pt:'rever a estrutura e detetar instabilidade', en:'revise the structure, detect instability'},
+   h:{pt:'Depois de codificar 10–50% dos dados, fazem uma revisão crítica das categorias e das orientações.', en:'After coding 10–50% of the data, carry out a critical review of the categories and guidelines.'},
+   a:{pt:'Fornecem relatórios sobre a estabilidade e a coerência das categorias já codificadas, ajudando na decisão final sobre os ajustamentos.', en:'Provide reports on the stability and coherence of the categories already coded, helping with the final decision on adjustments.'}},
+  {id:'5.5', pc:'--p1', ruf:true, name:{pt:'Ciclo de revisão CoT', en:'CoT review loop'}, sub:{pt:'diálogo: os agentes explicam e justificam', en:'dialogue: agents explain and justify'},
+   h:{pt:'Inspecionam, contestam e refinam o percurso interpretativo, e não apenas o resultado final.', en:'Inspect, contest and refine the interpretive path, not just the final output.'},
+   a:{pt:'Externalizam os passos intermédios do raciocínio (Chain-of-Thought), explicando e justificando cada classificação.', en:'Externalise the intermediate reasoning steps (Chain-of-Thought), explaining and justifying each classification.'}},
+  {id:'6', pc:'--p4', name:{pt:'Codificação final', en:'Final coding'}, sub:{pt:'todos os dados + métricas de acordo', en:'all data + agreement metrics'},
+   h:{pt:'Codificam os restantes dados com base nas diretrizes e categorias estabilizadas.', en:'Code the remaining data based on the stabilised guidelines and categories.'},
+   a:{pt:'Codificam em paralelo, o que permite a validação cruzada inter e intracodificadores: Kappa de Cohen, alfa de Krippendorff (2004) e técnica Delphi (Green, 2014).', en:'Code in parallel, enabling inter- and intra-coder cross-validation: Cohen’s Kappa, Krippendorff’s alpha (2004) and the Delphi technique (Green, 2014).'}},
+  {id:'7', pc:'--p3', name:{pt:'Validação final e resolução de ambiguidades', en:'Final validation and resolving ambiguity'}, sub:{pt:'os humanos julgam, os agentes sugerem', en:'humans judge, agents suggest'},
+   h:{pt:'Fazem a validação final das codificações, decidindo sobre casos complexos ou ambíguos.', en:'Carry out the final validation of the coding, deciding on complex or ambiguous cases.'},
+   a:{pt:'Atuam como segundos codificadores ou peritos adicionais, garantindo maior validade e menor subjetividade.', en:'Act as second coders or additional experts, ensuring greater validity and less subjectivity.'}},
+  {id:'8', pc:'--p1', name:{pt:'Interpretação e análise final', en:'Interpretation and final analysis'}, sub:{pt:'insights via CoT e análise', en:'insights via CoT and analysis'},
+   h:{pt:'Fazem as análises qualitativas e quantitativas finais (descritivas), interpretando co-ocorrências, frequências, contingências e inferências das categorias face à questão inicial.', en:'Carry out the final qualitative and (descriptive) quantitative analyses, interpreting co-occurrences, frequencies, contingencies and inferences of the categories in relation to the original question.'},
+   a:{pt:'Fornecem apoio analítico, destacando tendências e potenciais relações.', en:'Provide analytical support, highlighting trends and potential relationships.'}}
+];
+const LOOPS = [
+  {from:'4', to:'2', t:{pt:'A co-codificação revela a necessidade de novas categorias.', en:'Co-coding reveals the need for new categories.'}},
+  {from:'6', to:'5', t:{pt:'No fim da codificação, os desacordos humanos obrigam a ajustar inconsistências.', en:'At the end of coding, human disagreements require inconsistencies to be adjusted.'}},
+  {from:'8', to:'1', t:{pt:'Os resultados desafiam a questão inicial e levam a um refinamento teórico.', en:'The results challenge the initial question and lead to theoretical refinement.'}}
+];
+const POLLS = {
+  fases: {type:'multi', exclusive:'nenhuma', opts:[['problema'],['revisao'],['desenho'],['recolha'],['analise'],['resultados'],['dissem'],['nenhuma']]},
+  discordia: {type:'single', opts:[['sim','Sim, pode abrir alternativas','Yes, it can open up alternatives'],['depende','Depende de como a usamos','It depends on how we use it'],['nao','Não, acaba por impor','No, it ends up imposing']]},
+  papel: {type:'single', opts:[['assist'],['colab'],['copesq'],['nao']]},
+  confianca: {type:'text', max:140},
+  palavra: {type:'word', max:24}
+};
+CASES.forEach(c => { POLLS[c.id] = {type:'single', opts:c.opts}; });
+
+/* ================= estado ================= */
+const app = $('#app'), stage = $('#stage');
+const slides = $$('.slide');
+const S = { i:0, f:0, read:false, forced:null };
+let mine = store.get('mine') || {};
+const manual = {}; const manualTexts = {}; const hidden = new Set();
+const L = { room:null, admin:false, dead:false, connected:false, presenter:null, following:true };
+
+/* ================= construção de conteúdo dinâmico ================= */
+function buildCorpus() {
+  const box = $('#corpus');
+  CORPUS.forEach(c => {
+    const a = el('article', 'comp');
+    const h = el('header'); h.append(el('span', null, c.id), dual('span', null, c.g + ' · ' + G[c.g].pt, c.g + ' · ' + G[c.g].en));
+    const p = el('p'); p.append(duo(c.pt, c.en));
+    a.append(h, p); box.append(a);
+  });
+}
+function withMark(text, mark) {
+  const f = document.createDocumentFragment();
+  const k = mark ? text.indexOf(mark) : -1;
+  if (k < 0) { f.append(text); return f; }
+  f.append(text.slice(0, k)); f.append(el('mark', null, mark)); f.append(text.slice(k + mark.length));
+  return f;
+}
+let caseIdx = 0;
+const revealBtns = [];
+function buildCases() {
+  const tabs = $('#caseTabs'), box = $('#cases');
+  CASES.forEach((c, k) => {
+    const t = el('button', 'chip'); t.type = 'button'; t.setAttribute('role', 'tab'); t.dataset.case = k;
+    t.append(duo((k + 1) + ' · ' + c.dim.pt.replace(/ \(.*\)/, ''), (k + 1) + ' · ' + c.dim.en.replace(/ \(.*\)/, '')));
+    t.addEventListener('click', () => showCase(k));
+    tabs.append(t);
+    const pan = el('div', 'case'); pan.dataset.case = k; pan.setAttribute('role', 'tabpanel');
+    const L1 = el('div', 'case-l');
+    const dimRow = el('div');
+    dimRow.append(dual('p', 'kind', c.fixed ? 'Dimensão fixa' : 'Dimensão variável', c.fixed ? 'Fixed dimension' : 'Variable dimension'), dual('p', 'dim', c.dim.pt, c.dim.en), dual('p', 'def', c.def.pt, c.def.en));
+    const bq = el('blockquote');
+    if (c.c) {
+      const comp = CORPUS.find(x => x.id === c.c);
+      bq.append(dual('small', null, comp.id + ' · ' + G[comp.g].pt + ' · 5.º ano', comp.id + ' · ' + G[comp.g].en + ' · 5th grade'));
+      const sp = el('span', 'lg-pt'); sp.append(withMark(comp.pt, c.mark.pt));
+      const se = el('span', 'lg-en'); se.append(withMark(comp.en, c.mark.en));
+      bq.append(sp, se);
+    } else {
+      bq.append(dual('small', null, 'Corpus inteiro · 9 composições', 'Whole corpus · 9 compositions'));
+      const sp = el('span', 'lg-pt'); sp.append('Procurem no corpus: quantas composições falam de testes ou de avaliação? ');
+      const bp = el('b', null, 'Só duas (C5 e C6), e de passagem.'); bp.style.fontStyle = 'normal'; sp.append(bp);
+      const se = el('span', 'lg-en'); se.append('Search the corpus: how many compositions mention tests or assessment? ');
+      const be = el('b', null, 'Only two (C5 and C6), in passing.'); be.style.fontStyle = 'normal'; se.append(be);
+      bq.append(sp, se);
+    }
+    const q = c.c ? dual('p', 'small', 'Que categoria atribuíam ao trecho destacado?', 'Which category would you assign to the highlighted passage?')
+                  : dual('p', 'small', 'Que tema esperavam encontrar e quase não aparece?', 'Which theme did you expect to find that barely appears?');
+    q.style.fontWeight = '700';
+    const pollBox = el('div', 'opts'); pollBox.dataset.poll = c.id;
+    const meta = el('p', 'meta'); meta.dataset.meta = c.id;
+    const rv = el('button', 'btn primary'); rv.type = 'button';
+    const W = dual('div', 'wait', 'Votem primeiro. Depois revelem o que o modelo vetorial, o LLM e o investigador fizeram com este caso.', 'Vote first. Then reveal what the vector model, the LLM and the researcher did with this case.');
+    const R = el('div'); R.hidden = true; R.style.cssText = 'display:flex;flex-direction:column;gap:12px';
+    const setRv = () => { const on = pan.classList.contains('revealed'); R.hidden = !on; W.hidden = on; rv.textContent = on ? T('Esconder a análise', 'Hide the analysis') : T('Revelar a análise', 'Reveal the analysis'); };
+    rv.addEventListener('click', () => { pan.classList.toggle('revealed'); setRv(); });
+    revealBtns.push(setRv);
+    const act = el('div', 'case-act'); act.append(meta, rv);
+    L1.append(dimRow, bq, q, pollBox, act);
+    const R0 = el('div', 'case-r');
+    const b1 = el('div', 'blk ai'); b1.append(dual('h4', null, '1 · Classificação probabilística (vetorial)', '1 · Probabilistic classification (vector)'));
+    c.p.forEach(([n, v]) => { const r = el('div', 'pbar'); r.append(dual('span', null, n.pt, n.en)); const trk = el('span', 'tr'); trk.append(el('i')); trk.style.setProperty('--v', v); r.append(trk, el('span', null, v + '%')); b1.append(r); });
+    const b2 = el('div', 'blk ai'); b2.append(dual('h4', null, 'Feedback do LLM (prompt reflexivo)', 'LLM feedback (reflective prompting)'), dual('p', 'llm', c.llm.pt, c.llm.en));
+    const b3 = el('div', 'blk'); b3.append(dual('h4', null, '2 · Zona de ambiguidade interpretativa', '2 · Zone of interpretive ambiguity'));
+    const z = el('p', 'zone'); z.append(dual('span', 'yn' + (c.zone[0] ? '' : ' no'), c.zone[0] ? 'Sim' : 'Não', c.zone[0] ? 'Yes' : 'No'), dual('span', null, c.zone[1].pt, c.zone[1].en)); b3.append(z);
+    const b4 = el('div', 'blk hu'); b4.append(dual('h4', null, '3 · Comentário reflexivo (investigador)', '3 · Reflexive commentary (researcher)'), dual('p', 'rc', c.rc.pt, c.rc.en));
+    R.append(b1, b2, b3, b4);
+    R0.append(W, R);
+    pan.append(L1, R0);
+    box.append(pan);
+    setRv();
+  });
+  showCase(0);
+}
+function buildRufTable() {
+  const tb = $('#rufTable tbody'); tb.textContent = '';
+  const H = [T('Dimensões do RUF', 'RUF dimensions'), T('Exemplo no corpus', 'Example in the corpus'), T('Classificação probabilística', 'Probabilistic classification'), T('Zona de ambiguidade', 'Ambiguity zone'), T('Comentário reflexivo', 'Reflexive commentary')];
+  CASES.forEach((c, k) => {
+    const tr2 = el('tr');
+    const z = tr(c.zone[1]);
+    const cells = [(k + 1) + '. ' + tr(c.dim), tr(c.ex), c.p.map(x => tr(x[0]) + ': ' + x[1] + '%').join(', '), (c.zone[0] ? T('Sim', 'Yes') : T('Não', 'No')) + ' – ' + z.charAt(0).toLowerCase() + z.slice(1), tr(c.rc)];
+    cells.forEach((v, j) => { const td = el('td', j === 2 ? 'mono' : null, v); td.dataset.l = H[j]; tr2.append(td); });
+    tb.append(tr2);
+  });
+}
+function showCase(k) {
+  caseIdx = k;
+  $$('#caseTabs [data-case]').forEach(t => { const on = +t.dataset.case === k; t.setAttribute('aria-pressed', on); t.setAttribute('aria-selected', on); });
+  $$('#cases .case').forEach(p => { p.hidden = !S.read && +p.dataset.case !== k; });
+}
+function buildPhases() {
+  const ol = $('#phaseOl');
+  PHASES.filter(p => p.id !== '5.5').forEach(p => { const li = el('li'); li.style.setProperty('--pc', 'var(' + p.pc + ')'); li.append(el('i', null, p.id), duo(p.name.pt, p.name.en)); ol.append(li); });
+  const list = $('#abList');
+  PHASES.forEach((p, k) => {
+    const b = el('button', 'ph'); b.type = 'button'; b.dataset.ph = p.id; b.style.setProperty('--pc', 'var(' + p.pc + ')');
+    const t = el('span'); t.append(dual('span', 'nm', p.name.pt, p.name.en), document.createElement('br'), dual('span', 'sb', p.sub.pt, p.sub.en));
+    b.append(el('span', 'n', p.id), t);
+    b.addEventListener('click', () => { abSel = k; abLoop = null; renderAb(); });
+    list.append(b);
+  });
+}
+let abSel = 5, abLoop = null;
+function renderAb() {
+  const p = PHASES[abSel];
+  $$('#abList .ph').forEach((b, k) => {
+    const inLoop = abLoop !== null && (b.dataset.ph === LOOPS[abLoop].from || b.dataset.ph === LOOPS[abLoop].to);
+    b.setAttribute('aria-pressed', (abLoop === null && k === abSel) || inLoop ? 'true' : 'false');
+    b.classList.toggle('dim', abLoop !== null && !inLoop);
+  });
+  const d = $('#abDetail'); d.textContent = '';
+  if (abLoop !== null) {
+    const lp = LOOPS[abLoop];
+    d.append(el('p', 'eyebrow', T('Iteração do modelo', 'Model iteration')), el('p', 'dn', T('Da fase ' + lp.from + ' para a fase ' + lp.to, 'From phase ' + lp.from + ' to phase ' + lp.to)), el('p', 'lead', tr(lp.t)));
+  } else {
+    d.append(el('p', 'eyebrow', T('Fase ', 'Phase ') + p.id), el('p', 'dn', tr(p.name)), el('p', 'ds', tr(p.sub)));
+    const roles = el('div', 'roles');
+    const h = el('div', 'role hu'); h.append(el('h4', null, T('Humanos', 'Humans')), el('p', null, tr(p.h)));
+    const a = el('div', 'role ai'); a.append(el('h4', null, T('Agentes de IA', 'AI agents')), el('p', null, tr(p.a)));
+    roles.append(h, a); d.append(roles);
+    if (p.ruf) d.append(el('span', 'ruf-badge', T('Aqui entra o RUF: a incerteza como evidência', 'This is where the RUF comes in: uncertainty as evidence')));
+  }
+  const lw = el('div', 'loops'); lw.append(el('p', 'eyebrow', T('Iterações · cliquem para destacar', 'Iterations · click to highlight')));
+  LOOPS.forEach((lp, k) => {
+    const b = el('button', 'lp'); b.type = 'button'; b.setAttribute('aria-pressed', abLoop === k);
+    b.append(el('b', null, lp.from + ' → ' + lp.to), el('span', null, tr(lp.t)));
+    b.addEventListener('click', () => { abLoop = abLoop === k ? null : k; renderAb(); });
+    lw.append(b);
+  });
+  d.append(lw);
+  drawLoops();
+}
+function drawLoops() {
+  const svg = $('#abSvg'); if (!svg) return;
+  const list = $('#abList'); if (!list.offsetParent) return;
+  const items = $$('.ph', list);
+  const H = list.offsetHeight; svg.setAttribute('viewBox', '0 0 96 ' + H); svg.style.height = H + 'px';
+  const yOf = id => { const b = items.find(x => x.dataset.ph === id); return b.offsetTop - list.offsetTop + b.offsetHeight / 2; };
+  let s = '';
+  LOOPS.forEach((lp, k) => {
+    const y1 = yOf(lp.from), y2 = yOf(lp.to); const dx = 26 + k * 22;
+    const hot = abLoop === k ? ' hot' : '';
+    s += '<path class="' + hot + '" d="M2 ' + y1 + ' C ' + (dx + 30) + ' ' + y1 + ', ' + (dx + 30) + ' ' + y2 + ', 12 ' + y2 + '"/>';
+    s += '<polygon class="ah' + hot + '" points="2,' + y2 + ' 14,' + (y2 - 6) + ' 14,' + (y2 + 6) + '"/>';
+  });
+  svg.innerHTML = s;
+}
+
+/* ================= sondagens ================= */
+function clean(id, v) {
+  const p = POLLS[id]; if (!p) return undefined;
+  const has = x => p.opts.some(o => o[0] === x);
+  if (p.type === 'single') return (typeof v === 'string' && has(v)) ? v : undefined;
+  if (p.type === 'multi') { if (!Array.isArray(v)) return undefined; const a = Array.from(new Set(v.filter(x => typeof x === 'string' && has(x)))); return a.length ? a : undefined; }
+  if (typeof v !== 'string') return undefined;
+  const t = v.replace(BAD_CHARS, '').replace(/\s+/g, ' ').trim().slice(0, p.max);
+  return t || undefined;
+}
+const liveOn = () => !!(L.room && !L.dead);
+function modeOf() { return liveOn() ? 'live' : (S.read ? 'local' : 'manual'); }
+function tally() {
+  const R = {};
+  for (const id in POLLS) R[id] = {counts:{}, n:0, texts:[]};
+  const add = (id, v, me) => { const t = R[id]; t.n++; if (Array.isArray(v)) v.forEach(x => t.counts[x] = (t.counts[x] || 0) + 1); else if (POLLS[id].type === 'single') t.counts[v] = (t.counts[v] || 0) + 1; else t.texts.push({v, me}); };
+  if (liveOn()) {
+    for (const peer of L.room.peers()) {
+      if (peer.kind && peer.kind !== 'viewer') continue;
+      const src = (peer.isMe && peer.sameTab) ? mine : (peer.presence && peer.presence.a);
+      if (!src || typeof src !== 'object') continue;
+      for (const id in POLLS) { const v = clean(id, src[id]); if (v !== undefined) add(id, v, !!peer.isMe); }
+    }
+  } else if (!S.read) {
+    for (const id in POLLS) {
+      const m = manual[id] || {}; for (const k in m) R[id].counts[k] = m[k];
+      R[id].n = Object.values(m).reduce((a, b) => a + b, 0);
+      (manualTexts[id] || []).forEach(v => R[id].texts.push({v, me:false}));
+    }
+  } else {
+    for (const id in POLLS) { const v = clean(id, mine[id]); if (v !== undefined && (POLLS[id].type === 'text' || POLLS[id].type === 'word')) R[id].texts.push({v, me:true}); }
+  }
+  return R;
+}
+let TL = {};
+function refreshPolls() { TL = tally(); Object.keys(POLLS).forEach(updatePoll); updateLivePills(); }
+function buildDefaultOpts() {
+  $$('[data-poll]').forEach(box => {
+    const id = box.dataset.poll, p = POLLS[id];
+    if (!p || (p.type !== 'single' && p.type !== 'multi')) return;
+    if ($('[data-opt]', box)) return;
+    p.opts.forEach(([k, pt, en]) => {
+      const b = el('button', 'opt'); b.type = 'button'; b.dataset.pollFor = id; b.dataset.opt = k;
+      b.append(el('span', 'fill'), dual('span', 'lab', pt, en), el('span', 'cnt'));
+      box.append(b);
+    });
+  });
+}
+function choose(id, opt) {
+  const p = POLLS[id]; if (!p) return;
+  if (modeOf() === 'manual') { const m = manual[id] = manual[id] || {}; m[opt] = (m[opt] || 0) + 1; refreshPolls(); return; }
+  if (p.type === 'single') { if (mine[id] === opt) delete mine[id]; else mine[id] = opt; }
+  else {
+    let a = Array.isArray(mine[id]) ? mine[id].slice() : [];
+    if (a.includes(opt)) a = a.filter(x => x !== opt);
+    else if (opt === p.exclusive) a = [opt];
+    else { a = a.filter(x => x !== p.exclusive); a.push(opt); }
+    if (a.length) mine[id] = a; else delete mine[id];
+  }
+  store.set('mine', mine); pushPresence(); refreshPolls();
+}
+function updatePoll(id) {
+  const p = POLLS[id], t = TL[id] || {counts:{}, n:0, texts:[]}, mode = modeOf();
+  if (p.type === 'single' || p.type === 'multi') {
+    const mx = Math.max(0, ...Object.values(t.counts));
+    const denom = mode === 'live' ? Math.max(1, t.n) : Math.max(1, mx);
+    const my = mine[id];
+    $$('[data-poll-for="' + id + '"][data-opt]').forEach(b => {
+      const k = b.dataset.opt, c = t.counts[k] || 0;
+      const pressed = mode !== 'manual' && (Array.isArray(my) ? my.includes(k) : my === k);
+      b.setAttribute('aria-pressed', pressed ? 'true' : 'false');
+      b.style.setProperty('--p', mode === 'local' ? 0 : c / denom);
+      const ce = $('.cnt', b);
+      if (ce) ce.textContent = mode === 'local' ? '' : (mode === 'live' && p.type === 'single' && t.n ? Math.round(100 * c / t.n) + '% · ' + c : String(c));
+    });
+  }
+  if (p.type === 'text') renderWall(id, t);
+  if (p.type === 'word') renderCloud(id, t);
+  $$('[data-meta="' + id + '"]').forEach(m => {
+    m.textContent = '';
+    if (mode === 'live') m.append(el('span', null, t.n + T(t.n === 1 ? ' resposta' : ' respostas', t.n === 1 ? ' response' : ' responses') + T(' · ao vivo', ' · live')));
+    else if (mode === 'manual') {
+      const txt = p.type === 'text' || p.type === 'word';
+      m.append(el('span', null, txt ? T('Modo manual: escrevam aqui o que a turma disser.', 'Manual mode: type here what the class says.') : T('Contagem manual: um clique por braço no ar.', 'Manual count: one click per raised hand.')));
+      const r = el('button', null, T('Repor', 'Reset')); r.type = 'button'; r.addEventListener('click', () => { delete manual[id]; delete manualTexts[id]; refreshPolls(); }); m.append(r);
+    } else m.append(el('span', null, T('A vossa resposta fica guardada só neste dispositivo.', 'Your answer is kept on this device only.') + (inClaude ? T(' As respostas ao vivo precisam de sessão iniciada no Claude.', ' Live answers require being signed in to Claude.') : '')));
+  });
+}
+function renderWall(id, t) {
+  const w = $('[data-wall="' + id + '"]'); if (!w) return;
+  w.textContent = '';
+  const items = t.texts.filter(x => !hidden.has(id + '|' + x.v)).slice(-48);
+  if (!items.length) { w.append(el('p', 'empty', T('As respostas vão aparecer aqui.', 'Answers will appear here.'))); return; }
+  items.forEach(x => {
+    const c = el('div', 'resp' + (x.me ? ' me' : ''), x.v);
+    if (!S.read) { const b = el('button', 'x', '×'); b.type = 'button'; b.title = T('Ocultar neste ecrã', 'Hide on this screen'); b.setAttribute('aria-label', T('Ocultar resposta', 'Hide answer')); b.addEventListener('click', () => { hidden.add(id + '|' + x.v); refreshPolls(); }); c.append(b); }
+    w.append(c);
+  });
+}
+function renderCloud(id, t) {
+  const w = $('[data-cloud="' + id + '"]'); if (!w) return;
+  w.textContent = '';
+  const freq = new Map();
+  t.texts.forEach(x => { const k = x.v.toLocaleLowerCase(LANG === 'en' ? 'en' : 'pt-PT'); if (!hidden.has(id + '|' + k)) freq.set(k, (freq.get(k) || 0) + 1); });
+  if (!freq.size) { w.append(el('p', 'empty', T('As palavras vão aparecer aqui, maiores quanto mais vezes forem ditas.', 'Words will appear here, larger the more often they are given.'))); return; }
+  const mx = Math.max(...freq.values());
+  const base = S.read ? 18 : 30, span = S.read ? 26 : 70;
+  Array.from(freq.entries()).sort((a, b) => b[1] - a[1]).slice(0, 40).forEach(([k, n]) => {
+    const s = el('span', null, k); s.style.fontSize = (base + span * (n - 1) / Math.max(1, mx - 1)) + 'px'; s.title = n + '×';
+    if (!S.read) { s.style.cursor = 'pointer'; s.addEventListener('click', () => { hidden.add(id + '|' + k); refreshPolls(); }); }
+    w.append(s);
+  });
+}
+
+/* ================= ao vivo (room, só dentro do Claude) ================= */
+let presTimer = null;
+function pushPresence() {
+  if (!liveOn()) return;
+  clearTimeout(presTimer);
+  presTimer = setTimeout(() => {
+    const a = {}; for (const id in POLLS) { const v = clean(id, mine[id]); if (v !== undefined) a[id] = v; }
+    const patch = {a};
+    patch.follow = (L.presenter && L.following && !L.admin) ? {of: L.presenter.peer} : null;
+    L.room.presence(patch).catch(() => {});
+  }, 120);
+}
+function emitSlide() { if (L.admin && liveOn()) L.room.emit('slide', {i: S.i}).catch(() => {}); }
+function updateLivePills() {
+  const on = liveOn() && L.connected;
+  const n = liveOn() ? L.room.peers().filter(p => !p.kind || p.kind === 'viewer').length : 0;
+  $$('[data-livepill]').forEach(p => {
+    p.classList.toggle('live', on);
+    p.textContent = on ? T('Ao vivo · ' + n + (n === 1 ? ' ligado' : ' ligados'), 'Live · ' + n + ' connected') : (liveOn() ? T('A ligar…', 'Connecting…') : T('Respostas locais', 'Local answers'));
+  });
+  renderFollow();
+}
+function renderFollow() {
+  const show = !!(L.presenter && !L.admin);
+  const fr = $('#followRead'), fp = $('#followPres');
+  [fr, fp].forEach(b => b.classList.toggle('on', show));
+  if (!show) return;
+  const n = L.presenter.i + 1;
+  fr.textContent = T('Professor no ' + n + ' · ir', 'Presenter on ' + n + ' · go');
+  fp.textContent = L.following ? T('A seguir o professor', 'Following the presenter') : T('Seguir o professor (' + n + ')', 'Follow the presenter (' + n + ')');
+}
+async function initLive() {
+  if (!inClaude) return;
+  let room = null, user = null;
+  try { [room, user] = await Promise.all([window.claude.use('room'), window.claude.use('user')]); } catch (e) { return; }
+  if (!room) return;
+  L.room = room;
+  try { L.admin = user ? !!(await user.canEdit()) : false; } catch (e) { L.admin = false; }
+  const dead = () => { L.dead = true; L.connected = false; refreshPolls(); };
+  room.onConnection(c => { L.connected = !!c; if (c) { pushPresence(); emitSlide(); } updateLivePills(); }, dead);
+  room.onPeers(ch => { if (L.admin && ch.joined.some(p => !p.isMe)) emitSlide(); refreshPolls(); }, dead);
+  room.on('slide', msg => {
+    if (msg.isMe || L.admin) return;
+    const i = msg.data && Number.isInteger(msg.data.i) ? msg.data.i : -1;
+    if (i < 0 || i >= slides.length) return;
+    L.presenter = {peer: msg.peer, i};
+    if (L.following && !S.read && i !== S.i) goTo(i, {remote:true});
+    renderFollow(); pushPresence();
+  }, dead);
+  pushPresence(); refreshPolls();
+}
+
+/* ================= navegação ================= */
+const fragMax = s => $$('[data-f]', s).reduce((m, e) => Math.max(m, +e.dataset.f || 0), 0);
+function setHash(h) { try { history.replaceState(null, '', h); } catch (e) {} }
+function render(opts = {}) {
+  slides.forEach((s, k) => {
+    const on = k === S.i;
+    s.classList.toggle('is-active', on);
+    $$('[data-f]', s).forEach(e => e.classList.toggle('f-on', S.read || k < S.i || (on && +e.dataset.f <= S.f)));
+  });
+  const s = slides[S.i];
+  $('#count').textContent = (S.i + 1) + ' / ' + slides.length;
+  const sec = s.dataset.section || '';
+  $('#secLabel').textContent = LANG === 'en' ? (SECTIONS[sec] || sec) : sec;
+  $('#progress i').style.width = (100 * (S.i + 1) / slides.length) + '%';
+  const nt = $('.notes', s); $('#notesBody').textContent = nt ? nt.textContent : T('Sem notas para este diapositivo.', 'No notes for this slide.');
+  if (!opts.noHash) setHash('#s' + (S.i + 1));
+  if (s.id === 'abSlide') requestAnimationFrame(drawLoops);
+  if (!opts.remote) emitSlide();
+}
+function goTo(i, opts = {}) {
+  i = Math.max(0, Math.min(slides.length - 1, i));
+  if (S.read) { S.i = i; slides[i].scrollIntoView({behavior: reduced ? 'auto' : 'smooth', block: 'start'}); return; }
+  S.f = opts.end ? fragMax(slides[i]) : 0; S.i = i; render(opts);
+}
+function userNav() { if (L.presenter && !L.admin && L.following) { L.following = false; renderFollow(); pushPresence(); } }
+function next() { const n = fragMax(slides[S.i]); if (S.f < n) { S.f++; render({noHash:true}); } else if (S.i < slides.length - 1) goTo(S.i + 1); }
+function prev() { if (S.f > 0) { S.f--; render({noHash:true}); } else if (S.i > 0) goTo(S.i - 1, {end:true}); }
+
+function modeLabels() {
+  $$('[data-act="mode"]').forEach(b => {
+    const lbl = S.read ? T('Modo apresentação', 'Presentation mode') : T('Modo leitura (L)', 'Reading mode (L)');
+    b.title = lbl; b.setAttribute('aria-label', lbl);
+    if (b.classList.contains('btn')) b.textContent = S.read ? T('Diapositivos', 'Slides') : T('Leitura', 'Reading');
+  });
+}
+function applyMode() {
+  const was = S.read;
+  S.read = S.forced !== null ? S.forced : mqNarrow.matches;
+  app.classList.toggle('read', S.read); app.classList.toggle('present', !S.read);
+  modeLabels(); fit(); showCase(caseIdx); render({noHash:true}); refreshPolls();
+  if (S.read && was !== S.read) requestAnimationFrame(() => slides[S.i].scrollIntoView({block:'start'}));
+}
+function fit() { if (S.read) return; const k = Math.min(innerWidth / 1600, innerHeight / 900); stage.style.setProperty('--k', k); }
+const mqNarrow = matchMedia('(max-width: 820px), (max-height: 520px)');
+mqNarrow.addEventListener ? mqNarrow.addEventListener('change', applyMode) : mqNarrow.addListener(applyMode);
+addEventListener('resize', () => { fit(); drawLoops(); });
+
+const io = new IntersectionObserver(es => {
+  if (!S.read) return;
+  es.forEach(e => { if (e.isIntersecting) { S.i = slides.indexOf(e.target); setHash('#s' + (S.i + 1)); } });
+}, {rootMargin: '-40% 0px -55% 0px'});
+slides.forEach(s => io.observe(s));
+
+/* ================= QR ================= */
+function joinBase() {
+  const o = store.get('url'); if (o) return o;
+  if (!inClaude && /^https?:$/.test(location.protocol)) return location.href.split('#')[0];
+  return SHARE_URL || location.href.split('#')[0];
+}
+const joinUrl = () => joinBase().split('#')[0] + '#' + LANG;
+function drawQR(box, url) {
+  box.textContent = '';
+  if (typeof window.qrcode !== 'function') { box.append(el('span', 'qr-fallback', url)); return; }
+  try { const q = window.qrcode(0, 'M'); q.addData(url); q.make(); box.innerHTML = q.createSvgTag({cellSize: 6, margin: 0, scalable: true}); }
+  catch (e) { box.append(el('span', 'qr-fallback', url)); }
+}
+function drawAllQR() {
+  const u = joinUrl();
+  $$('[data-qr="join"]').forEach(b => drawQR(b, u));
+  $$('[data-qr-url]').forEach(b => drawQR(b, b.dataset.qrUrl));
+  $('#joinUrl').textContent = u;
+}
+function qrNote() {
+  $('#qrNote').textContent = inClaude
+    ? T('As respostas aparecem ao vivo no ecrã para quem abrir a aula com sessão iniciada no Claude e acesso a esta página. Sem isso, cada pessoa responde no seu dispositivo e o professor conta à mão.', 'Answers appear live on screen for anyone who opens the session signed in to Claude with access to this page. Otherwise, each person answers on their own device and the presenter counts by hand.')
+    : T('Neste endereço, cada pessoa responde no seu dispositivo e as respostas não são enviadas para nenhum servidor. O professor conta à mão no ecrã.', 'At this address, each person answers on their own device and answers are not sent to any server. The presenter counts by hand on screen.');
+}
+function toggleQR(force) {
+  const o = $('#qrOverlay'); const show = force !== undefined ? force : o.hidden;
+  o.hidden = !show; if (show) { $('#urlInput').value = joinBase(); $('[data-act="qrclose"]', o).focus(); }
+}
+function selectUrl() { const r = document.createRange(); r.selectNodeContents($('#joinUrl')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+$('#copyUrl').addEventListener('click', e => {
+  const u = joinUrl(), b = e.currentTarget;
+  const done = ok => { b.textContent = ok ? T('Ligação copiada', 'Link copied') : T('Selecionem o texto acima', 'Select the text above'); setTimeout(() => { b.textContent = T('Copiar ligação', 'Copy link'); }, 2200); };
+  try { navigator.clipboard.writeText(u).then(() => done(true), () => { selectUrl(); done(false); }); } catch (x) { selectUrl(); done(false); }
+});
+$('#urlForm').addEventListener('submit', e => { e.preventDefault(); const v = $('#urlInput').value.trim(); if (/^https?:\/\//.test(v)) store.set('url', v.split('#')[0]); else if (!v) store.del('url'); drawAllQR(); });
+$('#qrOverlay').addEventListener('click', e => { if (e.target.id === 'qrOverlay') toggleQR(false); });
+
+/* ================= agente em ciclo ================= */
+let loopBusy = false, iter = 0;
+function loopLabel() {
+  const out = $('#iterOut'), btn = $('#runLoop');
+  if (iter === 0) { out.textContent = T('Iteração 0', 'Iteration 0'); btn.textContent = T('Correr um ciclo', 'Run a cycle'); return; }
+  if (loopBusy) { out.textContent = T('Iteração ', 'Iteration ') + iter; return; }
+  if (iter < 3) { out.textContent = T('Iteração ' + iter + ' · continuar? sim', 'Iteration ' + iter + ' · continue? yes'); btn.textContent = T('Correr mais um ciclo', 'Run another cycle'); }
+  else { out.textContent = T('Iteração 3 · continuar? não → retornar resultado', 'Iteration 3 · continue? no → return result'); btn.textContent = T('Recomeçar', 'Start again'); }
+}
+$('#runLoop').addEventListener('click', () => {
+  if (loopBusy) return; loopBusy = true;
+  const li = $$('#agentSteps li');
+  if (iter >= 3) iter = 0;
+  iter++; loopLabel();
+  let k = 0; const dt = reduced ? 60 : 520;
+  const tick = () => {
+    li.forEach((x, j) => x.classList.toggle('hot', j === k));
+    k++;
+    if (k <= li.length) { setTimeout(tick, dt); return; }
+    li.forEach(x => x.classList.remove('hot'));
+    loopBusy = false; loopLabel();
+    if (iter >= 3 && !S.read) { S.f = fragMax(slides[S.i]); render({noHash:true}); }
+  };
+  tick();
+});
+
+/* ================= laboratório do limiar ================= */
+function labUpdate() {
+  const t = +$('#lim').value; $('#limOut').textContent = t + '%';
+  $$('#lab .th').forEach(x => x.style.setProperty('--t', t));
+  $$('#lab .bar').forEach(b => { $('.tr i', b).style.setProperty('--v', b.dataset.v); b.classList.toggle('off', +b.dataset.v < t); });
+  const set = (mode, cls, label, text) => { const c = $('#lab [data-mode="' + mode + '"]'); const s = $('[data-state]', c); s.className = 'state ' + cls; s.textContent = label; $('[data-out]', c).textContent = text; };
+  if (t > 72) set('hes', 'drop', T('Descartado', 'Discarded'), T('Par deixado vazio. O segmento sai da análise e ninguém fica a saber que houve hesitação.', 'Pair left empty. The segment leaves the analysis and nobody learns there was hesitation.'));
+  else if (t > 68) set('hes', 'none', T('Só a mais provável', 'Most likely only'), T('Fica só «empatia». A permissividade desaparece sem deixar rasto.', 'Only “empathy” remains. Permissiveness disappears without a trace.'));
+  else set('hes', 'good', T('Visível', 'Visible'), T('Ficam as duas categorias e a proximidade de 4 pontos fica à vista. Mas o limiar não a assinala: alguém tem de a ler.', 'Both categories remain and the 4-point gap is in view. But the threshold does not flag it: someone has to read it.'));
+  if (t > 78) set('cega', 'drop', T('Descartado', 'Discarded'), T('Par deixado vazio, mas pela razão errada: a confiança não mede o que falta.', 'Pair left empty, but for the wrong reason: confidence does not measure what is missing.'));
+  else set('cega', 'none', T('Sem rasto', 'No trace'), T('«Autoridade» passa sem qualquer sinal. O peso da exclusão no fundo da sala nunca é registado.', '“Authority” passes with no signal at all. The weight of exclusion at the back of the room is never recorded.'));
+  if (t > 22) set('sil', 'none', T('Irrelevância', 'Irrelevance'), T('Ambas descartadas: o que não aparece é lido como irrelevante.', 'Both discarded: what does not appear is read as irrelevant.'));
+  else if (t > 18) set('sil', 'noise', T('Ruído', 'Noise'), T('«Avaliação formal» entra como código fraco. O silêncio passa a ruído.', '“Formal evaluation” enters as a weak code. Silence becomes noise.'));
+  else set('sil', 'noise', T('Ruído', 'Noise'), T('As duas entram como códigos fracos. O silêncio continua sem ser achado, agora como ruído.', 'Both enter as weak codes. Silence is still not a finding; now it is noise.'));
+}
+$('#lim').addEventListener('input', labUpdate);
+$('#limReset').addEventListener('click', () => { $('#lim').value = 40; labUpdate(); });
+$('#rufOn').addEventListener('change', e => $('#lab').classList.toggle('ruf-on', e.target.checked));
+
+/* ================= língua ================= */
+function setLang(l, save) {
+  LANG = l === 'en' ? 'en' : 'pt';
+  app.dataset.lang = LANG; app.lang = LANG === 'en' ? 'en' : 'pt-PT';
+  try { document.documentElement.lang = app.lang; } catch (e) {}
+  i18nNodes.forEach(n => { n.el.innerHTML = LANG === 'en' ? n.en : n.pt; });
+  i18nAttrs.forEach(n => n.el.setAttribute(n.a, LANG === 'en' ? n.en : n.pt));
+  if (save) store.set('lang', LANG);
+  $$('[data-act="lang"]').forEach(b => { b.textContent = LANG === 'en' ? 'PT' : 'EN'; const a = LANG === 'en' ? 'Mudar para português' : 'Switch to English'; b.setAttribute('aria-label', a); b.title = a + ' (E)'; });
+  buildRufTable(); modeLabels(); refreshPolls(); labUpdate(); renderAb(); loopLabel(); revealBtns.forEach(f => f()); qrNote(); drawAllQR();
+  render({noHash:true});
+}
+
+/* ================= eventos globais ================= */
+document.addEventListener('click', e => {
+  const o = e.target.closest('[data-poll-for][data-opt]');
+  if (o) { choose(o.dataset.pollFor, o.dataset.opt); return; }
+  const b = e.target.closest('[data-act]'); if (!b) return;
+  const a = b.dataset.act;
+  if (a === 'next') { userNav(); next(); }
+  else if (a === 'prev') { userNav(); prev(); }
+  else if (a === 'qr') toggleQR(true);
+  else if (a === 'qrclose') toggleQR(false);
+  else if (a === 'notes') { const n = $('#notes'); n.hidden = !n.hidden; b.setAttribute('aria-pressed', !n.hidden); }
+  else if (a === 'mode') { S.forced = !S.read; applyMode(); }
+  else if (a === 'lang') setLang(LANG === 'en' ? 'pt' : 'en', true);
+  else if (a === 'fs') { try { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen().catch(() => {}); } catch (x) {} }
+  else if (a === 'step') { const n = fragMax(slides[S.i]); if (S.f < n) { S.f++; render({noHash:true}); } }
+  else if (a === 'restart') { S.f = 0; render({noHash:true}); }
+});
+document.addEventListener('submit', e => {
+  const f = e.target.closest('[data-poll] form.ask'); if (!f) return;
+  e.preventDefault();
+  const id = f.closest('[data-poll]').dataset.poll; const inp = $('input', f); const v = clean(id, inp.value);
+  if (!v) return;
+  if (modeOf() === 'manual') (manualTexts[id] = manualTexts[id] || []).push(v);
+  else { mine[id] = v; store.set('mine', mine); pushPresence(); }
+  inp.value = ''; refreshPolls();
+});
+$('#followRead').addEventListener('click', () => { if (L.presenter) slides[L.presenter.i].scrollIntoView({behavior: reduced ? 'auto' : 'smooth', block:'start'}); });
+$('#followPres').addEventListener('click', () => { if (!L.presenter) return; L.following = !L.following; if (L.following) goTo(L.presenter.i, {remote:true}); renderFollow(); pushPresence(); });
+addEventListener('keydown', e => {
+  if (e.target.closest && e.target.closest('input, textarea, select, [contenteditable="true"]')) return;
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  const k = e.key;
+  if (k === 'Escape') { toggleQR(false); $('#notes').hidden = true; return; }
+  if (k === 'q' || k === 'Q') { toggleQR(); return; }
+  if (k === 'e' || k === 'E') { setLang(LANG === 'en' ? 'pt' : 'en', true); return; }
+  if (S.read) return;
+  const onBtn = e.target.closest && e.target.closest('button, a, summary');
+  if (k === 'ArrowRight' || k === 'PageDown' || (k === ' ' && !onBtn)) { e.preventDefault(); userNav(); next(); }
+  else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); userNav(); prev(); }
+  else if (k === 'Home') { userNav(); goTo(0); }
+  else if (k === 'End') { userNav(); goTo(slides.length - 1); }
+  else if (k === 'n' || k === 'N') { const n = $('#notes'); n.hidden = !n.hidden; $('[data-act="notes"]').setAttribute('aria-pressed', !n.hidden); }
+  else if (k === 'f' || k === 'F') { $('[data-act="fs"]').click(); }
+  else if (k === 'l' || k === 'L') { S.forced = true; applyMode(); }
+});
+addEventListener('hashchange', () => {
+  const h = location.hash;
+  const lm = /^#(pt|en)$/.exec(h); if (lm) { setLang(lm[1], true); return; }
+  const m = /^#s(\d+)$/.exec(h); if (m) goTo(+m[1] - 1, {noHash:true});
+});
+
+/* ================= arranque ================= */
+collectI18n(app);
+buildCorpus(); buildCases(); buildPhases(); buildDefaultOpts();
+const h0 = location.hash;
+const lang0 = /^#(pt|en)$/.exec(h0);
+if (lang0) store.set('lang', lang0[1]);
+const m0 = /^#s(\d+)$/.exec(h0); if (m0) S.i = Math.max(0, Math.min(slides.length - 1, +m0[1] - 1));
+LANG = (lang0 && lang0[1]) || store.get('lang') || 'pt';
+applyMode(); setLang(LANG, false);
+if (S.read && S.i > 0) requestAnimationFrame(() => slides[S.i].scrollIntoView({block:'start'}));
+window.addEventListener('load', () => { if (typeof window.qrcode === 'function') drawAllQR(); drawLoops(); });
+if (document.fonts) document.fonts.ready.then(() => drawLoops());
+initLive();
+})();
+
+</script>
+
 </body>
 </html>
