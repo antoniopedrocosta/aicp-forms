@@ -50,7 +50,7 @@ for (const lang of ["pt", "en", "es", "it", "ko"]) {
       }
     }
   }
-  out.push("---", "", t(S.meta.references), "");
+  out.push("---", "", t(S.meta.references), "", "_AICP forms v" + S.meta.version + " (" + S.meta.released + ")_", "");
   fs.writeFileSync(path.join(__dirname, "../docs/AICP_forms_" + lang.toUpperCase() + ".md"), out.join("\n"));
 }
 console.log("ok");

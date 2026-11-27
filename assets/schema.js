@@ -22,6 +22,7 @@ const STATES = [L("Por iniciar", "Not started", "Sin iniciar", "Da iniziare", "�
 
 window.AICP_SCHEMA = {
   meta: {
+    version: "1.0.0", released: "2026-11-23",
     title: L("AI Curatorial Protocol (AICP)", "AI Curatorial Protocol (AICP)", "AI Curatorial Protocol (AICP)", "AI Curatorial Protocol (AICP)", "AI Curatorial Protocol (AICP)"),
     subtitle: L("Formulários de curadoria de conteúdos gerados por IA: texto, imagem e vídeo", "Curation forms for AI-generated content: text, image and video", "Formularios de curaduría de contenidos generados por IA: texto, imagen y vídeo", "Moduli di curatela di contenuti generati dall'IA: testo, immagine e video", "AI 생성 콘텐츠 큐레이션 양식: 텍스트, 이미지, 영상"),
     intro: L("Seis formulários curtos, um por fase, para anexar a qualquer conteúdo produzido com IA generativa: textos (artigo, trabalho académico, relatório, material didático, divulgação), imagens e vídeos. Escolha primeiro o tipo de conteúdo; os campos ajustam-se. Cada campo tem uma ajuda e, quando útil, um exemplo. Extensão do modelo 5R (Bain et al., 2002) com uma nova fase, Reconciling (Costa et al., 2026).",

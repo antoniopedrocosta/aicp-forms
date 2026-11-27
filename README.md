@@ -33,6 +33,10 @@ node tools/build-templates.js
 
 Não há dependências nem passo de compilação: a página usa apenas HTML, CSS e JavaScript.
 
+## Versões
+
+A versão de referência é a **1.0.0** (23/11/2026); as alterações seguintes partem dela. A numeração segue MAJOR.MINOR.PATCH: MAJOR para mudanças no protocolo ou que tornam incompatíveis os registos guardados, MINOR para campos, línguas ou funções novas, PATCH para correções. A versão aparece no rodapé da página, nos ficheiros exportados e na declaração gerada. Cada versão é publicada como *Release* no GitHub, com a etiqueta `v1.0.0`, `v1.1.0`, etc. Histórico completo em [`CHANGELOG.md`](CHANGELOG.md).
+
 ## Citar
 
 Costa, A. P., Pinho, I., Piedade, F., Balula, A., Ribeiro, N., Ruano, L. E., & Antonini, A. (2026). Algorithmic responsibility in education: A curatorial protocol for AI-generated text, images, and videos. *조형교육, 99*(2), 25–38.
@@ -72,6 +76,10 @@ Push these files to the `main` branch, then go to *Settings → Pages*, choose *
 
 All content lives in [`assets/schema.js`](assets/schema.js), with each text in Portuguese, English, Spanish, Italian and Korean; the `show` key marks fields used only for text, image and video, or video. Regenerate the Markdown templates with `node tools/build-templates.js`. No dependencies, no build step.
 
+### Versions
+
+The reference version is **1.0.0** (2026-11-23); later changes start from it. Numbering is MAJOR.MINOR.PATCH. The version is shown in the page footer, in exported files and in the generated statement. Each version is published as a GitHub Release tagged `v1.0.0`, `v1.1.0`, etc. Full history in [`CHANGELOG.md`](CHANGELOG.md).
+
 ### Licence
 
 Form content: CC BY 4.0. Code: MIT.
@@ -96,6 +104,10 @@ Formularios del *AI Curatorial Protocol* (AICP) para la curaduría de contenidos
 - **Exportar:** *Exportar Word* (.docx), *Exportar Markdown* e *Imprimir / PDF*, con una fase por página.
 - **Privacidad:** la página no envía datos a ningún servidor. No registre datos personales o confidenciales en los campos.
 - **Plantillas descargables** en [`docs/`](docs/), incluidas `AICP_forms_ES.md` y `AICP_forms_ES.docx`.
+
+### Versiones
+
+La versión de referencia es la **1.0.0** (23/11/2026). Historial completo en [`CHANGELOG.md`](CHANGELOG.md).
 
 ### Licencia
 
@@ -122,6 +134,10 @@ Moduli dell'*AI Curatorial Protocol* (AICP) per la curatela di contenuti prodott
 - **Privacy:** la pagina non invia dati ad alcun server. Non registrare dati personali o riservati nei campi.
 - **Modelli scaricabili** in [`docs/`](docs/), inclusi `AICP_forms_IT.md` e `AICP_forms_IT.docx`.
 
+### Versioni
+
+La versione di riferimento è la **1.0.0** (23/11/2026). Cronologia completa in [`CHANGELOG.md`](CHANGELOG.md).
+
 ### Licenza
 
 Contenuto dei moduli: CC BY 4.0. Codice: MIT.
@@ -146,6 +162,10 @@ Contenuto dei moduli: CC BY 4.0. Codice: MIT.
 - **내보내기:** *Word 내보내기*(.docx), *Markdown 내보내기*, *인쇄 / PDF*(단계별로 한 페이지).
 - **개인정보:** 이 페이지는 어떤 서버로도 데이터를 보내지 않습니다. 항목에 개인정보나 기밀 정보를 기록하지 마십시오.
 - **내려받을 수 있는 양식:** [`docs/`](docs/)에 `AICP_forms_KO.md`와 `AICP_forms_KO.docx`가 있습니다.
+
+### 버전
+
+기준 버전은 **1.0.0**(2026-11-23)입니다. 전체 기록은 [`CHANGELOG.md`](CHANGELOG.md)에 있습니다.
 
 ### 라이선스
 

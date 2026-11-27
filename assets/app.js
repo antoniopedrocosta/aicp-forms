@@ -19,6 +19,9 @@
     theirs: { pt: "Usar o do ficheiro", en: "Use the file's", es: "Usar el del archivo", it: "Usa quello del file", ko: "파일의 것 사용" },
     apply: { pt: "Aplicar", en: "Apply", es: "Aplicar", it: "Applica", ko: "적용" },
     rowW: { pt: "linha", en: "row", es: "fila", it: "riga", ko: "행" },
+    versionW: { pt: "Versão dos formulários", en: "Forms version", es: "Versión de los formularios", it: "Versione dei moduli", ko: "양식 버전" },
+    changes: { pt: "Histórico de versões", en: "Version history", es: "Historial de versiones", it: "Cronologia delle versioni", ko: "버전 기록" },
+    otherVersion: { pt: "Este ficheiro foi criado com outra versão dos formulários ({v}). Os dados foram abertos, mas verifique os campos que possam ter mudado.", en: "This file was created with another version of the forms ({v}). The data were opened, but check fields that may have changed.", es: "Este archivo se creó con otra versión de los formularios ({v}). Los datos se abrieron, pero revise los campos que puedan haber cambiado.", it: "Questo file è stato creato con un'altra versione dei moduli ({v}). I dati sono stati aperti, ma verifichi i campi che potrebbero essere cambiati.", ko: "이 파일은 다른 버전의 양식({v})으로 만들어졌습니다. 데이터는 열렸지만, 바뀌었을 수 있는 항목을 확인하십시오." },
     reset: { pt: "Limpar tudo", en: "Clear all", es: "Borrar todo", it: "Cancella tutto", ko: "모두 지우기" },
     resetConfirm: { pt: "Apagar todos os campos preenchidos neste navegador?", en: "Delete all filled-in fields in this browser?", es: "¿Borrar todos los campos completados en este navegador?", it: "Cancellare tutti i campi compilati in questo browser?", ko: "이 브라우저에 입력한 모든 내용을 지우시겠습니까?" },
     addRow: { pt: "+ linha", en: "+ row", es: "+ fila", it: "+ riga", ko: "+ 행" },
@@ -271,7 +274,8 @@
       main.append(sh);
     });
 
-    const foot = el("footer", {}, el("h2", {}, t(UI.refs)), el("p", {}, t(S.meta.references)));
+    const foot = el("footer", {}, el("h2", {}, t(UI.refs)), el("p", {}, t(S.meta.references)),
+      el("p", { class: "version" }, t(UI.versionW) + " " + S.meta.version + " (" + S.meta.released + ") · ", el("a", { href: "CHANGELOG.md" }, t(UI.changes))));
     app.append(head, nav, howto, main, foot);
     if (stmtAuto()) syncStmt();
   }
@@ -284,12 +288,17 @@
   const fileBase = () => (get("id.id.code", "") || "AICP").replace(/[^\w.-]+/g, "_");
 
   function exportJson() {
-    download(fileBase() + ".json", JSON.stringify({ schema: "aicp-forms-v2", lang: state.lang, exported: new Date().toISOString(), values: state.v }, null, 2), "application/json");
+    download(fileBase() + ".json", JSON.stringify({ schema: "aicp-forms-v2", formsVersion: S.meta.version, lang: state.lang, exported: new Date().toISOString(), values: state.v }, null, 2), "application/json");
+  }
+  function versionNotice(o) {
+    const fv = o && o.formsVersion;
+    if (fv === S.meta.version) return;
+    alert(t(UI.otherVersion).replace("{v}", fv || "< 1.0.0"));
   }
   function importJson(e) {
     const file = e.target.files[0]; if (!file) return;
     file.text().then((txt) => {
-      try { const o = JSON.parse(txt); if (!o || typeof o.values !== "object") throw 0; state.v = o.values; if (o.lang) state.lang = o.lang; save(); render(); }
+      try { const o = JSON.parse(txt); if (!o || typeof o.values !== "object") throw 0; state.v = o.values; if (o.lang) state.lang = o.lang; save(); render(); versionNotice(o); }
       catch (err) { alert(t(UI.badFile)); }
     });
   }
@@ -333,6 +342,7 @@
     file.text().then((txt) => {
       let o;
       try { o = JSON.parse(txt); if (!o || typeof o.values !== "object") throw 0; } catch (err) { alert(t(UI.badFile)); return; }
+      if (o.formsVersion !== S.meta.version) versionNotice(o);
       const inc = o.values, add = {}, conflicts = [];
       const incStmtManual = inc[STMT + ".auto"] === false || (inc[STMT + ".auto"] == null && !isEmpty(inc[STMT]));
       for (const [k, v] of Object.entries(inc)) {
@@ -414,7 +424,7 @@
         });
       });
     });
-    out.push("---", "", t(S.meta.references), "");
+    out.push("---", "", t(S.meta.references), "", "_" + t(UI.versionW) + " " + S.meta.version + "_", "");
     download(fileBase() + ".md", out.join("\n"), "text/markdown");
   }
 
@@ -555,7 +565,7 @@
             obj: ["do texto", "da imagem", "do vídeo", "do conteúdo"], tp: "tipo", tool: "ferramenta e versão", date: "data",
             open: (o, ty, tl, dt) => "Na preparação " + o + " (" + ty + "), foi utilizado o " + tl + ", em " + dt + ".",
             part: "Parte gerada pela IA: ", purpose: "A ferramenta foi usada para [finalidades: por exemplo, redação de uma primeira versão, revisão de linguagem, tradução, criação de uma ilustração].",
-            docs: "Foram fornecidos à ferramenta os seguintes materiais: ", audit: "A utilização foi auditada com o AI Curatorial Protocol (AICP; Costa et al., 2026), incluindo o registo de proveniência",
+            docs: "Foram fornecidos à ferramenta os seguintes materiais: ", audit: "A utilização foi auditada com o AI Curatorial Protocol (AICP; Costa et al., 2026; formulários v" + S.meta.version + "), incluindo o registo de proveniência",
             claims: (n, a, b) => ", a verificação de " + n + " afirmações e referências (" + a + " confirmadas na fonte; " + b + " com conteúdo confirmado)", claimsTodo: ", a verificação das referências [indicar quantas]",
             els: (n, a) => ", a verificação de " + n + " elementos representados (" + a + " corretos)", elsTodo: ", a verificação do que a imagem ou o vídeo representa [indicar]",
             bias: ", uma auditoria de enviesamentos", cross: ", a validação cruzada por ", crossTodo: ", a validação cruzada por [composição do grupo independente]", dec: " e uma decisão documentada",
@@ -571,7 +581,7 @@
             obj: ["this text", "this image", "this video", "this content"], tp: "type", tool: "tool and version", date: "date",
             open: (o, ty, tl, dt) => "In preparing " + o + " (" + ty + "), " + tl + " was used on " + dt + ".",
             part: "Part generated by AI: ", purpose: "The tool was used to [purposes: e.g. drafting a first version, language editing, translation, creating an illustration].",
-            docs: "The following materials were provided to the tool: ", audit: "Its use was audited with the AI Curatorial Protocol (AICP; Costa et al., 2026), including a provenance record",
+            docs: "The following materials were provided to the tool: ", audit: "Its use was audited with the AI Curatorial Protocol (AICP; Costa et al., 2026; forms v" + S.meta.version + "), including a provenance record",
             claims: (n, a, b) => ", the checking of " + n + " claims and references (" + a + " confirmed at source; " + b + " with content confirmed)", claimsTodo: ", reference checking [state how many]",
             els: (n, a) => ", the checking of " + n + " depicted elements (" + a + " correct)", elsTodo: ", checking of what the image or video depicts [state]",
             bias: ", a bias audit", cross: ", cross-validation by ", crossTodo: ", cross-validation by [composition of the independent group]", dec: " and a documented decision",
@@ -587,7 +597,7 @@
             obj: ["del texto", "de la imagen", "del vídeo", "del contenido"], tp: "tipo", tool: "herramienta y versión", date: "fecha",
             open: (o, ty, tl, dt) => "En la preparación " + o + " (" + ty + ") se utilizó " + tl + ", en " + dt + ".",
             part: "Parte generada por la IA: ", purpose: "La herramienta se utilizó para [finalidades: por ejemplo, redacción de una primera versión, revisión lingüística, traducción, creación de una ilustración].",
-            docs: "Se proporcionaron a la herramienta los siguientes materiales: ", audit: "El uso fue auditado con el AI Curatorial Protocol (AICP; Costa et al., 2026), incluyendo el registro de procedencia",
+            docs: "Se proporcionaron a la herramienta los siguientes materiales: ", audit: "El uso fue auditado con el AI Curatorial Protocol (AICP; Costa et al., 2026; formularios v" + S.meta.version + "), incluyendo el registro de procedencia",
             claims: (n, a, b) => ", la verificación de " + n + " afirmaciones y referencias (" + a + " confirmadas en la fuente; " + b + " con contenido confirmado)", claimsTodo: ", la verificación de las referencias [indicar cuántas]",
             els: (n, a) => ", la verificación de " + n + " elementos representados (" + a + " correctos)", elsTodo: ", la verificación de lo que representa la imagen o el vídeo [indicar]",
             bias: ", una auditoría de sesgos", cross: ", la validación cruzada por ", crossTodo: ", la validación cruzada por [composición del grupo independiente]", dec: " y una decisión documentada",
@@ -603,7 +613,7 @@
             obj: ["del testo", "dell'immagine", "del video", "del contenuto"], tp: "tipo", tool: "strumento e versione", date: "data",
             open: (o, ty, tl, dt) => "Nella preparazione " + o + " (" + ty + ") è stato utilizzato " + tl + ", in data " + dt + ".",
             part: "Parte generata dall'IA: ", purpose: "Lo strumento è stato utilizzato per [finalità: per esempio, stesura di una prima versione, revisione linguistica, traduzione, creazione di un'illustrazione].",
-            docs: "Allo strumento sono stati forniti i seguenti materiali: ", audit: "L'uso è stato sottoposto ad audit con l'AI Curatorial Protocol (AICP; Costa et al., 2026), comprendente il registro di provenienza",
+            docs: "Allo strumento sono stati forniti i seguenti materiali: ", audit: "L'uso è stato sottoposto ad audit con l'AI Curatorial Protocol (AICP; Costa et al., 2026; moduli v" + S.meta.version + "), comprendente il registro di provenienza",
             claims: (n, a, b) => ", la verifica di " + n + " affermazioni e riferimenti (" + a + " confermati alla fonte; " + b + " con contenuto confermato)", claimsTodo: ", la verifica dei riferimenti [indicare quanti]",
             els: (n, a) => ", la verifica di " + n + " elementi rappresentati (" + a + " corretti)", elsTodo: ", la verifica di ciò che rappresenta l'immagine o il video [indicare]",
             bias: ", un audit dei bias", cross: ", la validazione incrociata da parte di ", crossTodo: ", la validazione incrociata da parte di [composizione del gruppo indipendente]", dec: " e una decisione documentata",
@@ -619,7 +629,7 @@
             obj: ["본 텍스트", "본 이미지", "본 영상", "본 콘텐츠"], tp: "유형", tool: "도구와 버전", date: "날짜",
             open: (o, ty, tl, dt) => o + "(" + ty + ")의 제작에는 " + dt + "에 " + tl + "을(를) 사용하였습니다.",
             part: "AI가 생성한 부분: ", purpose: "도구는 [목적: 예를 들어 초안 작성, 문장 교정, 번역, 삽화 제작]에 사용되었습니다.",
-            docs: "도구에 제공한 자료: ", audit: "AI 사용은 AI Curatorial Protocol(AICP; Costa et al., 2026)에 따라 점검하였으며, 여기에는 출처 기록",
+            docs: "도구에 제공한 자료: ", audit: "AI 사용은 AI Curatorial Protocol(AICP; Costa et al., 2026; 양식 v" + S.meta.version + ")에 따라 점검하였으며, 여기에는 출처 기록",
             claims: (n, a, b) => ", 주장과 참고문헌 " + n + "건의 확인(" + a + "건 원문 실재 확인, " + b + "건 내용 일치 확인)", claimsTodo: ", 참고문헌 확인[건수 기재]",
             els: (n, a) => ", 표현된 요소 " + n + "건의 확인(" + a + "건 정확)", elsTodo: ", 이미지나 영상이 표현한 내용의 확인[기재]",
             bias: ", 편향 점검", cross: ", 다음 검토자에 의한 교차 검증: ", crossTodo: ", 교차 검증[독립 검토자 구성 기재]", dec: ", 그리고 문서화된 결정",
@@ -741,6 +751,7 @@
     });
     b.push(wP(wRun(t(UI.refs), { b: true, sz: 20 }), { pageBreak: true }));
     b.push(wP(wRun(t(S.meta.references), { sz: 18 })));
+    b.push(wP(wRun(t(UI.versionW) + " " + S.meta.version, { i: true, color: "5B6470", sz: 16 }), { before: 120 }));
     return '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body>'
       + b.join("") + '<w:sectPr><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="1134" w:right="1134" w:bottom="1134" w:left="1134" w:header="567" w:footer="567" w:gutter="0"/></w:sectPr></w:body></w:document>';
   }

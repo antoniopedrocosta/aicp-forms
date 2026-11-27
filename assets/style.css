@@ -114,3 +114,6 @@ footer h2 { font-size: 14px; }
 .merge-opt input { margin-top: 3px; }
 
 .dlg-actions button.primary { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+
+footer .version { margin-top: 8px; font-size: 12px; }
+footer .version a { color: inherit; }

@@ -336,3 +336,5 @@ _무엇을 결정합니까? 이전 단계에 근거하고, 사람이 책임지�
 ---
 
 Bain, J. D., Ballantyne, R., Mills, C., & Lester, N. C. (2002). Reflecting on practice: Student teachers' perspectives. Post Pressed. Costa, A. P., Pinho, I., Piedade, F., Balula, A., Ribeiro, N., Ruano, L. E., & Antonini, A. (2026). Algorithmic responsibility in education: A curatorial protocol for AI-generated text, images, and videos. 조형교육, 99(2), 25–38.
+
+_AICP forms v1.0.0 (2026-11-23)_
